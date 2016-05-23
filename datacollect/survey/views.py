@@ -6,10 +6,8 @@ from survey.models import Record
 
 def get_counts_by_gender(qs):
     counts = {}
-    counts["male"] = qs.filter(gender="M").count()
-    counts["female"] = qs.filter(gender="F").count()
-    counts["other"] = qs.filter(gender="O").count()
-    counts["unknown"] = qs.filter(gender="?").count()
+    counts["male"] = qs.filter(gender=0).count()
+    counts["other"] = qs.filter(gender=1).count()
     return counts
 
 class RecordAnalysis(TemplateView):
@@ -24,5 +22,18 @@ class RecordAnalysis(TemplateView):
         total_count = records.all().count()
         total_by_gender = get_counts_by_gender(records)
 
+        # Count issues in categories (multiple choices possible)
+        issue_head = ""
+        issue_body = ""
+        for x in Record.ISSUE_CHOICES:
+            issue_head += "<th>" + x[1] + "</th>"
+
+            tmp_count = 0
+            for record in records:
+                for item in getattr(record,'issue_area'):
+                    tmp_count += (1 if item == x[0] else 0)
+            issue_body += "<td>" + str(tmp_count) + "</td>"
+
+        
         return locals()
 

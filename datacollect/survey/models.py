@@ -4,146 +4,147 @@ from django.db import models
 from django_countries.fields import CountryField
 from select_multiple_field.models import SelectMultipleField
 
-# Choices for select boxes
-
-GENDER_CHOICES = (
-    (0, "Male"),
-    (1, "Not Male")
-)
-
-ISSUE_CHOICES = (
-    ("WR","Women's rights"),
-    ("LGBTI","LGBTI issues"),
-    ("IPR","Indigenous peoples' rights"),
-    ("HRFE","Housing rights/Forced evictions"),
-    ("LNR","Land rights/nat' res'/environment"),
-    ("LR","Labour rights"),
-    ("IF","Internet freedom"),
-    ("CRS","Children's rights"),
-    ("HI","Health issues"),
-    ("CR","Cultural rights"),
-    ("RF","Religious freedom"),
-    ("HRE","Human rights education"),
-    ("MRR","Migrants'/Refugees' rights"),
-    ("MR","Minority rights (if not specified)"),
-    ("AT","Anti-Torture"),
-    ("PR","Prisoner's rights"),
-    ("ED","Enforced disappearance"),
-    ("H","Homocide"),
-    ("AC","Anti-Corruption"),
-    ("?","N/A")
-)
-
-ACTIVITIES_CHOICES = (
-    ("L","Lawyer"),
-    ("CSA","Civil society activist"),
-    ("TUA","Trade union activist"),
-    ("S","Student"),
-    ("J","Journalist/Editor/Writer"),
-    ("MP","Medical professional"),
-    ("T","Teacher/Professor"),
-    ("CL","Community leader"),
-    ("RA","Religious association"),
-    ("PM","Politician/Party member"),
-    ("HW","Humanitarian worker"),
-    ("V","Victim/witness of HR violations"),
-    ("I","Investigation against officials"),
-    ("PC","Participation in conference"),
-    ("PP","Participation in protest/rally"),
-    ("?","N/A")
-)
-
-COOPERATION_CHOICES = (
-    (0, "Not mentioned"),
-    (1, "UN"),
-    (2, "INGO")
-)
-
-LOCATION_CHOICES = (
-    ("C","Capital"),
-    ("T","City/Town"),
-    ("R","Rural area"),
-    ("?","Unknown")
-)
-
-VIOLATIONS_CHOICES = (
-    ("AD","Arrest/Detention"),
-    ("P","Prosecution"),
-    ("UT","Unfair trial"),
-    ("C","Conviction"),
-    ("K","Killing"),
-    ("KA","Killing attempt/Assault"),
-    ("DI","Diappearance/Incommunicado"),
-    ("PC","Held in poor conditions"),
-    ("RT","Risk of torture"),
-    ("TI","Torture/Ill-treatment"),
-    ("T","Threats"),
-    ("DC","Defamation campaign"),
-    ("DP","Disciplinary proceedings"),
-    ("S","Surveillance"),
-    ("R","Office/home raided"),
-    ("B","Barred from travelling"),
-    ("AH","Administrative harassment"),
-    ("?","N/A")
-)
-
-VIOLATION_FAMILY_CHOICES = (
-    (0,"Only HDR"),
-    (1,"against relative"),
-    (2,"against both")
-)
-
-PERPETRATOR_CHOICES = (
-    ("P","Police/Security forces"),
-    ("A","Army"),
-    ("AO","Armed opposition"),
-    ("B","Business/landholder"),
-    ("M","Mob"),
-    ("U","Unknown"),
-    ("?","N/A")
-)
-
-INTERVENTION_CHOICES = (
-    ("UA","UA"),
-    ("JUA","JUA"),
-    ("AL","AL"),
-    ("JAL","JAL"),
-    ("PR","PR")
-)
-
-JOINT_CHOICES = (
-    ("FREX","FREX"),
-    ("TOR","TOR")
-)
-
-CONCERN_CHOICES = (
-    ("PM","Protection measures"),
-    ("II","Independent investigation"),
-    ("PI","Provide information"),
-    ("PV","Concern: Pattern of violation"),
-    ("CV","Concern over violation")
-)
-
-GOV_REPLY_CHOICES = (
-    ("reject","Violation rejected"),
-    ("incomp","Reponsive but incomplete"),
-    ("immat","Immaterial response"),
-    ("react","Steps taken to address")
-)
-
-GOV_ACTION_CHOICES = (
-    ("protect","Protection measures granted"),
-    ("release","Individual released"),
-    ("improve","Improved prison conditions"),
-    ("investigate","Investigation opened"),
-    ("prosecuted","Perpetrator suspended/prosecuted"),
-    ("issued","Travel documents issued")
-)
-
-
-# Data model implementation
 
 class Record(models.Model):
+
+    # Choices for select boxes
+
+    GENDER_CHOICES = (
+        (0, "Male"),
+        (1, "Not Male")
+    )
+
+    ISSUE_CHOICES = (
+        ("WR","Women's rights"),
+        ("LGBTI","LGBTI issues"),
+        ("IPR","Indigenous peoples' rights"),
+        ("HRFE","Housing rights/Forced evictions"),
+        ("LNR","Land rights/nat' res'/environment"),
+        ("LR","Labour rights"),
+        ("IF","Internet freedom"),
+        ("CRS","Children's rights"),
+        ("HI","Health issues"),
+        ("CR","Cultural rights"),
+        ("RF","Religious freedom"),
+        ("HRE","Human rights education"),
+        ("MRR","Migrants'/Refugees' rights"),
+        ("MR","Minority rights (if not specified)"),
+        ("AT","Anti-Torture"),
+        ("PR","Prisoner's rights"),
+        ("ED","Enforced disappearance"),
+        ("H","Homocide"),
+        ("AC","Anti-Corruption"),
+        ("?","N/A")
+    )
+    
+    ACTIVITIES_CHOICES = (
+        ("L","Lawyer"),
+        ("CSA","Civil society activist"),
+        ("TUA","Trade union activist"),
+        ("S","Student"),
+        ("J","Journalist/Editor/Writer"),
+        ("MP","Medical professional"),
+        ("T","Teacher/Professor"),
+        ("CL","Community leader"),
+        ("RA","Religious association"),
+        ("PM","Politician/Party member"),
+        ("HW","Humanitarian worker"),
+        ("V","Victim/witness of HR violations"),
+        ("I","Investigation against officials"),
+        ("PC","Participation in conference"),
+        ("PP","Participation in protest/rally"),
+        ("?","N/A")
+    )
+
+    COOPERATION_CHOICES = (
+        (0, "Not mentioned"),
+        (1, "UN"),
+        (2, "INGO")
+    )
+
+    LOCATION_CHOICES = (
+        ("C","Capital"),
+        ("T","City/Town"),
+        ("R","Rural area"),
+        ("?","Unknown")
+    )
+
+    VIOLATIONS_CHOICES = (
+        ("AD","Arrest/Detention"),
+        ("P","Prosecution"),
+        ("UT","Unfair trial"),
+        ("C","Conviction"),
+        ("K","Killing"),
+        ("KA","Killing attempt/Assault"),
+        ("DI","Diappearance/Incommunicado"),
+        ("PC","Held in poor conditions"),
+        ("RT","Risk of torture"),
+        ("TI","Torture/Ill-treatment"),
+        ("T","Threats"),
+        ("DC","Defamation campaign"),
+        ("DP","Disciplinary proceedings"),
+        ("S","Surveillance"),
+        ("R","Office/home raided"),
+        ("B","Barred from travelling"),
+        ("AH","Administrative harassment"),
+        ("?","N/A")
+    )
+
+    VIOLATION_FAMILY_CHOICES = (
+        (0,"Only HDR"),
+        (1,"against relative"),
+        (2,"against both")
+    )
+
+    PERPETRATOR_CHOICES = (
+        ("P","Police/Security forces"),
+        ("A","Army"),
+        ("AO","Armed opposition"),
+        ("B","Business/landholder"),
+        ("M","Mob"),
+        ("U","Unknown"),
+        ("?","N/A")
+    )
+
+    INTERVENTION_CHOICES = (
+        ("UA","UA"),
+        ("JUA","JUA"),
+        ("AL","AL"),
+        ("JAL","JAL"),
+        ("PR","PR")
+    )
+
+    JOINT_CHOICES = (
+        ("FREX","FREX"),
+        ("TOR","TOR")
+    )
+
+    CONCERN_CHOICES = (
+        ("PM","Protection measures"),
+        ("II","Independent investigation"),
+        ("PI","Provide information"),
+        ("PV","Concern: Pattern of violation"),
+        ("CV","Concern over violation")
+    )
+
+    GOV_REPLY_CHOICES = (
+        ("reject","Violation rejected"),
+        ("incomp","Reponsive but incomplete"),
+        ("immat","Immaterial response"),
+        ("react","Steps taken to address")
+    )
+
+    GOV_ACTION_CHOICES = (
+        ("protect","Protection measures granted"),
+        ("release","Individual released"),
+        ("improve","Improved prison conditions"),
+        ("investigate","Investigation opened"),
+        ("prosecuted","Perpetrator suspended/prosecuted"),
+        ("issued","Travel documents issued")
+    )
+
+    
+    # Data model implementation
 
     person_id = models.CharField(max_length=10)
     name = models.CharField(max_length=500)
