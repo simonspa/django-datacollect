@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import FormView
 from django.views.generic import TemplateView
 from survey.models import Record
 
@@ -34,6 +35,32 @@ class RecordAnalysis(TemplateView):
                     tmp_count += (1 if item == x[0] else 0)
             issue_body += "<td>" + str(tmp_count) + "</td>"
 
+        # Produce matrix of Gov reply vs concern
+        matrix_head = "<th></th>"
+        for x in Record.GOV_REPLY_CHOICES:
+            matrix_head += "<th>" + x[1] + "</th>"
+
+        matrix_body = ""
+        for y in Record.CONCERN_CHOICES:
+            matrix_body += "<tr><th>" + y[1] + "</th>"
+            
+            for x in Record.GOV_REPLY_CHOICES:
+                tmp_count = 0
+                for record in records:
+                    tmp_count += (1 if x[0] == getattr(record,'government_reply_content') and
+                                  y[0] == getattr(record,'concern_expressed') else 0)
+                matrix_body += "<td>" + str(tmp_count) + "</td>"
+            matrix_body += "</tr>"
         
         return locals()
 
+class HomePageView(TemplateView):
+    template_name = 'demo/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(HomePageView, self).get_context_data(**kwargs)
+        messages.info(self.request, 'hello http://example.com')
+        return context
+
+class MiscView(TemplateView):
+    template_name = 'demo/misc.html'

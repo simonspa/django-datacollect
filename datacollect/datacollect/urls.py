@@ -21,4 +21,7 @@ from survey.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^record_analysis/$', RecordAnalysis.as_view(), name='record_analysis'),
+
+    url(r'^$', HomePageView.as_view(), name='home'),
+    url(r'^misc$', MiscView.as_view(), name='misc'),
 ]
