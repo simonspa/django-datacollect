@@ -21,8 +21,8 @@ def export_csv(modeladmin, request, queryset):
 export_csv.short_description = u"Export CSV"
 
 class RecordAdmin(admin.ModelAdmin):
-    list_display = ("person_id","name", "date_latest_incident", "date_intervention")
-    list_filter = ("gender", "type_intervention")
+    list_display = ("person_id","name", "country", "type_intervention", "date_intervention")
+    list_filter = ("gender", "type_intervention","country")
     search_fields = ("name",)
     actions = [export_csv] #, export_xls, export_xlsx]
 

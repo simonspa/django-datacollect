@@ -146,7 +146,11 @@ class Record(models.Model):
     
     # Data model implementation
 
-    person_id = models.CharField(max_length=10)
+    person_id = models.CharField(
+        max_length=10,
+        verbose_name="Person ID",
+        help_text="Form YYYY-CCC-P, where YYYY is the year of publication, CCC is the sequential communcation number, and P the person number within the communication"
+    )
     name = models.CharField(max_length=500)
     gender = models.IntegerField(
         choices=GENDER_CHOICES
@@ -155,13 +159,15 @@ class Record(models.Model):
         max_length=10,
         choices=ISSUE_CHOICES,
         max_choices=2,
-        default="?"
+        default="?",
+        help_text="Select maximum 2 items"
     )
     relevant_activities = SelectMultipleField(
         max_length=15,
         choices=ACTIVITIES_CHOICES,
         max_choices=3,
-        default="?"
+        default="?",
+        help_text="Select maximum 3 items"
     )
     international_cooperation = models.IntegerField(
         choices=COOPERATION_CHOICES,
@@ -179,30 +185,47 @@ class Record(models.Model):
         choices=LOCATION_CHOICES,
         default = "?"
     )
-    name_of_city_or_area = models.CharField(max_length=500,blank=True)
+    name_area = models.CharField(
+        max_length=500,
+        blank=True,
+        verbose_name="Name of City / Area"
+    )
     violations = SelectMultipleField(
         max_length=15,
         choices=VIOLATIONS_CHOICES,
         max_choices=3,
-        default="?"
+        default="?",
+        verbose_name="Violation(s)",
+        help_text="Select maximum 3 items"
     )
-    violation_against_family_member = models.IntegerField(
+    violation_family = models.IntegerField(
         choices=VIOLATION_FAMILY_CHOICES,
-        default=0
+        default=0,
+        verbose_name="Violation against family member"
     )
-    alleged_perpetrator = models.CharField(
+    perpetrator = models.CharField(
         max_length=2,
         choices=PERPETRATOR_CHOICES,
-        default = "?"
+        default = "?",
+        verbose_name="Alleged perpetrator"
     )
-    date_latest_incident = models.DateField(null=True, blank=True)
+    date_incident = models.DateField(
+        null=True,
+        blank=True,
+        verbose_name="Date of the latest incident"
+    )
 
     ##########################
     
-    date_intervention = models.DateField(null=True, blank=True)
+    date_intervention = models.DateField(
+        null=True,
+        blank=True,
+        verbose_name="Date of the intervention"
+    )
     type_intervention = models.CharField(
         max_length=3,
-        choices=INTERVENTION_CHOICES
+        choices=INTERVENTION_CHOICES,
+        verbose_name="Type of intervention"
     )
     joint_with = models.CharField(
         max_length=4,
@@ -212,22 +235,39 @@ class Record(models.Model):
     )
     concern_expressed = models.CharField(
         max_length=2,
-        choices=CONCERN_CHOICES
+        choices=CONCERN_CHOICES,
+        verbose_name="Concern expressed / demand"
     )
 
     ##########################
 
-    date_government_reply = models.DateField(null=True, blank=True)
+    date_govreply = models.DateField(
+        null=True,
+        blank=True,
+        verbose_name="Date of government reply",
+        help_text='Date, leave empty for "No response"'
+    )
     government_reply_content = models.CharField(
         max_length=6,
-        choices=GOV_REPLY_CHOICES
+        choices=GOV_REPLY_CHOICES,
+        verbose_name="Content of government reply",
+        help_text="According to rating criteria by Piccone (2012)"
     )
-    date_government_action = models.DateField(null=True, blank=True)
+    date_government_action = models.DateField(
+        null=True,
+        blank=True,
+        verbose_name="Date of government action according to reply"
+    )
     government_reply_action = models.CharField(
         max_length=11,
-        choices=GOV_ACTION_CHOICES
+        choices=GOV_ACTION_CHOICES,
+        verbose_name="Government action taken accroding to reply"
     )
     
     ##########################
     
-    further_comments = models.TextField(blank=True)
+    further_comments = models.TextField(
+        blank=True,
+        verbose_name="Further comments",
+        help_text="Observations that might be relevant but don't fit elsewhere"
+    )
