@@ -3,9 +3,22 @@ from __future__ import unicode_literals
 from django.db import models
 from django_countries.fields import CountryField
 from select_multiple_field.models import SelectMultipleField
+from django.core.exceptions import ValidationError
 
+def update_filename(instance, filename):
+    return '{0}/{1}'.format(instance.person_id, filename)
 
 class Record(models.Model):
+
+    # Additional model valiation
+
+    def clean(self):
+        super(Record, self).clean()
+
+        if self.date_govreply and not self.govreply_content:
+            raise ValidationError('With a government reply date set, a reply content is required')
+        if self.date_govaction and not self.govreply_action:
+            raise ValidationError('With a government reply date set, a reply content is required')
 
     # Choices for select boxes
 
@@ -247,21 +260,23 @@ class Record(models.Model):
         verbose_name="Date of government reply",
         help_text='Date, leave empty for "No response"'
     )
-    government_reply_content = models.CharField(
+    govreply_content = models.CharField(
         max_length=6,
         choices=GOV_REPLY_CHOICES,
         verbose_name="Content of government reply",
-        help_text="According to rating criteria by Piccone (2012)"
+        help_text="According to rating criteria by Piccone (2012)",
+        blank=True
     )
-    date_government_action = models.DateField(
+    date_govaction = models.DateField(
         null=True,
         blank=True,
         verbose_name="Date of government action according to reply"
     )
-    government_reply_action = models.CharField(
+    govreply_action = models.CharField(
         max_length=11,
         choices=GOV_ACTION_CHOICES,
-        verbose_name="Government action taken accroding to reply"
+        verbose_name="Government action taken accroding to reply",
+        blank=True
     )
     
     ##########################
@@ -271,3 +286,12 @@ class Record(models.Model):
         verbose_name="Further comments",
         help_text="Observations that might be relevant but don't fit elsewhere"
     )
+
+    upload = models.FileField(
+        upload_to=update_filename,
+        null=True,
+        blank=True
+    )
+
+
+    
