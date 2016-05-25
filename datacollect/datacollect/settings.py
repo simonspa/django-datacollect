@@ -25,13 +25,12 @@ if BOOTSTRAP3_FOLDER not in sys.path:
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open('/home/django/secret_key.txt') as f:
-    SECRET_KEY = f.read().strip()
+SECRET_KEY = 'p3&%w+r3itc+!2c43jft1_y_if($(7=l^z)7r2yn$!9c622qb!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['django.simonspa.de']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -146,11 +145,10 @@ BOOTSTRAP3 = {
 
 
 # Security settings
-
 X_FRAME_OPTIONS = 'DENY'
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_HTTPONLY = True
+SECURE_CONTENT_TYPE_NOSNIFF = False
+SECURE_BROWSER_XSS_FILTER = False
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_HTTPONLY = False
