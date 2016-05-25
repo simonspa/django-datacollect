@@ -13,7 +13,7 @@ def get_counts_by_gender(qs):
 
 class RecordAnalysis(TemplateView):
     # The HTML template we're going to use, found in the /templates directory
-    template_name = "record_analysis.html"
+    template_name = "analysis.html"
 
     def get_context_data(self, **kwargs):
         # Quick notation to access all records
@@ -47,7 +47,7 @@ class RecordAnalysis(TemplateView):
             for x in Record.GOV_REPLY_CHOICES:
                 tmp_count = 0
                 for record in records:
-                    tmp_count += (1 if x[0] == getattr(record,'government_reply_content') and
+                    tmp_count += (1 if x[0] == getattr(record,'govreply_content') and
                                   y[0] == getattr(record,'concern_expressed') else 0)
                 matrix_body += "<td>" + str(tmp_count) + "</td>"
             matrix_body += "</tr>"
@@ -59,7 +59,7 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
-        messages.info(self.request, 'hello http://example.com')
+        #messages.info(self.request, 'hello http://example.com')
         return context
 
 class MiscView(TemplateView):
