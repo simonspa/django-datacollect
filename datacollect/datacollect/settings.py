@@ -28,9 +28,9 @@ if BOOTSTRAP3_FOLDER not in sys.path:
 SECRET_KEY = 'z#5(yli#eqys($3zh!_)+gp)tqapu@$(7f!f%8lac8m1+v(=sm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django.simonspa.de']
 
 
 # Application definition
@@ -130,6 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Settings for django-bootstrap3
 BOOTSTRAP3 = {
@@ -138,3 +139,14 @@ BOOTSTRAP3 = {
     'required_css_class': 'bootstrap3-required',
     'javascript_in_head': True,
 }
+
+
+# Security settings
+
+X_FRAME_OPTIONS = 'DENY'
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
