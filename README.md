@@ -18,7 +18,12 @@ virtualenv django-datacollect
 
 Install packages using
 ```
-pip install django django-flat-theme django-countries django-select-multiple-field
+pip install django django-flat-theme django-countries django-select-multiple-field django-bootstrap3 mysql-python
+```
+
+MySQL-Pyton requires
+```
+sudo apt-get install libmysqlclient-dev python-mysqldb
 ```
 
 
