@@ -25,7 +25,8 @@ if BOOTSTRAP3_FOLDER not in sys.path:
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z#5(yli#eqys($3zh!_)+gp)tqapu@$(7f!f%8lac8m1+v(=sm'
+with open('/home/django/secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
