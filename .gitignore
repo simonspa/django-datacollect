@@ -1,4 +1,6 @@
 *~
+.gitconfig
+.bash_history
 
 # local environment created by virtualenv:
 bin/
@@ -10,6 +12,7 @@ static/
 
 # ignore secret key file:
 secret_key.txt
+mysql_password.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
