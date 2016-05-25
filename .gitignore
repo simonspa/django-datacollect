@@ -1,9 +1,15 @@
+*~
+
 # local environment created by virtualenv:
 bin/
 include/
 local/
 pip-selfcheck.json
 share/
+static/
+
+# ignore secret key file:
+secret_key.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
