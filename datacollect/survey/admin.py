@@ -20,11 +20,18 @@ def export_csv(modeladmin, request, queryset):
     return response
 export_csv.short_description = u"Export CSV"
 
+def duplicate_event(modeladmin, request, queryset):
+    for object in queryset:
+        object.id = None
+        object.name = u"%s (duplicate)" % object.name
+        object.save()
+duplicate_event.short_description = u"Duplicate selected record"
+
 class RecordAdmin(admin.ModelAdmin):
     list_display = ("person_id","name", "country", "type_intervention", "date_intervention")
     list_filter = ("gender", "type_intervention","country")
     search_fields = ("name",)
-    actions = [export_csv] #, export_xls, export_xlsx]
+    actions = [export_csv,duplicate_event] #, export_xls, export_xlsx]
 
 admin.site.register(Record, RecordAdmin)
 
