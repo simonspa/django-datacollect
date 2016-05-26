@@ -29,6 +29,7 @@ class Record(models.Model):
     )
 
     ISSUE_CHOICES = (
+        ("?","N/A"),
         ("WR","Women's rights"),
         ("LGBTI","LGBTI issues"),
         ("IPR","Indigenous peoples' rights"),
@@ -47,11 +48,11 @@ class Record(models.Model):
         ("PR","Prisoner's rights"),
         ("ED","Enforced disappearance"),
         ("H","Homocide"),
-        ("AC","Anti-Corruption"),
-        ("?","N/A")
+        ("AC","Anti-Corruption")
     )
     
     ACTIVITIES_CHOICES = (
+        ("?","N/A"),
         ("L","Lawyer"),
         ("CSA","Civil society activist"),
         ("TUA","Trade union activist"),
@@ -66,8 +67,7 @@ class Record(models.Model):
         ("V","Victim/witness of HR violations"),
         ("I","Investigation against officials"),
         ("PC","Participation in conference"),
-        ("PP","Participation in protest/rally"),
-        ("?","N/A")
+        ("PP","Participation in protest/rally")
     )
 
     COOPERATION_CHOICES = (
@@ -90,6 +90,7 @@ class Record(models.Model):
     )
 
     VIOLATIONS_CHOICES = (
+        ("?","N/A"),
         ("AD","Arrest/Detention"),
         ("P","Prosecution"),
         ("UT","Unfair trial"),
@@ -106,22 +107,22 @@ class Record(models.Model):
         ("S","Surveillance"),
         ("R","Office/home raided"),
         ("B","Barred from travelling"),
-        ("AH","Administrative harassment"),
-        ("?","N/A")
+        ("AH","Administrative harassment")
     )
 
     PERPETRATOR_CHOICES = (
-        ("P","Police/Security forces"),
+        ("?","N/A"),
+        ("P","Police/security forces"),
+        ("CS","Civil servant/administration"),
         ("A","Army"),
         ("AO","Armed opposition"),
         ("B","Business/landholder"),
         ("M","Mob"),
-        ("U","Unknown"),
-        ("?","N/A")
+        ("U","Unknown")
     )
 
     INTERVENTION_CHOICES = (
-        ("NA","N/A"),
+        ("?","N/A"),
         ("UA","UA"),
         ("JUA","JUA"),
         ("AL","AL"),
@@ -281,7 +282,7 @@ class Record(models.Model):
     govreply_action = models.CharField(
         max_length=11,
         choices=GOV_ACTION_CHOICES,
-        verbose_name="Government action taken accroding to reply",
+        verbose_name="Government action taken according to reply",
         blank=True
     )
     
