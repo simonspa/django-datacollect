@@ -24,7 +24,8 @@ class Record(models.Model):
 
     GENDER_CHOICES = (
         (0, "Male"),
-        (1, "Not Male")
+        (1, "Female"),
+        (2, "Trans/inter*")
     )
 
     ISSUE_CHOICES = (
@@ -82,6 +83,12 @@ class Record(models.Model):
         ("?","Unknown")
     )
 
+    VIOLATION_FAMILY_CHOICES = (
+        (0,"Only HRD"),
+        (1,"against relative"),
+        (2,"against both")
+    )
+
     VIOLATIONS_CHOICES = (
         ("AD","Arrest/Detention"),
         ("P","Prosecution"),
@@ -103,12 +110,6 @@ class Record(models.Model):
         ("?","N/A")
     )
 
-    VIOLATION_FAMILY_CHOICES = (
-        (0,"Only HDR"),
-        (1,"against relative"),
-        (2,"against both")
-    )
-
     PERPETRATOR_CHOICES = (
         ("P","Police/Security forces"),
         ("A","Army"),
@@ -120,6 +121,7 @@ class Record(models.Model):
     )
 
     INTERVENTION_CHOICES = (
+        ("NA","N/A"),
         ("UA","UA"),
         ("JUA","JUA"),
         ("AL","AL"),
@@ -133,11 +135,11 @@ class Record(models.Model):
     )
 
     CONCERN_CHOICES = (
+        ("CV","Concern over violation"),
         ("PM","Protection measures"),
         ("II","Independent investigation"),
         ("PI","Provide information"),
-        ("PV","Concern: Pattern of violation"),
-        ("CV","Concern over violation")
+        ("PV","Concern: Pattern of violation")
     )
 
     GOV_REPLY_CHOICES = (
@@ -173,14 +175,14 @@ class Record(models.Model):
         choices=ISSUE_CHOICES,
         max_choices=2,
         default="?",
-        help_text="Select maximum 2 items"
+        help_text="Select maximum 2 items with <i>Ctrl+Click</i>"
     )
     relevant_activities = SelectMultipleField(
         max_length=15,
         choices=ACTIVITIES_CHOICES,
         max_choices=3,
         default="?",
-        help_text="Select maximum 3 items"
+        help_text="Select maximum 3 items with <i>Ctrl+Click</i>"
     )
     international_cooperation = models.IntegerField(
         choices=COOPERATION_CHOICES,
@@ -203,18 +205,18 @@ class Record(models.Model):
         blank=True,
         verbose_name="Name of City / Area"
     )
+    violation_family = models.IntegerField(
+        choices=VIOLATION_FAMILY_CHOICES,
+        default=0,
+        verbose_name="Violation against HRD or family member?"
+    )
     violations = SelectMultipleField(
         max_length=15,
         choices=VIOLATIONS_CHOICES,
         max_choices=3,
         default="?",
         verbose_name="Violation(s)",
-        help_text="Select maximum 3 items"
-    )
-    violation_family = models.IntegerField(
-        choices=VIOLATION_FAMILY_CHOICES,
-        default=0,
-        verbose_name="Violation against family member"
+        help_text="Select maximum 3 items with <i>Ctrl+Click</i>"
     )
     perpetrator = models.CharField(
         max_length=2,
@@ -225,7 +227,8 @@ class Record(models.Model):
     date_incident = models.DateField(
         null=True,
         blank=True,
-        verbose_name="Date of the latest incident"
+        verbose_name="Date of the latest incident",
+        help_text="Format YYY-MM-DD"
     )
 
     ##########################
@@ -233,7 +236,8 @@ class Record(models.Model):
     date_intervention = models.DateField(
         null=True,
         blank=True,
-        verbose_name="Date of the intervention"
+        verbose_name="Date of the intervention",
+        help_text="Format YYY-MM-DD"
     )
     type_intervention = models.CharField(
         max_length=3,
@@ -249,7 +253,8 @@ class Record(models.Model):
     concern_expressed = models.CharField(
         max_length=2,
         choices=CONCERN_CHOICES,
-        verbose_name="Concern expressed / demand"
+        verbose_name="Concern expressed / demand",
+        blank=True
     )
 
     ##########################
@@ -258,7 +263,7 @@ class Record(models.Model):
         null=True,
         blank=True,
         verbose_name="Date of government reply",
-        help_text='Date, leave empty for "No response"'
+        help_text='Format YYY-MM-DD, leave empty for "No response"'
     )
     govreply_content = models.CharField(
         max_length=6,
@@ -270,7 +275,8 @@ class Record(models.Model):
     date_govaction = models.DateField(
         null=True,
         blank=True,
-        verbose_name="Date of government action according to reply"
+        verbose_name="Date of government action according to reply",
+        help_text="Format YYY-MM-DD"
     )
     govreply_action = models.CharField(
         max_length=11,
