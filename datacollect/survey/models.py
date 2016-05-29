@@ -178,16 +178,40 @@ class Record(models.Model):
     person_id = models.CharField(
         max_length=10,
         verbose_name="Person ID",
-        help_text="Form YYYY-CCC-P, where YYYY is the year of publication, CCC is the sequential communcation number, and P the person number within the communication"
+        help_text="Form YYYY-CCC-P, where YYYY is the year of publication, CCC is the paragraph number given in the report, and P the person number within the communication"
     )
     ohchr_case = models.CharField(
         max_length=20,
         blank=True,
         verbose_name="OHCHR case no."
     )
-    name = models.CharField(max_length=500)
+    country = CountryField(blank_label='(select country)')
+    date_intervention = models.DateField(
+        null=True,
+        blank=True,
+        verbose_name="Date of the intervention",
+        help_text="Format YYY-MM-DD"
+    )
+    type_intervention = models.CharField(
+        max_length=3,
+        choices=INTERVENTION_CHOICES,
+        verbose_name="Type of intervention"
+    )
+    joint_with = models.CharField(
+        max_length=4,
+        choices=JOINT_CHOICES,
+        null = True,
+        blank = True
+    )
+    name = models.CharField(
+        max_length=500,
+        verbose_name="Name of HRD"
+    )
     gender = models.IntegerField(
         choices=GENDER_CHOICES
+    )
+    follow_up_case = models.BooleanField(
+        default = False
     )
     issue_area = SelectMultipleField(
         max_length=10,
@@ -212,13 +236,6 @@ class Record(models.Model):
         choices=COOPERATION_CHOICES,
         default=0
     )
-    follow_up_case = models.BooleanField(
-        default = False
-    )
-
-    ##########################
-    
-    country = CountryField(blank_label='(select country)')
     location = models.CharField(
         max_length=1,
         choices=LOCATION_CHOICES,
@@ -256,30 +273,10 @@ class Record(models.Model):
         verbose_name="Date of the latest incident",
         help_text="Format YYY-MM-DD"
     )
-
-    ##########################
-    
-    date_intervention = models.DateField(
-        null=True,
-        blank=True,
-        verbose_name="Date of the intervention",
-        help_text="Format YYY-MM-DD"
-    )
-    type_intervention = models.CharField(
-        max_length=3,
-        choices=INTERVENTION_CHOICES,
-        verbose_name="Type of intervention"
-    )
-    joint_with = models.CharField(
-        max_length=4,
-        choices=JOINT_CHOICES,
-        null = True,
-        blank = True
-    )
     concern_expressed = models.CharField(
         max_length=2,
         choices=CONCERN_CHOICES,
-        verbose_name="Concern expressed / demand",
+        verbose_name="Concern/demand expressed in intervention",
         blank=True
     )
 
