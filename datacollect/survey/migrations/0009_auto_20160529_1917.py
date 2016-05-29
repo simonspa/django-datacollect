@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='record',
             name='date_intervention',
-            field=models.DateField(default=2014, help_text='Format YYY-MM-DD', verbose_name='Date of the intervention'),
+	    field=models.DateField(default='1970-01-01', help_text='Format YYY-MM-DD', verbose_name='Date of the intervention'),
             preserve_default=False,
         ),
         migrations.AlterField(
