@@ -8,7 +8,8 @@ from survey.models import Record
 def get_counts_by_gender(qs):
     counts = {}
     counts["male"] = qs.filter(gender=0).count()
-    counts["other"] = qs.filter(gender=1).count()
+    counts["female"] = qs.filter(gender=1).count()
+    counts["trans"] = qs.filter(gender=2).count()
     return counts
 
 class RecordAnalysis(TemplateView):
@@ -51,7 +52,25 @@ class RecordAnalysis(TemplateView):
                                   y[0] == getattr(record,'concern_expressed') else 0)
                 matrix_body += "<td>" + str(tmp_count) + "</td>"
             matrix_body += "</tr>"
-        
+
+        # Produce matrix of violations vs perpetrators
+        matrix2_head = "<th></th>"
+        for x in Record.PERPETRATOR_CHOICES:
+            matrix2_head += "<th>" + x[1] + "</th>"
+
+        matrix2_body = ""
+        for y in Record.VIOLATIONS_CHOICES:
+            matrix2_body += "<tr><th>" + y[1] + "</th>"
+            
+            for x in Record.PERPETRATOR_CHOICES:
+                tmp_count = 0
+                for record in records:
+                    for item in getattr(record,'violations'):
+                        for item2 in getattr(record,'perpetrator'):
+                            tmp_count += (1 if item == y[0] and item2 == x[0] else 0)
+                matrix2_body += "<td>" + str(tmp_count) + "</td>"
+            matrix2_body += "</tr>"
+
         return locals()
 
 class HomePageView(TemplateView):
