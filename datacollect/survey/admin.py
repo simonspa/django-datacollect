@@ -38,18 +38,21 @@ class RecordAdmin(admin.ModelAdmin):
         (None, {
             'fields': ('person_id', 'ohchr_case')
         }),
-        ('Case details', {
-            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', 'gender', 'follow_up_case')
+        ('Case information', {
+            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', 'follow_up_case')
         }),
-        ('Issue description', {
+        ('HRD identity', {
             #'description': 'ex',
-            'fields': ('issue_area', 'relevant_activities', 'further_info', 'international_cooperation', 'location', 'name_area', 'violation_family', 'violations', 'perpetrator', 'date_incident', 'concern_expressed'),
+            'fields': ('gender', 'issue_area', 'relevant_activities', 'further_info', 'international_cooperation')
+            }),
+        ('Incident information', {
+            'fields': ('location', 'name_area', 'violation_family', 'violations', 'perpetrator', 'date_incident', 'concern_expressed'),
         }),
         ('Government reply', {
             #'classes': ('collapse',),
             'fields': ('date_govreply', 'govreply_content', 'date_govaction', 'govreply_action'),
         }),
-        ('Supplementary information', {
+        ('Additional information', {
             'classes': ('collapse',),
             'fields': ('further_comments','upload'),
         }),
