@@ -48,7 +48,8 @@ class Record(models.Model):
         ("PR","Prisoner's rights"),
         ("ED","Enforced disappearance"),
         ("H","Homocide"),
-        ("AC","Anti-Corruption")
+        ("AC","Anti-Corruption"),
+        ("PV","Police violence"),
     )
     
     ACTIVITIES_CHOICES = (
