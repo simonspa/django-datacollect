@@ -114,7 +114,7 @@ class Record(models.Model):
     PERPETRATOR_CHOICES = (
         ("?","N/A"),
         ("P","Police/security forces"),
-        ("CS","Civil servant/administration"),
+        ("CS","Civil servant/administration/judiciary"),
         ("A","Army"),
         ("AO","Armed opposition"),
         ("B","Business/landholder"),
@@ -132,8 +132,20 @@ class Record(models.Model):
     )
 
     JOINT_CHOICES = (
-        ("FREX","FREX"),
-        ("TOR","TOR")
+        ("FrASSEM","FrASSEM"),
+        ("FrEXPRESS","FrEXPRESS"),
+        ("TORTURE","TORTURE"),
+        ("WGAD","WGAD"),
+        ("WGED","WGED"),
+        ("SumEXECU","SumEXECU"),
+        ("WOMEN","WOMEN"),
+        ("FrRELIGION","FrRELIGION"),
+        ("JUDGES","JUDGES"),
+        ("INDIGENOUS","INDIGENOUS"),
+        ("TERRORISM","TERRORISM"),
+        ("BUSINESS","BUSINESS"),
+        ("HEALTH","HEALTH"),
+        ("ENVIR","ENVIR")
     )
 
     CONCERN_CHOICES = (
@@ -168,6 +180,11 @@ class Record(models.Model):
         verbose_name="Person ID",
         help_text="Form YYYY-CCC-P, where YYYY is the year of publication, CCC is the sequential communcation number, and P the person number within the communication"
     )
+    ohchr_case = models.CharField(
+        max_length=20,
+        blank=True,
+        verbose_name="OHCHR case no."
+    )
     name = models.CharField(max_length=500)
     gender = models.IntegerField(
         choices=GENDER_CHOICES
@@ -185,6 +202,11 @@ class Record(models.Model):
         max_choices=3,
         default="?",
         help_text="Select maximum 3 items with <i>Ctrl+Click</i>"
+    )
+    further_info = models.TextField(
+        blank=True,
+        verbose_name="Further information",
+        help_text="Name of NGO or party, title of conference, object of investigation etc."
     )
     international_cooperation = models.IntegerField(
         choices=COOPERATION_CHOICES,
@@ -220,11 +242,13 @@ class Record(models.Model):
         verbose_name="Violation(s)",
         help_text="Select maximum 3 items with <i>Ctrl+Click</i>"
     )
-    perpetrator = models.CharField(
+    perpetrator = SelectMultipleField(
         max_length=2,
         choices=PERPETRATOR_CHOICES,
+        max_choices=2,
         default = "?",
-        verbose_name="Alleged perpetrator"
+        verbose_name="Alleged perpetrator",
+        help_text="Select maximum 2 items with <i>Ctrl+Click</i>"
     )
     date_incident = models.DateField(
         null=True,
