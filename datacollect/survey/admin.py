@@ -50,7 +50,7 @@ class RecordAdmin(admin.ModelAdmin):
         }),
         ('Government reply', {
             #'classes': ('collapse',),
-            'fields': ('date_govreply', 'govreply_content', 'date_govaction', 'govreply_action'),
+            'fields': ('date_govreply', 'govreply_content', 'govreply_action', 'date_govaction'),
         }),
         ('Additional information', {
             'classes': ('collapse',),
