@@ -258,7 +258,7 @@ class Record(models.Model):
         help_text="Select maximum 3 items with <i>Ctrl+Click</i>"
     )
     perpetrator = SelectMultipleField(
-        max_length=2,
+        max_length=10,
         choices=PERPETRATOR_CHOICES,
         max_choices=2,
         default = "?",
