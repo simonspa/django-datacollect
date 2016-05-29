@@ -187,8 +187,6 @@ class Record(models.Model):
     )
     country = CountryField(blank_label='(select country)')
     date_intervention = models.DateField(
-        null=True,
-        blank=True,
         verbose_name="Date of the intervention",
         help_text="Format YYY-MM-DD"
     )
@@ -198,7 +196,7 @@ class Record(models.Model):
         verbose_name="Type of intervention"
     )
     joint_with = models.CharField(
-        max_length=4,
+        max_length=10,
         choices=JOINT_CHOICES,
         null = True,
         blank = True
