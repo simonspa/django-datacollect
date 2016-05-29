@@ -1,6 +1,8 @@
 from django.contrib import admin
+from django.db import models
 from django.http import HttpResponse
 from survey.models import Record
+from django.forms import ModelForm, Textarea
 
 def export_csv(modeladmin, request, queryset):
     import csv
@@ -52,6 +54,12 @@ class RecordAdmin(admin.ModelAdmin):
             'fields': ('further_comments','upload'),
         }),
     )
+    formfield_overrides = {
+        models.TextField: {'widget': Textarea(
+            attrs={'rows': 2,
+                   'cols': 50,
+                   'style': 'height: 2em;'})},
+    }
 
 admin.site.register(Record, RecordAdmin)
 
