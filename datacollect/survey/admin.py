@@ -32,6 +32,26 @@ class RecordAdmin(admin.ModelAdmin):
     list_filter = ("gender", "type_intervention","country")
     search_fields = ("name",)
     actions = [export_csv,duplicate_event] #, export_xls, export_xlsx]
+    fieldsets = (
+        (None, {
+            'fields': ('person_id', 'ohchr_case')
+        }),
+        ('Case details', {
+            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', 'gender', 'follow_up_case')
+        }),
+        ('Issue description', {
+            #'description': 'ex',
+            'fields': ('issue_area', 'relevant_activities', 'further_info', 'international_cooperation', 'location', 'name_area', 'violation_family', 'violations', 'perpetrator', 'date_incident', 'concern_expressed'),
+        }),
+        ('Government reply', {
+            #'classes': ('collapse',),
+            'fields': ('date_govreply', 'govreply_content', 'date_govaction', 'govreply_action'),
+        }),
+        ('Supplementary information', {
+            'classes': ('collapse',),
+            'fields': ('further_comments','upload'),
+        }),
+    )
 
 admin.site.register(Record, RecordAdmin)
 
