@@ -199,7 +199,6 @@ class Record(models.Model):
     joint_with = SelectMultipleField(
         max_length=200,
         choices=JOINT_CHOICES,
-        null = True,
         blank = True,
         help_text="Select any number items with <i>Ctrl+Click</i>"
     )
