@@ -54,7 +54,7 @@ class Record(models.Model):
     
     ACTIVITIES_CHOICES = (
         ("?","N/A"),
-        ("L","Lawyer"),
+        ("L","Lawyer/Judge"),
         ("CSA","Civil society activist"),
         ("TUA","Trade union activist"),
         ("S","Student"),
