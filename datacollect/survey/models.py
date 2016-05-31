@@ -33,7 +33,7 @@ class Record(models.Model):
         ("WR","Women's rights"),
         ("LGBTI","LGBTI issues"),
         ("IPR","Indigenous peoples' rights"),
-        ("HRFE","Housing rights/Forced evictions"),
+        ("HRFE","Housing rights/forced evictions"),
         ("LNR","Land rights/nat' res'/environment"),
         ("LR","Labour rights"),
         ("IF","Internet freedom"),
@@ -42,14 +42,15 @@ class Record(models.Model):
         ("CR","Cultural rights"),
         ("RF","Religious freedom"),
         ("HRE","Human rights education"),
-        ("MRR","Migrants'/Refugees' rights"),
+        ("MRR","Migrants'/refugees' rights"),
         ("MR","Minority rights (if not specified)"),
         ("AT","Anti-Torture"),
         ("PR","Prisoner's rights"),
         ("ED","Enforced disappearance"),
         ("H","Homocide"),
-        ("AC","Anti-Corruption"),
+        ("AC","Anti-corruption"),
         ("PV","Police violence"),
+        ("DV","Democratic/voting rights"),
     )
     
     ACTIVITIES_CHOICES = (
