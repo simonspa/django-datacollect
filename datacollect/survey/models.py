@@ -68,7 +68,8 @@ class Record(models.Model):
         ("V","Victim/witness of HR violations"),
         ("I","Investigation against officials"),
         ("PC","Participation in conference"),
-        ("PP","Participation in protest/rally")
+        ("PP","Participation in protest/rally"),
+        ("OP","Ombudsperson")
     )
 
     COOPERATION_CHOICES = (
