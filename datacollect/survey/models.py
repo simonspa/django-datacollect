@@ -196,11 +196,12 @@ class Record(models.Model):
         choices=INTERVENTION_CHOICES,
         verbose_name="Type of intervention"
     )
-    joint_with = models.CharField(
-        max_length=10,
+    joint_with = SelectMultipleField(
+        max_length=200,
         choices=JOINT_CHOICES,
         null = True,
-        blank = True
+        blank = True,
+        help_text="Select any number items with <i>Ctrl+Click</i>"
     )
     name = models.CharField(
         max_length=500,
