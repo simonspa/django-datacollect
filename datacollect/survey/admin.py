@@ -30,7 +30,7 @@ def duplicate_event(modeladmin, request, queryset):
 duplicate_event.short_description = u"Duplicate selected record"
 
 class RecordAdmin(admin.ModelAdmin):
-    list_display = ("person_id","name", "country", "type_intervention", "date_intervention")
+    list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments")
     list_filter = ("gender", "type_intervention","country")
     search_fields = ("name",)
     actions = [export_csv,duplicate_event] #, export_xls, export_xlsx]
