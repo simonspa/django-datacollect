@@ -51,6 +51,7 @@ class Record(models.Model):
         ("AC","Anti-corruption"),
         ("PV","Police violence"),
         ("DV","Democratic/voting rights"),
+        ("TJ","Transitional justice"),
     )
     
     ACTIVITIES_CHOICES = (
