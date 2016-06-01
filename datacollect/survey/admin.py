@@ -3,6 +3,7 @@ from django.db import models
 from django.http import HttpResponse
 from survey.models import Record
 from django.forms import ModelForm, Textarea
+from django.db.utils import IntegrityError
 
 def export_csv(modeladmin, request, queryset):
     import csv
@@ -26,8 +27,23 @@ def duplicate_event(modeladmin, request, queryset):
     for object in queryset:
         object.id = None
         object.name = u"%s (duplicate)" % object.name
-        object.save()
-duplicate_event.short_description = u"Duplicate selected record"
+
+        id = object.person_id.split("-")
+        # Find the next available person ID
+        while 1:
+            try:
+                if(int(id[-1]) < 9):
+                    id[-1] = str(int(id[-1])+1)
+                else:
+                    id[-2] = str(int(id[-2])+1).zfill(3)
+                    id[-1] = str(1)
+                object.person_id = '-'.join(id)
+                object.save()
+                break
+            except IntegrityError:
+                pass
+duplicate_event.short_description = u"Duplicate"
+
 
 class RecordAdmin(admin.ModelAdmin):
     list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments")

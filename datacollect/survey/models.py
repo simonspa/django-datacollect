@@ -4,6 +4,7 @@ from django.db import models
 from django_countries.fields import CountryField
 from select_multiple_field.models import SelectMultipleField
 from django.core.exceptions import ValidationError
+from django.core.validators import int_list_validator, MinLengthValidator
 
 def update_filename(instance, filename):
     return '{0}/{1}'.format(instance.person_id, filename)
@@ -180,6 +181,8 @@ class Record(models.Model):
     person_id = models.CharField(
         max_length=10,
         verbose_name="Person ID",
+        unique=True,
+        validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(10, message=None)],
         help_text="Form YYYY-CCC-P, where YYYY is the year of publication, CCC is the paragraph number given in the report, and P the person number within the communication"
     )
     ohchr_case = models.CharField(
