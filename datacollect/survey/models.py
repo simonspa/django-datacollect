@@ -179,7 +179,7 @@ class Record(models.Model):
     # Data model implementation
 
     person_id = models.CharField(
-        max_length=10,
+        max_length=11,
         verbose_name="Person ID",
         help_text="Form YYYY-CCC-P, where YYYY is the year of publication, CCC is the paragraph number given in the report, and P the person number within the communication"
     )
