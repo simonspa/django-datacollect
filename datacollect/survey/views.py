@@ -24,6 +24,14 @@ class RecordAnalysis(TemplateView):
         total_count = records.all().count()
         total_by_gender = get_counts_by_gender(records)
 
+        # Total count of communications (stripping person identifier from personID)
+        commlist = []
+        for record in records:
+            # take first eight chars of the personID
+            commlist.append(record.person_id[:8])
+        # set removes duplicates, len counts length:
+        comm = len(set(commlist))
+        
         # Count issues in categories (multiple choices possible)
         issue_head = ""
         issue_body = ""

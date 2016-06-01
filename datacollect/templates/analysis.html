@@ -12,6 +12,7 @@
                 <tr>
                     <th></th>
                     <th class="data">Total</th>
+		    <th class="data">Communications</th>
                     <th class="data">Male</th>
                     <th class="data">Female</th>
 		    <th class="data">Trans/inter*</th>
@@ -19,8 +20,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Total Records</td>
+                    <td>All records</td>
                     <td class="data">{{ total_count|intcomma }}</td>
+		    <td class="data">{{ comm|intcomma }}</td>
                     <td class="data">{{ total_by_gender.male|intcomma }}</td>    
                     <td class="data">{{ total_by_gender.female|intcomma }}</td>
 		    <td class="data">{{ total_by_gender.trans|intcomma }}</td>    
