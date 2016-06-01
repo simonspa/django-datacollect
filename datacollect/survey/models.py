@@ -20,7 +20,12 @@ class Record(models.Model):
             raise ValidationError('With a government reply date set, a reply content is required')
         if self.date_govaction and not self.govreply_action:
             raise ValidationError('With a government reply date set, a reply content is required')
+        if self.type_intervention == 'JUA' or self.type_intervention == 'JAL':
+            print "length: " + str(len(self.joint_with))
+            if not self.joint_with or (len(self.joint_with) == 1 and not self.joint_with[0]):
+                raise ValidationError('Select joint intervention type, required for JUA and JAL.')
 
+            
     # Choices for select boxes
 
     GENDER_CHOICES = (
