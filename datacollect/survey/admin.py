@@ -69,8 +69,8 @@ class RecordAdmin(admin.ModelAdmin):
             'fields': ('date_govreply', 'govreply_content', 'govreply_action', 'date_govaction'),
         }),
         ('Additional information', {
-            'classes': ('collapse',),
-            'fields': ('further_comments','upload'),
+            #'classes': ('collapse',),
+            'fields': ('further_comments',),
         }),
     )
     formfield_overrides = {

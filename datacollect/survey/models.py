@@ -53,6 +53,7 @@ class Record(models.Model):
         ("PV","Police violence"),
         ("DV","Democratic/voting rights"),
         ("TJ","Transitional justice"),
+        ("POV","Poverty")
     )
     
     ACTIVITIES_CHOICES = (
@@ -164,12 +165,13 @@ class Record(models.Model):
         ("reject","Violation rejected"),
         ("incomp","Reponsive but incomplete"),
         ("immat","Immaterial response"),
-        ("react","Steps taken to address")
+        ("react","Steps taken to address"),
+        ("transl","In translation")
     )
 
     GOV_ACTION_CHOICES = (
         ("protect","Protection measures granted"),
-        ("release","Individual released"),
+        ("release","Individual released early"),
         ("improve","Improved prison conditions"),
         ("investigate","Investigation opened"),
         ("prosecuted","Perpetrator suspended/prosecuted"),
