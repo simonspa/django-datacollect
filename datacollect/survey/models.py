@@ -180,7 +180,7 @@ class Record(models.Model):
     # Data model implementation
 
     person_id = models.CharField(
-        max_length=10,
+        max_length=11,
         verbose_name="Person ID",
         unique=True,
         validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(10, message=None)],
