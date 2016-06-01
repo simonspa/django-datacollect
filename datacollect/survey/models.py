@@ -155,7 +155,8 @@ class Record(models.Model):
         ("TERRORISM","TERRORISM"),
         ("BUSINESS","BUSINESS"),
         ("HEALTH","HEALTH"),
-        ("ENVIR","ENVIR")
+        ("ENVIR","ENVIR"),
+        ("FOOD","FOOD")
     )
 
     CONCERN_CHOICES = (
