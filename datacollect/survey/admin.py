@@ -52,17 +52,17 @@ class RecordAdmin(admin.ModelAdmin):
     actions = [export_csv,duplicate_event] #, export_xls, export_xlsx]
     fieldsets = (
         (None, {
-            'fields': ('person_id', 'ohchr_case')
+            'fields': (('person_id', 'ohchr_case'),)
         }),
         ('Case information', {
-            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', 'follow_up_case')
+            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', ('follow_up_case','regional_case'))
         }),
         ('HRD identity', {
             #'description': 'ex',
-            'fields': ('gender', 'issue_area', 'relevant_activities', 'further_info', 'international_cooperation')
+            'fields': ('gender', 'issue_area', ('relevant_activities', 'further_info'), 'international_cooperation')
             }),
         ('Incident information', {
-            'fields': ('location', 'name_area', 'violation_family', 'violations', 'perpetrator', 'date_incident', 'concern_expressed'),
+            'fields': (('location', 'name_area'), 'violation_family', 'violations', 'perpetrator', 'date_incident', 'concern_expressed'),
         }),
         ('Government reply', {
             #'classes': ('collapse',),
