@@ -32,8 +32,8 @@ def duplicate_event(modeladmin, request, queryset):
         # Find the next available person ID
         while 1:
             try:
-                if(int(id[-1]) < 9):
-                    id[-1] = str(int(id[-1])+1)
+                if(int(id[-1]) < 99):
+                    id[-1] = str(int(id[-1])+1).zfill(2)
                 else:
                     id[-2] = str(int(id[-2])+1).zfill(3)
                     id[-1] = str(1)
