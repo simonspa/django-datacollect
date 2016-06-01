@@ -222,7 +222,12 @@ class Record(models.Model):
         choices=GENDER_CHOICES
     )
     follow_up_case = models.BooleanField(
-        default = False
+        default = False,
+        verbose_name="Follow-up on UN case"
+    )
+    regional_case = models.BooleanField(
+        default = False,
+        verbose_name="Regional mechanism case"
     )
     issue_area = SelectMultipleField(
         max_length=10,
