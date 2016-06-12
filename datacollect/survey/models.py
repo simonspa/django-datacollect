@@ -63,22 +63,23 @@ class Record(models.Model):
     
     ACTIVITIES_CHOICES = (
         ("?","N/A"),
-        ("L","Lawyer/Judge"),
         ("CSA","Civil society activist"),
         ("TUA","Trade union activist"),
-        ("S","Student"),
-        ("J","Journalist/Editor/Writer"),
-        ("MP","Medical professional"),
-        ("T","Teacher/Professor"),
-        ("CL","Community leader"),
         ("RA","Religious association"),
         ("PM","Politician/Party member"),
+        ("CL","Community leader"),
+        ("L","Lawyer/Judge/Attorney"),
+        ("J","Journalist/Editor"),
+        ("A","Artist/Writer"),
+        ("S","Student"),
+        ("T","Teacher/Professor"),
+        ("MP","Medical professional"),
         ("HW","Humanitarian worker"),
         ("V","Victim/witness of HR violations"),
+        ("OP","Ombudsperson"),
         ("I","Investigation against officials"),
-        ("PC","Participation in conference"),
-        ("PP","Participation in protest/rally"),
-        ("OP","Ombudsperson")
+        ("PC","Participation in conference/meeting"),
+        ("PP","Participation in public protest/rally"),
     )
 
     COOPERATION_CHOICES = (
