@@ -357,13 +357,13 @@ class Record(models.Model):
     date_govaction = models.DateField(
         null=True,
         blank=True,
-        verbose_name="Date of government action according to reply",
+        verbose_name="Date of action according to reply",
         help_text="Format YYY-MM-DD"
     )
     govreply_action = models.CharField(
         max_length=11,
         choices=GOV_ACTION_CHOICES,
-        verbose_name="Government action taken according to reply",
+        verbose_name="Action taken according to reply",
         blank=True
     )
     
