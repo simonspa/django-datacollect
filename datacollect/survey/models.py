@@ -304,7 +304,7 @@ class Record(models.Model):
         verbose_name="Violation against HRD or family member?"
     )
     violations = SelectMultipleField(
-        max_length=15,
+        max_length=50,
         choices=VIOLATIONS_CHOICES,
         default="?",
         verbose_name="Violation(s)",
@@ -318,7 +318,7 @@ class Record(models.Model):
         help_text="Select multiple items with <i>Ctrl+Click</i>"
     )
     violations2 = SelectMultipleField(
-        max_length=15,
+        max_length=50,
         choices=VIOLATIONS_CHOICES,
         default="?",
         verbose_name="Violation(s) #2",
@@ -334,7 +334,7 @@ class Record(models.Model):
         blank=True
     )
     violations3 = SelectMultipleField(
-        max_length=15,
+        max_length=50,
         choices=VIOLATIONS_CHOICES,
         default="?",
         verbose_name="Violation(s) #3",
