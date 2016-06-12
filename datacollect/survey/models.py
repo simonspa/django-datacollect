@@ -21,11 +21,40 @@ class Record(models.Model):
         if self.date_govaction and not self.govreply_action:
             raise ValidationError('With a government reply date set, a reply content is required')
         if self.type_intervention == 'JUA' or self.type_intervention == 'JAL':
-            print "length: " + str(len(self.joint_with))
             if not self.joint_with or (len(self.joint_with) == 1 and not self.joint_with[0]):
                 raise ValidationError('Select joint intervention type, required for JUA and JAL.')
+        # Violations: Auto-add top-level entries when sub-cat is selected
+        if not "AD" in self.violations:
+            if any(True for x in self.violations if x in ["IC","PC","RT"]):
+                self.violations.append("AD")
+        if not "KA" in self.violations:
+            if any(True for x in self.violations if x in ["DI","KK","K"]):
+                self.violations.append("KA")
+        if not "P" in self.violations:
+            if any(True for x in self.violations if x in ["UT","C"]):
+                self.violations.append("P")
 
-            
+        if not "AD" in self.violations2:
+            if any(True for x in self.violations2 if x in ["IC","PC","RT"]):
+                self.violations2.append("AD")
+        if not "KA" in self.violations2:
+            if any(True for x in self.violations2 if x in ["DI","KK","K"]):
+                self.violations2.append("KA")
+        if not "P" in self.violations2:
+            if any(True for x in self.violations2 if x in ["UT","C"]):
+                self.violations2.append("P")
+
+        if not "AD" in self.violations3:
+            if any(True for x in self.violations3 if x in ["IC","PC","RT"]):
+                self.violations3.append("AD")
+        if not "KA" in self.violations3:
+            if any(True for x in self.violations3 if x in ["DI","KK","K"]):
+                self.violations3.append("KA")
+        if not "P" in self.violations3:
+            if any(True for x in self.violations3 if x in ["UT","C"]):
+                self.violations3.append("P")
+
+
     # Choices for select boxes
 
     GENDER_CHOICES = (
@@ -219,7 +248,7 @@ class Record(models.Model):
         max_length=200,
         choices=JOINT_CHOICES,
         blank = True,
-        help_text="Select any number items with <i>Ctrl+Click</i>"
+        help_text="Select multiple items with <i>Ctrl+Click</i>"
     )
     name = models.CharField(
         max_length=500,
@@ -277,53 +306,47 @@ class Record(models.Model):
     violations = SelectMultipleField(
         max_length=15,
         choices=VIOLATIONS_CHOICES,
-        max_choices=3,
         default="?",
         verbose_name="Violation(s)",
-        help_text="Select maximum 3 items with <i>Ctrl+Click</i>"
+        help_text="Select multiple items with <i>Ctrl+Click</i>"
     )
     perpetrator = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        max_choices=2,
         default = "?",
         verbose_name="Alleged perpetrator",
-        help_text="Select maximum 2 items with <i>Ctrl+Click</i>"
+        help_text="Select multiple items with <i>Ctrl+Click</i>"
     )
     violations2 = SelectMultipleField(
         max_length=15,
         choices=VIOLATIONS_CHOICES,
-        max_choices=3,
         default="?",
         verbose_name="Violation(s) #2",
-        help_text="Select maximum 3 items with <i>Ctrl+Click</i>",
+        help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
     )
     perpetrator2 = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        max_choices=2,
         default = "?",
         verbose_name="Alleged perpetrator #2",
-        help_text="Select maximum 2 items with <i>Ctrl+Click</i>",
+        help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
     )
     violations3 = SelectMultipleField(
         max_length=15,
         choices=VIOLATIONS_CHOICES,
-        max_choices=3,
         default="?",
         verbose_name="Violation(s) #3",
-        help_text="Select maximum 3 items with <i>Ctrl+Click</i>",
+        help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
     )
     perpetrator3 = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        max_choices=2,
         default = "?",
         verbose_name="Alleged perpetrator #3",
-        help_text="Select maximum 2 items with <i>Ctrl+Click</i>",
+        help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
     )
     date_incident = models.DateField(
