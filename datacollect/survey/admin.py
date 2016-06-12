@@ -5,6 +5,7 @@ from survey.models import Record
 from django.forms import ModelForm, Textarea
 from django.db.utils import IntegrityError
 from reversion.admin import VersionAdmin
+from django.db import transaction
 
 def export_csv(modeladmin, request, queryset):
     import csv
@@ -28,7 +29,7 @@ def duplicate_event(modeladmin, request, queryset):
     for object in queryset:
         object.id = None
         object.name = u"%s (duplicate)" % object.name
-
+        
         id = object.person_id.split("-")
         # Find the next available person ID
         while 1:
@@ -39,7 +40,8 @@ def duplicate_event(modeladmin, request, queryset):
                     id[-2] = str(int(id[-2])+1).zfill(3)
                     id[-1] = str(1)
                 object.person_id = '-'.join(id)
-                object.save()
+                with transaction.atomic():
+                    object.save()
                 break
             except IntegrityError:
                 pass
