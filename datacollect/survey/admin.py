@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from survey.models import Record
 from django.forms import ModelForm, Textarea
 from django.db.utils import IntegrityError
+from reversion.admin import VersionAdmin
 
 def export_csv(modeladmin, request, queryset):
     import csv
@@ -45,7 +46,7 @@ def duplicate_event(modeladmin, request, queryset):
 duplicate_event.short_description = u"Duplicate"
 
 
-class RecordAdmin(admin.ModelAdmin):
+class RecordAdmin(VersionAdmin):
     list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments")
     list_filter = ("gender", "type_intervention","country")
     search_fields = ("name",)

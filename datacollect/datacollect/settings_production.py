@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django_countries',
     'django.contrib.humanize',
     'bootstrap3',
+    'reversion',
     'survey',
 ]
 
