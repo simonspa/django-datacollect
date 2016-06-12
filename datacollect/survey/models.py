@@ -166,10 +166,11 @@ class Record(models.Model):
 
     CONCERN_CHOICES = (
         ("CV","Concern over violation"),
-        ("PM","Protection measures"),
-        ("II","Independent investigation"),
-        ("PI","Provide information"),
-        ("PV","Concern: Pattern of violation")
+        ("PV","Concern: Pattern of violation"),
+        ("PM","Demand: Protection measures"),
+        ("II","Demand: Independent investigation"),
+        ("PI","Demand: Provide information"),
+        ("RD","Demand: Release detainee")
     )
 
     GOV_REPLY_CHOICES = (
