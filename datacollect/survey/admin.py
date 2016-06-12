@@ -62,7 +62,14 @@ class RecordAdmin(admin.ModelAdmin):
             'fields': ('gender', 'issue_area', ('relevant_activities', 'further_info'), 'international_cooperation')
             }),
         ('Incident information', {
-            'fields': (('location', 'name_area'), 'violation_family', 'violations', 'perpetrator', 'date_incident', 'concern_expressed'),
+            'fields': (('location', 'name_area'), 'violation_family', ('violations', 'perpetrator')),
+        }),
+        ('Further violations', {
+            'classes': ('collapse',),
+            'fields': (('violations2','perpetrator2'), ('violations3','perpetrator3')),
+        }),
+        (None, {
+            'fields': ('date_incident', 'concern_expressed'),
         }),
         ('Government reply', {
             #'classes': ('collapse',),
