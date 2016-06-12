@@ -104,28 +104,32 @@ class Record(models.Model):
     VIOLATIONS_CHOICES = (
         ("?","N/A"),
         ("AD","Arrest/Detention"),
-        ("P","Prosecution"),
-        ("UT","Unfair trial"),
-        ("C","Conviction"),
-        ("K","Killing"),
-        ("KA","Killing attempt/Assault"),
-        ("DI","Diappearance/Incommunicado"),
-        ("PC","Held in poor conditions"),
-        ("RT","Risk of torture"),
+        ("IC"," + Incommunicado"),
+        ("PC"," + Held in poor conditions"),
+        ("RT"," + Risk of torture"),
         ("TI","Torture/Ill-treatment"),
+        ("ED","Enforced disappearance"),
+        ("KA","Physical attack"),
+        ("DI"," + Kidnapping"),
+        ("KK"," + Killing attempt"),
+        ("K","  + Killing"),
+        ("P","Prosecution"),
+        ("UT"," + Unfair trial"),
+        ("C"," + Conviction"),
         ("T","Threats"),
-        ("DC","Defamation campaign"),
-        ("DP","Disciplinary proceedings"),
         ("S","Surveillance"),
         ("R","Office/home raided"),
-        ("B","Barred from travelling"),
-        ("AH","Administrative harassment")
+        ("DC","Defamation campaign"),
+        ("DP","Disciplinary proceedings"),
+        ("B","Travel restrictions"),
+        ("AH","Administrative harassment"),
+        ("FI","Failure to intervene/protect")
     )
 
     PERPETRATOR_CHOICES = (
         ("?","N/A"),
         ("P","Police/security forces"),
-        ("CS","Civil servant/administration/judiciary"),
+        ("CS","Public official/administration/judiciary"),
         ("A","Army"),
         ("AO","Armed opposition"),
         ("B","Business/landholder"),
@@ -284,6 +288,42 @@ class Record(models.Model):
         default = "?",
         verbose_name="Alleged perpetrator",
         help_text="Select maximum 2 items with <i>Ctrl+Click</i>"
+    )
+    violations2 = SelectMultipleField(
+        max_length=15,
+        choices=VIOLATIONS_CHOICES,
+        max_choices=3,
+        default="?",
+        verbose_name="Violation(s) #2",
+        help_text="Select maximum 3 items with <i>Ctrl+Click</i>",
+        blank=True
+    )
+    perpetrator2 = SelectMultipleField(
+        max_length=10,
+        choices=PERPETRATOR_CHOICES,
+        max_choices=2,
+        default = "?",
+        verbose_name="Alleged perpetrator #2",
+        help_text="Select maximum 2 items with <i>Ctrl+Click</i>",
+        blank=True
+    )
+    violations3 = SelectMultipleField(
+        max_length=15,
+        choices=VIOLATIONS_CHOICES,
+        max_choices=3,
+        default="?",
+        verbose_name="Violation(s) #3",
+        help_text="Select maximum 3 items with <i>Ctrl+Click</i>",
+        blank=True
+    )
+    perpetrator3 = SelectMultipleField(
+        max_length=10,
+        choices=PERPETRATOR_CHOICES,
+        max_choices=2,
+        default = "?",
+        verbose_name="Alleged perpetrator #3",
+        help_text="Select maximum 2 items with <i>Ctrl+Click</i>",
+        blank=True
     )
     date_incident = models.DateField(
         null=True,
