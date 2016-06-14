@@ -35,7 +35,7 @@ class Record(models.Model):
             if any(True for x in self.violations if x in ["IC","PC","RT"]):
                 self.violations.append("AD")
         if not "KA" in self.violations:
-            if any(True for x in self.violations if x in ["DI","KK","K"]):
+            if any(True for x in self.violations if x in ["KK","K"]):
                 self.violations.append("KA")
         if not "P" in self.violations:
             if any(True for x in self.violations if x in ["UT","C"]):
@@ -45,7 +45,7 @@ class Record(models.Model):
             if any(True for x in self.violations2 if x in ["IC","PC","RT"]):
                 self.violations2.append("AD")
         if not "KA" in self.violations2:
-            if any(True for x in self.violations2 if x in ["DI","KK","K"]):
+            if any(True for x in self.violations2 if x in ["KK","K"]):
                 self.violations2.append("KA")
         if not "P" in self.violations2:
             if any(True for x in self.violations2 if x in ["UT","C"]):
@@ -55,7 +55,7 @@ class Record(models.Model):
             if any(True for x in self.violations3 if x in ["IC","PC","RT"]):
                 self.violations3.append("AD")
         if not "KA" in self.violations3:
-            if any(True for x in self.violations3 if x in ["DI","KK","K"]):
+            if any(True for x in self.violations3 if x in ["KK","K"]):
                 self.violations3.append("KA")
         if not "P" in self.violations3:
             if any(True for x in self.violations3 if x in ["UT","C"]):
@@ -149,9 +149,9 @@ class Record(models.Model):
         ("TI","Torture/Ill-treatment"),
         ("ED","Enforced disappearance"),
         ("KA","Physical attack"),
-        ("DI"," + Kidnapping"),
         ("KK"," + Killing attempt"),
         ("K","  + Killing"),
+        ("DI","Kidnapping"),
         ("P","Prosecution"),
         ("UT"," + Unfair trial"),
         ("C"," + Conviction"),
@@ -166,14 +166,13 @@ class Record(models.Model):
     )
 
     PERPETRATOR_CHOICES = (
-        ("?","N/A"),
+        ("U","Unknown"),
         ("P","Police/security forces"),
         ("CS","Public official/administration/judiciary"),
         ("A","Army"),
         ("AO","Armed opposition"),
         ("B","Business/landholder"),
-        ("M","Mob"),
-        ("U","Unknown")
+        ("M","Mob")
     )
 
     INTERVENTION_CHOICES = (
@@ -233,11 +232,11 @@ class Record(models.Model):
     # Data model implementation
 
     person_id = models.CharField(
-        max_length=11,
+        max_length=12,
         verbose_name="Person ID",
         unique=True,
-        validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(11, message=None)],
-        help_text="Form YYYY-CCC-P, where YYYY is the year of publication, CCC is the paragraph number given in the report, and P the person number within the communication"
+        validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(12, message=None)],
+        help_text="Form YYYY-CCCC-P, where YYYY is the year of publication, CCCC is the paragraph number given in the report, and P the person number within the communication"
     )
     ohchr_case = models.CharField(
         max_length=20,
@@ -278,7 +277,7 @@ class Record(models.Model):
     issue_area = SelectMultipleField(
         max_length=10,
         choices=ISSUE_CHOICES,
-        max_choices=2,
+        max_choices=3,
         default="?",
         help_text="Select maximum 2 items with <i>Ctrl+Click</i>"
     )
@@ -323,7 +322,7 @@ class Record(models.Model):
     perpetrator = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        default = "?",
+        default = "U",
         verbose_name="Alleged perpetrator",
         help_text="Select multiple items with <i>Ctrl+Click</i>"
     )
@@ -338,7 +337,7 @@ class Record(models.Model):
     perpetrator2 = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        default = "?",
+        default = "U",
         verbose_name="Alleged perpetrator #2",
         help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
@@ -354,7 +353,7 @@ class Record(models.Model):
     perpetrator3 = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        default = "?",
+        default = "U",
         verbose_name="Alleged perpetrator #3",
         help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
