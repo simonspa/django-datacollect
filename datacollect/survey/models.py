@@ -159,14 +159,13 @@ class Record(models.Model):
     )
 
     PERPETRATOR_CHOICES = (
-        ("?","N/A"),
+        ("U","Unknown"),
         ("P","Police/security forces"),
         ("CS","Public official/administration/judiciary"),
         ("A","Army"),
         ("AO","Armed opposition"),
         ("B","Business/landholder"),
-        ("M","Mob"),
-        ("U","Unknown")
+        ("M","Mob")
     )
 
     INTERVENTION_CHOICES = (
@@ -316,7 +315,7 @@ class Record(models.Model):
     perpetrator = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        default = "?",
+        default = "U",
         verbose_name="Alleged perpetrator",
         help_text="Select multiple items with <i>Ctrl+Click</i>"
     )
@@ -331,7 +330,7 @@ class Record(models.Model):
     perpetrator2 = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        default = "?",
+        default = "U",
         verbose_name="Alleged perpetrator #2",
         help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
@@ -347,7 +346,7 @@ class Record(models.Model):
     perpetrator3 = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        default = "?",
+        default = "U",
         verbose_name="Alleged perpetrator #3",
         help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
