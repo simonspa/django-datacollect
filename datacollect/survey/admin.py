@@ -37,7 +37,7 @@ def duplicate_event(modeladmin, request, queryset):
                 if(int(id[-1]) < 99):
                     id[-1] = str(int(id[-1])+1).zfill(2)
                 else:
-                    id[-2] = str(int(id[-2])+1).zfill(3)
+                    id[-2] = str(int(id[-2])+1).zfill(4)
                     id[-1] = str(1)
                 object.person_id = '-'.join(id)
                 with transaction.atomic():

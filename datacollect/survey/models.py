@@ -225,11 +225,11 @@ class Record(models.Model):
     # Data model implementation
 
     person_id = models.CharField(
-        max_length=11,
+        max_length=12,
         verbose_name="Person ID",
         unique=True,
-        validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(11, message=None)],
-        help_text="Form YYYY-CCC-P, where YYYY is the year of publication, CCC is the paragraph number given in the report, and P the person number within the communication"
+        validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(12, message=None)],
+        help_text="Form YYYY-CCCC-P, where YYYY is the year of publication, CCCC is the paragraph number given in the report, and P the person number within the communication"
     )
     ohchr_case = models.CharField(
         max_length=20,
