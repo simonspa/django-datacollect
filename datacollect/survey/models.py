@@ -31,7 +31,7 @@ class Record(models.Model):
             if any(True for x in self.violations if x in ["IC","PC","RT"]):
                 self.violations.append("AD")
         if not "KA" in self.violations:
-            if any(True for x in self.violations if x in ["DI","KK","K"]):
+            if any(True for x in self.violations if x in ["KK","K"]):
                 self.violations.append("KA")
         if not "P" in self.violations:
             if any(True for x in self.violations if x in ["UT","C"]):
@@ -41,7 +41,7 @@ class Record(models.Model):
             if any(True for x in self.violations2 if x in ["IC","PC","RT"]):
                 self.violations2.append("AD")
         if not "KA" in self.violations2:
-            if any(True for x in self.violations2 if x in ["DI","KK","K"]):
+            if any(True for x in self.violations2 if x in ["KK","K"]):
                 self.violations2.append("KA")
         if not "P" in self.violations2:
             if any(True for x in self.violations2 if x in ["UT","C"]):
@@ -51,7 +51,7 @@ class Record(models.Model):
             if any(True for x in self.violations3 if x in ["IC","PC","RT"]):
                 self.violations3.append("AD")
         if not "KA" in self.violations3:
-            if any(True for x in self.violations3 if x in ["DI","KK","K"]):
+            if any(True for x in self.violations3 if x in ["KK","K"]):
                 self.violations3.append("KA")
         if not "P" in self.violations3:
             if any(True for x in self.violations3 if x in ["UT","C"]):
@@ -142,9 +142,9 @@ class Record(models.Model):
         ("TI","Torture/Ill-treatment"),
         ("ED","Enforced disappearance"),
         ("KA","Physical attack"),
-        ("DI"," + Kidnapping"),
         ("KK"," + Killing attempt"),
         ("K","  + Killing"),
+        ("DI","Kidnapping"),
         ("P","Prosecution"),
         ("UT"," + Unfair trial"),
         ("C"," + Conviction"),
