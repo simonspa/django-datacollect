@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.views.generic import FormView
 from django.views.generic import TemplateView
 from survey.models import Record
+import json
+from django.http import HttpResponse
+
 
 # Create your views here.
 
@@ -91,3 +94,39 @@ class HomePageView(TemplateView):
 
 class MiscView(TemplateView):
     template_name = 'demo/misc.html'
+
+    
+class RecordsMap(TemplateView):
+    """
+    A map we use to display cases in a Leaflet-based template.
+    In the HTML template, we pull the cases_son views.
+    """
+    template_name = 'map.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(RecordsMap, self).get_context_data(**kwargs)
+        return context
+
+class RecordsMap2(TemplateView):
+    template_name = 'map2.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(RecordsMap2, self).get_context_data(**kwargs)
+        return context
+
+    
+def cases_json(request):
+    """
+    Pull all cases.
+    """
+    records = Record.objects.exclude(latitude=None, longitude=None)
+
+    records = list(records)
+    features = [record.as_geojson_dict() for record in records]
+    objects = {
+        'type': "FeatureCollection",
+        'features': features
+    }
+
+    response = json.dumps(objects)
+    return HttpResponse(response, content_type='text/json')
