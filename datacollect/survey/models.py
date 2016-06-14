@@ -270,7 +270,7 @@ class Record(models.Model):
     issue_area = SelectMultipleField(
         max_length=10,
         choices=ISSUE_CHOICES,
-        max_choices=2,
+        max_choices=3,
         default="?",
         help_text="Select maximum 2 items with <i>Ctrl+Click</i>"
     )
