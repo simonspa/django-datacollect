@@ -279,7 +279,7 @@ class Record(models.Model):
         choices=ISSUE_CHOICES,
         max_choices=3,
         default="?",
-        help_text="Select maximum 2 items with <i>Ctrl+Click</i>"
+        help_text="Select maximum 3 items with <i>Ctrl+Click</i>"
     )
     relevant_activities = SelectMultipleField(
         max_length=15,
