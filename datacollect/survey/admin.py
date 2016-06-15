@@ -47,6 +47,24 @@ def duplicate_event(modeladmin, request, queryset):
                 pass
 duplicate_event.short_description = u"Duplicate"
 
+def duplicate_other_event(modeladmin, request, queryset):
+    for object in queryset:
+        object.id = None
+        object.name = u"%s (duplicate)" % object.name
+        
+        id = object.case_id.split("-")
+        # Find the next available case ID
+        while 1:
+            try:
+                id[-1] = str(int(id[-1])+1).zfill(4)
+                object.case_id = '-'.join(id)
+                with transaction.atomic():
+                    object.save()
+                break
+            except IntegrityError:
+                pass
+duplicate_other_event.short_description = u"Duplicate"
+
 
 class RecordAdmin(VersionAdmin):
     list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments")
@@ -94,7 +112,7 @@ class OtherRecordAdmin(VersionAdmin):
     list_display = ("case_id","name", "country", "type_intervention", "date_intervention", "further_comments")
     list_filter = ("type_intervention","country")
     search_fields = ("name","case_id")
-    actions = [export_csv]
+    actions = [export_csv,duplicate_other_event]
     fieldsets = (
         (None, {
             'fields': (('case_id', 'ohchr_case'),)
