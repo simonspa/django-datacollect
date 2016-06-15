@@ -155,6 +155,7 @@ CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_HTTPONLY = False
 
 COUNTRIES_OVERRIDE = {
+    'NON': ' Non-State Actor',
     'AX': None,
     'AS': None,
     'AI': None,
