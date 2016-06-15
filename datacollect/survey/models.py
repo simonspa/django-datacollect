@@ -325,7 +325,6 @@ class Record(models.Model):
     violations2 = SelectMultipleField(
         max_length=50,
         choices=VIOLATIONS_CHOICES,
-        default="?",
         verbose_name="Violation(s) #2",
         help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
@@ -333,7 +332,6 @@ class Record(models.Model):
     perpetrator2 = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        default = "U",
         verbose_name="Alleged perpetrator #2",
         help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
@@ -341,7 +339,6 @@ class Record(models.Model):
     violations3 = SelectMultipleField(
         max_length=50,
         choices=VIOLATIONS_CHOICES,
-        default="?",
         verbose_name="Violation(s) #3",
         help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
@@ -349,7 +346,6 @@ class Record(models.Model):
     perpetrator3 = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        default = "U",
         verbose_name="Alleged perpetrator #3",
         help_text="Select multiple items with <i>Ctrl+Click</i>",
         blank=True
