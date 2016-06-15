@@ -232,7 +232,7 @@ class Record(models.Model):
         verbose_name="Person ID",
         unique=True,
         validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(12, message=None)],
-        help_text="Form YYYY-CCCC-P, where YYYY is the year of publication, CCCC is the paragraph number given in the report, and P the person number within the communication"
+        help_text="Form YYYY-CCCC-PP, where YYYY is the year of publication, CCCC is the paragraph number given in the report, and PP the person number within the communication"
     )
     ohchr_case = models.CharField(
         max_length=20,
@@ -429,7 +429,7 @@ class OtherRecord(models.Model):
         verbose_name="Case ID",
         unique=True,
         validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(9, message=None)],
-        help_text="Form YYYY-CCCC-P, where YYYY is the year of publication and CCCC the paragraph number given in the report"
+        help_text="Form YYYY-CCCC, where YYYY is the year of publication and CCCC the paragraph number given in the report"
     )
     ohchr_case = models.CharField(
         max_length=20,
