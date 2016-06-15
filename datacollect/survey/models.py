@@ -411,3 +411,74 @@ class Record(models.Model):
 
 
     
+class OtherRecord(models.Model):
+
+    class Meta: 
+        verbose_name = "NGO Record"
+
+    def __unicode__(self):
+        return "%s (%s)" % (self.case_id, self.name)
+    
+    # Additional model valiation
+
+    def clean(self):
+        super(OtherRecord, self).clean()
+
+        if self.type_intervention == 'JUA' or self.type_intervention == 'JAL':
+            if not self.joint_with or (len(self.joint_with) == 1 and not self.joint_with[0]):
+                raise ValidationError('Select joint intervention type, required for JUA and JAL.')
+
+    case_id = models.CharField(
+        max_length=9,
+        verbose_name="Case ID",
+        unique=True,
+        validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(9, message=None)],
+        help_text="Form YYYY-CCCC-P, where YYYY is the year of publication and CCCC the paragraph number given in the report"
+    )
+    ohchr_case = models.CharField(
+        max_length=20,
+        blank=True,
+        verbose_name="OHCHR case no."
+    )
+    country = CountryField(blank_label='(select country)')
+    date_intervention = models.DateField(
+        verbose_name="Date of the intervention",
+        help_text="Format YYY-MM-DD"
+    )
+    type_intervention = models.CharField(
+        max_length=3,
+        choices=Record.INTERVENTION_CHOICES,
+        verbose_name="Type of intervention"
+    )
+    joint_with = SelectMultipleField(
+        max_length=200,
+        choices=Record.JOINT_CHOICES,
+        blank = True,
+        help_text="Select multiple items with <i>Ctrl+Click</i>"
+    )
+    name = models.CharField(
+        max_length=500,
+        verbose_name="Name of NGO"
+    )
+    follow_up_case = models.BooleanField(
+        default = False,
+        verbose_name="Follow-up on UN case"
+    )
+    regional_case = models.BooleanField(
+        default = False,
+        verbose_name="Regional mechanism case"
+    )
+    
+    ##########################
+    
+    further_comments = models.TextField(
+        blank=True,
+        verbose_name="Further comments",
+        help_text="Observations that might be relevant but don't fit elsewhere"
+    )
+
+    upload = models.FileField(
+        upload_to=update_filename,
+        null=True,
+        blank=True
+    )

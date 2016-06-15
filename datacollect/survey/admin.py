@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from django.http import HttpResponse
-from survey.models import Record
+from survey.models import Record, OtherRecord
 from django.forms import ModelForm, Textarea
 from django.db.utils import IntegrityError
 from reversion.admin import VersionAdmin
@@ -90,5 +90,24 @@ class RecordAdmin(VersionAdmin):
                    'style': 'height: 2em;'})},
     }
 
+class OtherRecordAdmin(VersionAdmin):
+    list_display = ("case_id","name", "country", "type_intervention", "date_intervention", "further_comments")
+    list_filter = ("type_intervention","country")
+    search_fields = ("name","case_id")
+    actions = [export_csv]
+    fieldsets = (
+        (None, {
+            'fields': (('case_id', 'ohchr_case'),)
+        }),
+        ('Case information', {
+            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', ('follow_up_case','regional_case'))
+        }),
+        ('Additional information', {
+            #'classes': ('collapse',),
+            'fields': ('further_comments',),
+        }),
+    )
+
 admin.site.register(Record, RecordAdmin)
+admin.site.register(OtherRecord, OtherRecordAdmin)
 
