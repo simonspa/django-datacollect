@@ -15,6 +15,9 @@ def update_filename(instance, filename):
 
 class Record(models.Model):
 
+    class Meta: 
+        verbose_name = "HRD Record"
+
     def __unicode__(self):
         return "%s (%s)" % (self.person_id, self.name)
     
