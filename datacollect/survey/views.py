@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import FormView
 from django.views.generic import TemplateView
-from survey.models import Record
+from survey.models import Record, OtherRecord
 
 # Create your views here.
 
@@ -19,9 +19,12 @@ class RecordAnalysis(TemplateView):
     def get_context_data(self, **kwargs):
         # Quick notation to access all records
         records = Record.objects.all()
-
+        ngorecords = OtherRecord.objects.all()
+        
         # Total counts of cases, all priority levels
-        total_count = records.all().count()
+        hrd_total_count = records.all().count()
+        ngo_total_count = ngorecords.all().count()
+        total_count = hrd_total_count + ngo_total_count
         total_by_gender = get_counts_by_gender(records)
 
         # Total count of communications (stripping person identifier from personID)
@@ -30,8 +33,12 @@ class RecordAnalysis(TemplateView):
             # take first eight chars of the personID
             commlist.append(record.person_id[:8])
         # set removes duplicates, len counts length:
-        comm = len(set(commlist))
-        
+        hrd_comm = len(set(commlist))
+
+        # Total count of communications (here we have one comm per database record)
+        ngo_comm = len(ngorecords)
+        total_comm = hrd_comm + ngo_comm
+
         # Count issues in categories (multiple choices possible)
         issue_body = ""
         for x in Record.ISSUE_CHOICES:
@@ -75,7 +82,11 @@ class RecordAnalysis(TemplateView):
                     for item in getattr(record,'violations'):
                         for item2 in getattr(record,'perpetrator'):
                             tmp_count += (1 if item == y[0] and item2 == x[0] else 0)
-                matrix2_body += "<td>" + str(tmp_count) + "</td>"
+                col = ""
+                if tmp_count > 20: col = "red"
+                elif tmp_count > 10: col = "orange"
+                elif tmp_count > 5: col = "yellow"
+                matrix2_body += '<td class="' + col + '">' + str(tmp_count) + "</td>"
             matrix2_body += "</tr>"
 
         return locals()
