@@ -33,16 +33,15 @@ class RecordAnalysis(TemplateView):
         comm = len(set(commlist))
         
         # Count issues in categories (multiple choices possible)
-        issue_head = ""
         issue_body = ""
         for x in Record.ISSUE_CHOICES:
-            issue_head += "<th>" + x[1] + "</th>"
+            issue_body += "<tr><th>" + x[1] + "</th>"
 
             tmp_count = 0
             for record in records:
                 for item in getattr(record,'issue_area'):
                     tmp_count += (1 if item == x[0] else 0)
-            issue_body += "<td>" + str(tmp_count) + "</td>"
+            issue_body += "<td>" + str(tmp_count) + "</td></tr>"
 
         # Produce matrix of Gov reply vs concern
         matrix_head = "<th></th>"
