@@ -1,0 +1,63 @@
+{% extends 'demo/bootstrap.html' %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_extra_head %}
+<style type="text/css">
+  .container{padding-bottom:60px}
+  .page-header{border-bottom:0;padding:0 0 15px 0;margin:0}
+  h1{font-family:Georgia,serif;font-size:56px;line-height:57.5px;font-weight:normal;color:#000;margin:5px 0}
+  h2{font-family:Georgia,serif;font-size:32px;line-height:32px;font-weight:normal;color:#000;margin:5px 0}
+  h3{font-family:Georgia,serif;font-size:24px;line-height:24px;font-weight:normal;color:#000;margin:5px 0}
+  h4{font-family:Georgia,serif;font-size:15px;line-height:20px;color:#000;font-weight:bold;margin:5px 0}
+  p{font-family:Georgia,serif;color:#666;line-height:27px;width:100%;font-size:18px;margin:18px 0}
+
+  #tophat-container{background:#282828;width:100%;margin:0 0 20px 0;padding:0;position:relative}
+  #tophat{width:100%;margin:0 auto;min-height:50px;font-family:Arial,sans-serif;font-size:12px}
+  #tophat a{color:white;text-decoration:none;display:block;line-height:50px}
+  #tophat ul{list-style:none;display:block;position:static;width:100%;z-index:999;margin:0;padding:0}
+  #tophat ul li{float:left;text-align:center}
+  #tophat ul li a{line-height:50px;margin:0 10px;display:block}
+  #tophat ul li:hover,#tophat ul li.active{background:#4591B8}
+  #tophat ul li ul{display:none;position:absolute;background:#4591B8;margin:0;padding:0;list-style:none;width:auto;z-index:99999999999999999}
+  #tophat ul li ul li{text-align:left;float:none;z-index:99999999999999999;height:35px}
+  #tophat ul li ul li:hover{background:#282828}
+  #tophat ul li ul li a{display:block;line-height:35px;width:140px}
+  #tophat-logo{display:block;float:left;margin:0 10px 0 20px;padding:0 0 0 0;font-weight:bold;font-family:Georgia,serif;font-size:15px;}
+
+  footer{margin:0;padding:0;bottom:0;width:100%;height:50px}
+  #footer-container{background:#282828;width:100%;margin:10px 0 0 0;padding:0;position:relative}
+  #footer-container a{color:white}
+  #footer-container #footer{width:100%;margin:0 auto;height:50px;position:relative;font-family:Arial,sans-serif;font-size:11px;}
+</style>
+{% endblock %}
+
+{% block bootstrap3_title %}UN Individual Case Work: Data Analysis{% endblock %}
+
+{% block bootstrap3_content %}
+<!-- NAV -->
+{% block nav %}
+<nav title="Navigation">
+  {% include "jsp/nav/default.html" %}
+</nav>
+{% endblock %}
+
+{% block container %}
+<!-- CONTENT GOES HERE -->
+<div class="container" id="container">
+  <div class="page-header">
+    {% block title %}{% endblock %}
+    {% block subtitle %}{% endblock %}
+  </div>
+  {% block content %}
+  {% endblock %}
+</div>
+{% endblock %}
+
+<!-- FOOTER -->
+<footer>
+      {% include "jsp/footer.html" %}
+</footer>
+
+{% block body-bottom %}{% endblock %}
+{% endblock %}

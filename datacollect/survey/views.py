@@ -82,7 +82,7 @@ class RecordAnalysis(TemplateView):
         return locals()
 
 class HomePageView(TemplateView):
-    template_name = 'demo/home.html'
+    template_name = 'jsp/home.html'
 
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)

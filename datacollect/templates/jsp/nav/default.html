@@ -1,0 +1,11 @@
+<div id="tophat-container">
+  <div id="tophat">
+        {% block content %}
+        <a id="tophat-logo" href="https://django.simonspa.de/">UN Individual Case Work</a>
+        <ul>
+	  <li><a href="{% url 'home' %}">home</a></li>
+          <li><a href="{% url 'record_analysis' %}">analysis</a></li>
+	</ul>
+        {% endblock %}
+  </div>
+</div>
