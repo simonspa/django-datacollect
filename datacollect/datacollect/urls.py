@@ -26,4 +26,6 @@ urlpatterns = [
     url(r'^analysis/$', RecordAnalysis.as_view(), name='record_analysis'),
 
     url(r'^$', HomePageView.as_view(), name='home'),
+    url(r'^map/$', RecordsMap.as_view(), name='map'),
+    url(r'^api/records.json$', cases_json, name='records-json'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

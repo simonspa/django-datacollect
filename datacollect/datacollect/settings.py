@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'reversion',
     'survey',
+    'leaflet'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -212,4 +213,14 @@ COUNTRIES_OVERRIDE = {
     'VI': None,
     'WF': None,
     'EH': None
+}
+
+
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': (6.0, 45.0),
+    'DEFAULT_ZOOM': 3,
+    'MIN_ZOOM': 2,
+    'MAX_ZOOM': 9,
+    'TILES': 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+    'ATTRIBUTION_PREFIX': ''
 }

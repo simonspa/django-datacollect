@@ -6,6 +6,11 @@ from select_multiple_field.models import SelectMultipleField
 from django.core.exceptions import ValidationError
 from django.core.validators import int_list_validator, MinLengthValidator
 
+from geopy.geocoders import Nominatim
+from datetime import datetime
+from django.utils import dateformat
+import random
+
 def update_filename(instance, filename):
     return '{0}/{1}'.format(instance.person_id, filename)
 
@@ -60,6 +65,9 @@ class Record(models.Model):
             if any(True for x in self.violations3 if x in ["UT","C"]):
                 self.violations3.append("P")
 
+        # Fill geolocation:
+        self.set_coordinates()
+        
 
     # Choices for select boxes
 
@@ -410,9 +418,49 @@ class Record(models.Model):
         null=True,
         blank=True
     )
-
+    
+    longitude = models.FloatField(null = True)
+    latitude = models.FloatField(null = True)
 
     
+    def set_coordinates(self):
+        geolocator = Nominatim()
+        geoname = "%s %s"%(self.country.name,self.name_area)
+        location = geolocator.geocode(geoname)
+        try:
+            print(location.address) + " (" + geoname + ")"
+            print((location.latitude, location.longitude))
+            self.longitude = location.longitude
+            self.latitude = location.latitude
+        except AttributeError:
+            print "Not found: " + geoname
+            self.longitude = None
+            self.latitude = None
+        
+    def as_geojson_dict(self):
+        """
+        Method to return each feature in the DB as a geojson object.
+        """
+        if self.latitude is not None and self.longitude is not None:
+            as_dict = {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        float(self.longitude),
+                        float(self.latitude)
+                    ]
+                },
+                "properties": {
+                    "date": dateformat.format(self.date_intervention, 'F j, Y'),
+                    "type": self.type_intervention
+                }
+            }
+        else:
+            as_dict = {}
+        return as_dict
+
+
 class OtherRecord(models.Model):
 
     class Meta: 
