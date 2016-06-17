@@ -399,6 +399,12 @@ class Record(models.Model):
         help_text="Observations that might be relevant but don't fit elsewhere"
     )
 
+    feedback = models.TextField(
+        blank=True,
+        verbose_name="Feedback",
+        help_text="Direct feedback on the coding of this particular case"
+    )
+
     upload = models.FileField(
         upload_to=update_filename,
         null=True,
