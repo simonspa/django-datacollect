@@ -6,17 +6,16 @@
 <style type="text/css">
   * {margin: 0;}
   body,html{min-height:100vh;position:relative;}
-  #wrapper{height:100%;width:100%;}
   .container{padding-bottom:60px;}
   
-  .page-header{border-bottom:0;padding:0 0 15px 0;margin:0}
+  .page-header{border-bottom:0;padding:20px 0 15px 0;margin:0}
   h1{font-family:Georgia,serif;font-size:56px;line-height:57.5px;font-weight:normal;color:#000;margin:5px 0}
   h2{font-family:Georgia,serif;font-size:32px;line-height:32px;font-weight:normal;color:#000;margin:5px 0}
   h3{font-family:Georgia,serif;font-size:24px;line-height:24px;font-weight:normal;color:#000;margin:5px 0}
   h4{font-family:Georgia,serif;font-size:15px;line-height:20px;color:#000;font-weight:bold;margin:5px 0}
   p{font-family:Georgia,serif;color:#666;line-height:27px;width:100%;font-size:18px;margin:18px 0}
 
-  #tophat-container{background:#282828;width:100%;margin:0 0 20px 0;padding:0;position:relative}
+  #tophat-container{background:#282828;width:100%;margin:00;padding:0;position:relative}
   #tophat{width:100%;margin:0 auto;min-height:50px;font-family:Arial,sans-serif;font-size:12px}
   #tophat a{color:white;text-decoration:none;display:block;line-height:50px}
   #tophat ul{list-style:none;display:block;position:static;width:100%;z-index:999;margin:0;padding:0}
@@ -29,8 +28,8 @@
   #tophat ul li ul li a{display:block;line-height:35px;width:140px}
   #tophat-logo{display:block;float:left;margin:0 10px 0 20px;padding:0 0 0 0;font-weight:bold;font-family:Georgia,serif;font-size:15px;}
 
-  footer{position:absolute;margin:0;padding:0;bottom:0;width:100%;height:60px}
-  #footer-container{background:#282828;width:100%;margin:10px 0 0 0;padding:0;position:relative}
+  footer{position:absolute;margin:0;padding:0;bottom:0;width:100%;height:50px}
+  #footer-container{background:#282828;width:100%;margin:0;padding:0;position:relative}
   #footer-container a{color:white}
   #footer-container #footer{width:100%;margin:0 auto;height:50px;position:relative;font-family:Arial,sans-serif;font-size:11px;}
 
@@ -44,7 +43,6 @@
 {% block bootstrap3_title %}UN Individual Case Work: Data Analysis{% endblock %}
 
 {% block bootstrap3_content %}
-<div id="wrapper">
   <!-- NAV -->
   {% block nav %}
   <nav title="Navigation">
@@ -64,13 +62,11 @@
   </div>
   {% endblock %}
 
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer>
     {% include "jsp/footer.html" %}
   </footer>
 
   {% block body-bottom %}{% endblock %}
-
-</div>
 
 {% endblock %}
