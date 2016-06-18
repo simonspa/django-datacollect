@@ -67,8 +67,10 @@ duplicate_other_event.short_description = u"Duplicate"
 
 
 class RecordAdmin(VersionAdmin):
-    list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments")
-    list_filter = ("gender", "type_intervention","country")
+    exclude = ("analyst",)
+    list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments","analyst")
+    list_filter = ("gender", "type_intervention","analyst","country")
+    list_editable = ("analyst",)
     search_fields = ("name","person_id")
     actions = [export_csv,duplicate_event] #, export_xls, export_xlsx]
     fieldsets = (
@@ -108,9 +110,18 @@ class RecordAdmin(VersionAdmin):
                    'style': 'height: 2em;'})},
     }
 
+    # Automatically store the analyst user
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.analyst = request.user
+        obj.save()
+
+
 class OtherRecordAdmin(VersionAdmin):
-    list_display = ("case_id","name", "country", "type_intervention", "date_intervention", "further_comments")
-    list_filter = ("type_intervention","country")
+    exclude = ("analyst",)
+    list_display = ("case_id","name", "country", "type_intervention", "date_intervention", "further_comments","analyst")
+    list_filter = ("type_intervention","analyst","country")
+    list_editable = ("analyst",)
     search_fields = ("name","case_id")
     actions = [export_csv,duplicate_other_event]
     fieldsets = (
@@ -125,6 +136,14 @@ class OtherRecordAdmin(VersionAdmin):
             'fields': ('further_comments',),
         }),
     )
+
+    
+    # Automatically store the analyst user
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.analyst = request.user
+        obj.save()
+
 
 admin.site.register(Record, RecordAdmin)
 admin.site.register(OtherRecord, OtherRecordAdmin)

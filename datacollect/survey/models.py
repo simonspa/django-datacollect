@@ -5,6 +5,7 @@ from django_countries.fields import CountryField
 from select_multiple_field.models import SelectMultipleField
 from django.core.exceptions import ValidationError
 from django.core.validators import int_list_validator, MinLengthValidator
+from django.contrib.auth.models import User
 
 from geopy.geocoders import Nominatim
 from datetime import datetime
@@ -418,6 +419,14 @@ class Record(models.Model):
         null=True,
         blank=True
     )
+
+    analyst = models.ForeignKey(
+        User,
+        blank=True,
+        null=True,
+        verbose_name="Analyst",
+        help_text="User responsible for this record"
+    )
     
     longitude = models.FloatField(null = True)
     latitude = models.FloatField(null = True)
@@ -460,7 +469,7 @@ class Record(models.Model):
             as_dict = {}
         return as_dict
 
-
+    
 class OtherRecord(models.Model):
 
     class Meta: 
@@ -531,4 +540,12 @@ class OtherRecord(models.Model):
         upload_to=update_filename,
         null=True,
         blank=True
+    )
+
+    analyst = models.ForeignKey(
+        User,
+        blank=True,
+        null=True,
+        verbose_name="Analyst",
+        help_text="User responsible for this record"
     )
