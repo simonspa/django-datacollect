@@ -70,6 +70,7 @@ class RecordAdmin(VersionAdmin):
     exclude = ("analyst",)
     list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments","analyst")
     list_filter = ("gender", "type_intervention","analyst","country")
+    list_editable = ("analyst",)
     search_fields = ("name","person_id")
     actions = [export_csv,duplicate_event] #, export_xls, export_xlsx]
     fieldsets = (
@@ -120,6 +121,7 @@ class OtherRecordAdmin(VersionAdmin):
     exclude = ("analyst",)
     list_display = ("case_id","name", "country", "type_intervention", "date_intervention", "further_comments","analyst")
     list_filter = ("type_intervention","analyst","country")
+    list_editable = ("analyst",)
     search_fields = ("name","case_id")
     actions = [export_csv,duplicate_other_event]
     fieldsets = (
