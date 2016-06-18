@@ -5,6 +5,7 @@ from django_countries.fields import CountryField
 from select_multiple_field.models import SelectMultipleField
 from django.core.exceptions import ValidationError
 from django.core.validators import int_list_validator, MinLengthValidator
+from django.contrib.auth.models import User
 
 def update_filename(instance, filename):
     return '{0}/{1}'.format(instance.person_id, filename)
@@ -411,7 +412,13 @@ class Record(models.Model):
         blank=True
     )
 
-
+    analyst = models.ForeignKey(
+        User,
+        blank=True,
+        null=True,
+        verbose_name="Analyst",
+        help_text="User responsible for this record"
+    )
     
 class OtherRecord(models.Model):
 
@@ -483,4 +490,12 @@ class OtherRecord(models.Model):
         upload_to=update_filename,
         null=True,
         blank=True
+    )
+
+    analyst = models.ForeignKey(
+        User,
+        blank=True,
+        null=True,
+        verbose_name="Analyst",
+        help_text="User responsible for this record"
     )
