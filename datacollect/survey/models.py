@@ -448,8 +448,9 @@ class Record(models.Model):
                     float(loc.latitude)
                 ]
             }
+            print "Located record %s (%s)" % (self.person_id, self.name) + " in: " + loc.address
         except AttributeError:
-            print "Not found: " + geoname
+            print "Could locate record %s (%s)" % (self.person_id, self.name) + " with: " + geoname
         
     def as_geojson_dict(self):
         """
