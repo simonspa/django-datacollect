@@ -1,12 +1,19 @@
 <div id="tophat-container">
   <div id="tophat">
     {% block content %}
+    <span id="tophat-dropdown">
+      <hr />
+      <hr />
+      <hr />
+    </span>
     <div id="tophat-logo">UN Individual Case Work</div>
-    <ul>
-      <li><a href="{% url 'home' %}">home</a></li>
-      <li><a href="{% url 'record_analysis' %}">analysis</a></li>
-      <li><a href="{% url 'map' %}">map</a></li>
-    </ul>
+    <div class="tophat-links">
+      <ul>
+	<li><a href="{% url 'home' %}">home</a></li>
+	<li><a href="{% url 'record_analysis' %}">analysis</a></li>
+	<li><a href="{% url 'map' %}">map</a></li>
+      </ul>
+    </div>
     {% endblock %}
   </div>
 </div>
