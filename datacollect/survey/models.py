@@ -71,6 +71,11 @@ class Record(models.Model):
         self.get_coordinates()
         
 
+    def save(self, *args, **kwargs):
+        self.clean()
+        super(Record, self).save(*args, **kwargs) # Call the "real" save() method.
+
+
     # Choices for select boxes
 
     GENDER_CHOICES = (
