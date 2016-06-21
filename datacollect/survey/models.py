@@ -9,6 +9,7 @@ from django.core.validators import int_list_validator, MinLengthValidator
 from django.contrib.auth.models import User
 
 import json
+from geopy.exc import GeocoderServiceError
 from geopy.geocoders import Nominatim
 from datetime import datetime
 from django.utils import dateformat
@@ -444,8 +445,8 @@ class Record(models.Model):
     def get_coordinates(self):
         geolocator = Nominatim()
         geoname = "%s %s"%(self.country.name,self.name_area)
-        loc = geolocator.geocode(geoname)
         try:
+            loc = geolocator.geocode(geoname)
             self.coords = {
                 "type": "Point",
                 "coordinates": [
@@ -453,9 +454,13 @@ class Record(models.Model):
                     float(loc.latitude)
                 ]
             }
-            print "Located record %s (%s)" % (self.person_id, self.name) + " in: " + loc.address
+            print "Located record %s (%s)" % (self.person_id, self.name) + " with: " + geoname
         except AttributeError:
-            print "Could locate record %s (%s)" % (self.person_id, self.name) + " with: " + geoname
+            print "Could not locate record %s (%s)" % (self.person_id, self.name) + " with: " + geoname
+            pass
+        except GeocoderServiceError:
+            print "Geocoder service error on record %s (%s)" % (self.person_id, self.name)
+            pass
         
     def as_geojson_dict(self):
         """
