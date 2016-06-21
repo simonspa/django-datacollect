@@ -99,13 +99,8 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
-        #messages.info(self.request, 'hello http://example.com')
         return context
 
-class MiscView(TemplateView):
-    template_name = 'demo/misc.html'
-
-    
 class RecordsMap(TemplateView):
     """
     A map we use to display cases in a Leaflet-based template.
