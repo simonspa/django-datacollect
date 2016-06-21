@@ -467,12 +467,14 @@ class Record(models.Model):
         Method to return each feature in the DB as a geojson object.
         """
         if self.coords is not None:
+            place = str(self.country.name) if not self.name_area else "%s, %s" % (self.name_area, self.country.name)
             as_dict = {
                 "type": "Feature",
                 "geometry": self.coords,
                 "properties": {
                     "date": dateformat.format(self.date_intervention, 'F j, Y'),
-                    "type": self.type_intervention
+                    "type": self.type_intervention,
+                    "location": place
                 }
             }
         else:
