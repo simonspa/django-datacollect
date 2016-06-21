@@ -121,10 +121,11 @@ def cases_json(request):
     """
     Pull all cases.
     """
-    records = Record.objects.exclude(latitude=None, longitude=None)
+    records = Record.objects.exclude(coords=None)
 
     records = list(records)
     features = [record.as_geojson_dict() for record in records]
+
     objects = {
         'type': "FeatureCollection",
         'features': features

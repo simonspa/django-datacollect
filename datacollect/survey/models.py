@@ -1,16 +1,17 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from djgeojson.fields import PointField
 from django_countries.fields import CountryField
 from select_multiple_field.models import SelectMultipleField
 from django.core.exceptions import ValidationError
 from django.core.validators import int_list_validator, MinLengthValidator
 from django.contrib.auth.models import User
 
+import json
 from geopy.geocoders import Nominatim
 from datetime import datetime
 from django.utils import dateformat
-import random
 
 def update_filename(instance, filename):
     return '{0}/{1}'.format(instance.person_id, filename)
@@ -67,7 +68,7 @@ class Record(models.Model):
                 self.violations3.append("P")
 
         # Fill geolocation:
-        self.set_coordinates()
+        self.get_coordinates()
         
 
     # Choices for select boxes
@@ -428,38 +429,36 @@ class Record(models.Model):
         help_text="User responsible for this record"
     )
     
-    longitude = models.FloatField(null = True)
-    latitude = models.FloatField(null = True)
+    coords = PointField(
+        blank=True,
+        null=True,
+        editable=False
+    )
 
     
-    def set_coordinates(self):
+    def get_coordinates(self):
         geolocator = Nominatim()
         geoname = "%s %s"%(self.country.name,self.name_area)
-        location = geolocator.geocode(geoname)
+        loc = geolocator.geocode(geoname)
         try:
-            print(location.address) + " (" + geoname + ")"
-            print((location.latitude, location.longitude))
-            self.longitude = location.longitude
-            self.latitude = location.latitude
+            self.coords = {
+                "type": "Point",
+                "coordinates": [
+                    float(loc.longitude),
+                    float(loc.latitude)
+                ]
+            }
         except AttributeError:
             print "Not found: " + geoname
-            self.longitude = None
-            self.latitude = None
         
     def as_geojson_dict(self):
         """
         Method to return each feature in the DB as a geojson object.
         """
-        if self.latitude is not None and self.longitude is not None:
+        if self.coords is not None:
             as_dict = {
                 "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        float(self.longitude),
-                        float(self.latitude)
-                    ]
-                },
+                "geometry": self.coords,
                 "properties": {
                     "date": dateformat.format(self.date_intervention, 'F j, Y'),
                     "type": self.type_intervention

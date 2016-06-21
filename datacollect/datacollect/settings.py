@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_countries',
     'django.contrib.humanize',
+    'djgeojson',
     'bootstrap3',
     'reversion',
     'survey',
