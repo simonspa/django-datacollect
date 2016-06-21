@@ -222,6 +222,6 @@ LEAFLET_CONFIG = {
     'DEFAULT_ZOOM': 3,
     'MIN_ZOOM': 2,
     'MAX_ZOOM': 9,
-    'TILES': 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+    'TILES': 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
     'ATTRIBUTION_PREFIX': ''
 }
