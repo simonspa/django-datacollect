@@ -454,12 +454,12 @@ class Record(models.Model):
                     float(loc.latitude)
                 ]
             }
-            print "Located record %s (%s)" % (self.person_id, self.name) + " with: " + geoname
+            #print "Located record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(geoname)
         except AttributeError:
-            print "Could not locate record %s (%s)" % (self.person_id, self.name) + " with: " + geoname
+            #print "Could not locate record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(geoname)
             pass
         except GeocoderServiceError:
-            print "Geocoder service error on record %s (%s)" % (self.person_id, self.name)
+            #print "Geocoder service error on record %s (%s)" % (self.person_id, unicode(self.name))
             pass
         
     def as_geojson_dict(self):
