@@ -234,6 +234,7 @@ class Record(models.Model):
     GOV_ACTION_CHOICES = (
         ("protect","Protection measures granted"),
         ("release","Individual released early"),
+        ("notrial","Individual released without trial"),
         ("improve","Improved prison conditions"),
         ("investigate","Investigation opened"),
         ("prosecuted","Perpetrator suspended/prosecuted"),
