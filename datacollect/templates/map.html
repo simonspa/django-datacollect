@@ -42,20 +42,20 @@
     var mapMarkers = {},
 tooltipTemplate = $('#tooltip-template').html();
 
-var defaultRadius = 3,
-    hoverRadius = 8,
+var defaultRadius = 4,
+    hoverRadius = 9,
     zoomRadius,
     mymap;
 
 zoomRadius = {
-    2: 3,
-    3: 3,
-    4: 3.5,
-    5: 4,
-    6: 5,
-    7: 6,
-    8: 7,
-    9: 8
+    2: 4,
+    3: 4.5,
+    4: 5,
+    5: 6,
+    6: 7,
+    7: 8,
+    8: 9,
+    9: 10
 };
 
 var pointStyles = {
@@ -125,6 +125,16 @@ function map_init_basic (map, options) {
 	var markers = L.markerClusterGroup();
 	markers.addLayer(recordsLayer);
 	map.addLayer(markers);
+    });
+
+    map.on('zoomend', function(){
+        var currentZoom = map.getZoom(),
+            newRadius = zoomRadius[currentZoom];
+        
+        for (marker in mapMarkers) {
+            var feature = mapMarkers[marker];
+            feature.setRadius(newRadius);
+        }
     });
 }
 </script>
