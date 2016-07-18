@@ -1,6 +1,25 @@
 {% extends 'jsp/base.html' %}
 {% load bootstrap3 humanize %}
 
+{% block extra_head %}
+<style type="text/css">
+  #progress-container {
+  width:  100%;
+  height: 36px;
+  background-color: #cccccc;
+  margin-bottom: 30px;
+  padding: 3px;
+  }
+  #progress {
+  height: 100%;
+  background-color: #009900;
+  color: #ffffff;
+  text-align:right;
+  padding:5px;
+  }
+</style>
+{% endblock %}
+
 {% block title %}<h1>Record Overview</h1>{% endblock %}
 
 {% block content %}
@@ -43,7 +62,11 @@
         </tr>
       </tbody>
     </table>
-
+    
+    <h2>Coding Progress</h2>
+    assuming {{ reportsum|intcomma }} communications since 2001 in total
+    <div id="progress-container"><div id="progress" style="width:{{ progress }}%"><b>{{ progress|floatformat:2 }}%</b></div></div>
+    
     <h2>HRD Records Statistics</h2>
     {% autoescape off %}
     <table class="table table-striped table-bordered table-condensed">

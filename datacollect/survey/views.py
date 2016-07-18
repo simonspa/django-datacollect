@@ -42,6 +42,11 @@ class RecordAnalysis(TemplateView):
         ngo_comm = len(ngorecords)
         total_comm = hrd_comm + ngo_comm
 
+        # List of communications for all reports since 2001:
+        reportlist = [13,4986,1]
+        reportsum = sum(reportlist)
+        progress = 100.*total_comm/reportsum
+        
         # Count issues in categories (multiple choices possible)
         issue_body = ""
         for x in Record.ISSUE_CHOICES:
