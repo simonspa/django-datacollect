@@ -87,7 +87,7 @@ class RecordAdmin(VersionAdmin):
             'fields': (('location', 'name_area'), 'violation_family', ('violations', 'perpetrator')),
         }),
         ('Further violations', {
-            'classes': ('collapse',),
+            #'classes': ('collapse',),
             'fields': (('violations2','perpetrator2'), ('violations3','perpetrator3')),
         }),
         (None, {

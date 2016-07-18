@@ -184,7 +184,8 @@ class Record(models.Model):
         ("A","Army"),
         ("AO","Armed opposition"),
         ("B","Business/landholder"),
-        ("M","Mob")
+        ("M","Mob"),
+        ("PM","Paramilitary group")
     )
 
     INTERVENTION_CHOICES = (
