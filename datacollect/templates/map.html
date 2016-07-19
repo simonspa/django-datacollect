@@ -35,7 +35,8 @@
   <h4>Intervention</h4>
     <p><div class="swatch-holder"><div class="swatch round type-<%= style %>"></div><b><%= type %></b></div>
     <b><%= date_intervention %></b></br>
-    <%= place %>
+    <%= place %></br>
+      <a href="https://{{ request.get_host }}/admin/survey/record/<%= id %>/change/" target="_blank">Edit &raquo;</a>
   </p>
 </script>
 <script type="text/javascript">
@@ -91,6 +92,7 @@ var onEachFeature = function(feature, layer) {
 	date_intervention: props["date"],
 	type: props["type"],
 	place: props["location"],
+	id: props["id"],
 	style: getcolor(props["type"])
     };
 

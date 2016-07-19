@@ -476,7 +476,8 @@ class Record(models.Model):
                 "properties": {
                     "date": dateformat.format(self.date_intervention, 'F j, Y'),
                     "type": self.type_intervention,
-                    "location": place
+                    "location": place,
+                    "id": self.id
                 }
             }
         else:
