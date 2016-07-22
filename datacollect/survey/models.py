@@ -446,7 +446,7 @@ class Record(models.Model):
     
     def get_coordinates(self):
         geolocator = Nominatim()
-        geoname = "%s %s"%(self.country.name,self.name_area)
+        geoname = "%s"%(self.country.name) if not self.name_area else "%s, %s"%(self.name_area,self.country.name)
         try:
             loc = geolocator.geocode(geoname)
             self.coords = {
@@ -456,7 +456,7 @@ class Record(models.Model):
                     float(loc.latitude)
                 ]
             }
-            #print "Located record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(geoname)
+            #print "Located record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(geoname) + " " + str(loc.longitude) + " " + str(loc.latitude)
         except AttributeError:
             #print "Could not locate record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(geoname)
             pass
