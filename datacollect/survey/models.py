@@ -92,6 +92,7 @@ class Record(models.Model):
         ("IPR","Indigenous peoples' rights"),
         ("LGBTI","LGBTI issues"),
         ("MRR","Migrants'/refugees' rights"),
+        ("MR","Other minorities' rights"),
         ("LR","Labour rights"),
         ("POV","Poverty"),
         ("RTF","Right to food"),
@@ -212,7 +213,8 @@ class Record(models.Model):
         ("BUSINESS","BUSINESS"),
         ("HEALTH","HEALTH"),
         ("ENVIR","ENVIR"),
-        ("FOOD","FOOD")
+        ("FOOD","FOOD"),
+        ("specific","Country-specific")
     )
 
     CONCERN_CHOICES = (
