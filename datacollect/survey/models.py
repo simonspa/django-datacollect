@@ -214,6 +214,7 @@ class Record(models.Model):
         ("HEALTH","HEALTH"),
         ("ENVIR","ENVIR"),
         ("FOOD","FOOD"),
+        ("CHILD","CHILD"),
         ("specific","Country-specific")
     )
 
