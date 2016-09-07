@@ -68,8 +68,9 @@ duplicate_other_event.short_description = u"Duplicate"
 
 class RecordAdmin(VersionAdmin):
     exclude = ("analyst",)
-    list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments","feedback","analyst")
-    list_filter = ("gender", "type_intervention","analyst","country")
+    list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments","feedback","analyst","is_final")
+    list_editable = ("is_final",)
+    list_filter = ("is_final","gender", "type_intervention","analyst","country")
     search_fields = ("name","person_id")
     actions = [export_csv,duplicate_event] #, export_xls, export_xlsx]
     fieldsets = (
@@ -99,7 +100,7 @@ class RecordAdmin(VersionAdmin):
         }),
         ('Additional information', {
             #'classes': ('collapse',),
-            'fields': ('further_comments','feedback'),
+            'fields': ('further_comments','feedback','is_final'),
         }),
     )
     formfield_overrides = {

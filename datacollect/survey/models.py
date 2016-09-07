@@ -439,6 +439,11 @@ class Record(models.Model):
         verbose_name="Analyst",
         help_text="User responsible for this record"
     )
+
+    is_final = models.BooleanField(
+        default = False,
+        verbose_name="Final"
+    )
     
     coords = PointField(
         blank=True,
