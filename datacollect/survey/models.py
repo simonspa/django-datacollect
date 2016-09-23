@@ -91,11 +91,11 @@ class Record(models.Model):
         ("CRS","Children's rights"),
         ("IPR","Indigenous peoples' rights"),
         ("LGBTI","LGBTI issues"),
-        ("MRR","Migrants'/refugees' rights"),
-        ("MR","Other minorities' rights"),
+        ("MRR","Migrants'/refugees'/IDP's rights"),
+        ("MR","Ethnic minorities' rights"),
         ("LR","Labour rights"),
         ("POV","Poverty"),
-        ("RTF","Right to food"),
+        ("RTF","Right to food/water"),
         ("HI","Health issues"),
         ("HRFE","Housing rights/forced evictions"),
         ("LNR","Land rights/environment"),
@@ -103,14 +103,16 @@ class Record(models.Model):
         ("RF","Religious freedom"),
         ("PR","Prisoner's rights"),
         ("AT","Torture"),
+        ("DP","Death penalty"),
         ("ED","Enforced disappearance"),
         ("H","Homocide"),
-        ("PV","Police violence"),
+        ("PV","Police/military violence"),
         ("AC","Corruption"),
         ("DV","Democratic/voting rights"),
         ("IF","Internet freedom"),
         ("HRE","Human rights education"),
-        ("TJ","Transitional justice")
+        ("TJ","Transitional justice"),
+        ("PA","Peace activism")
     )
     
     ACTIVITIES_CHOICES = (
@@ -292,7 +294,7 @@ class Record(models.Model):
         verbose_name="Regional mechanism case"
     )
     issue_area = SelectMultipleField(
-        max_length=10,
+        max_length=20,
         choices=ISSUE_CHOICES,
         max_choices=3,
         default="?",
