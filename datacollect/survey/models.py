@@ -37,6 +37,16 @@ class Record(models.Model):
         if self.type_intervention == 'JUA' or self.type_intervention == 'JAL':
             if not self.joint_with or (len(self.joint_with) == 1 and not self.joint_with[0]):
                 raise ValidationError('Select joint intervention type, required for JUA and JAL.')
+
+        # Communication dates: check for sensible time order
+        if self.date_govreply and self.date_intervention and self.date_govreply < self.date_intervention:
+            raise ValidationError('Date of government reply has to be past the date of intervention.')
+        if self.date_intervention and self.date_incident and self.date_intervention < self.date_incident:
+            raise ValidationError('Date of intervention has to be past the date of the incident.')
+        if self.date_govreply and self.date_incident and self.date_govreply < self.date_incident:
+            raise ValidationError('Date of government reply has to be past the date of the incident.')
+
+        
         # Violations: Auto-add top-level entries when sub-cat is selected
         if not "AD" in self.violations:
             if any(True for x in self.violations if x in ["IC","PC","RT"]):
