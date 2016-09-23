@@ -174,7 +174,7 @@ CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
 
 COUNTRIES_OVERRIDE = {
-    'NON': ' Non-State Actor',
+    'XX': 'Non-State Actor',
     'AX': None,
     'AS': None,
     'AI': None,
@@ -200,7 +200,6 @@ COUNTRIES_OVERRIDE = {
     'GU': None,
     'GG': None,
     'HM': None,
-    'VA': None,
     'HK': None,
     'IM': None,
     'JE': None,
@@ -212,7 +211,6 @@ COUNTRIES_OVERRIDE = {
     'NU': None,
     'NF': None,
     'MP': None,
-    'PS': None,
     'PN': None,
     'PR': None,
     'RE': None,
@@ -232,6 +230,10 @@ COUNTRIES_OVERRIDE = {
     'WF': None,
     'EH': None
 }
+
+COUNTRIES_FIRST = [
+    'XX',
+]
 
 LEAFLET_CONFIG = {
     'DEFAULT_CENTER': (6.0, 45.0),
