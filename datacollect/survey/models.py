@@ -139,7 +139,7 @@ class Record(models.Model):
     COOPERATION_CHOICES = (
         (0, "Not mentioned"),
         (1, "UN"),
-        (2, "INGO")
+        (2, "INGO/other IO")
     )
 
     LOCATION_CHOICES = (
