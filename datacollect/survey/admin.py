@@ -122,8 +122,8 @@ class RecordAdmin(VersionAdmin):
 
 class OtherRecordAdmin(VersionAdmin):
     exclude = ("analyst",)
-    list_display = ("case_id","name", "country", "type_intervention", "date_intervention", "further_comments","analyst")
-    list_filter = ("type_intervention","analyst","country")
+    list_display = ("case_id","name", "case_type", "country", "type_intervention", "date_intervention", "further_comments","analyst")
+    list_filter = ("type_intervention","analyst","case_type","country")
     search_fields = ("name","case_id")
     actions = [export_csv,duplicate_other_event]
     fieldsets = (
@@ -131,7 +131,7 @@ class OtherRecordAdmin(VersionAdmin):
             'fields': (('case_id', 'ohchr_case'),)
         }),
         ('Case information', {
-            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', ('follow_up_case','regional_case'))
+            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', "case_type", ('follow_up_case','regional_case'))
         }),
         ('Additional information', {
             #'classes': ('collapse',),

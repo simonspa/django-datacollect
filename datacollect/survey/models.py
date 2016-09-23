@@ -499,6 +499,14 @@ class Record(models.Model):
     
 class OtherRecord(models.Model):
 
+    CASE_CHOICES = (
+        (0, "NGO"),
+        (1, "NHRI"),
+        (2, "Statement by official"),
+        (3, "Law/bill"),
+        (4, "Mass violation/pattern")
+    )
+
     class Meta: 
         verbose_name = "NGO Record"
 
@@ -544,7 +552,12 @@ class OtherRecord(models.Model):
     )
     name = models.CharField(
         max_length=500,
-        verbose_name="Name of NGO"
+        verbose_name="Subject of communication"
+    )
+    case_type = models.IntegerField(
+        choices=CASE_CHOICES,
+        verbose_name="Type of case",
+        default=0
     )
     follow_up_case = models.BooleanField(
         default = False,
