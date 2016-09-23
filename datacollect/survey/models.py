@@ -173,9 +173,11 @@ class Record(models.Model):
         ("T","Threats"),
         ("S","Surveillance"),
         ("R","Office/home raided"),
+        ("PD","Property stolen/confiscated/destroyed"),
         ("DC","Defamation campaign"),
         ("DP","Disciplinary proceedings"),
         ("B","Travel restrictions"),
+        ("A","Access denied"),
         ("AH","Administrative harassment"),
         ("FI","Failure to intervene/protect")
     )
