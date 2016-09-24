@@ -43,7 +43,7 @@ class RecordAnalysis(TemplateView):
         total_comm = hrd_comm + ngo_comm
 
         # List of communications for all reports since 2001:
-        reportlist = [13,4986,1]
+        reportlist = [1,4198,1]
         reportsum = sum(reportlist)
         progress = 100.*total_comm/reportsum
         
