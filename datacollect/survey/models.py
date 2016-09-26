@@ -229,6 +229,9 @@ class Record(models.Model):
         ("ENVIR","ENVIR"),
         ("FOOD","FOOD"),
         ("CHILD","CHILD"),
+        ("RACISM","RACISM"),
+        ("HOUSING","HOUSING"),
+        ("MINORITY","MINORITY"),
         ("specific","Country-specific")
     )
 
@@ -516,11 +519,13 @@ class Record(models.Model):
 class OtherRecord(models.Model):
 
     CASE_CHOICES = (
-        (0, "NGO"),
+        (0, "NGO/Trade union/..."),
         (1, "NHRI"),
         (2, "Statement by official"),
         (3, "Law/bill"),
-        (4, "Mass violation/pattern")
+        (4, "Mass violation/pattern"),
+        (5, "Anonymous cases"),
+        (6, "PR on individual")
     )
 
     class Meta: 
