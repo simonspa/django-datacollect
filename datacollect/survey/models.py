@@ -301,6 +301,11 @@ class Record(models.Model):
         default = False,
         verbose_name="Follow-up on UN case"
     )
+    earlier_coms = models.CharField(
+        blank=True,
+        max_length=500,
+        verbose_name="Date(s) of earlier coms"
+    )
     regional_case = models.BooleanField(
         default = False,
         verbose_name="Regional mechanism case"

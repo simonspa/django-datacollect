@@ -81,7 +81,7 @@ class RecordAdmin(VersionAdmin):
             'fields': (('person_id', 'ohchr_case'),)
         }),
         ('Case information', {
-            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', ('follow_up_case','regional_case'))
+            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', ('follow_up_case','regional_case'), 'earlier_coms')
         }),
         ('HRD identity', {
             #'description': 'ex',
