@@ -277,7 +277,8 @@ class Record(models.Model):
     country = CountryField(blank_label='(select country)')
     date_intervention = models.DateField(
         verbose_name="Date of the intervention",
-        help_text="Format YYY-MM-DD"
+        help_text="Format YYY-MM-DD",
+        blank=True
     )
     type_intervention = models.CharField(
         max_length=3,
