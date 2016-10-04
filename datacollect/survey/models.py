@@ -107,6 +107,7 @@ class Record(models.Model):
         ("POV","Poverty"),
         ("RTF","Right to food/water"),
         ("HI","Health issues"),
+        ("RE","Right to education"),
         ("HRFE","Housing rights/forced evictions"),
         ("LNR","Land rights/environment"),
         ("CR","Cultural rights"),
@@ -117,12 +118,14 @@ class Record(models.Model):
         ("ED","Enforced disappearance"),
         ("H","Homocide"),
         ("PV","Police/military violence"),
+        ("NSV","Non-state violence"),
         ("AC","Corruption"),
         ("DV","Democratic/voting rights"),
         ("IF","Internet freedom"),
         ("HRE","Human rights education"),
         ("TJ","Transitional justice"),
-        ("PA","Peace activism")
+        ("PA","Peace activism"),
+        ("AR","Anti-racism")
     )
     
     ACTIVITIES_CHOICES = (
@@ -134,6 +137,7 @@ class Record(models.Model):
         ("CL","Community leader"),
         ("L","Lawyer/Judge/Attorney"),
         ("J","Journalist/Editor"),
+        ("CA","Cyberactivist"),
         ("A","Artist/Writer"),
         ("S","Student"),
         ("T","Teacher/Professor/Scientist"),
@@ -188,6 +192,7 @@ class Record(models.Model):
         ("DP","Disciplinary proceedings"),
         ("B","Travel restrictions"),
         ("A","Access denied"),
+        ("VD","Expulsion/Visa denied"),
         ("AH","Administrative harassment"),
         ("FI","Failure to intervene/protect")
     )
@@ -200,7 +205,8 @@ class Record(models.Model):
         ("AO","Armed opposition"),
         ("B","Business/landholder"),
         ("M","Mob"),
-        ("PM","Paramilitary group")
+        ("PM","Paramilitary group"),
+        ("PP","Private person")
     )
 
     INTERVENTION_CHOICES = (
@@ -232,6 +238,9 @@ class Record(models.Model):
         ("RACISM","RACISM"),
         ("HOUSING","HOUSING"),
         ("MINORITY","MINORITY"),
+        ("EDUCATION","EDUCATION"),
+        ("MIGRANTS","MIGRANTS"),
+        ("WASTE","WASTE"),
         ("specific","Country-specific")
     )
 
