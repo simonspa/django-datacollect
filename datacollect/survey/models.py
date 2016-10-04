@@ -342,6 +342,10 @@ class Record(models.Model):
         verbose_name="Further information",
         help_text="Name of NGO or party, title of conference, object of investigation etc."
     )
+    foreign_national = models.BooleanField(
+        default=False,
+        verbose_name="Foreign national"
+    )
     international_cooperation = models.IntegerField(
         choices=COOPERATION_CHOICES,
         default=0

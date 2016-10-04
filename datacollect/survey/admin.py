@@ -85,7 +85,7 @@ class RecordAdmin(VersionAdmin):
         }),
         ('HRD identity', {
             #'description': 'ex',
-            'fields': ('gender', 'issue_area', ('relevant_activities', 'further_info'), 'international_cooperation')
+            'fields': ('gender', 'issue_area', ('relevant_activities', 'further_info', 'foreign_national'), 'international_cooperation')
             }),
         ('Incident information', {
             'fields': (('location', 'name_area'), 'violation_family', ('violations', 'perpetrator')),
