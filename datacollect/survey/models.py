@@ -519,7 +519,7 @@ class Record(models.Model):
                 "type": "Feature",
                 "geometry": self.coords,
                 "properties": {
-                    "date": dateformat.format(self.date_intervention, 'F j, Y'),
+                    "date": dateformat.format(self.date_intervention, 'F j, Y') if self.date_intervention else "unknown",
                     "type": self.type_intervention,
                     "location": place,
                     "id": self.id
