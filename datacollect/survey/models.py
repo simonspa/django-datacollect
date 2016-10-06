@@ -290,7 +290,8 @@ class Record(models.Model):
     date_intervention = models.DateField(
         verbose_name="Date of the intervention",
         help_text="Format YYY-MM-DD",
-        blank=True
+        blank=True,
+        null=True
     )
     type_intervention = models.CharField(
         max_length=3,
