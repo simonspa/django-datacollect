@@ -539,7 +539,8 @@ class OtherRecord(models.Model):
         (3, "Law/bill"),
         (4, "Mass violation/pattern"),
         (5, "Anonymous cases"),
-        (6, "PR on individual")
+        (6, "PR on individual"),
+        (7, "Country visit by SR")
     )
 
     class Meta: 
