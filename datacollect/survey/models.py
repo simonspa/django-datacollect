@@ -497,22 +497,28 @@ class Record(models.Model):
         editable=False
     )
 
+    def get_geoname(self):
+        return "%s"%(self.country.name) if not self.name_area or self.location == 'A' else "%s, %s"%(self.name_area,self.country.name)
     
     def get_coordinates(self):
         geolocator = Nominatim()
-        geoname = "%s"%(self.country.name) if not self.name_area else "%s, %s"%(self.name_area,self.country.name)
         try:
-            loc = geolocator.geocode(geoname)
-            self.coords = {
+            loc = geolocator.geocode(self.get_geoname())
+            tmp = PointField()
+            tmp = {
                 "type": "Point",
                 "coordinates": [
                     float(loc.longitude),
                     float(loc.latitude)
                 ]
             }
-            #print "Located record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(geoname) + " " + str(loc.longitude) + " " + str(loc.latitude)
+            #if tmp != self.coords:
+                #print "Updated record %s: %s -> %s" % (self.person_id, self.coords['coordinates'], tmp['coordinates'])
+
+            self.coords = tmp
+            #print "Located record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(self.get_geoname()) + " " + str(loc.longitude) + " " + str(loc.latitude)
         except AttributeError:
-            #print "Could not locate record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(geoname)
+            #print "Could not locate record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(self.get_geoname())
             pass
         except GeocoderServiceError:
             #print "Geocoder service error on record %s (%s)" % (self.person_id, unicode(self.name))
@@ -523,7 +529,7 @@ class Record(models.Model):
         Method to return each feature in the DB as a geojson object.
         """
         if self.coords is not None:
-            place = str(self.country.name) if not self.name_area else "%s, %s" % (self.name_area, self.country.name)
+            place = self.get_geoname()
             as_dict = {
                 "type": "Feature",
                 "geometry": self.coords,
