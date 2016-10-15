@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from survey.models import Record, OtherRecord
 from django.forms import ModelForm, Textarea
 from django.db.utils import IntegrityError
+from django.utils.encoding import force_bytes
 from reversion.admin import VersionAdmin
 from django.db import transaction
 
@@ -20,7 +21,7 @@ def export_csv(modeladmin, request, queryset):
 
     # Loop over requested records and write out data
     for obj in queryset:
-        writer.writerow([smart_str(getattr(obj,field.name)) for field in obj._meta.fields])
+        writer.writerow(["\"" + force_bytes(getattr(obj,field.name)) + "\"" for field in obj._meta.fields])
         
     return response
 export_csv.short_description = u"Export CSV"
