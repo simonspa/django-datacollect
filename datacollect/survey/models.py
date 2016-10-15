@@ -512,8 +512,9 @@ class Record(models.Model):
                     float(loc.latitude)
                 ]
             }
+
             #if tmp != self.coords:
-                #print "Updated record %s: %s -> %s" % (self.person_id, self.coords['coordinates'], tmp['coordinates'])
+                #print "Updated record %s: %s -> %s" % (self.person_id, "none" if not self.coords else self.coords['coordinates'], tmp['coordinates'])
 
             self.coords = tmp
             #print "Located record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(self.get_geoname()) + " " + str(loc.longitude) + " " + str(loc.latitude)
