@@ -160,6 +160,7 @@ class Record(models.Model):
         ("C","Capital"),
         ("T","City/Town"),
         ("R","Rural area"),
+        ("A","Abroad"),
         ("?","Unknown")
     )
 
@@ -241,6 +242,13 @@ class Record(models.Model):
         ("EDUCATION","EDUCATION"),
         ("MIGRANTS","MIGRANTS"),
         ("WASTE","WASTE"),
+        ("IDPs","IDPs"),
+        ("WG_WOMEN","WG_WOMEN"),
+        ("MERCENARIES","MERCENARIES"),
+        ("TRUTH","TRUTH"),
+        ("POVERTY","POVERTY"),
+        ("CULTURE","CULTURE"),
+        ("ELDERLY","ELDERLY"),
         ("specific","Country-specific")
     )
 
