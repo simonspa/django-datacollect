@@ -121,6 +121,7 @@ class Record(models.Model):
         ("NSV","Non-state violence"),
         ("AC","Corruption"),
         ("DV","Democratic/voting rights"),
+        ("JI","Judicial independence"),
         ("IF","Internet freedom"),
         ("HRE","Human rights education"),
         ("TJ","Transitional justice"),
