@@ -512,16 +512,16 @@ class Record(models.Model):
                     float(loc.latitude)
                 ]
             }
-            if tmp != self.coords:
-                print "Updated record %s: %s -> %s" % (self.person_id, self.coords['coordinates'], tmp['coordinates'])
+            #if tmp != self.coords:
+                #print "Updated record %s: %s -> %s" % (self.person_id, self.coords['coordinates'], tmp['coordinates'])
 
             self.coords = tmp
             #print "Located record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(self.get_geoname()) + " " + str(loc.longitude) + " " + str(loc.latitude)
         except AttributeError:
-            print "Could not locate record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(self.get_geoname())
+            #print "Could not locate record %s (%s)" % (self.person_id, unicode(self.name)) + " with: " + unicode(self.get_geoname())
             pass
-        except GeocoderServiceError as e:
-            print "Geocoder service error %s on record %s (%s)" % (e, self.person_id, unicode(self.name))
+        except GeocoderServiceError:
+            #print "Geocoder service error on record %s (%s)" % (self.person_id, unicode(self.name))
             pass
         
     def as_geojson_dict(self):
