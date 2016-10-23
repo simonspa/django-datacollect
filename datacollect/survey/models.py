@@ -208,7 +208,8 @@ class Record(models.Model):
         ("B","Business/landholder"),
         ("M","Mob"),
         ("PM","Paramilitary group"),
-        ("PP","Private person")
+        ("PP","Private person"),
+        ("RA","Religious authority")
     )
 
     INTERVENTION_CHOICES = (
@@ -267,7 +268,8 @@ class Record(models.Model):
         ("incomp","Reponsive but incomplete"),
         ("immat","Immaterial response"),
         ("react","Steps taken to address"),
-        ("transl","In translation")
+        ("transl","In translation"),
+        ("na","N/A")
     )
 
     GOV_ACTION_CHOICES = (
