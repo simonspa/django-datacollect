@@ -251,6 +251,7 @@ class Record(models.Model):
         ("POVERTY","POVERTY"),
         ("CULTURE","CULTURE"),
         ("ELDERLY","ELDERLY"),
+        ("SLAVERY","SLAVERY"),
         ("specific","Country-specific")
     )
 
