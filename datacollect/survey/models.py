@@ -104,7 +104,7 @@ class Record(models.Model):
         ("MRR","Migrants'/refugees'/IDP's rights"),
         ("MR","Ethnic minorities' rights"),
         ("LR","Labour rights"),
-        ("POV","Poverty"),
+        ("POV","Poverty/social welfare"),
         ("RTF","Right to food/water"),
         ("HI","Health issues"),
         ("RE","Right to education"),
@@ -149,6 +149,7 @@ class Record(models.Model):
         ("I","Investigation against officials"),
         ("PC","Participation in conference/meeting"),
         ("PP","Participation in public protest/rally"),
+        ("GAS","Government/Army/Security forces")
     )
 
     COOPERATION_CHOICES = (
