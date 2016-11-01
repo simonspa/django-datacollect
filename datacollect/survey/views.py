@@ -4,7 +4,8 @@ from django.views.generic import TemplateView
 from survey.models import Record, OtherRecord
 import json
 from django.http import HttpResponse
-
+from collections import OrderedDict
+import operator
 
 # Create your views here.
 
@@ -48,56 +49,45 @@ class RecordAnalysis(TemplateView):
         progress = 100.*total_comm/reportsum
         
         # Count issues in categories (multiple choices possible)
-        issue_body = ""
-        for x in Record.ISSUE_CHOICES:
-            issue_body += "<tr><th>" + x[1] + "</th>"
+        issues = {x[0]: 0 for x in Record.ISSUE_CHOICES}
+        issues_titles = dict(Record.ISSUE_CHOICES)
+        
+        activities = {x[0]: 0 for x in Record.ACTIVITIES_CHOICES}
+        activities_titles = dict(Record.ACTIVITIES_CHOICES)
 
-            tmp_count = 0
-            for record in records:
-                for item in getattr(record,'issue_area'):
-                    tmp_count += (1 if item == x[0] else 0)
-            issue_body += "<td>" + str(tmp_count) + "</td></tr>"
+        matrix_violations = OrderedDict([(y[0], OrderedDict([(x[0], 0) for x in Record.PERPETRATOR_CHOICES])) for y in Record.VIOLATIONS_CHOICES])
+        matrix_violations_titles_x = dict(Record.PERPETRATOR_CHOICES)
+        matrix_violations_titles_y = dict(Record.VIOLATIONS_CHOICES)
 
-        # Produce matrix of Gov reply vs concern
-        matrix_head = "<th></th>"
-        for x in Record.GOV_REPLY_CHOICES:
-            matrix_head += "<th>" + x[1] + "</th>"
+        matrix_activities = OrderedDict([(y[0], OrderedDict([(x[0], 0) for x in Record.ACTIVITIES_CHOICES])) for y in Record.VIOLATIONS_CHOICES])
+        matrix_activities_titles_x = dict(Record.ACTIVITIES_CHOICES)
+        matrix_activities_titles_y = dict(Record.VIOLATIONS_CHOICES)
 
-        matrix_body = ""
-        for y in Record.CONCERN_CHOICES:
-            matrix_body += "<tr><th>" + y[1] + "</th>"
-            
-            for x in Record.GOV_REPLY_CHOICES:
-                tmp_count = 0
-                for record in records:
-                    tmp_count += (1 if x[0] == getattr(record,'govreply_content') and
-                                  y[0] == getattr(record,'concern_expressed') else 0)
-                matrix_body += "<td>" + str(tmp_count) + "</td>"
-            matrix_body += "</tr>"
+        matrix_perpetrator = OrderedDict([(y[0], OrderedDict([(x[0], 0) for x in Record.GOV_REPLY_CHOICES])) for y in Record.PERPETRATOR_CHOICES])
+        matrix_perpetrator_titles_x = dict(Record.GOV_REPLY_CHOICES)
+        matrix_perpetrator_titles_y = dict(Record.PERPETRATOR_CHOICES)
 
-        # Produce matrix of violations vs perpetrators
-        matrix2_head = "<th></th>"
-        for x in Record.PERPETRATOR_CHOICES:
-            matrix2_head += "<th>" + x[1] + "</th>"
+        
+        for record in records:
+            for item in getattr(record,'issue_area'):
+                issues[item] += 1
+            for item in getattr(record,'relevant_activities'):
+                activities[item] += 1
+            for viol in getattr(record,'violations'):
+                for perp in getattr(record,'perpetrator'):
+                    matrix_violations[viol][perp] += 1
+                for act in getattr(record,'relevant_activities'):
+                    matrix_activities[viol][act] += 1
+            for perp in getattr(record,'perpetrator'):
+                gov = getattr(record,'govreply_content')
+                if(gov):
+                    matrix_perpetrator[perp][gov] += 1
 
-        matrix2_body = ""
-        for y in Record.VIOLATIONS_CHOICES:
-            matrix2_body += "<tr><th>" + y[1] + "</th>"
-            
-            for x in Record.PERPETRATOR_CHOICES:
-                tmp_count = 0
-                for record in records:
-                    for item in getattr(record,'violations'):
-                        for item2 in getattr(record,'perpetrator'):
-                            tmp_count += (1 if item == y[0] and item2 == x[0] else 0)
-                col = ""
-                if tmp_count > 20: col = "red"
-                elif tmp_count > 10: col = "orange"
-                elif tmp_count > 5: col = "yellow"
-                matrix2_body += '<td class="' + col + '">' + str(tmp_count) + "</td>"
-            matrix2_body += "</tr>"
-
+        issues_sorted = sorted(issues.items(), key=operator.itemgetter(1), reverse=True)
+        activities_sorted = sorted(activities.items(), key=operator.itemgetter(1), reverse=True)
+        
         return locals()
+
 
 class HomePageView(TemplateView):
     template_name = 'jsp/home.html'
