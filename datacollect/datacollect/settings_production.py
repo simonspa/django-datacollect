@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'bootstrap3',
     'reversion',
     'survey',
-    'leaflet'
+    'leaflet',
+    'mathfilters'
 ]
 
 MIDDLEWARE_CLASSES = [

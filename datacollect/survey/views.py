@@ -87,6 +87,10 @@ class RecordAnalysis(LoginRequiredMixin,TemplateView):
 
         issues_sorted = sorted(issues.items(), key=operator.itemgetter(1), reverse=True)
         activities_sorted = sorted(activities.items(), key=operator.itemgetter(1), reverse=True)
+
+        max_activities = max(max(v.iteritems(), key=operator.itemgetter(1))[1] for k,v in matrix_activities.items())
+        max_violations = max(max(v.iteritems(), key=operator.itemgetter(1))[1] for k,v in matrix_violations.items())
+        max_perpetrator = max(max(v.iteritems(), key=operator.itemgetter(1))[1] for k,v in matrix_perpetrator.items())
         
         return locals()
 

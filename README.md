@@ -23,7 +23,7 @@ virtualenv django-datacollect
 
 Install packages using
 ```
-pip install django django-flat-theme django-countries django-select-multiple-field django-bootstrap3 mysql-python django-reversion django-leaflet django-geojson django-jsonfield geopy
+pip install django django-flat-theme django-countries django-select-multiple-field django-bootstrap3 mysql-python django-reversion django-leaflet django-geojson django-jsonfield geopy django-mathfilters
 ```
 
 MySQL-Pyton requires

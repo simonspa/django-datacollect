@@ -1,6 +1,7 @@
 {% extends 'jsp/base.html' %}
 {% load bootstrap3 humanize %}
 {% load get_item }
+{% load mathfilters %}
 
 {% block extra_head %}
 <style type="text/css">
@@ -138,7 +139,7 @@
 	    {% for key, data in matrix_violations.items %}
             <tr><th>{{ matrix_violations_titles_y|get_item:key }}</th>
 	      {% for key2, val in data.items %}
-	      <td>{{ val }}</td>
+	      <td style='background-color:rgba(255,0,0,{{ val|div:max_violations }})'>{{ val }}</td>
 	      {% endfor %}
 	    </tr>
 	    {% endfor %}
@@ -163,7 +164,7 @@
 	    {% for key, data in matrix_activities.items %}
             <tr><th>{{ matrix_activities_titles_y|get_item:key }}</th>
 	      {% for key2, val in data.items %}
-	      <td>{{ val }}</td>
+	      <td style='background-color:rgba(255,0,0,{{ val|div:max_activities }})'>{{ val }}</td>
 	      {% endfor %}
 	    </tr>
 	    {% endfor %}
@@ -188,7 +189,7 @@
 	    {% for key, data in matrix_perpetrator.items %}
             <tr><th>{{ matrix_perpetrator_titles_y|get_item:key }}</th>
 	      {% for key2, val in data.items %}
-	      <td>{{ val }}</td>
+	      <td style='background-color:rgba(255,0,0,{{ val|div:max_perpetrator }})'>{{ val }}</td>
 	      {% endfor %}
 	    </tr>
 	    {% endfor %}
