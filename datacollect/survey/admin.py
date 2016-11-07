@@ -104,7 +104,7 @@ class RecordAdmin(VersionAdmin):
         }),
         ('Additional information', {
             #'classes': ('collapse',),
-            'fields': ('further_comments','feedback','is_final'),
+            'fields': (('business_case','business_company'),'further_comments','feedback','is_final'),
         }),
     )
     formfield_overrides = {
@@ -136,7 +136,7 @@ class OtherRecordAdmin(VersionAdmin):
         }),
         ('Additional information', {
             #'classes': ('collapse',),
-            'fields': ('further_comments',),
+            'fields': (('business_case','business_company'),'further_comments',),
         }),
     )
 

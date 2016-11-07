@@ -501,6 +501,17 @@ class Record(models.Model):
         verbose_name="Final"
     )
     
+    business_case = models.BooleanField(
+        default = False,
+        verbose_name="Business-related case"
+    )
+
+    business_company = models.CharField(
+        blank=True,
+        max_length=500,
+        verbose_name="Name of company"
+    )
+
     coords = PointField(
         blank=True,
         null=True,
@@ -650,4 +661,15 @@ class OtherRecord(models.Model):
         null=True,
         verbose_name="Analyst",
         help_text="User responsible for this record"
+    )
+
+    business_case = models.BooleanField(
+        default = False,
+        verbose_name="Business-related case"
+    )
+
+    business_company = models.CharField(
+        blank=True,
+        max_length=500,
+        verbose_name="Name of company"
     )
