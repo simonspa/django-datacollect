@@ -20,9 +20,13 @@ from survey.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url('^login/$', auth_views.login,name='login'),
+    url('^logout/$', auth_views.logout,name='logout'),
+
     url(r'^analysis/$', RecordAnalysis.as_view(), name='record_analysis'),
 
     url(r'^$', HomePageView.as_view(), name='home'),

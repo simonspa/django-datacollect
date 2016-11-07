@@ -146,6 +146,7 @@ BOOTSTRAP3 = {
     'javascript_in_head': True,
 }
 
+LOGIN_REDIRECT_URL = '/'
 
 # Security settings
 X_FRAME_OPTIONS = 'DENY'

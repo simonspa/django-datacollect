@@ -6,6 +6,7 @@ import json
 from django.http import HttpResponse
 from collections import OrderedDict
 import operator
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
@@ -16,10 +17,11 @@ def get_counts_by_gender(qs):
     counts["trans"] = qs.filter(gender=2).count()
     return counts
 
-class RecordAnalysis(TemplateView):
+class RecordAnalysis(LoginRequiredMixin,TemplateView):
     # The HTML template we're going to use, found in the /templates directory
     template_name = "analysis.html"
 
+    login_url = '/login/'
     def get_context_data(self, **kwargs):
         # Quick notation to access all records
         records = Record.objects.all()
@@ -96,12 +98,13 @@ class HomePageView(TemplateView):
         context = super(HomePageView, self).get_context_data(**kwargs)
         return context
 
-class RecordsMap(TemplateView):
+class RecordsMap(LoginRequiredMixin,TemplateView):
     """
     A map we use to display cases in a Leaflet-based template.
     In the HTML template, we pull the cases_son views.
     """
     template_name = 'map.html'
+    login_url = '/login/'
 
     def get_context_data(self, **kwargs):
         context = super(RecordsMap, self).get_context_data(**kwargs)

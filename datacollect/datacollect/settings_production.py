@@ -162,6 +162,7 @@ BOOTSTRAP3 = {
     'javascript_in_head': True,
 }
 
+LOGIN_REDIRECT_URL = '/'
 
 # Security settings
 
