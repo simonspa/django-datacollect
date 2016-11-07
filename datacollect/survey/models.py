@@ -126,7 +126,8 @@ class Record(models.Model):
         ("HRE","Human rights education"),
         ("TJ","Transitional justice"),
         ("PA","Peace activism"),
-        ("AR","Anti-racism")
+        ("AR","Anti-racism"),
+        ("RP","Right to privacy")
     )
     
     ACTIVITIES_CHOICES = (
@@ -253,6 +254,11 @@ class Record(models.Model):
         ("CULTURE","CULTURE"),
         ("ELDERLY","ELDERLY"),
         ("SLAVERY","SLAVERY"),
+        ("WATER","WATER"),
+        ("AFRICAN","AFRICAN"),
+        ("DISCAPA","DISCAPA"),
+        ("SOLIDAR","SOLIDAR"),
+        ("INTORDER","INT'ORDER"),
         ("specific","Country-specific")
     )
 
@@ -271,7 +277,7 @@ class Record(models.Model):
         ("immat","Immaterial response"),
         ("react","Steps taken to address"),
         ("transl","In translation"),
-        ("na","N/A")
+        ("na","File not available")
     )
 
     GOV_ACTION_CHOICES = (
