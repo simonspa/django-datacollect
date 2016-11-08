@@ -147,10 +147,10 @@ class Record(models.Model):
         ("HW","Humanitarian worker"),
         ("V","Victim/witness of HR violations"),
         ("OP","Ombudsperson/Procuraduria/NHRI"),
+        ("GAS","Government/Army/Security forces"),
         ("I","Investigation against officials"),
         ("PC","Participation in conference/meeting"),
-        ("PP","Participation in public protest/rally"),
-        ("GAS","Government/Army/Security forces")
+        ("PP","Participation in public protest/rally")
     )
 
     COOPERATION_CHOICES = (
@@ -259,6 +259,7 @@ class Record(models.Model):
         ("DISCAPA","DISCAPA"),
         ("SOLIDAR","SOLIDAR"),
         ("INTORDER","INT'ORDER"),
+        ("TRAFFIC","TRAFFIC"),
         ("specific","Country-specific")
     )
 
