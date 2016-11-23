@@ -39,11 +39,11 @@ def duplicate_event(modeladmin, request, queryset):
         # Find the next available person ID
         while 1:
             try:
-                if(int(id[-1]) < 99):
-                    id[-1] = str(int(id[-1])+1).zfill(2)
+                if(int(id[-1]) < 999):
+                    id[-1] = str(int(id[-1])+1).zfill(3)
                 else:
                     id[-2] = str(int(id[-2])+1).zfill(4)
-                    id[-1] = str(1)
+                    id[-1] = str(1).zfill(3)
                 object.person_id = '-'.join(id)
                 with transaction.atomic():
                     object.save()

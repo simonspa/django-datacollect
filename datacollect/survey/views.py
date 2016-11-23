@@ -36,7 +36,7 @@ class RecordAnalysis(LoginRequiredMixin,TemplateView):
         # Total count of communications (stripping person identifier from personID)
         commlist = []
         for record in records:
-            # take first eight chars of the personID
+            # take first nine chars of the personID
             commlist.append(record.person_id[:9])
         # set removes duplicates, len counts length:
         hrd_comm = len(set(commlist))
