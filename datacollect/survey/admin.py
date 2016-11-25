@@ -74,7 +74,7 @@ duplicate_other_event.short_description = u"Duplicate"
 class RecordAdmin(VersionAdmin):
     exclude = ("analyst",)
     list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments","feedback","analyst","is_final")
-    list_filter = ("is_final","gender", "type_intervention","analyst","country")
+    list_filter = ("is_final","gender","business_case","type_intervention","analyst","country")
     search_fields = ("name","person_id")
     actions = [export_csv,duplicate_event,set_final] #, export_xls, export_xlsx]
     fieldsets = (
