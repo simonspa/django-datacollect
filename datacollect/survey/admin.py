@@ -96,7 +96,7 @@ class RecordAdmin(VersionAdmin):
             'fields': (('violations2','perpetrator2'), ('violations3','perpetrator3')),
         }),
         (None, {
-            'fields': ('date_incident', 'concern_expressed'),
+            'fields': ('date_incident',),
         }),
         ('Government reply', {
             #'classes': ('collapse',),
