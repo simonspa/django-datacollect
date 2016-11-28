@@ -92,7 +92,8 @@ class Record(models.Model):
     GENDER_CHOICES = (
         (0, "Male"),
         (1, "Female"),
-        (2, "Trans/inter*")
+        (2, "Trans/inter*"),
+        (3, "Gender unclear")
     )
 
     ISSUE_CHOICES = (
@@ -147,6 +148,7 @@ class Record(models.Model):
         ("HW","Humanitarian worker"),
         ("V","Victim/witness of HR violations"),
         ("OP","Ombudsperson/Procuraduria/NHRI"),
+        ("UN","UN official"),
         ("GAS","Government/Army/Security forces"),
         ("I","Investigation against officials"),
         ("PC","Participation in conference/meeting"),
@@ -288,7 +290,8 @@ class Record(models.Model):
         ("improve","Improved prison conditions"),
         ("investigate","Investigation opened"),
         ("prosecuted","Perpetrator suspended/prosecuted"),
-        ("issued","Travel documents issued")
+        ("issued","Travel documents issued"),
+        ("other","Other")
     )
 
     
