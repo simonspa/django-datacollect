@@ -389,6 +389,11 @@ class Record(models.Model):
         default=0,
         verbose_name="Violation against HRD or family member?"
     )
+    violation_family_who = models.CharField(
+        max_length=500,
+        blank=True,
+        verbose_name="Concerned family member"
+    )
     violations = SelectMultipleField(
         max_length=50,
         choices=VIOLATIONS_CHOICES,
@@ -437,13 +442,22 @@ class Record(models.Model):
         verbose_name="Date of the latest incident",
         help_text="Format YYY-MM-DD"
     )
+    date_incident_unspecific = models.CharField(
+        max_length=500,
+        blank=True,
+        verbose_name="If unspecific"
+    )
     concern_expressed = models.CharField(
         max_length=2,
         choices=CONCERN_CHOICES,
         verbose_name="Concern/demand expressed in intervention",
         blank=True
     )
-
+    is_released = models.BooleanField(
+        default = False,
+        verbose_name="If arrested: released?"
+    )
+    
     ##########################
 
     date_govreply = models.DateField(
@@ -451,6 +465,11 @@ class Record(models.Model):
         blank=True,
         verbose_name="Date of government reply",
         help_text='Format YYY-MM-DD, leave empty for "No response"'
+    )
+    date_govreply_further = models.CharField(
+        max_length=500,
+        blank=True,
+        verbose_name="Date(s) of further replies"
     )
     govreply_content = models.CharField(
         max_length=6,

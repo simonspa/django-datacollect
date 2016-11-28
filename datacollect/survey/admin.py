@@ -89,18 +89,18 @@ class RecordAdmin(VersionAdmin):
             'fields': ('gender', 'issue_area', ('relevant_activities', 'further_info', 'foreign_national'), 'international_cooperation')
             }),
         ('Incident information', {
-            'fields': (('location', 'name_area'), 'violation_family', ('violations', 'perpetrator')),
+            'fields': (('location', 'name_area'), ('violation_family','violation_family_who'), ('violations', 'perpetrator')),
         }),
         ('Further violations', {
             #'classes': ('collapse',),
             'fields': (('violations2','perpetrator2'), ('violations3','perpetrator3')),
         }),
         (None, {
-            'fields': ('date_incident',),
+            'fields': (('date_incident','date_incident_unspecific'),'is_released'),
         }),
         ('Government reply', {
             #'classes': ('collapse',),
-            'fields': ('date_govreply', 'govreply_content', 'govreply_action', 'date_govaction'),
+            'fields': (('date_govreply','date_govreply_further'), 'govreply_content', 'govreply_action', 'date_govaction'),
         }),
         ('Additional information', {
             #'classes': ('collapse',),
