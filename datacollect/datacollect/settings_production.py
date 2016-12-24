@@ -31,7 +31,7 @@ with open('/home/django/secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['django.simonspa.de']
+ALLOWED_HOSTS = ['defendersdatabase.org']
 
 
 # Application definition
