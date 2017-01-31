@@ -696,3 +696,160 @@ class OtherRecord(models.Model):
         max_length=500,
         verbose_name="Name of company"
     )
+
+
+
+
+class AIRecord(models.Model):
+
+    class Meta: 
+        verbose_name = "AI Record"
+
+    def __unicode__(self):
+        return "%s (%s)" % (self.person_id, self.name)
+    
+    # Additional model valiation
+
+    def clean(self):
+        super(AIRecord, self).clean()
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super(AIRecord, self).save(*args, **kwargs) # Call the "real" save() method.
+    
+    # Data model implementation
+
+    person_id = models.CharField(
+        max_length=16,
+        verbose_name="Person ID",
+        unique=True,
+        validators=[MinLengthValidator(16, message=None)],
+        default = "AI-",
+        help_text="Form AI-YYYY-RRRR-PPP, where YYYY is the year of publication, RRRR is the reference, and PPP the person number within the communication"
+    )
+    ai_reference = models.CharField(
+        max_length=25,
+        verbose_name="AI Internal Reference"
+    )
+    pub_reference = models.CharField(
+        max_length=25,
+        blank=True,
+        verbose_name="Public ID"
+    )
+    country = CountryField(blank_label='(select country)')
+    date_submission = models.DateField(
+        verbose_name="Date of the submission",
+        help_text="Format YYY-MM-DD"
+    )
+    joint_with = SelectMultipleField(
+        max_length=200,
+        choices=Record.JOINT_CHOICES,
+        blank = True,
+        help_text="Select multiple items with <i>Ctrl+Click</i>",
+        verbose_name="Additional mandates"
+    )
+    name = models.CharField(
+        max_length=500,
+        verbose_name="Name of HRD"
+    )   
+    case_summary = models.TextField(
+        blank=True,
+        verbose_name="Case Summary",
+        help_text=""
+    )
+
+    fa_title = models.TextField(
+        blank=True,
+        verbose_name="FA Title",
+        help_text=""
+    )
+
+    fa_date = models.DateField(
+        verbose_name="Date of FA",
+        help_text="Format YYY-MM-DD",
+        blank=True,
+        null=True
+    )
+
+    fa_summary = models.TextField(
+        blank=True,
+        verbose_name="Summary of FA",
+        help_text=""
+    )
+
+    fa_title2 = models.TextField(
+        blank=True,
+        verbose_name="FA Title (2)",
+        help_text=""
+    )
+
+    fa_date2 = models.DateField(
+        verbose_name="Date of FA (2)",
+        help_text="Format YYY-MM-DD",
+        blank=True,
+        null=True
+    )
+
+    fa_summary2 = models.TextField(
+        blank=True,
+        verbose_name="Summary of FA (2)",
+        help_text=""
+    )
+
+    fa_title3 = models.TextField(
+        blank=True,
+        verbose_name="FA Title (3)",
+        help_text=""
+    )
+
+    fa_date3 = models.DateField(
+        verbose_name="Date of FA (3)",
+        help_text="Format YYY-MM-DD",
+        blank=True,
+        null=True
+    )
+
+    fa_summary3 = models.TextField(
+        blank=True,
+        verbose_name="Summary of FA (3)",
+        help_text=""
+    )
+
+    fa_title4 = models.TextField(
+        blank=True,
+        verbose_name="FA Title (4)",
+        help_text=""
+    )
+
+    fa_date4 = models.DateField(
+        verbose_name="Date of FA (4)",
+        help_text="Format YYY-MM-DD",
+        blank=True,
+        null=True
+    )
+
+    fa_summary4 = models.TextField(
+        blank=True,
+        verbose_name="Summary of FA (4)",
+        help_text=""
+    )
+    
+    further_comments = models.TextField(
+        blank=True,
+        verbose_name="Further comments",
+        help_text="Observations that might be relevant but don't fit elsewhere"
+    )
+
+    analyst = models.ForeignKey(
+        User,
+        blank=True,
+        null=True,
+        verbose_name="Analyst",
+        help_text="User responsible for this record"
+    )
+
+    is_final = models.BooleanField(
+        default = False,
+        verbose_name="Final"
+    )
+    

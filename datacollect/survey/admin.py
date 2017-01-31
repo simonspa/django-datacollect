@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from django.http import HttpResponse
-from survey.models import Record, OtherRecord
+from survey.models import Record, OtherRecord, AIRecord
 from django.forms import ModelForm, Textarea
 from django.db.utils import IntegrityError
 from django.utils.encoding import force_bytes
@@ -148,6 +148,46 @@ class OtherRecordAdmin(VersionAdmin):
         obj.save()
 
 
+class AIRecordAdmin(VersionAdmin):
+    exclude = ("analyst",)
+    list_display = ("person_id", "name", "country", "date_submission", "analyst","is_final")
+    list_filter = ("is_final","analyst","country")
+    search_fields = ("name","person_id")
+    actions = [duplicate_event,set_final]
+    fieldsets = (
+        (None, {
+            'fields': ('person_id', 'ai_reference','pub_reference',)
+        }),
+        ('Complaint information', {
+            'fields': ('country', 'date_submission', 'joint_with', 'name', 'case_summary')
+        }),
+        ('Further action(s)', {
+            'fields': ('fa_title', 'fa_date', 'fa_summary')
+            }),
+        ('Further action(s)', {
+            'classes': ('collapse',),
+            'fields': ('fa_title2', 'fa_date2', 'fa_summary2','fa_title3', 'fa_date3', 'fa_summary3','fa_title4', 'fa_date4', 'fa_summary4',)
+        }),
+        ('Additional information', {
+            #'classes': ('collapse',),
+            'fields': ('further_comments','is_final'),
+        }),
+    )
+    formfield_overrides = {
+        models.TextField: {'widget': Textarea(
+            attrs={'rows': 5,
+                   'cols': 50,
+                   'style': 'height: 8em;'})},
+    }
+
+    # Automatically store the analyst user
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.analyst = request.user
+        obj.save()
+
+
 admin.site.register(Record, RecordAdmin)
 admin.site.register(OtherRecord, OtherRecordAdmin)
+admin.site.register(AIRecord, AIRecordAdmin)
 
