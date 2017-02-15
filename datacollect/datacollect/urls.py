@@ -17,10 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
 from survey.views import *
+from questionnaire.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
 from django.contrib.auth import views as auth_views
+
+uuid_regexp = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -32,4 +35,7 @@ urlpatterns = [
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^map/$', RecordsMap.as_view(), name='map'),
     url(r'^api/records.json$', cases_json, name='records-json'),
+
+    url(r'^submit/(?P<uuid>{})$'.format(uuid_regexp), FollowUpUpdate.as_view(), name='sumit-form'),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

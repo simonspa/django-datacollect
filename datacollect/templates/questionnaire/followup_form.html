@@ -1,0 +1,14 @@
+{% extends 'jsp/base.html' %}
+{% load bootstrap3 humanize %}
+{% load get_item }
+{% load mathfilters %}
+
+{% block title %}<h1>HRD Case Follow-Up Questionnaire</h1>{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Update" />
+</form>
+{% endblock %}
