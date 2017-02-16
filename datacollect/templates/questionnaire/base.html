@@ -1,0 +1,83 @@
+{% extends 'demo/bootstrap.html' %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_extra_head %}
+<style type="text/css">
+  * {margin: 0;}
+  body,html{min-height:100vh;position:relative;}
+  .container{padding-bottom:60px;}
+  
+  .page-header{border-bottom:0;padding:20px 0 15px 0;margin:0}
+  h1{font-family:Georgia,serif;font-size:56px;line-height:57.5px;font-weight:normal;color:#000;margin:5px 0}
+  h2{font-family:Georgia,serif;font-size:32px;line-height:32px;font-weight:normal;color:#000;margin:5px 0}
+  h3{font-family:Georgia,serif;font-size:24px;line-height:24px;font-weight:normal;color:#000;margin:5px 0}
+  h4{font-family:Georgia,serif;font-size:15px;line-height:20px;color:#000;font-weight:bold;margin:5px 0}
+  p{font-family:Georgia,serif;color:#666;line-height:27px;width:100%;font-size:18px;margin:18px 0}
+
+  #tophat-container{background:#282828;width:100%;margin:00;padding:0;position:relative}
+  #tophat{width:100%;margin:0 auto;min-height:50px;font-family:Arial,sans-serif;font-size:12px}
+  #tophat a{color:white;text-decoration:none;display:block;line-height:50px}
+  #tophat-dropdown{display:none}
+  #tophat ul{list-style:none;display:block;position:static;width:100%;z-index:999;margin:0;padding:0}
+  #tophat ul li{float:left;text-align:center}
+  #tophat ul li a{line-height:50px;margin:0 10px;display:block}
+  #tophat ul li:hover,#tophat ul li.active{background:#4591B8}
+  #tophat ul li ul{display:none;position:absolute;background:#4591B8;margin:0;padding:0;list-style:none;width:auto;z-index:99999999999999999}
+  #tophat ul li ul li{text-align:left;float:none;z-index:99999999999999999;height:35px}
+  #tophat ul li ul li:hover{background:#282828}
+  #tophat ul li ul li a{display:block;line-height:35px;width:140px}
+  #tophat-logo{display:block;float:left;margin:0 10px 0 20px;padding:0 0 0 0;font-weight:bold;font-family:Georgia,serif;font-size:15px;color:white;text-decoration:none;display:block;line-height:50px}
+  #tophat.tophat-small #tophat-dropdown{display:inline!important;width:25px!important;height:25px!important;float:left;margin:13px 13px 0 13px;cursor:pointer}
+  #tophat.tophat-small #tophat-dropdown hr{height:4px;padding:0;margin:0 0 4px 0;border:0;background-color:#FFF}
+  #tophat.tophat-small .tophat-links ul li ul{display:none!important}
+  #tophat.tophat-small .tophat-links ul{display:none;position:absolute;top:50px;background:#00758d;margin:0;padding:0;list-style:none;width:auto;z-index:99999999999999999;background:#282828}
+  #tophat.tophat-small .tophat-links ul li{float:none;line-height:32px;text-align:left}
+  #tophat.tophat-small .tophat-links ul li a{line-height:32px}
+  
+  footer{position:absolute;margin:0;padding:0;bottom:0;width:100%;height:50px}
+  #footer-container{background:#282828;width:100%;margin:0;padding:0;position:relative}
+  #footer-container a{color:white}
+  #footer-container #footer{width:100%;margin:0 auto;height:50px;position:relative;font-family:Arial,sans-serif;font-size:11px;}
+
+  .yellow{background-color:yellow;}
+  .orange{background-color:orange;}
+  .red{background-color:#C00000;}
+</style>
+{% block extra_head %}{% endblock %}
+{% endblock %}
+
+{% block bootstrap3_title %}UN Individual Case Work: Follow-Up Questionnaire{% endblock %}
+
+{% block bootstrap3_content %}
+<!-- NAV -->
+{% block nav %}
+<nav title="Navigation">
+  <div id="tophat-container">
+    <div id="tophat">
+      <div id="tophat-logo">UN Individual Case Work</div>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block container %}
+<!-- CONTENT GOES HERE -->
+<div class="container" id="container">
+  <div class="page-header">
+    {% block title %}{% endblock %}
+    {% block subtitle %}{% endblock %}
+  </div>
+  {% block content %}
+  {% endblock %}
+</div>
+{% endblock %}
+
+<!-- FOOTER -->
+<footer>
+  {% include "jsp/footer.html" %}
+</footer>
+
+{% block body-bottom %}{% endblock %}
+
+{% endblock %}

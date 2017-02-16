@@ -1,7 +1,19 @@
-{% extends 'jsp/base.html' %}
+{% extends 'questionnaire/base.html' %}
 {% load bootstrap3 humanize %}
 {% load get_item }
 {% load mathfilters %}
+
+{% block extra_head %}
+<style type="text/css">
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #ff9800;
+    color: white;
+    margin-bottom: 15px;
+}
+</style>
+{% endblock %}
 
 {% block title %}<h1>HRD Case Follow-Up Questionnaire</h1>{% endblock %}
 
@@ -20,6 +32,9 @@
 <form action="" method="post">
   {% csrf_token %}
   {{ form.as_p }}
+  <div class="alert">
+    <strong>Warning!</strong> You can only submit this form once. After submission, the link is deactivated.
+  </div>
   <input type="submit" value="Submit" />
 </form>
 {% endblock %}
