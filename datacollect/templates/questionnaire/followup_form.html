@@ -6,9 +6,20 @@
 {% block title %}<h1>HRD Case Follow-Up Questionnaire</h1>{% endblock %}
 
 {% block content %}
+<h2>Case Summary</h2>
+
+<dl>
+  <dt>Country</dt>
+  <dd>{{ form.instance.case.country.name }}</dd>
+  <dt>Date of the intervention</dt>
+  <dd>{{ form.instance.case.date_intervention }}</dd>
+  ...
+</dl>
+
+<h2>Follow-Up Questionnaire</h2>
 <form action="" method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" value="Update" />
+  <input type="submit" value="Submit" />
 </form>
 {% endblock %}

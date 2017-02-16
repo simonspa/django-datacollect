@@ -7,7 +7,7 @@ class FollowUpForm(forms.ModelForm):
 
     class Meta:
         model = FollowUp
-        fields = ('is_answered', )
+        fields = ('further_comments', )
 
     def clean(self):
         super(FollowUpForm,self).clean()
