@@ -14,8 +14,8 @@ def invalidate_form(modeladmin, request, queryset):
 invalidate_form.short_description = u"Mark selected Follow-Up form as invalid"
 
 class FollowUpAdmin(VersionAdmin):
-    list_display = ("person_id","name","country","date_intervention","unique_id","timestamp","is_answered",)
-    list_filter = ("is_answered",)
+    list_display = ("person_id","name","country","date_intervention","unique_id","language","timestamp","is_answered",)
+    list_filter = ("is_answered","language",)
     actions = [invalidate_form]
 
     def person_id(self, x):
