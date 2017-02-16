@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^map/$', RecordsMap.as_view(), name='map'),
     url(r'^api/records.json$', cases_json, name='records-json'),
 
-    url(r'^submit/(?P<uuid>{})$'.format(uuid_regexp), FollowUpUpdate.as_view(), name='sumit-form'),
+    url(r'^submit/(?P<uuid>{})$'.format(uuid_regexp), FollowUpUpdate.as_view(), name='submit-form'),
+    url(r'^submit-success/(?P<person_id>.*)$', FormSuccessView.as_view(), name='submit-success'),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,26 @@
+{% extends 'questionnaire/base.html' %}
+{% load bootstrap3 humanize %}
+{% load get_item }
+{% load mathfilters %}
+
+{% block extra_head %}
+<style type="text/css">
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 15px;
+}
+</style>
+{% endblock %}
+
+{% block title %}<h1>HRD Case Follow-Up Questionnaire</h1>{% endblock %}
+
+{% block content %}
+ <div class="alert">
+   <strong>Success!</strong> Your information has been received correctly.
+</div>
+
+ Thank fou for providing follow-up information on the case <strong>{{ case.person_id }} </strong>
+ {% endblock %}
