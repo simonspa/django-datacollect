@@ -2,11 +2,14 @@ from django.contrib import admin
 from django.db import models
 from django.http import HttpResponse
 from survey.models import Record, OtherRecord, AIRecord
+from questionnaire.models import FollowUp
 from django.forms import ModelForm, Textarea
 from django.db.utils import IntegrityError
 from django.utils.encoding import force_bytes
 from reversion.admin import VersionAdmin
 from django.db import transaction
+
+import random
 
 def export_csv(modeladmin, request, queryset):
     import csv
@@ -76,7 +79,7 @@ class RecordAdmin(VersionAdmin):
     list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments","feedback","analyst","is_final")
     list_filter = ("is_final","gender","business_case","type_intervention","analyst","country")
     search_fields = ("name","person_id")
-    actions = [export_csv,duplicate_event,set_final] #, export_xls, export_xlsx]
+    actions = [export_csv,duplicate_event,set_final,'generate_followups'] #, export_xls, export_xlsx]
     fieldsets = (
         (None, {
             'fields': (('person_id', 'ohchr_case'),)
@@ -120,6 +123,47 @@ class RecordAdmin(VersionAdmin):
             obj.analyst = request.user
         obj.save()
 
+    def generate_followups(self, request, queryset):
+        insert_list = []
+        commlist = {}
+
+        # Prepare:
+        for obj in queryset:
+            # take first nine chars of the personID and increment on new cases
+            commlist[obj.person_id[:9]] = commlist.get(obj.person_id[:9], 0) + 1
+
+        cases_selected = 0
+        while (cases_selected < 100):
+            # do we have options left?
+            if not commlist:
+                break;
+        
+            case, persons = random.choice(list(commlist.items()))
+            #remove from commlist to avoid duplicated:
+            del commlist[case]
+        
+            # If more than 10 persons in this case: drop
+            if persons > 10:
+                print "Discarding " + str(case) + ": too big (" + str(persons) + " persons)"
+                continue;
+
+            # If a follow-up already exists: drop:
+            followups = FollowUp.objects.filter(case__person_id__startswith=case)
+            if followups.count() > 0:
+                print "Discarding " + str(case) + ": exists (" + str(followups) + ")"
+                continue;
+
+            cases_selected += 1
+            print "Selecting " + str(case)
+            # Get all HRD records fro this case:
+            records = Record.objects.filter(person_id__startswith=case)
+            for r in records:
+                print "   adding " + str(r)
+                insert_list.append(FollowUp(case=r))
+
+        FollowUp.objects.bulk_create(insert_list)
+        self.message_user(request, "Created new follow-up questionnaires for %s cases with %s individual persons." % (cases_selected, len(insert_list)))
+    generate_followups.short_description = u"Generate 100 new follow-up questionnaires"
 
 class OtherRecordAdmin(VersionAdmin):
     exclude = ("analyst",)
