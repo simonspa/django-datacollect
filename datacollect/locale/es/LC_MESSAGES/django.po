@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-06 21:59+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: datacollect/settings.py:127
+msgid "English"
+msgstr ""
+
+#: datacollect/settings.py:128
+msgid "Spanish"
+msgstr ""
+
+#: datacollect/settings.py:129
+msgid "French"
+msgstr ""
+
+#: questionnaire/models.py:22
+msgid "HRD Case Follow-Up"
+msgstr ""
+
+#: questionnaire/models.py:46
+msgid "Timestamp"
+msgstr ""
+
+#: questionnaire/models.py:55
+msgid "Further comments"
+msgstr ""
+
+#: questionnaire/models.py:56
+msgid "Observations that might be relevant but don't fit elsewhere"
+msgstr ""
+
+#: questionnaire/models.py:60
+msgid "Follow-up form answered"
+msgstr ""
+
+#: templates/admin/draw.html:12
+msgid "Home"
+msgstr ""
+
+#: templates/admin/draw.html:19
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:19
+msgid "HRD Case Follow-Up Questionnaire"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:22
+msgid "Case Summary"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:25
+msgid "Country"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:27
+msgid "Date of the intervention"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:32
+msgid "Follow-Up Questionnaire"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:37
+msgid "Warning!"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:37
+msgid ""
+"You can only submit this form once. After submission, the link is "
+"deactivated."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:39
+msgid "Submit"
+msgstr ""

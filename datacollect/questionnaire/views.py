@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 from questionnaire.models import FollowUp
 from questionnaire.forms import FollowUpForm
 
+from django.utils import translation
 
 class FollowUpUpdate(UpdateView):
     model = FollowUp
@@ -20,6 +21,9 @@ class FollowUpUpdate(UpdateView):
         if not obj or obj.is_answered:
             raise Http404("Page not found")
         else:
+            print obj.language
+            translation.activate(obj.language)
+            print translation.get_language()
             return obj
 
     def get_success_url(self):
