@@ -8,12 +8,20 @@ from django.db.utils import IntegrityError
 from django.utils.encoding import force_bytes
 from reversion.admin import VersionAdmin
 from django.db import transaction
-    
+
 class FollowUpAdmin(VersionAdmin):
+    readonly_fields = ['case']
     list_display = ("person_id","name","country","date_intervention","unique_id","language","timestamp","is_answered",)
+    fieldsets = (
+        ('Case information', {
+            'fields': ('case',)
+        }),
+        ('Questionnaire', {
+            'fields': ("language","timestamp","is_answered",)
+    }))
     list_filter = ("is_answered","language",)
     actions = ['mark_as_answered', 'export_urls']
-
+    
     def person_id(self, x):
         return x.case.person_id
     person_id.short_description = 'Person ID'
