@@ -17,8 +17,8 @@ class FollowUpUpdate(UpdateView):
     def get_object(self, **kwargs):
         # get the uuid out of the url group and find the corresponding object
         obj = FollowUp.objects.filter(unique_id=self.kwargs.get('uuid')).first()
-        if obj.is_answered:
-            raise Http404("Page not foundt")
+        if not obj or obj.is_answered:
+            raise Http404("Page not found")
         else:
             return obj
 
