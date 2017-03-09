@@ -11,7 +11,7 @@ from django.db import transaction
 
 class FollowUpAdmin(VersionAdmin):
     readonly_fields = ['case']
-    list_display = ("person_id","name","country","date_intervention","unique_id","language","timestamp","is_answered",)
+    list_display = ("person_id","name","ohchr_case","country","date_intervention","unique_id","language","timestamp","is_answered",)
     fieldsets = (
         ('Case information', {
             'fields': ('case',)
@@ -29,6 +29,10 @@ class FollowUpAdmin(VersionAdmin):
     def name(self, x):
         return x.case.name
     name.short_description = 'Name of HRD'
+
+    def ohchr_case(self, x):
+        return x.case.ohchr_case
+    person_id.short_description = 'OHCHR case no.'
 
     def country(self, x):
         return x.case.country
@@ -52,7 +56,7 @@ class FollowUpAdmin(VersionAdmin):
         response.write(u'\ufeff'.encode('utf8'))
 
         # Write out the column names, read from first item
-        writer.writerow(['case.person_id', 'unique_id','url'])
+        writer.writerow(['case.person_id', 'case.name', 'case.ohchr_case', 'case.country', 'case.date_intervention', 'case.date_incident', 'unique_id','url'])
 
         # Loop over requested records and write out data
         for obj in queryset:
