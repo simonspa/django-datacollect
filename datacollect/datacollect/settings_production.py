@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'reversion',
     'survey',
+    'questionnaire',
     'leaflet',
     'mathfilters'
 ]
