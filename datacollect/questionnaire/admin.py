@@ -32,7 +32,7 @@ class FollowUpAdmin(VersionAdmin):
 
     def ohchr_case(self, x):
         return x.case.ohchr_case
-    person_id.short_description = 'OHCHR case no.'
+    ohchr_case.short_description = 'OHCHR case no.'
 
     def country(self, x):
         return x.case.country
@@ -60,7 +60,7 @@ class FollowUpAdmin(VersionAdmin):
 
         # Loop over requested records and write out data
         for obj in queryset:
-            writer.writerow([obj.case.person_id, obj.unique_id, request.META['HTTP_HOST'] + "/submit/" + str(obj.unique_id)])
+            writer.writerow([obj.case.person_id, obj.case.name.encode('utf8'), obj.case.ohchr_case, obj.case.country, obj.case.date_intervention, obj.case.date_incident, obj.unique_id, request.META['HTTP_HOST'] + "/submit/" + str(obj.unique_id)])
         
         return response
     export_urls.short_description = u"Export URLs"
