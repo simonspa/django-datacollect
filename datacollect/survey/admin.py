@@ -89,7 +89,7 @@ class RecordAdmin(VersionAdmin):
         }),
         ('HRD identity', {
             #'description': 'ex',
-            'fields': ('gender', 'issue_area', ('relevant_activities', 'further_info', 'foreign_national'), 'international_cooperation')
+            'fields': ('gender', 'issue_area', ('relevant_activities', 'further_info', 'foreign_national'), 'affiliation', 'international_cooperation')
             }),
         ('Incident information', {
             'fields': (('location', 'name_area'), ('violation_family','violation_family_who'), ('violations', 'perpetrator')),
@@ -107,7 +107,7 @@ class RecordAdmin(VersionAdmin):
         }),
         ('Additional information', {
             #'classes': ('collapse',),
-            'fields': (('business_case','business_company'),'further_comments','feedback','is_final'),
+            'fields': (('business_case','business_company'),('sources_number','sources_type'),'further_comments','feedback','is_final'),
         }),
     )
     formfield_overrides = {

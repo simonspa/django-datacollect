@@ -294,6 +294,14 @@ class Record(models.Model):
         ("other","Other")
     )
 
+    SOURCES_CHOICES = (
+        ("NGO", "NGO"),
+        ("RNGO", "RNGO"),
+        ("LNGO","LNGO"),
+        ("GOV", "GOV"),
+        ("IO", "IO"),
+        ("IND","Indiv.")
+    )
     
     # Data model implementation
 
@@ -360,6 +368,11 @@ class Record(models.Model):
         max_choices=3,
         default="?",
         help_text="Select maximum 3 items with <i>Ctrl+Click</i>"
+    )
+    affiliation = models.CharField(
+        blank=True,
+        max_length=500,
+        verbose_name="Affiliation"
     )
     further_info = models.TextField(
         blank=True,
@@ -533,6 +546,20 @@ class Record(models.Model):
         blank=True,
         max_length=500,
         verbose_name="Name of company"
+    )
+
+    sources_number = models.CharField(
+        blank=True,
+        max_length=50,
+        verbose_name="Number of sources"
+    )
+
+    sources_type = SelectMultipleField(
+        max_length=50,
+        choices=SOURCES_CHOICES,
+        verbose_name="Type of sources",
+        help_text="Select multiple items with <i>Ctrl+Click</i>",
+        blank=True
     )
 
     coords = PointField(
