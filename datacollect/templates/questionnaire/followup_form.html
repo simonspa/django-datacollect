@@ -19,11 +19,47 @@
 {% block title %}<h1>{% trans "HRD Case Follow-Up Questionnaire" %}</h1>{% endblock %}
 
 {% block content %}
-<h2>{% trans "Case Summary" %}</h2>
+
+<div class="row-fluid">
+  <div class="span12">
+    <h2>{% trans "Case Summary" %}</h2>
+    <table class="table table-striped table-bordered table-condensed">
+      <tbody>
+        <tr>
+          <th>{% trans "Country" %}</th>
+          <td class="data">{{ form.instance.case.country.name }}</td>
+	</tr>
+	<tr>
+	  <th>{% trans "Defender's Name" %}</th>
+          <td class="data">{{ form.instance.case.name }}</td>
+	</tr>
+	<tr>
+          <th>{% trans "Affiliation" %}</th>
+          <td class="data">{{ form.instance.case.affiliation }}</td>
+	</tr>
+	<tr>
+          <th>{% trans "Incidents reported to UN" %}</th>
+          <td class="data">{{ form.instance.case.country.name }}</td>
+	</tr>
+	<tr>
+	  <th>{% trans "Victim(s)" %}</th>
+          <td class="data">{{ form.instance.case.violation_family }}</td>
+	</tr>
+	<tr>
+	  <th>{% trans "Date of last reported indcident" %}</th>
+          <td class="data">{{ form.instance.case.date_incident }}</td>
+	</tr>
+	<tr>
+	  <th>{% trans "UN Communication date" %}</th>
+          <td class="data">{{ form.instance.case.date_intervention }}</td>
+	</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <dl>
-  <dt>{% trans "Country" %}</dt>
-  <dd>{{ form.instance.case.country.name }}</dd>
+  <dt>{% trans "Country" %}</dt><dd>{{ form.instance.case.country.name }}</dd>
   <dt>{% trans "Date of the intervention" %}</dt>
   <dd>{{ form.instance.case.date_intervention }}</dd>
   ...
