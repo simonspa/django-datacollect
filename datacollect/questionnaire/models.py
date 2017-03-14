@@ -32,6 +32,14 @@ class FollowUp(models.Model):
         self.clean()
         super(FollowUp, self).save(*args, **kwargs) # Call the "real" save() method.
 
+    RATING_CHOICES = (
+        (1, _("Much worse")),
+        (2, _("Somewhat worse")),
+        (3, _("Not better, not worse / or alternating")),
+        (4, _("Somewhat better")),
+        (5, _("Much better")),
+        (6, _("I don't know"))
+    )
     
     # Data model implementation
     case = models.OneToOneField(
@@ -49,6 +57,11 @@ class FollowUp(models.Model):
         default = "en",
         max_length=7,
         choices=settings.LANGUAGES
+    )
+    rating = models.IntegerField(
+        choices=RATING_CHOICES,
+        default=None,
+        null=True
     )
     further_comments = models.TextField(
         blank=True,

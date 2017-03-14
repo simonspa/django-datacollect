@@ -7,8 +7,8 @@ class FollowUpForm(forms.ModelForm):
 
     class Meta:
         model = FollowUp
-        fields = ('further_comments', )
-
+        fields = ('rating','further_comments', )
+        #widgets = (forms.RadioSelect
     def clean(self):
         super(FollowUpForm,self).clean()
         #if bool(self.cleaned_data['first_field'])== bool(self.cleaned_data['first_field']):
