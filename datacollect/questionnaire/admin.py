@@ -17,10 +17,10 @@ class FollowUpAdmin(VersionAdmin):
             'fields': ('case',)
         }),
         ('Questionnaire', {
-            'fields': ("language","timestamp","is_answered",)
+            'fields': ("language","timestamp","is_answered","is_processed")
     }))
-    list_filter = ("is_answered","language",)
-    actions = ['mark_as_answered', 'mark_as_processed', 'export_urls']
+    list_filter = ("is_processed","is_answered","language")
+    actions = ['mark_as_answered', 'mark_as_processed', 'mark_as_unprocessed', 'export_urls']
     
     def person_id(self, x):
         return x.case.person_id
@@ -49,6 +49,10 @@ class FollowUpAdmin(VersionAdmin):
     def mark_as_processed(self, request, queryset):
         queryset.update(is_processed=True)
     mark_as_processed.short_description = u"Mark selected follow-up forms as processed"
+
+    def mark_as_unprocessed(self, request, queryset):
+        queryset.update(is_processed=False)
+    mark_as_unprocessed.short_description = u"Mark selected follow-up forms as unprocessed"
 
     def export_urls(self, request, queryset):
         import csv
