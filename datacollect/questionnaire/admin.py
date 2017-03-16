@@ -12,7 +12,6 @@ from django.db import transaction
 class FollowUpAdmin(VersionAdmin):
     readonly_fields = ['case']
     list_display = ("person_id","name","ohchr_case","country","date_intervention","unique_id","language","timestamp","is_answered","is_processed")
-    list_editable = ("is_processed",)
     fieldsets = (
         ('Case information', {
             'fields': ('case',)
@@ -21,7 +20,7 @@ class FollowUpAdmin(VersionAdmin):
             'fields': ("language","timestamp","is_answered",)
     }))
     list_filter = ("is_answered","language",)
-    actions = ['mark_as_answered', 'export_urls']
+    actions = ['mark_as_answered', 'mark_as_processed', 'export_urls']
     
     def person_id(self, x):
         return x.case.person_id
@@ -45,7 +44,11 @@ class FollowUpAdmin(VersionAdmin):
 
     def mark_as_answered(self, request, queryset):
         queryset.update(is_answered=True)
-    mark_as_answered.short_description = u"Mark selected follow-up form as answered"
+    mark_as_answered.short_description = u"Mark selected follow-up forms as answered"
+
+    def mark_as_processed(self, request, queryset):
+        queryset.update(is_processed=True)
+    mark_as_processed.short_description = u"Mark selected follow-up forms as processed"
 
     def export_urls(self, request, queryset):
         import csv
