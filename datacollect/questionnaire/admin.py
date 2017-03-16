@@ -11,7 +11,8 @@ from django.db import transaction
 
 class FollowUpAdmin(VersionAdmin):
     readonly_fields = ['case']
-    list_display = ("person_id","name","ohchr_case","country","date_intervention","unique_id","language","timestamp","is_answered",)
+    list_display = ("person_id","name","ohchr_case","country","date_intervention","unique_id","language","timestamp","is_answered","is_processed")
+    list_editable = ("is_processed",)
     fieldsets = (
         ('Case information', {
             'fields': ('case',)
@@ -56,11 +57,11 @@ class FollowUpAdmin(VersionAdmin):
         response.write(u'\ufeff'.encode('utf8'))
 
         # Write out the column names, read from first item
-        writer.writerow(['case.person_id', 'case.name', 'case.ohchr_case', 'case.country', 'case.date_intervention', 'case.date_incident', 'unique_id','url'])
+        writer.writerow(['case.person_id', 'case.name', 'case.ohchr_case', 'case.country', 'case.date_intervention', 'case.date_incident', 'unique_id','url', 'is_processed'])
 
         # Loop over requested records and write out data
         for obj in queryset:
-            writer.writerow([obj.case.person_id, obj.case.name.encode('utf8'), obj.case.ohchr_case, obj.case.country.alpha3, obj.case.date_intervention, obj.case.date_incident, obj.unique_id, request.META['HTTP_HOST'] + "/submit/" + str(obj.unique_id)])
+            writer.writerow([obj.case.person_id, obj.case.name.encode('utf8'), obj.case.ohchr_case, obj.case.country.alpha3, obj.case.date_intervention, obj.case.date_incident, obj.unique_id, request.META['HTTP_HOST'] + "/submit/" + str(obj.unique_id), obj.is_processed])
         
         return response
     export_urls.short_description = u"Export URLs"

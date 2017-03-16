@@ -72,3 +72,7 @@ class FollowUp(models.Model):
         default = False,
         verbose_name=_("Follow-up form answered")
     )
+    is_processed = models.BooleanField(
+        default = False,
+        verbose_name=_("Follow-up processed")
+    )
