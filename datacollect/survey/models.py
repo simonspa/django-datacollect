@@ -349,6 +349,7 @@ class Record(models.Model):
     follow_ups = models.ManyToManyField(
         'self',
         default = None,
+        blank = True,
         verbose_name="Follow-up Person IDs"
     )
     earlier_coms = models.CharField(
