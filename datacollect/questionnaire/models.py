@@ -46,6 +46,7 @@ class FollowUp(models.Model):
         Record,
         on_delete=models.CASCADE,
         primary_key=True,
+        related_name="followup"
     )
     unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     timestamp = models.DateTimeField(

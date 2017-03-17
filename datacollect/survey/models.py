@@ -568,6 +568,9 @@ class Record(models.Model):
         editable=False
     )
 
+    def has_related_object(self):
+        return hasattr(self, 'followup')
+
     def get_geoname(self):
         return "%s"%(self.country.name) if not self.name_area or self.location == 'A' else "%s, %s"%(self.name_area,self.country.name)
     
