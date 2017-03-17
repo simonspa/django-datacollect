@@ -73,11 +73,29 @@ def duplicate_other_event(modeladmin, request, queryset):
                 pass
 duplicate_other_event.short_description = u"Duplicate"
 
+class RelationListFilter(admin.SimpleListFilter):
+    title = 'Selected for follow-up'
+    parameter_name = 'has_followup'
+
+    def lookups(self, request, model_admin):
+        return (
+            ('y', 'Yes'),
+            ('n', 'No'),
+        )
+
+    def queryset(self, request, queryset):
+
+        followup_y = [rec.person_id for rec in Record.objects.all() if rec.has_related_object()]
+        if self.value() == 'y':
+            return queryset.filter(person_id__in=followup_y)
+
+        if self.value() == 'n':
+            return queryset.exclude(person_id__in=followup_y)
 
 class RecordAdmin(VersionAdmin):
     exclude = ("analyst",)
     list_display = ("person_id","name", "country", "type_intervention", "date_intervention", "further_comments","feedback","analyst","is_final")
-    list_filter = ("is_final","gender","business_case","type_intervention","analyst","country")
+    list_filter = ("is_final",RelationListFilter,"gender","business_case","type_intervention","analyst","country")
     search_fields = ("name","person_id")
     actions = [export_csv,duplicate_event,set_final,'generate_followups'] #, export_xls, export_xlsx]
     fieldsets = (
