@@ -346,12 +346,6 @@ class Record(models.Model):
         default = False,
         verbose_name="Follow-up on UN case"
     )
-    follow_ups = models.ManyToManyField(
-        'self',
-        default = None,
-        blank = True,
-        verbose_name="Follow-up Person IDs"
-    )
     earlier_coms = models.CharField(
         blank=True,
         max_length=500,
