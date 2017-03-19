@@ -125,7 +125,7 @@ class RecordAdmin(VersionAdmin):
         }),
         ('Additional information', {
             #'classes': ('collapse',),
-            'fields': (('business_case','business_company'),('sources_number','sources_type'),'further_comments','feedback','is_final'),
+            'fields': (('business_case','business_company'),('sources_number','sources_type'),('complaint_sent','complaint_received'),'further_comments','feedback','is_final'),
         }),
     )
     formfield_overrides = {

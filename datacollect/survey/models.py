@@ -562,6 +562,20 @@ class Record(models.Model):
         blank=True
     )
 
+    complaint_sent = models.DateField(
+        null=True,
+        blank=True,
+        verbose_name="Complaint sent on",
+        help_text="Format YYY-MM-DD"
+    )
+
+    complaint_received = models.DateField(
+        null=True,
+        blank=True,
+        verbose_name="Complaint received on",
+        help_text="Format YYY-MM-DD"
+    )
+
     coords = PointField(
         blank=True,
         null=True,
