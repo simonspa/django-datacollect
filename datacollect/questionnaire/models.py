@@ -66,6 +66,11 @@ class FollowUp(models.Model):
         max_length=7,
         choices=settings.LANGUAGES
     )
+    rating = models.IntegerField(
+        choices=RATING_CHOICES,
+        default=6,
+        null=True,
+    )
     incident_date_1 = models.DateField(
         null=True,
         blank=True,
@@ -118,6 +123,11 @@ class FollowUp(models.Model):
     incident_text_5 = models.TextField(
         blank=True,
         verbose_name=_("Brief description of the incident"),
+    )
+    attention = models.IntegerField(
+        choices=ATTENTION_CHOICES,
+        default=6,
+        null=True,
     )
     impact = models.TextField(
         blank=True,
