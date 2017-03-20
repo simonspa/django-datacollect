@@ -10,13 +10,11 @@ class FollowUpForm(forms.ModelForm):
     class Meta:
       model = FollowUp
       localized_fields = '__all__'
-      fields = ('rating',
-                'incident_date_1','incident_text_1',
+      fields = ('incident_date_1','incident_text_1',
                 'incident_date_2','incident_text_2',
                 'incident_date_3','incident_text_3',
                 'incident_date_4','incident_text_4',
                 'incident_date_5','incident_text_5',
-                'attention',
                 'impact',
                 'further_comments',
                 'want_informed',
@@ -24,8 +22,6 @@ class FollowUpForm(forms.ModelForm):
                 'email_address',
       )
       widgets = {
-        'rating': forms.RadioSelect(),
-        'attention': forms.RadioSelect(),
         'impact': forms.Textarea(attrs={'rows': 3,
                                         'cols': 40,
                                         'style': 'height: 8em;'}),
@@ -60,7 +56,6 @@ class FollowUpForm(forms.ModelForm):
           '1. Development of the situation',
           HTML("<p>In light of these attacks before the Special Rapporteur\'s action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation within one year after this date?</p>"),
           #InlineRadios('rating'),
-          'rating',
         ),
         Fieldset(
           '2. Significant incidents',
@@ -97,7 +92,6 @@ class FollowUpForm(forms.ModelForm):
         Fieldset(
           '3. International attention',
           HTML("<p>Do you believe that the international attention to {{ form.instance.case.name }}\'s case, including from the UN, did have an impact on the development of [his/her] situation during this period?</p>"),
-          'attention',
           ),
         Fieldset(
           '4. Impact of the attention',

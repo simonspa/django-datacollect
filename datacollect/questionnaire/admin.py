@@ -17,8 +17,7 @@ class FollowUpAdmin(VersionAdmin):
             'fields': ('case',)
         }),
         ('Questionnaire', {
-            'fields': ("rating",
-                       "incident_date_1","incident_text_1",)
+            'fields': ("incident_date_1","incident_text_1",)
         }),
         ('Further incidents', {
             'classes': ('collapse',),
@@ -29,8 +28,7 @@ class FollowUpAdmin(VersionAdmin):
             )
         }),
         (None, {
-            'fields': ("attention",
-                       "impact",
+            'fields': ("impact",
                        "further_comments",)
         }),
         ('Voluntary contact information', {
