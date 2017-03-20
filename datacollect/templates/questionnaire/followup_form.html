@@ -15,6 +15,9 @@
     color: white;
     margin-bottom: 15px;
 }
+legend {
+    padding-top: 2em;
+}
 </style>
 {% endblock %}
 
@@ -41,11 +44,23 @@
 	</tr>
 	<tr>
           <th>{% trans "Incidents reported to UN" %}</th>
-          <td class="data">{{ form.instance.case.violations }}</td>
+          <td class="data">
+	    {% for i in form.instance.case.violations %}
+	    {{ i|display_violation }}</br>
+	    {% endfor %}
+	  </td>
 	</tr>
 	<tr>
 	  <th>{% trans "Victim(s)" %}</th>
-          <td class="data">{{ form.instance.case.violation_family }}</td>
+          <td class="data">
+	    {% if form.instance.case.violation_family == 0 %}
+	    {% trans "Only HRD" %}
+	    {% elif form.instance.case.violation_family == 1 %}
+	    {% trans "Against relatives of the HRD" %}
+	    {% elif form.instance.case.violation_family == 2 %}
+	    {% trans "Against both the HRD and relatives" %}
+	    {% endif %}
+	  </td>
 	</tr>
 	<tr>
 	  <th>{% trans "Date of last reported indcident" %}</th>
