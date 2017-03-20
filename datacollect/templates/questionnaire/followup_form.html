@@ -3,6 +3,8 @@
 {% load get_item }
 {% load mathfilters %}
 {% load i18n %}
+{% trans alert %}
+{% load crispy_forms_tags %}
 
 {% block extra_head %}
 <style type="text/css">
@@ -58,23 +60,13 @@
   </div>
 </div>
 
-<dl>
-  <dt>{% trans "Country" %}</dt><dd>{{ form.instance.case.country.name }}</dd>
-  <dt>{% trans "Date of the intervention" %}</dt>
-  <dd>{{ form.instance.case.date_intervention }}</dd>
-  ...
-</dl>
-
 <h2>{% trans "Follow-Up Questionnaire" %}</h2>
-<form action="" method="post">
-  {% csrf_token %}
-  {% blocktrans with comdate=form.instance.case.date_intervention hrd=form.instance.case.name %}
-In light of these attacks before the Special Rapporteur's action on {{ comdate }}, how would you describe the development of {{ hrd }}'s situation within one year after this date?
-{% endblocktrans %}
-  {{ form.as_p }}
-  <div class="alert">
-    <strong>{% trans "Warning!" %}</strong> {% trans "You can only submit this form once. After submission, the link is deactivated." %}
-  </div>
-  <input type="submit" value="{% trans "Submit" %}" />
-</form>
+<p></p>
+<div class="form-group row" id="questionnaire">
+  <form action="" method="post">
+    {% csrf_token %}
+    {% crispy form form.helper %}
+  </form>
+</div>
 {% endblock %}
+

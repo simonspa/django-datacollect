@@ -17,8 +17,32 @@ class FollowUpAdmin(VersionAdmin):
             'fields': ('case',)
         }),
         ('Questionnaire', {
-            'fields': ("language","timestamp","is_answered","is_processed")
-    }))
+            'fields': ("rating",
+                       "incident_date_1","incident_text_1",)
+        }),
+        ('Further incidents', {
+            'classes': ('collapse',),
+            'fields': ("incident_date_2","incident_text_2",
+                       "incident_date_3","incident_text_3",
+                       "incident_date_4","incident_text_4",
+                       "incident_date_5","incident_text_5",
+            )
+        }),
+        (None, {
+            'fields': ("attention",
+                       "impact",
+                       "further_comments",)
+        }),
+        ('Voluntary contact information', {
+            'fields': ("want_informed",
+                       "contact_again",
+                       "email_address",
+                       )
+        }),
+        ('Metadata', {
+            'fields': ("language","timestamp","is_answered","is_processed",)
+        })
+    )
     list_filter = ("is_processed","is_answered","language")
     actions = ['mark_as_answered', 'mark_as_processed', 'mark_as_unprocessed', 'export_urls']
     

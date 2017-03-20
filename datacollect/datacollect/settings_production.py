@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'survey',
     'questionnaire',
     'leaflet',
+    'crispy_forms',
     'mathfilters'
 ]
 
@@ -170,6 +171,8 @@ BOOTSTRAP3 = {
     'required_css_class': 'bootstrap3-required',
     'javascript_in_head': True,
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 LOGIN_REDIRECT_URL = '/'
 
