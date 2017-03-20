@@ -3,7 +3,7 @@ from django.utils import timezone
 from .models import FollowUp
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Button
-from crispy_forms.bootstrap import TabHolder, Tab, InlineRadios, FormActions
+from crispy_forms.bootstrap import TabHolder, Tab, InlineRadios, FormActions, Alert
 
 class FollowUpForm(forms.ModelForm):
 
@@ -116,7 +116,7 @@ class FollowUpForm(forms.ModelForm):
         ),
         Fieldset(
           'Submission',
-          HTML('<div class="alert"><strong>Warning!</strong> You can only submit this form once. After submission, the link is deactivated.</div>'),
+          Alert(content='<strong>Warning!</strong> You can only submit this form once. After submission, the link is deactivated.'),
           HTML("<p>Thank you for your contribution!</p>"),
           FormActions(
             Submit('save', 'Submit'),
