@@ -26,6 +26,27 @@ class FollowUpForm(forms.ModelForm):
       widgets = {
         'rating': forms.RadioSelect(),
         'attention': forms.RadioSelect(),
+        'impact': forms.Textarea(attrs={'rows': 3,
+                                        'cols': 40,
+                                        'style': 'height: 8em;'}),
+        'incident_text_1' : forms.Textarea(attrs={'rows': 3,
+                                        'cols': 40,
+                                        'style': 'height: 8em;'}),
+        'incident_text_2' : forms.Textarea(attrs={'rows': 3,
+                                        'cols': 40,
+                                        'style': 'height: 8em;'}),
+        'incident_text_3' : forms.Textarea(attrs={'rows': 3,
+                                        'cols': 40,
+                                        'style': 'height: 8em;'}),
+        'incident_text_4' : forms.Textarea(attrs={'rows': 3,
+                                        'cols': 40,
+                                        'style': 'height: 8em;'}),
+        'incident_text_5' : forms.Textarea(attrs={'rows': 3,
+                                        'cols': 40,
+                                        'style': 'height: 8em;'}),
+        'further_comments' : forms.Textarea(attrs={'rows': 3,
+                                        'cols': 40,
+                                        'style': 'height: 8em;'}),
       }
 
     def __init__(self, *args, **kwargs):
@@ -36,12 +57,14 @@ class FollowUpForm(forms.ModelForm):
       self.helper.field_class = 'col-lg-8'
       self.helper.layout = Layout(
         Fieldset(
-          '1. In light of these attacks before the Special Rapporteur\'s action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation within one year after this date?',
+          '1. Development of the situation',
+          HTML("<p>In light of these attacks before the Special Rapporteur\'s action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation within one year after this date?</p>"),
           #InlineRadios('rating'),
           'rating',
         ),
         Fieldset(
-          '2. Please indicate all significant incidents during that period that you are aware of (if there were more than 5, concentrate on the most important ones):',
+          '2. Significant incidents',
+          HTML("<p>Please indicate all significant incidents during that period that you are aware of (if there were more than 5, concentrate on the most important ones):</p>"),
           TabHolder(
             Tab(
               'Incident #1',
@@ -72,11 +95,13 @@ class FollowUpForm(forms.ModelForm):
           ),
         ),
         Fieldset(
-          '3. Do you believe that the international attention to {{ form.instance.case.name }}\'s case, including from the UN, did have an impact on the development of [his/her] situation during this period?',
+          '3. International attention',
+          HTML("<p>Do you believe that the international attention to {{ form.instance.case.name }}\'s case, including from the UN, did have an impact on the development of [his/her] situation during this period?</p>"),
           'attention',
           ),
         Fieldset(
-          '4. Please give as much detail as possible on what makes you believe that it had (no) impact, and what kind of impact it had, if any:',
+          '4. Impact of the attention',
+          HTML("<p>Please give as much detail as possible on what makes you believe that it had (no) impact, and what kind of impact it had, if any:</p>"),
           'impact',
         ),
         Fieldset(

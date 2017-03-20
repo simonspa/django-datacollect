@@ -60,13 +60,17 @@
   </div>
 </div>
 
-<h2>{% trans "Follow-Up Questionnaire" %}</h2>
-<p></p>
-<div class="form-group row" id="questionnaire">
-  <form action="" method="post">
+<div class="row-fluid">
+  <div class="span12">
+    <h2>{% trans "Follow-Up Questionnaire" %}</h2>
+    <p></p>
+    <div class="form-group row" id="questionnaire">
+      <form action="" method="post">
     {% csrf_token %}
     {% crispy form form.helper %}
-  </form>
+      </form>
+    </div>
+  </div>
 </div>
 {% endblock %}
 
