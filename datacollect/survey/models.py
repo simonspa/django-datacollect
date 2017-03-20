@@ -295,7 +295,7 @@ class Record(models.Model):
     )
 
     SOURCES_CHOICES = (
-        ("NGO", "NGO"),
+        ("NGO", "INGO"),
         ("RNGO", "RNGO"),
         ("LNGO","LNGO"),
         ("GOV", "GOV"),
