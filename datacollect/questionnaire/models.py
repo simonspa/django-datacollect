@@ -33,11 +33,11 @@ class FollowUp(models.Model):
         super(FollowUp, self).save(*args, **kwargs) # Call the "real" save() method.
 
     RATING_CHOICES = (
-        (1, _("Much worse")),
-        (2, _("Somewhat worse")),
-        (3, _("Not better, not worse / or alternating")),
-        (4, _("Somewhat better")),
-        (5, _("Much better")),
+        (1, _("Much better")),
+        (2, _("Somewhat better")),
+        (3, _("Situation stayed the same overall")),
+        (4, _("Somewhat worse")),
+        (5, _("Much worse")),
         (6, _("I don't know"))
     )
     ATTENTION_CHOICES = (
@@ -136,7 +136,6 @@ class FollowUp(models.Model):
     further_comments = models.TextField(
         blank=True,
         verbose_name=_("Further comments"),
-        help_text=_("Observations that might be relevant but don't fit elsewhere")
     )
     want_informed = models.BooleanField(
         default = False,
@@ -153,7 +152,6 @@ class FollowUp(models.Model):
         blank=True,
         null=True,
         verbose_name=_("Email address"),
-        help_text=_("please note that by submitting your email address, your contact will be known by and can be connected to this case by the independent researcher carrying out the analysis. If you don't indicate your contact details, your submission will remain anonymous")
     )
     is_answered = models.BooleanField(
         default = False,
