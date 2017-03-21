@@ -64,10 +64,16 @@ legend {
 	</tr>
 	<tr>
 	  <th>{% trans "Date of last reported indcident" %}</th>
-          <td class="data">{{ form.instance.case.date_incident }}</td>
+          <td class="data">
+	    {% if form.instance.case.date_incident == None %}
+	    {{ form.instance.case.date_incident_unspecific }}
+	    {% else %}
+	    {{ form.instance.case.date_incident }}
+	    {% endif %}
+	  </td>
 	</tr>
 	<tr>
-	  <th>{% trans "UN Communication date" %}</th>
+	  <th>{% trans "Date of UN action" %}</th>
           <td class="data">{{ form.instance.case.date_intervention }}</td>
 	</tr>
       </tbody>

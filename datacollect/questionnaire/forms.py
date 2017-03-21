@@ -53,17 +53,21 @@ class FollowUpForm(forms.ModelForm):
       super(FollowUpForm, self).__init__(*args, **kwargs)
       self.helper = FormHelper(self)
       self.helper.form_class = 'form-horizontal'
-      self.helper.label_class = 'col-lg-3'
+      self.helper.label_class = 'col-lg-4'
       self.helper.field_class = 'col-lg-8'
       self.helper.layout = Layout(
         Fieldset(
-          '1. Development of the situation',
-          HTML("<p>In light of these attacks before the Special Rapporteur\'s action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation within one year after this date?</p>"),
-          #InlineRadios('rating'),
-          'rating',
+            '1. Familiarity',
+            HTML("<p>How familiar are you with {{ form.instance.case.name }}'s case in the period from {{ form.instance.case.date_intervention }} until one year later?</p>"),
         ),
         Fieldset(
-          '2. Significant incidents',
+          '2. Development of the situation',
+            HTML("<p>In light of the attacks (see above) that occurred before the Special Rapporteur's action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation/case <strong>within one year</strong> after this date?</p>"),
+          'rating',
+            HTML("<p>If you are not sure how to assess the case, here is a table with various examples.</p>"),
+        ),
+        Fieldset(
+          '3. Significant incidents',
           HTML("<p>Please indicate all significant incidents during that period that you are aware of (if there were more than 5, concentrate on the most important ones):</p>"),
           TabHolder(
             Tab(
@@ -95,24 +99,25 @@ class FollowUpForm(forms.ModelForm):
           ),
         ),
         Fieldset(
-          '3. International attention',
-          HTML("<p>Do you believe that the international attention to {{ form.instance.case.name }}\'s case, including from the UN, did have an impact on the development of [his/her] situation during this period?</p>"),
+          '4. International attention',
+          HTML("<p>Do you believe that the international attention to {{ form.instance.case.name }}\'s case, including from the UN, did have an impact on the development of his/her situation during this period?</p>"),
           'attention',
           ),
         Fieldset(
-          '4. Impact of the attention',
-          HTML("<p>Please give as much detail as possible on what makes you believe that it had (no) impact, and what kind of impact it had, if any:</p>"),
+          '5. Impact of the attention',
+          HTML("<p>Please provide as much detail as possible on what makes you come to this conclusion, as well as on what kind of impact the attention had (if any):</p>"),
           'impact',
         ),
         Fieldset(
-          '5. Further comments/feedback:',
+          '6. Further comments/feedback:',
           'further_comments',
           ),
         Fieldset(
-          '6. Voluntary contact information:',
+          '7. Voluntary contact information:',
           'want_informed',
           'contact_again',
           'email_address',
+            HTML("(Please note that by submitting your email address, your contact can be connected to this case by the independent researcher carrying out the analysis. If you don't indicate your contact details, your submission will remain anonymous. If you wish to receive further information but do not want to be connected to this case, you can write to <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>.)"),
         ),
         Fieldset(
           'Submission',
