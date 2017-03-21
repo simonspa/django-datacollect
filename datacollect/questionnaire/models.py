@@ -32,6 +32,12 @@ class FollowUp(models.Model):
         self.clean()
         super(FollowUp, self).save(*args, **kwargs) # Call the "real" save() method.
 
+    FAMILIARITY_CHOICES = (
+        (1, _("I am very familiar with the case.")),
+        (2, _("I have information but it might be incomplete.")),
+        (3, _("I only have little information.")),
+        (4, _("I don't have any information.")),
+    )
     RATING_CHOICES = (
         (1, _("Much better")),
         (2, _("Somewhat better")),
@@ -65,6 +71,11 @@ class FollowUp(models.Model):
         default = "en",
         max_length=7,
         choices=settings.LANGUAGES
+    )
+    familiarity = models.IntegerField(
+        choices=FAMILIARITY_CHOICES,
+        default=4,
+        null=True,
     )
     rating = models.IntegerField(
         choices=RATING_CHOICES,

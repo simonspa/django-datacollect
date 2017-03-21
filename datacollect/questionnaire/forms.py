@@ -10,7 +10,8 @@ class FollowUpForm(forms.ModelForm):
     class Meta:
       model = FollowUp
       localized_fields = '__all__'
-      fields = ('rating',
+      fields = ('familiarity',
+                'rating',
                 'incident_date_1','incident_text_1',
                 'incident_date_2','incident_text_2',
                 'incident_date_3','incident_text_3',
@@ -25,6 +26,7 @@ class FollowUpForm(forms.ModelForm):
       )
       widgets = {
         'rating': forms.RadioSelect(),
+        'familiarity': forms.RadioSelect(),
         'attention': forms.RadioSelect(),
         'impact': forms.Textarea(attrs={'rows': 3,
                                         'cols': 40,
@@ -59,6 +61,7 @@ class FollowUpForm(forms.ModelForm):
         Fieldset(
             '1. Familiarity',
             HTML("<p>How familiar are you with {{ form.instance.case.name }}'s case in the period from {{ form.instance.case.date_intervention }} until one year later?</p>"),
+            'familiarity',
         ),
         Fieldset(
           '2. Development of the situation',

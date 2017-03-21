@@ -17,7 +17,7 @@ class FollowUpAdmin(VersionAdmin):
             'fields': ('case',)
         }),
         ('Questionnaire', {
-            'fields': ("rating",
+            'fields': ("familiarity","rating",
                        "incident_date_1","incident_text_1",)
         }),
         ('Further incidents', {
