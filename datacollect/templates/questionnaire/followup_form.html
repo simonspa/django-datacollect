@@ -54,11 +54,11 @@ legend {
 	  <th>{% trans "Victim(s)" %}</th>
           <td class="data">
 	    {% if form.instance.case.violation_family == 0 %}
-	    {% trans "Only HRD" %}
+	    {% trans "Defender him/herself" %}
 	    {% elif form.instance.case.violation_family == 1 %}
-	    {% trans "Against relatives of the HRD" %}
+	    {% trans "Relatives of the defender" %}
 	    {% elif form.instance.case.violation_family == 2 %}
-	    {% trans "Against both the HRD and relatives" %}
+	    {% trans "Defender and his/her relatives" %}
 	    {% endif %}
 	  </td>
 	</tr>
