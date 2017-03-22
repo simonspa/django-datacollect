@@ -40,7 +40,7 @@ class FollowUpAdmin(VersionAdmin):
                        )
         }),
         ('Metadata', {
-            'fields': ("language","timestamp","is_answered","is_processed",)
+            'fields': ("language","timestamp","is_answered","is_processed","internal_comments")
         })
     )
     list_filter = ("is_processed","is_answered","language")

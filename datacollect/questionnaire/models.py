@@ -172,3 +172,7 @@ class FollowUp(models.Model):
         default = False,
         verbose_name=_("Follow-up processed")
     )
+    internal_comments = models.TextField(
+        blank=True,
+        verbose_name=_("Internal comments"),
+    )
