@@ -11,7 +11,7 @@ from django.db import transaction
 
 class FollowUpAdmin(VersionAdmin):
     readonly_fields = ['case']
-    list_display = ("person_id","name","ohchr_case","country","date_intervention","unique_id","language","timestamp","is_answered","is_processed")
+    list_display = ("person_id","name","affiliation","ohchr_case","country","date_intervention","unique_id","language","timestamp","is_answered","is_processed")
     fieldsets = (
         ('Case information', {
             'fields': ('case',)
@@ -57,6 +57,10 @@ class FollowUpAdmin(VersionAdmin):
     def ohchr_case(self, x):
         return x.case.ohchr_case
     ohchr_case.short_description = 'OHCHR case no.'
+
+    def affiliation(self, x):
+        return x.case.affiliation
+    affiliation.short_description = 'Affiliation'
 
     def country(self, x):
         return x.case.country.alpha3
