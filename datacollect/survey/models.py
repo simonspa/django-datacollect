@@ -7,6 +7,7 @@ from select_multiple_field.models import SelectMultipleField
 from django.core.exceptions import ValidationError
 from django.core.validators import int_list_validator, MinLengthValidator
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 
 import json
 from geopy.exc import GeocoderServiceError
@@ -90,385 +91,394 @@ class Record(models.Model):
     # Choices for select boxes
 
     GENDER_CHOICES = (
-        (0, "Male"),
-        (1, "Female"),
-        (2, "Trans/inter*"),
-        (3, "Gender unclear")
+        (0, _("Male")),
+        (1, _("Female")),
+        (2, _("Trans/inter*")),
+        (3, _("Gender unclear"))
     )
 
     ISSUE_CHOICES = (
-        ("?","N/A"),
-        ("WR","Women's rights"),
-        ("CRS","Children's rights"),
-        ("IPR","Indigenous peoples' rights"),
-        ("LGBTI","LGBTI issues"),
-        ("MRR","Migrants'/refugees'/IDP's rights"),
-        ("MR","Ethnic minorities' rights"),
-        ("LR","Labour rights"),
-        ("POV","Poverty/social welfare"),
-        ("RTF","Right to food/water"),
-        ("HI","Health issues"),
-        ("RE","Right to education"),
-        ("HRFE","Housing rights/forced evictions"),
-        ("LNR","Land rights/environment"),
-        ("CR","Cultural rights"),
-        ("RF","Religious freedom"),
-        ("PR","Prisoner's rights"),
-        ("AT","Torture"),
-        ("DP","Death penalty"),
-        ("ED","Enforced disappearance"),
-        ("H","Homocide"),
-        ("PV","Police/military violence"),
-        ("NSV","Non-state violence"),
-        ("AC","Corruption"),
-        ("DV","Democratic/voting rights"),
-        ("JI","Judicial independence"),
-        ("IF","Internet freedom"),
-        ("HRE","Human rights education"),
-        ("TJ","Transitional justice"),
-        ("PA","Peace activism"),
-        ("AR","Anti-racism"),
-        ("RP","Right to privacy")
+        ("?",_("N/A")),
+        ("WR",_("Women's rights")),
+        ("CRS",_("Children's rights")),
+        ("IPR",_("Indigenous peoples' rights")),
+        ("LGBTI",_("LGBTI issues")),
+        ("MRR",_("Migrants'/refugees'/IDP's rights")),
+        ("MR",_("Ethnic minorities' rights")),
+        ("LR",_("Labour rights")),
+        ("POV",_("Poverty/social welfare")),
+        ("RTF",_("Right to food/water")),
+        ("HI",_("Health issues")),
+        ("RE",_("Right to education")),
+        ("HRFE",_("Housing rights/forced evictions")),
+        ("LNR",_("Land rights/environment")),
+        ("CR",_("Cultural rights")),
+        ("RF",_("Religious freedom")),
+        ("PR",_("Prisoner's rights")),
+        ("AT",_("Torture")),
+        ("DP",_("Death penalty")),
+        ("ED",_("Enforced disappearance")),
+        ("H",_("Homocide")),
+        ("PV",_("Police/military violence")),
+        ("NSV",_("Non-state violence")),
+        ("AC",_("Corruption")),
+        ("DV",_("Democratic/voting rights")),
+        ("JI",_("Judicial independence")),
+        ("IF",_("Internet freedom")),
+        ("HRE",_("Human rights education")),
+        ("TJ",_("Transitional justice")),
+        ("PA",_("Peace activism")),
+        ("AR",_("Anti-racism")),
+        ("RP",_("Right to privacy")),
     )
     
     ACTIVITIES_CHOICES = (
-        ("?","N/A"),
-        ("CSA","Civil society activist"),
-        ("TUA","Trade union activist"),
-        ("RA","Religious association"),
-        ("PM","Politician/Party member"),
-        ("CL","Community leader"),
-        ("L","Lawyer/Judge/Attorney"),
-        ("J","Journalist/Editor"),
-        ("CA","Cyberactivist"),
-        ("A","Artist/Writer"),
-        ("S","Student"),
-        ("T","Teacher/Professor/Scientist"),
-        ("MP","Medical professional"),
-        ("HW","Humanitarian worker"),
-        ("V","Victim/witness of HR violations"),
-        ("OP","Ombudsperson/Procuraduria/NHRI"),
-        ("UN","UN official"),
-        ("GAS","Government/Army/Security forces"),
-        ("I","Investigation against officials"),
-        ("PC","Participation in conference/meeting"),
-        ("PP","Participation in public protest/rally")
+        ("?",_("N/A")),
+        ("CSA",_("Civil society activist")),
+        ("TUA",_("Trade union activist")),
+        ("RA",_("Religious association")),
+        ("PM",_("Politician/Party member")),
+        ("CL",_("Community leader")),
+        ("L",_("Lawyer/Judge/Attorney")),
+        ("J",_("Journalist/Editor")),
+        ("CA",_("Cyberactivist")),
+        ("A",_("Artist/Writer")),
+        ("S",_("Student")),
+        ("T",_("Teacher/Professor/Scientist")),
+        ("MP",_("Medical professional")),
+        ("HW",_("Humanitarian worker")),
+        ("V",_("Victim/witness of HR violations")),
+        ("OP",_("Ombudsperson/Procuraduria/NHRI")),
+        ("UN",_("UN official")),
+        ("GAS",_("Government/Army/Security forces")),
+        ("I",_("Investigation against officials")),
+        ("PC",_("Participation in conference/meeting")),
+        ("PP",_("Participation in public protest/rally")),
     )
 
     COOPERATION_CHOICES = (
-        (0, "Not mentioned"),
-        (1, "UN"),
-        (2, "INGO/other IO")
+        (0,_("Not mentioned")),
+        (1,_("UN")),
+        (2,_("INGO/other IO")),
     )
 
     LOCATION_CHOICES = (
-        ("C","Capital"),
-        ("T","City/Town"),
-        ("R","Rural area"),
-        ("A","Abroad"),
-        ("?","Unknown")
+        ("C",_("Capital")),
+        ("T",_("City/Town")),
+        ("R",_("Rural area")),
+        ("A",_("Abroad")),
+        ("?",_("Unknown"))
     )
 
     VIOLATION_FAMILY_CHOICES = (
-        (0,"Only HRD"),
-        (1,"against relative"),
-        (2,"against both")
+        (0,_("Only HRD")),
+        (1,_("against relative")),
+        (2,_("against both")),
     )
 
     VIOLATIONS_CHOICES = (
-        ("?","N/A"),
-        ("AD","Arrest/Detention"),
-        ("IC","Incommunicado"),
-        ("PC","Held in poor conditions"),
-        ("RT","Risk of torture"),
-        ("TI","Torture/Ill-treatment"),
-        ("ED","Enforced disappearance"),
-        ("KA","Physical attack"),
-        ("KK","Killing attempt"),
-        ("K","Killing"),
-        ("DI","Kidnapping"),
-        ("P","Trial"),
-        ("UT","Unfair trial"),
-        ("C","Conviction"),
-        ("T","Threats"),
-        ("S","Surveillance"),
-        ("R","Office/home raided"),
-        ("PD","Property stolen/confiscated/destroyed"),
-        ("DC","Defamation campaign"),
-        ("DP","Disciplinary proceedings"),
-        ("B","Travel restrictions"),
-        ("A","Access denied"),
-        ("VD","Expulsion/Visa denied"),
-        ("AH","Administrative harassment"),
-        ("FI","Failure to intervene/protect")
+        ("?",_("N/A")),
+        ("AD",_("Arrest/Detention")),
+        ("IC",_("Incommunicado")),
+        ("PC",_("Held in poor conditions")),
+        ("RT",_("Risk of torture")),
+        ("TI",_("Torture/Ill-treatment")),
+        ("ED",_("Enforced disappearance")),
+        ("KA",_("Physical attack")),
+        ("KK",_("Killing attempt")),
+        ("K",_("Killing")),
+        ("DI",_("Kidnapping")),
+        ("P",_("Trial")),
+        ("UT",_("Unfair trial")),
+        ("C",_("Conviction")),
+        ("T",_("Threats")),
+        ("S",_("Surveillance")),
+        ("R",_("Office/home raided")),
+        ("PD",_("Property stolen/confiscated/destroyed")),
+        ("DC",_("Defamation campaign")),
+        ("DP",_("Disciplinary proceedings")),
+        ("B",_("Travel restrictions")),
+        ("A",_("Access denied")),
+        ("VD",_("Expulsion/Visa denied")),
+        ("AH",_("Administrative harassment")),
+        ("FI",_("Failure to intervene/protect")),
     )
 
     PERPETRATOR_CHOICES = (
-        ("U","Unknown"),
-        ("P","Police/security forces"),
-        ("CS","Public official/administration/judiciary"),
-        ("A","Army"),
-        ("AO","Armed opposition"),
-        ("B","Business/landholder"),
-        ("M","Mob"),
-        ("PM","Paramilitary group"),
-        ("PP","Private person"),
-        ("RA","Religious authority")
+        ("U",_("Unknown")),
+        ("P",_("Police/security forces")),
+        ("CS",_("Public official/administration/judiciary")),
+        ("A",_("Army")),
+        ("AO",_("Armed opposition")),
+        ("B",_("Business/landholder")),
+        ("M",_("Mob")),
+        ("PM",_("Paramilitary group")),
+        ("PP",_("Private person")),
+        ("RA",_("Religious authority")),
     )
 
     INTERVENTION_CHOICES = (
-        ("?","N/A"),
-        ("UA","UA"),
-        ("JUA","JUA"),
-        ("AL","AL"),
-        ("JAL","JAL"),
-        ("PR","PR")
+        ("?",_("N/A")),
+        ("UA",_("UA")),
+        ("JUA",_("JUA")),
+        ("AL",_("AL")),
+        ("JAL",_("JAL")),
+        ("PR",_("PR")),
     )
 
     JOINT_CHOICES = (
-        ("FrASSEM","FrASSEM"),
-        ("FrEXPRESS","FrEXPRESS"),
-        ("TORTURE","TORTURE"),
-        ("WGAD","WGAD"),
-        ("WGED","WGED"),
-        ("SumEXECU","SumEXECU"),
-        ("WOMEN","WOMEN"),
-        ("FrRELIGION","FrRELIGION"),
-        ("JUDGES","JUDGES"),
-        ("INDIGENOUS","INDIGENOUS"),
-        ("TERRORISM","TERRORISM"),
-        ("BUSINESS","BUSINESS"),
-        ("HEALTH","HEALTH"),
-        ("ENVIR","ENVIR"),
-        ("FOOD","FOOD"),
-        ("CHILD","CHILD"),
-        ("RACISM","RACISM"),
-        ("HOUSING","HOUSING"),
-        ("MINORITY","MINORITY"),
-        ("EDUCATION","EDUCATION"),
-        ("MIGRANTS","MIGRANTS"),
-        ("WASTE","WASTE"),
-        ("IDPs","IDPs"),
-        ("WG_WOMEN","WG_WOMEN"),
-        ("MERCENARIES","MERCENARIES"),
-        ("TRUTH","TRUTH"),
-        ("POVERTY","POVERTY"),
-        ("CULTURE","CULTURE"),
-        ("ELDERLY","ELDERLY"),
-        ("SLAVERY","SLAVERY"),
-        ("WATER","WATER"),
-        ("AFRICAN","AFRICAN"),
-        ("DISCAPA","DISCAPA"),
-        ("SOLIDAR","SOLIDAR"),
-        ("INTORDER","INT'ORDER"),
-        ("TRAFFIC","TRAFFIC"),
-        ("specific","Country-specific")
+        ("FrASSEM",_("FrASSEM")),
+        ("FrEXPRESS",_("FrEXPRESS")),
+        ("TORTURE",_("TORTURE")),
+        ("WGAD",_("WGAD")),
+        ("WGED",_("WGED")),
+        ("SumEXECU",_("SumEXECU")),
+        ("WOMEN",_("WOMEN")),
+        ("FrRELIGION",_("FrRELIGION")),
+        ("JUDGES",_("JUDGES")),
+        ("INDIGENOUS",_("INDIGENOUS")),
+        ("TERRORISM",_("TERRORISM")),
+        ("BUSINESS",_("BUSINESS")),
+        ("HEALTH",_("HEALTH")),
+        ("ENVIR",_("ENVIR")),
+        ("FOOD",_("FOOD")),
+        ("CHILD",_("CHILD")),
+        ("RACISM",_("RACISM")),
+        ("HOUSING",_("HOUSING")),
+        ("MINORITY",_("MINORITY")),
+        ("EDUCATION",_("EDUCATION")),
+        ("MIGRANTS",_("MIGRANTS")),
+        ("WASTE",_("WASTE")),
+        ("IDPs",_("IDPs")),
+        ("WG_WOMEN",_("WG_WOMEN")),
+        ("MERCENARIES",_("MERCENARIES")),
+        ("TRUTH",_("TRUTH")),
+        ("POVERTY",_("POVERTY")),
+        ("CULTURE",_("CULTURE")),
+        ("ELDERLY",_("ELDERLY")),
+        ("SLAVERY",_("SLAVERY")),
+        ("WATER",_("WATER")),
+        ("AFRICAN",_("AFRICAN")),
+        ("DISCAPA",_("DISCAPA")),
+        ("SOLIDAR",_("SOLIDAR")),
+        ("INTORDER",_("INT'ORDER")),
+        ("TRAFFIC",_("TRAFFIC")),
+        ("specific",_("Country-specific")),
     )
 
     CONCERN_CHOICES = (
-        ("CV","Concern over violation"),
-        ("PV","Concern: Pattern of violation"),
-        ("PM","Demand: Protection measures"),
-        ("II","Demand: Independent investigation"),
-        ("PI","Demand: Provide information"),
-        ("RD","Demand: Release detainee")
+        ("CV",_("Concern over violation")),
+        ("PV",_("Concern: Pattern of violation")),
+        ("PM",_("Demand: Protection measures")),
+        ("II",_("Demand: Independent investigation")),
+        ("PI",_("Demand: Provide information")),
+        ("RD",_("Demand: Release detainee")),
     )
 
     GOV_REPLY_CHOICES = (
-        ("reject","Violation rejected"),
-        ("incomp","Reponsive but incomplete"),
-        ("immat","Immaterial response"),
-        ("react","Steps taken to address"),
-        ("transl","In translation"),
-        ("na","File not available")
+        ("reject",_("Violation rejected")),
+        ("incomp",_("Reponsive but incomplete")),
+        ("immat",_("Immaterial response")),
+        ("react",_("Steps taken to address")),
+        ("transl",_("In translation")),
+        ("na",_("File not available")),
     )
 
     GOV_ACTION_CHOICES = (
-        ("protect","Protection measures granted"),
-        ("release","Individual released early"),
-        ("notrial","Individual released without trial"),
-        ("improve","Improved prison conditions"),
-        ("investigate","Investigation opened"),
-        ("prosecuted","Perpetrator suspended/prosecuted"),
-        ("issued","Travel documents issued"),
-        ("other","Other")
+        ("protect",_("Protection measures granted")),
+        ("release",_("Individual released early")),
+        ("notrial",_("Individual released without trial")),
+        ("improve",_("Improved prison conditions")),
+        ("investigate",_("Investigation opened")),
+        ("prosecuted",_("Perpetrator suspended/prosecuted")),
+        ("issued",_("Travel documents issued")),
+        ("other",_("Other")),
     )
 
     SOURCES_CHOICES = (
-        ("NGO", "INGO"),
-        ("RNGO", "RNGO"),
-        ("LNGO","LNGO"),
-        ("GOV", "GOV"),
-        ("IO", "IO"),
-        ("IND","Indiv.")
+        ("NGO",_("INGO")),
+        ("RNGO",_("RNGO")),
+        ("LNGO",_("LNGO")),
+        ("GOV",_("GOV")),
+        ("IO",_("IO")),
+        ("IND",_("Indiv.")),
     )
     
     # Data model implementation
 
     person_id = models.CharField(
         max_length=13,
-        verbose_name="Person ID",
+        verbose_name=_("Person ID"),
         unique=True,
         validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(13, message=None)],
-        help_text="Form YYYY-CCCC-PPP, where YYYY is the year of publication, CCCC is the paragraph number given in the report, and PPP the person number within the communication"
+        help_text=_("Form YYYY-CCCC-PPP, where YYYY is the year of publication, CCCC is the paragraph number given in the report, and PPP the person number within the communication")
     )
     ohchr_case = models.CharField(
         max_length=20,
         blank=True,
-        verbose_name="OHCHR case no."
+        verbose_name=_("OHCHR case no.")
     )
-    country = CountryField(blank_label='(select country)')
+    country = CountryField(
+        blank_label=_('(select country)'),
+        verbose_name=_("Country")
+    )
     date_intervention = models.DateField(
-        verbose_name="Date of the intervention",
-        help_text="Format YYY-MM-DD",
+        verbose_name=_("Date of the intervention"),
+        help_text=_("Format YYY-MM-DD"),
         blank=True,
         null=True
     )
     type_intervention = models.CharField(
         max_length=3,
         choices=INTERVENTION_CHOICES,
-        verbose_name="Type of intervention"
+        verbose_name=_("Type of intervention")
     )
     joint_with = SelectMultipleField(
         max_length=200,
         choices=JOINT_CHOICES,
         blank = True,
-        help_text="Select multiple items with <i>Ctrl+Click</i>"
+        verbose_name=_("Joint with"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>")
     )
     name = models.CharField(
         max_length=500,
-        verbose_name="Name of HRD"
+        verbose_name=_("Name of HRD")
     )
     gender = models.IntegerField(
-        choices=GENDER_CHOICES
+        choices=GENDER_CHOICES,
+        verbose_name=_("Gender")
     )
     follow_up_case = models.BooleanField(
         default = False,
-        verbose_name="Follow-up on UN case"
+        verbose_name=_("Follow-up on UN case")
     )
     earlier_coms = models.CharField(
         blank=True,
         max_length=500,
-        verbose_name="Date(s) of earlier coms"
+        verbose_name=_("Date(s) of earlier coms")
     )
     regional_case = models.BooleanField(
         default = False,
-        verbose_name="Regional mechanism case"
+        verbose_name=_("Regional mechanism case")
     )
     issue_area = SelectMultipleField(
         max_length=20,
         choices=ISSUE_CHOICES,
         max_choices=3,
         default="?",
-        help_text="Select maximum 3 items with <i>Ctrl+Click</i>"
+        verbose_name=_("Issue area"),
+        help_text=_("Select maximum 3 items with <i>Ctrl+Click</i>")
     )
     relevant_activities = SelectMultipleField(
         max_length=15,
         choices=ACTIVITIES_CHOICES,
         max_choices=3,
         default="?",
-        help_text="Select maximum 3 items with <i>Ctrl+Click</i>"
+        verbose_name=_("Relevant activities"),
+        help_text=_("Select maximum 3 items with <i>Ctrl+Click</i>")
     )
     affiliation = models.CharField(
         blank=True,
         max_length=500,
-        verbose_name="Affiliation"
+        verbose_name=_("Affiliation")
     )
     further_info = models.TextField(
         blank=True,
-        verbose_name="Further information",
-        help_text="Name of NGO or party, title of conference, object of investigation etc."
+        verbose_name=_("Further information"),
+        help_text=_("Name of NGO or party, title of conference, object of investigation etc.")
     )
     foreign_national = models.BooleanField(
         default=False,
-        verbose_name="Foreign national"
+        verbose_name=_("Foreign national")
     )
     international_cooperation = models.IntegerField(
         choices=COOPERATION_CHOICES,
-        default=0
+        default=0,
+        verbose_name=_("International cooperation")
     )
     location = models.CharField(
         max_length=1,
         choices=LOCATION_CHOICES,
-        default = "?"
+        default = "?",
+        verbose_name=_("Location")
     )
     name_area = models.CharField(
         max_length=500,
         blank=True,
-        verbose_name="Name of City / Area"
+        verbose_name=_("Name of City / Area")
     )
     violation_family = models.IntegerField(
         choices=VIOLATION_FAMILY_CHOICES,
         default=0,
-        verbose_name="Violation against HRD or family member?"
+        verbose_name=_("Violation against HRD or family member?")
     )
     violation_family_who = models.CharField(
         max_length=500,
         blank=True,
-        verbose_name="Concerned family member"
+        verbose_name=_("Concerned family member")
     )
     violations = SelectMultipleField(
         max_length=50,
         choices=VIOLATIONS_CHOICES,
         default="?",
-        verbose_name="Violation(s)",
-        help_text="Select multiple items with <i>Ctrl+Click</i>"
+        verbose_name=_("Violation(s)"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>")
     )
     perpetrator = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
         default = "U",
-        verbose_name="Alleged perpetrator",
-        help_text="Select multiple items with <i>Ctrl+Click</i>"
+        verbose_name=_("Alleged perpetrator"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>")
     )
     violations2 = SelectMultipleField(
         max_length=50,
         choices=VIOLATIONS_CHOICES,
-        verbose_name="Violation(s) #2",
-        help_text="Select multiple items with <i>Ctrl+Click</i>",
+        verbose_name=_("Violation(s) #2"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>"),
         blank=True
     )
     perpetrator2 = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        verbose_name="Alleged perpetrator #2",
-        help_text="Select multiple items with <i>Ctrl+Click</i>",
+        verbose_name=_("Alleged perpetrator #2"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>"),
         blank=True
     )
     violations3 = SelectMultipleField(
         max_length=50,
         choices=VIOLATIONS_CHOICES,
-        verbose_name="Violation(s) #3",
-        help_text="Select multiple items with <i>Ctrl+Click</i>",
+        verbose_name=_("Violation(s) #3"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>"),
         blank=True
     )
     perpetrator3 = SelectMultipleField(
         max_length=10,
         choices=PERPETRATOR_CHOICES,
-        verbose_name="Alleged perpetrator #3",
-        help_text="Select multiple items with <i>Ctrl+Click</i>",
+        verbose_name=_("Alleged perpetrator #3"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>"),
         blank=True
     )
     date_incident = models.DateField(
         null=True,
         blank=True,
-        verbose_name="Date of the latest incident",
-        help_text="Format YYY-MM-DD"
+        verbose_name=_("Date of the latest incident"),
+        help_text=_("Format YYY-MM-DD")
     )
     date_incident_unspecific = models.CharField(
         max_length=500,
         blank=True,
-        verbose_name="If unspecific"
+        verbose_name=_("If unspecific")
     )
     concern_expressed = models.CharField(
         max_length=2,
         choices=CONCERN_CHOICES,
-        verbose_name="Concern/demand expressed in intervention",
+        verbose_name=_("Concern/demand expressed in intervention"),
         blank=True
     )
     is_released = models.BooleanField(
         default = False,
-        verbose_name="If arrested: released?"
+        verbose_name=_("If arrested: released?")
     )
     
     ##########################
@@ -476,31 +486,31 @@ class Record(models.Model):
     date_govreply = models.DateField(
         null=True,
         blank=True,
-        verbose_name="Date of government reply",
-        help_text='Format YYY-MM-DD, leave empty for "No response"'
+        verbose_name=_("Date of government reply"),
+        help_text=_('Format YYY-MM-DD, leave empty for "No response"')
     )
     date_govreply_further = models.CharField(
         max_length=500,
         blank=True,
-        verbose_name="Date(s) of further replies"
+        verbose_name=_("Date(s) of further replies")
     )
     govreply_content = models.CharField(
         max_length=6,
         choices=GOV_REPLY_CHOICES,
-        verbose_name="Content of government reply",
-        help_text="According to rating criteria by Piccone (2012)",
+        verbose_name=_("Content of government reply"),
+        help_text=_("According to rating criteria by Piccone (2012)"),
         blank=True
     )
     date_govaction = models.DateField(
         null=True,
         blank=True,
-        verbose_name="Date of action according to reply",
-        help_text="Format YYY-MM-DD"
+        verbose_name=_("Date of action according to reply"),
+        help_text=_("Format YYY-MM-DD")
     )
     govreply_action = models.CharField(
         max_length=11,
         choices=GOV_ACTION_CHOICES,
-        verbose_name="Action taken according to reply",
+        verbose_name=_("Action taken according to reply"),
         blank=True
     )
     
@@ -508,78 +518,80 @@ class Record(models.Model):
     
     further_comments = models.TextField(
         blank=True,
-        verbose_name="Further comments",
-        help_text="Observations that might be relevant but don't fit elsewhere"
+        verbose_name=_("Further comments"),
+        help_text=_("Observations that might be relevant but don't fit elsewhere")
     )
 
     feedback = models.TextField(
         blank=True,
-        verbose_name="Feedback",
-        help_text="Direct feedback on the coding of this particular case"
+        verbose_name=_("Feedback"),
+        help_text=_("Direct feedback on the coding of this particular case")
     )
 
     upload = models.FileField(
         upload_to=update_filename,
         null=True,
-        blank=True
+        blank=True,
+        verbose_name=_("Uploads")
     )
 
     analyst = models.ForeignKey(
         User,
         blank=True,
         null=True,
-        verbose_name="Analyst",
-        help_text="User responsible for this record"
+        verbose_name=_("Analyst"),
+        help_text=_("User responsible for this record")
     )
 
     is_final = models.BooleanField(
         default = False,
-        verbose_name="Final"
+        verbose_name=_("Final")
     )
     
     business_case = models.BooleanField(
         default = False,
-        verbose_name="Business-related case"
+        verbose_name=_("Business-related case")
     )
 
     business_company = models.CharField(
         blank=True,
         max_length=500,
-        verbose_name="Name of company"
+        verbose_name=_("Name of company")
     )
 
     sources_number = models.CharField(
         blank=True,
         max_length=50,
-        verbose_name="Number of sources"
+        verbose_name=_("Number of sources")
     )
 
     sources_type = SelectMultipleField(
         max_length=50,
         choices=SOURCES_CHOICES,
-        verbose_name="Type of sources",
-        help_text="Select multiple items with <i>Ctrl+Click</i>",
+        verbose_name=_("Type of sources"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>"),
         blank=True
     )
 
     complaint_sent = models.DateField(
         null=True,
         blank=True,
-        verbose_name="Complaint sent on",
-        help_text="Format YYY-MM-DD"
+        verbose_name=_("Complaint sent on"),
+        help_text=_("Format YYY-MM-DD")
     )
 
     complaint_received = models.DateField(
         null=True,
         blank=True,
-        verbose_name="Complaint received on",
-        help_text="Format YYY-MM-DD"
+        verbose_name=_("Complaint received on"),
+        help_text=_("Format YYY-MM-DD")
     )
 
     coords = PointField(
         blank=True,
         null=True,
-        editable=False
+        editable=False,
+        verbose_name=_("Coordinates")
     )
 
     def has_related_object(self):
@@ -637,18 +649,18 @@ class Record(models.Model):
 class OtherRecord(models.Model):
 
     CASE_CHOICES = (
-        (0, "NGO/Trade union/..."),
-        (1, "NHRI"),
-        (2, "Statement by official"),
-        (3, "Law/bill"),
-        (4, "Mass violation/pattern"),
-        (5, "Anonymous cases"),
-        (6, "PR on individual"),
-        (7, "Country visit by SR")
+        (0, _("NGO/Trade union/...")),
+        (1, _("NHRI")),
+        (2, _("Statement by official")),
+        (3, _("Law/bill")),
+        (4, _("Mass violation/pattern")),
+        (5, _("Anonymous cases")),
+        (6, _("PR on individual")),
+        (7, _("Country visit by SR"))
     )
 
     class Meta: 
-        verbose_name = "NGO Record"
+        verbose_name = _("NGO Record")
 
     def __unicode__(self):
         return "%s (%s)" % (self.case_id, self.name)
@@ -664,81 +676,86 @@ class OtherRecord(models.Model):
 
     case_id = models.CharField(
         max_length=9,
-        verbose_name="Case ID",
+        verbose_name=_("Case ID"),
         unique=True,
         validators=[int_list_validator(sep='-', message=None, code='invalid'),MinLengthValidator(9, message=None)],
-        help_text="Form YYYY-CCCC, where YYYY is the year of publication and CCCC the paragraph number given in the report"
+        help_text=_("Form YYYY-CCCC, where YYYY is the year of publication and CCCC the paragraph number given in the report")
     )
     ohchr_case = models.CharField(
         max_length=20,
         blank=True,
-        verbose_name="OHCHR case no."
+        verbose_name=_("OHCHR case no.")
     )
-    country = CountryField(blank_label='(select country)')
+    country = CountryField(
+        blank_label=_('(select country)'),
+        verbose_name=_("Country")
+    )
     date_intervention = models.DateField(
-        verbose_name="Date of the intervention",
-        help_text="Format YYY-MM-DD"
+        verbose_name=_("Date of the intervention"),
+        help_text=_("Format YYY-MM-DD")
     )
     type_intervention = models.CharField(
         max_length=3,
         choices=Record.INTERVENTION_CHOICES,
-        verbose_name="Type of intervention"
+        verbose_name=_("Type of intervention")
     )
     joint_with = SelectMultipleField(
         max_length=200,
         choices=Record.JOINT_CHOICES,
         blank = True,
-        help_text="Select multiple items with <i>Ctrl+Click</i>"
+        verbose_name=_("Joint with"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>")
     )
     name = models.CharField(
         max_length=500,
-        verbose_name="Subject of communication"
+        verbose_name=_("Subject of communication")
     )
     case_type = models.IntegerField(
         choices=CASE_CHOICES,
-        verbose_name="Type of case",
+        verbose_name=_("Type of case"),
         default=0
     )
     follow_up_case = models.BooleanField(
         default = False,
-        verbose_name="Follow-up on UN case"
+        verbose_name=_("Follow-up on UN case")
     )
     regional_case = models.BooleanField(
         default = False,
-        verbose_name="Regional mechanism case"
+        verbose_name=_("Regional mechanism case")
     )
     
     ##########################
     
     further_comments = models.TextField(
         blank=True,
-        verbose_name="Further comments",
-        help_text="Observations that might be relevant but don't fit elsewhere"
+        verbose_name=_("Further comments"),
+        help_text=_("Observations that might be relevant but don't fit elsewhere")
     )
 
     upload = models.FileField(
         upload_to=update_filename,
         null=True,
-        blank=True
+        blank=True,
+        verbose_name=_("Uploads")
     )
 
     analyst = models.ForeignKey(
         User,
         blank=True,
         null=True,
-        verbose_name="Analyst",
-        help_text="User responsible for this record"
+        verbose_name=_("Analyst"),
+        help_text=_("User responsible for this record")
     )
 
     business_case = models.BooleanField(
         default = False,
-        verbose_name="Business-related case"
+        verbose_name=_("Business-related case")
     )
 
     business_company = models.CharField(
         blank=True,
         max_length=500,
-        verbose_name="Name of company"
+        verbose_name=_("Name of company")
     )
 
 
@@ -747,7 +764,7 @@ class OtherRecord(models.Model):
 class AIRecord(models.Model):
 
     class Meta: 
-        verbose_name = "AI Record"
+        verbose_name = _("AI Record")
 
     def __unicode__(self):
         return "%s (%s)" % (self.person_id, self.name)
@@ -765,135 +782,135 @@ class AIRecord(models.Model):
 
     person_id = models.CharField(
         max_length=16,
-        verbose_name="Person ID",
+        verbose_name=_("Person ID"),
         unique=True,
         validators=[MinLengthValidator(16, message=None)],
         default = "AI-",
-        help_text="Form AI-YYYY-RRRR-PPP, where YYYY is the year of publication, RRRR is the reference, and PPP the person number within the communication"
+        help_text=_("Form AI-YYYY-RRRR-PPP, where YYYY is the year of publication, RRRR is the reference, and PPP the person number within the communication")
     )
     ai_reference = models.CharField(
         max_length=25,
-        verbose_name="AI Internal Reference"
+        verbose_name=_("AI Internal Reference")
     )
     pub_reference = models.CharField(
         max_length=25,
         blank=True,
-        verbose_name="Public ID"
+        verbose_name=_("Public ID")
     )
     country = CountryField(blank_label='(select country)')
     date_submission = models.DateField(
-        verbose_name="Date of the submission",
-        help_text="Format YYY-MM-DD"
+        verbose_name=_("Date of the submission"),
+        help_text=_("Format YYY-MM-DD")
     )
     joint_with = SelectMultipleField(
         max_length=200,
         choices=Record.JOINT_CHOICES,
         blank = True,
-        help_text="Select multiple items with <i>Ctrl+Click</i>",
-        verbose_name="Additional mandates"
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>"),
+        verbose_name=_("Additional mandates")
     )
     name = models.CharField(
         max_length=500,
-        verbose_name="Name of HRD"
+        verbose_name=_("Name of HRD")
     )   
     case_summary = models.TextField(
         blank=True,
-        verbose_name="Case Summary",
+        verbose_name=_("Case Summary"),
         help_text=""
     )
 
     fa_title = models.TextField(
         blank=True,
-        verbose_name="FA Title",
+        verbose_name=_("FA Title"),
         help_text=""
     )
 
     fa_date = models.DateField(
-        verbose_name="Date of FA",
-        help_text="Format YYY-MM-DD",
+        verbose_name=_("Date of FA"),
+        help_text=_("Format YYY-MM-DD"),
         blank=True,
         null=True
     )
 
     fa_summary = models.TextField(
         blank=True,
-        verbose_name="Summary of FA",
+        verbose_name=_("Summary of FA"),
         help_text=""
     )
 
     fa_title2 = models.TextField(
         blank=True,
-        verbose_name="FA Title (2)",
+        verbose_name=_("FA Title (2)"),
         help_text=""
     )
 
     fa_date2 = models.DateField(
-        verbose_name="Date of FA (2)",
-        help_text="Format YYY-MM-DD",
+        verbose_name=_("Date of FA (2)"),
+        help_text=_("Format YYY-MM-DD"),
         blank=True,
         null=True
     )
 
     fa_summary2 = models.TextField(
         blank=True,
-        verbose_name="Summary of FA (2)",
+        verbose_name=_("Summary of FA (2)"),
         help_text=""
     )
 
     fa_title3 = models.TextField(
         blank=True,
-        verbose_name="FA Title (3)",
+        verbose_name=_("FA Title (3)"),
         help_text=""
     )
 
     fa_date3 = models.DateField(
-        verbose_name="Date of FA (3)",
-        help_text="Format YYY-MM-DD",
+        verbose_name=_("Date of FA (3)"),
+        help_text=_("Format YYY-MM-DD"),
         blank=True,
         null=True
     )
 
     fa_summary3 = models.TextField(
         blank=True,
-        verbose_name="Summary of FA (3)",
+        verbose_name=_("Summary of FA (3)"),
         help_text=""
     )
 
     fa_title4 = models.TextField(
         blank=True,
-        verbose_name="FA Title (4)",
+        verbose_name=_("FA Title (4)"),
         help_text=""
     )
 
     fa_date4 = models.DateField(
-        verbose_name="Date of FA (4)",
-        help_text="Format YYY-MM-DD",
+        verbose_name=_("Date of FA (4)"),
+        help_text=_("Format YYY-MM-DD"),
         blank=True,
         null=True
     )
 
     fa_summary4 = models.TextField(
         blank=True,
-        verbose_name="Summary of FA (4)",
+        verbose_name=_("Summary of FA (4)"),
         help_text=""
     )
     
     further_comments = models.TextField(
         blank=True,
-        verbose_name="Further comments",
-        help_text="Observations that might be relevant but don't fit elsewhere"
+        verbose_name=_("Further comments"),
+        help_text=_("Observations that might be relevant but don't fit elsewhere")
     )
 
     analyst = models.ForeignKey(
         User,
         blank=True,
         null=True,
-        verbose_name="Analyst",
-        help_text="User responsible for this record"
+        verbose_name=_("Analyst"),
+        help_text=_("User responsible for this record")
     )
 
     is_final = models.BooleanField(
         default = False,
-        verbose_name="Final"
+        verbose_name=_("Final")
     )
     
