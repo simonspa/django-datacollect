@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 17:42+0100\n"
+"POT-Creation-Date: 2017-03-24 17:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,6 +28,63 @@ msgstr ""
 
 #: datacollect/settings.py:132 datacollect/settings_production.py:151
 msgid "French"
+msgstr ""
+
+#: questionnaire/forms.py:64
+msgid "1. Familiarity"
+msgstr ""
+
+#: questionnaire/forms.py:69
+msgid "2. Development of the situation"
+msgstr ""
+
+#: questionnaire/forms.py:75
+msgid "3. Significant incidents"
+msgstr ""
+
+#: questionnaire/forms.py:79
+msgid "Incident #1"
+msgstr ""
+
+#: questionnaire/forms.py:84
+msgid "Incident #2"
+msgstr ""
+
+#: questionnaire/forms.py:89
+msgid "Incident #3"
+msgstr ""
+
+#: questionnaire/forms.py:94
+msgid "Incident #4"
+msgstr ""
+
+#: questionnaire/forms.py:99
+msgid "Incident #5"
+msgstr ""
+
+#: questionnaire/forms.py:107
+msgid "4. International attention"
+msgstr ""
+
+#: questionnaire/forms.py:112
+msgid "5. Impact of the attention"
+msgstr ""
+
+#: questionnaire/forms.py:117
+msgid "6. Further comments/feedback:"
+msgstr ""
+
+#: questionnaire/forms.py:121
+msgid "7. Voluntary contact information:"
+msgstr ""
+
+#: questionnaire/forms.py:128
+msgid "Submission"
+msgstr ""
+
+#: questionnaire/forms.py:143
+msgid ""
+"Please fill the e-mail address field if you wish to receive information."
 msgstr ""
 
 #: questionnaire/models.py:22
