@@ -136,17 +136,17 @@ class FollowUpForm(forms.ModelForm):
 
     def clean(self):
         super(FollowUpForm,self).clean()
-      if bool(self.cleaned_data['want_informed']) or bool(self.cleaned_data['contact_again']):
-          try:
-              validate_email(self.cleaned_data['email_address'])
-          except ValidationError:
-              raise ValidationError(_("Please fill the e-mail address field if you wish to receive information."))
+        if bool(self.cleaned_data['want_informed']) or bool(self.cleaned_data['contact_again']):
+            try:
+                validate_email(self.cleaned_data['email_address'])
+            except ValidationError:
+                raise ValidationError(_("Please fill the e-mail address field if you wish to receive information."))
 
     def save(self, commit=True, *args, **kwargs):
         instance = super(FollowUpForm, self).save(commit=False, *args, **kwargs)
         instance.timestamp = timezone.now()
         instance.is_answered = True
-      if commit:
-          instance.save()
-      return instance
+        if commit:
+            instance.save()
+        return instance
   
