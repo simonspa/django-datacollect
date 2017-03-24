@@ -324,7 +324,7 @@ class Record(models.Model):
     )
     date_intervention = models.DateField(
         verbose_name=_("Date of the intervention"),
-        help_text=_("Format YYY-MM-DD"),
+        help_text=_("Format YYYY-MM-DD"),
         blank=True,
         null=True
     )
@@ -463,7 +463,7 @@ class Record(models.Model):
         null=True,
         blank=True,
         verbose_name=_("Date of the latest incident"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
     date_incident_unspecific = models.CharField(
         max_length=500,
@@ -487,7 +487,7 @@ class Record(models.Model):
         null=True,
         blank=True,
         verbose_name=_("Date of government reply"),
-        help_text=_('Format YYY-MM-DD, leave empty for "No response"')
+        help_text=_('Format YYYY-MM-DD, leave empty for "No response"')
     )
     date_govreply_further = models.CharField(
         max_length=500,
@@ -505,7 +505,7 @@ class Record(models.Model):
         null=True,
         blank=True,
         verbose_name=_("Date of action according to reply"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
     govreply_action = models.CharField(
         max_length=11,
@@ -577,14 +577,14 @@ class Record(models.Model):
         null=True,
         blank=True,
         verbose_name=_("Complaint sent on"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
 
     complaint_received = models.DateField(
         null=True,
         blank=True,
         verbose_name=_("Complaint received on"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
 
     coords = PointField(
@@ -692,7 +692,7 @@ class OtherRecord(models.Model):
     )
     date_intervention = models.DateField(
         verbose_name=_("Date of the intervention"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
     type_intervention = models.CharField(
         max_length=3,
@@ -800,7 +800,7 @@ class AIRecord(models.Model):
     country = CountryField(blank_label='(select country)')
     date_submission = models.DateField(
         verbose_name=_("Date of the submission"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
     joint_with = SelectMultipleField(
         max_length=200,
@@ -827,7 +827,7 @@ class AIRecord(models.Model):
 
     fa_date = models.DateField(
         verbose_name=_("Date of FA"),
-        help_text=_("Format YYY-MM-DD"),
+        help_text=_("Format YYYY-MM-DD"),
         blank=True,
         null=True
     )
@@ -846,7 +846,7 @@ class AIRecord(models.Model):
 
     fa_date2 = models.DateField(
         verbose_name=_("Date of FA (2)"),
-        help_text=_("Format YYY-MM-DD"),
+        help_text=_("Format YYYY-MM-DD"),
         blank=True,
         null=True
     )
@@ -865,7 +865,7 @@ class AIRecord(models.Model):
 
     fa_date3 = models.DateField(
         verbose_name=_("Date of FA (3)"),
-        help_text=_("Format YYY-MM-DD"),
+        help_text=_("Format YYYY-MM-DD"),
         blank=True,
         null=True
     )
@@ -884,7 +884,7 @@ class AIRecord(models.Model):
 
     fa_date4 = models.DateField(
         verbose_name=_("Date of FA (4)"),
-        help_text=_("Format YYY-MM-DD"),
+        help_text=_("Format YYYY-MM-DD"),
         blank=True,
         null=True
     )
