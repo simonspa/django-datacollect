@@ -20,21 +20,19 @@ msgstr ""
 
 #: datacollect/settings.py:130 datacollect/settings_production.py:149
 msgid "English"
-msgstr ""
+msgstr "Anglais"
 
 #: datacollect/settings.py:131 datacollect/settings_production.py:150
 msgid "Spanish"
-msgstr ""
+msgstr "Espagnol"
 
 #: datacollect/settings.py:132 datacollect/settings_production.py:151
 msgid "French"
-msgstr ""
+msgstr "Français"
 
 #: questionnaire/forms.py:64
-#, fuzzy
-#| msgid "Level of familiarity"
 msgid "1. Familiarity"
-msgstr "Niveau de connaissance"
+msgstr "1. Connaissance"
 
 #: questionnaire/forms.py:65
 msgid ""
@@ -45,7 +43,7 @@ msgstr ""
 
 #: questionnaire/forms.py:69
 msgid "2. Development of the situation"
-msgstr ""
+msgstr "2. Developpement de la situation"
 
 #: questionnaire/forms.py:70
 msgid ""
@@ -149,11 +147,11 @@ msgstr ""
 
 #: questionnaire/forms.py:130
 msgid "<p>Thank you for your contribution!</p>"
-msgstr ""
+msgstr "<p>Merci beaucoup pour votre contribution !</p>"
 
 #: questionnaire/forms.py:132
 msgid "Submit"
-msgstr ""
+msgstr "Envoyer"
 
 #: questionnaire/forms.py:143
 msgid ""
@@ -1308,7 +1306,7 @@ msgstr ""
 
 #: survey/models.py:818 templates/questionnaire/followup_form.html.py:31
 msgid "Case Summary"
-msgstr "Résumé de cas"
+msgstr "Résumé du cas"
 
 #: survey/models.py:824
 msgid "FA Title"

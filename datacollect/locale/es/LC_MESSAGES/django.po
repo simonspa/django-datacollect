@@ -20,15 +20,15 @@ msgstr ""
 
 #: datacollect/settings.py:130 datacollect/settings_production.py:149
 msgid "English"
-msgstr ""
+msgstr "Inglés"
 
 #: datacollect/settings.py:131 datacollect/settings_production.py:150
 msgid "Spanish"
-msgstr ""
+msgstr "Español"
 
 #: datacollect/settings.py:132 datacollect/settings_production.py:151
 msgid "French"
-msgstr ""
+msgstr "Francés"
 
 #: questionnaire/forms.py:64
 msgid "1. Familiarity"
