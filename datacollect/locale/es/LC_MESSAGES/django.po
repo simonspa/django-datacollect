@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 17:46+0100\n"
+"POT-Creation-Date: 2017-03-24 17:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,12 +34,40 @@ msgstr ""
 msgid "1. Familiarity"
 msgstr ""
 
+#: questionnaire/forms.py:65
+msgid ""
+"<p>How familiar are you with {{ form.instance.case.name }}'s case in the "
+"period from {{ form.instance.case.date_intervention }} until one year later?"
+"</p>"
+msgstr ""
+
 #: questionnaire/forms.py:69
 msgid "2. Development of the situation"
 msgstr ""
 
+#: questionnaire/forms.py:70
+msgid ""
+"<p>In light of the attacks (see above) that occurred before the Special "
+"Rapporteur's action on {{ form.instance.case.date_intervention }}, how would "
+"you describe the development of {{ form.instance.case.name }}'s situation/"
+"case <strong>within one year</strong> after this date?</p>"
+msgstr ""
+
+#: questionnaire/forms.py:72
+msgid ""
+"<p>If you are not sure how to assess the case, here is a table with various "
+"examples.</p>"
+msgstr ""
+
 #: questionnaire/forms.py:75
 msgid "3. Significant incidents"
+msgstr ""
+
+#: questionnaire/forms.py:76
+msgid ""
+"<p>Please indicate all significant incidents during that period that you are "
+"aware of (if there were more than 5, concentrate on the most important ones):"
+"</p>"
 msgstr ""
 
 #: questionnaire/forms.py:79
@@ -66,8 +94,21 @@ msgstr ""
 msgid "4. International attention"
 msgstr ""
 
+#: questionnaire/forms.py:108
+msgid ""
+"<p>Do you believe that the international attention to {{ form.instance.case."
+"name }}'s case, including from the UN, did have an impact on the development "
+"of his/her situation during this period?</p>"
+msgstr ""
+
 #: questionnaire/forms.py:112
 msgid "5. Impact of the attention"
+msgstr ""
+
+#: questionnaire/forms.py:113
+msgid ""
+"<p>Please provide as much detail as possible on what makes you come to this "
+"conclusion, as well as on what kind of impact the attention had (if any):</p>"
 msgstr ""
 
 #: questionnaire/forms.py:117
@@ -78,8 +119,32 @@ msgstr ""
 msgid "7. Voluntary contact information:"
 msgstr ""
 
+#: questionnaire/forms.py:125
+msgid ""
+"(Please note that by submitting your email address, your contact can be "
+"connected to this case by the independent researcher carrying out the "
+"analysis. If you don't indicate your contact details, your submission will "
+"remain anonymous. If you wish to receive further information but do not want "
+"to be connected to this case, you can write to <a href=\"mailto:"
+"info@defendersdatabase.org\">info@defendersdatabase.org</a>.)"
+msgstr ""
+
 #: questionnaire/forms.py:128
 msgid "Submission"
+msgstr ""
+
+#: questionnaire/forms.py:129
+msgid ""
+"<strong>Warning!</strong> You can only submit this form once. After "
+"submission, the link is deactivated."
+msgstr ""
+
+#: questionnaire/forms.py:130
+msgid "<p>Thank you for your contribution!</p>"
+msgstr ""
+
+#: questionnaire/forms.py:132
+msgid "Submit"
 msgstr ""
 
 #: questionnaire/forms.py:143

@@ -62,18 +62,18 @@ class FollowUpForm(forms.ModelForm):
         self.helper.layout = Layout(
             Fieldset(
                 _('1. Familiarity'),
-                HTML("<p>How familiar are you with {{ form.instance.case.name }}'s case in the period from {{ form.instance.case.date_intervention }} until one year later?</p>"),
+                HTML(_("<p>How familiar are you with {{ form.instance.case.name }}'s case in the period from {{ form.instance.case.date_intervention }} until one year later?</p>")),
                 'familiarity',
             ),
             Fieldset(
                 _('2. Development of the situation'),
-                HTML("<p>In light of the attacks (see above) that occurred before the Special Rapporteur's action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation/case <strong>within one year</strong> after this date?</p>"),
+                HTML(_("<p>In light of the attacks (see above) that occurred before the Special Rapporteur's action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation/case <strong>within one year</strong> after this date?</p>")),
                 'rating',
-                HTML("<p>If you are not sure how to assess the case, here is a table with various examples.</p>"),
+                HTML(_("<p>If you are not sure how to assess the case, here is a table with various examples.</p>")),
             ),
             Fieldset(
                 _('3. Significant incidents'),
-                HTML("<p>Please indicate all significant incidents during that period that you are aware of (if there were more than 5, concentrate on the most important ones):</p>"),
+                HTML(_("<p>Please indicate all significant incidents during that period that you are aware of (if there were more than 5, concentrate on the most important ones):</p>")),
                 TabHolder(
                     Tab(
                         _('Incident #1'),
@@ -105,12 +105,12 @@ class FollowUpForm(forms.ModelForm):
             ),
             Fieldset(
                 _('4. International attention'),
-                HTML("<p>Do you believe that the international attention to {{ form.instance.case.name }}\'s case, including from the UN, did have an impact on the development of his/her situation during this period?</p>"),
+                HTML(_("<p>Do you believe that the international attention to {{ form.instance.case.name }}\'s case, including from the UN, did have an impact on the development of his/her situation during this period?</p>")),
                 'attention',
             ),
             Fieldset(
                 _('5. Impact of the attention'),
-                HTML('<p>Please provide as much detail as possible on what makes you come to this conclusion, as well as on what kind of impact the attention had (if any):</p>'),
+                HTML(_('<p>Please provide as much detail as possible on what makes you come to this conclusion, as well as on what kind of impact the attention had (if any):</p>')),
                 'impact',
             ),
             Fieldset(
@@ -122,14 +122,14 @@ class FollowUpForm(forms.ModelForm):
                 'want_informed',
                 'contact_again',
                 'email_address',
-                HTML("(Please note that by submitting your email address, your contact can be connected to this case by the independent researcher carrying out the analysis. If you don't indicate your contact details, your submission will remain anonymous. If you wish to receive further information but do not want to be connected to this case, you can write to <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>.)"),
+                HTML(_("(Please note that by submitting your email address, your contact can be connected to this case by the independent researcher carrying out the analysis. If you don't indicate your contact details, your submission will remain anonymous. If you wish to receive further information but do not want to be connected to this case, you can write to <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>.)")),
             ),
             Fieldset(
                 _('Submission'),
-                Alert(content='<strong>Warning!</strong> You can only submit this form once. After submission, the link is deactivated.'),
-                HTML("<p>Thank you for your contribution!</p>"),
+                Alert(content=_('<strong>Warning!</strong> You can only submit this form once. After submission, the link is deactivated.')),
+                HTML(_("<p>Thank you for your contribution!</p>")),
                 FormActions(
-                    Submit('save', 'Submit'),
+                    Submit('save', _('Submit')),
                 ),
             ),
         )
