@@ -6,6 +6,7 @@ from .models import FollowUp
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Button
 from crispy_forms.bootstrap import TabHolder, Tab, InlineRadios, FormActions, Alert
+from django.utils.translation import ugettext_lazy as _
 
 class FollowUpForm(forms.ModelForm):
 
