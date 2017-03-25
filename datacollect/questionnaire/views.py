@@ -21,9 +21,8 @@ class FollowUpUpdate(UpdateView):
         if not obj or obj.is_answered:
             raise Http404("Page not found")
         else:
-            print obj.language
             translation.activate(obj.language)
-            print translation.get_language()
+            self.request.session[translation.LANGUAGE_SESSION_KEY] = obj.language
             return obj
 
     def get_success_url(self):

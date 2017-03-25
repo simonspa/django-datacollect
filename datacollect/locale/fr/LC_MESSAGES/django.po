@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-06 21:59+0100\n"
+"POT-Creation-Date: 2017-03-24 18:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,80 +18,1380 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: datacollect/settings.py:127
+#: datacollect/settings.py:130 datacollect/settings_production.py:149
 msgid "English"
 msgstr "Anglais"
 
-#: datacollect/settings.py:128
+#: datacollect/settings.py:131 datacollect/settings_production.py:150
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: datacollect/settings.py:129
+#: datacollect/settings.py:132 datacollect/settings_production.py:151
 msgid "French"
-msgstr "Francais"
+msgstr "Français"
+
+#: questionnaire/forms.py:65
+msgid "1. Familiarity"
+msgstr "1. Connaissance"
+
+#: questionnaire/forms.py:66
+msgid ""
+"<p>How familiar are you with {{ form.instance.case.name }}'s case in the "
+"period from {{ form.instance.case.date_intervention }} until one year later?"
+"</p>"
+msgstr ""
+
+#: questionnaire/forms.py:70
+msgid "2. Development of the situation"
+msgstr "2. Developpement de la situation"
+
+#: questionnaire/forms.py:71
+msgid ""
+"<p>In light of the attacks (see above) that occurred before the Special "
+"Rapporteur's action on {{ form.instance.case.date_intervention }}, how would "
+"you describe the development of {{ form.instance.case.name }}'s situation/"
+"case <strong>within one year</strong> after this date?</p>"
+msgstr ""
+
+#: questionnaire/forms.py:73
+msgid ""
+"<p>If you are not sure how to assess the case, here is a table with various "
+"examples.</p>"
+msgstr ""
+
+#: questionnaire/forms.py:76
+msgid "3. Significant incidents"
+msgstr ""
+
+#: questionnaire/forms.py:77
+msgid ""
+"<p>Please indicate all significant incidents during that period that you are "
+"aware of (if there were more than 5, concentrate on the most important ones):"
+"</p>"
+msgstr ""
+
+#: questionnaire/forms.py:80
+msgid "Incident #1"
+msgstr ""
+
+#: questionnaire/forms.py:85
+msgid "Incident #2"
+msgstr ""
+
+#: questionnaire/forms.py:90
+msgid "Incident #3"
+msgstr ""
+
+#: questionnaire/forms.py:95
+msgid "Incident #4"
+msgstr ""
+
+#: questionnaire/forms.py:100
+msgid "Incident #5"
+msgstr ""
+
+#: questionnaire/forms.py:108
+#, fuzzy
+#| msgid "Further comments"
+msgid "4. International attention"
+msgstr "Remarque complémentaire"
+
+#: questionnaire/forms.py:109
+msgid ""
+"<p>Do you believe that the international attention to {{ form.instance.case."
+"name }}'s case, including from the UN, did have an impact on the development "
+"of his/her situation during this period?</p>"
+msgstr ""
+
+#: questionnaire/forms.py:113
+#, fuzzy
+#| msgid "Date of the intervention"
+msgid "5. Impact of the attention"
+msgstr "Date de l'intervention"
+
+#: questionnaire/forms.py:114
+msgid ""
+"<p>Please provide as much detail as possible on what makes you come to this "
+"conclusion, as well as on what kind of impact the attention had (if any):</p>"
+msgstr ""
+
+#: questionnaire/forms.py:118
+#, fuzzy
+#| msgid "Further comments"
+msgid "6. Further comments/feedback:"
+msgstr "Remarque complémentaire"
+
+#: questionnaire/forms.py:122
+msgid "7. Voluntary contact information:"
+msgstr ""
+
+#: questionnaire/forms.py:126
+msgid ""
+"(Please note that by submitting your email address, your contact can be "
+"connected to this case by the independent researcher carrying out the "
+"analysis. If you don't indicate your contact details, your submission will "
+"remain anonymous. If you wish to receive further information but do not want "
+"to be connected to this case, you can write to <a href=\"mailto:"
+"info@defendersdatabase.org\">info@defendersdatabase.org</a>.)"
+msgstr ""
+
+#: questionnaire/forms.py:129
+msgid "Submission"
+msgstr ""
+
+#: questionnaire/forms.py:130
+msgid ""
+"<strong>Warning!</strong> You can only submit this form once. After "
+"submission, the link is deactivated."
+msgstr ""
+
+#: questionnaire/forms.py:131
+msgid "<p>Thank you for your contribution!</p>"
+msgstr "<p>Merci beaucoup pour votre contribution !</p>"
+
+#: questionnaire/forms.py:133
+msgid "Submit"
+msgstr "Envoyer"
+
+#: questionnaire/forms.py:144
+msgid ""
+"Please fill the e-mail address field if you wish to receive information."
+msgstr ""
 
 #: questionnaire/models.py:22
 msgid "HRD Case Follow-Up"
-msgstr "DRH"
+msgstr ""
+
+#: questionnaire/models.py:36
+msgid "I am very familiar with the case."
+msgstr ""
+
+#: questionnaire/models.py:37
+msgid "I have information but it might be incomplete."
+msgstr ""
+
+#: questionnaire/models.py:38
+msgid "I only have little information."
+msgstr ""
+
+#: questionnaire/models.py:39
+msgid "I don't have any information."
+msgstr ""
+
+#: questionnaire/models.py:42
+msgid "Much better"
+msgstr ""
+
+#: questionnaire/models.py:43
+msgid "Somewhat better"
+msgstr ""
+
+#: questionnaire/models.py:44
+msgid "Situation stayed the same overall"
+msgstr ""
+
+#: questionnaire/models.py:45
+msgid "Somewhat worse"
+msgstr ""
 
 #: questionnaire/models.py:46
-msgid "Timestamp"
-msgstr "Horodatage"
+msgid "Much worse"
+msgstr ""
 
-#: questionnaire/models.py:55
+#: questionnaire/models.py:47 questionnaire/models.py:54
+msgid "I don't know"
+msgstr ""
+
+#: questionnaire/models.py:50
+msgid "For sure"
+msgstr ""
+
+#: questionnaire/models.py:51
+msgid "Probably"
+msgstr ""
+
+#: questionnaire/models.py:52
+msgid "Rather not"
+msgstr ""
+
+#: questionnaire/models.py:53
+msgid "Definitely not"
+msgstr ""
+
+#: questionnaire/models.py:63
+msgid "Case"
+msgstr ""
+
+#: questionnaire/models.py:69
+msgid "Unique ID"
+msgstr ""
+
+#: questionnaire/models.py:74
+msgid "Timestamp"
+msgstr ""
+
+#: questionnaire/models.py:80
+msgid "Language"
+msgstr ""
+
+#: questionnaire/models.py:86
+msgid "Level of familiarity"
+msgstr "Niveau de connaissance"
+
+#: questionnaire/models.py:92
+msgid "Rating"
+msgstr ""
+
+#: questionnaire/models.py:97 questionnaire/models.py:108
+#: questionnaire/models.py:119 questionnaire/models.py:130
+#: questionnaire/models.py:140
+#, fuzzy
+#| msgid "Date of the intervention"
+msgid "Date of the incident"
+msgstr "Date de l'intervention"
+
+#: questionnaire/models.py:98 questionnaire/models.py:109
+#: questionnaire/models.py:120 questionnaire/models.py:131
+#: questionnaire/models.py:141 survey/models.py:327 survey/models.py:466
+#: survey/models.py:508 survey/models.py:580 survey/models.py:587
+#: survey/models.py:695 survey/models.py:803 survey/models.py:830
+#: survey/models.py:849 survey/models.py:868 survey/models.py:887
+msgid "Format YYYY-MM-DD"
+msgstr ""
+
+#: questionnaire/models.py:102 questionnaire/models.py:113
+#: questionnaire/models.py:124 questionnaire/models.py:135
+#: questionnaire/models.py:145
+msgid "Brief description of the incident"
+msgstr ""
+
+#: questionnaire/models.py:151
+msgid "Attention impact"
+msgstr ""
+
+#: questionnaire/models.py:155
+msgid "Details about impact"
+msgstr ""
+
+#: questionnaire/models.py:159 survey/models.py:521 survey/models.py:731
+#: survey/models.py:900
 msgid "Further comments"
 msgstr "Remarque complémentaire"
 
-#: questionnaire/models.py:56
+#: questionnaire/models.py:164
+msgid "I want to be informed about the outcome of this study"
+msgstr ""
+
+#: questionnaire/models.py:169
+msgid "You can contact me again if you have further questions about this case"
+msgstr ""
+
+#: questionnaire/models.py:175
+msgid "Email address"
+msgstr ""
+
+#: questionnaire/models.py:179
+msgid "Follow-up form answered"
+msgstr ""
+
+#: questionnaire/models.py:183
+msgid "Follow-up processed"
+msgstr ""
+
+#: questionnaire/models.py:187
+msgid "Internal comments"
+msgstr ""
+
+#: survey/models.py:94
+msgid "Male"
+msgstr ""
+
+#: survey/models.py:95
+msgid "Female"
+msgstr ""
+
+#: survey/models.py:96
+msgid "Trans/inter*"
+msgstr ""
+
+#: survey/models.py:97
+msgid "Gender unclear"
+msgstr ""
+
+#: survey/models.py:101 survey/models.py:136 survey/models.py:180
+#: survey/models.py:221
+msgid "N/A"
+msgstr ""
+
+#: survey/models.py:102
+msgid "Women's rights"
+msgstr ""
+
+#: survey/models.py:103
+msgid "Children's rights"
+msgstr ""
+
+#: survey/models.py:104
+msgid "Indigenous peoples' rights"
+msgstr ""
+
+#: survey/models.py:105
+msgid "LGBTI issues"
+msgstr ""
+
+#: survey/models.py:106
+msgid "Migrants'/refugees'/IDP's rights"
+msgstr ""
+
+#: survey/models.py:107
+msgid "Ethnic minorities' rights"
+msgstr ""
+
+#: survey/models.py:108
+msgid "Labour rights"
+msgstr ""
+
+#: survey/models.py:109
+msgid "Poverty/social welfare"
+msgstr ""
+
+#: survey/models.py:110
+msgid "Right to food/water"
+msgstr ""
+
+#: survey/models.py:111
+msgid "Health issues"
+msgstr ""
+
+#: survey/models.py:112
+msgid "Right to education"
+msgstr ""
+
+#: survey/models.py:113
+msgid "Housing rights/forced evictions"
+msgstr ""
+
+#: survey/models.py:114
+msgid "Land rights/environment"
+msgstr ""
+
+#: survey/models.py:115
+msgid "Cultural rights"
+msgstr ""
+
+#: survey/models.py:116
+msgid "Religious freedom"
+msgstr ""
+
+#: survey/models.py:117
+msgid "Prisoner's rights"
+msgstr ""
+
+#: survey/models.py:118
+msgid "Torture"
+msgstr ""
+
+#: survey/models.py:119
+msgid "Death penalty"
+msgstr ""
+
+#: survey/models.py:120 survey/models.py:186
+msgid "Enforced disappearance"
+msgstr ""
+
+#: survey/models.py:121
+msgid "Homocide"
+msgstr ""
+
+#: survey/models.py:122
+msgid "Police/military violence"
+msgstr ""
+
+#: survey/models.py:123
+msgid "Non-state violence"
+msgstr ""
+
+#: survey/models.py:124
+msgid "Corruption"
+msgstr ""
+
+#: survey/models.py:125
+msgid "Democratic/voting rights"
+msgstr ""
+
+#: survey/models.py:126
+msgid "Judicial independence"
+msgstr ""
+
+#: survey/models.py:127
+msgid "Internet freedom"
+msgstr ""
+
+#: survey/models.py:128
+msgid "Human rights education"
+msgstr ""
+
+#: survey/models.py:129
+msgid "Transitional justice"
+msgstr ""
+
+#: survey/models.py:130
+msgid "Peace activism"
+msgstr ""
+
+#: survey/models.py:131
+msgid "Anti-racism"
+msgstr ""
+
+#: survey/models.py:132
+msgid "Right to privacy"
+msgstr ""
+
+#: survey/models.py:137
+msgid "Civil society activist"
+msgstr ""
+
+#: survey/models.py:138
+msgid "Trade union activist"
+msgstr ""
+
+#: survey/models.py:139
+msgid "Religious association"
+msgstr ""
+
+#: survey/models.py:140
+msgid "Politician/Party member"
+msgstr ""
+
+#: survey/models.py:141
+msgid "Community leader"
+msgstr ""
+
+#: survey/models.py:142
+msgid "Lawyer/Judge/Attorney"
+msgstr ""
+
+#: survey/models.py:143
+msgid "Journalist/Editor"
+msgstr ""
+
+#: survey/models.py:144
+msgid "Cyberactivist"
+msgstr ""
+
+#: survey/models.py:145
+msgid "Artist/Writer"
+msgstr ""
+
+#: survey/models.py:146
+msgid "Student"
+msgstr ""
+
+#: survey/models.py:147
+msgid "Teacher/Professor/Scientist"
+msgstr ""
+
+#: survey/models.py:148
+msgid "Medical professional"
+msgstr ""
+
+#: survey/models.py:149
+msgid "Humanitarian worker"
+msgstr ""
+
+#: survey/models.py:150
+msgid "Victim/witness of HR violations"
+msgstr ""
+
+#: survey/models.py:151
+msgid "Ombudsperson/Procuraduria/NHRI"
+msgstr ""
+
+#: survey/models.py:152
+msgid "UN official"
+msgstr ""
+
+#: survey/models.py:153
+msgid "Government/Army/Security forces"
+msgstr ""
+
+#: survey/models.py:154
+msgid "Investigation against officials"
+msgstr ""
+
+#: survey/models.py:155
+msgid "Participation in conference/meeting"
+msgstr ""
+
+#: survey/models.py:156
+msgid "Participation in public protest/rally"
+msgstr ""
+
+#: survey/models.py:160
+msgid "Not mentioned"
+msgstr ""
+
+#: survey/models.py:161
+msgid "UN"
+msgstr ""
+
+#: survey/models.py:162
+msgid "INGO/other IO"
+msgstr ""
+
+#: survey/models.py:166
+msgid "Capital"
+msgstr ""
+
+#: survey/models.py:167
+msgid "City/Town"
+msgstr ""
+
+#: survey/models.py:168
+msgid "Rural area"
+msgstr ""
+
+#: survey/models.py:169
+msgid "Abroad"
+msgstr ""
+
+#: survey/models.py:170 survey/models.py:208
+msgid "Unknown"
+msgstr ""
+
+#: survey/models.py:174
+msgid "Only HRD"
+msgstr ""
+
+#: survey/models.py:175
+msgid "against relative"
+msgstr ""
+
+#: survey/models.py:176
+msgid "against both"
+msgstr ""
+
+#: survey/models.py:181
+msgid "Arrest/Detention"
+msgstr ""
+
+#: survey/models.py:182
+msgid "Incommunicado"
+msgstr ""
+
+#: survey/models.py:183
+msgid "Held in poor conditions"
+msgstr ""
+
+#: survey/models.py:184
+msgid "Risk of torture"
+msgstr ""
+
+#: survey/models.py:185
+msgid "Torture/Ill-treatment"
+msgstr ""
+
+#: survey/models.py:187
+msgid "Physical attack"
+msgstr ""
+
+#: survey/models.py:188
+msgid "Killing attempt"
+msgstr ""
+
+#: survey/models.py:189
+msgid "Killing"
+msgstr ""
+
+#: survey/models.py:190
+msgid "Kidnapping"
+msgstr ""
+
+#: survey/models.py:191
+msgid "Trial"
+msgstr ""
+
+#: survey/models.py:192
+msgid "Unfair trial"
+msgstr ""
+
+#: survey/models.py:193
+msgid "Conviction"
+msgstr ""
+
+#: survey/models.py:194
+msgid "Threats"
+msgstr ""
+
+#: survey/models.py:195
+msgid "Surveillance"
+msgstr ""
+
+#: survey/models.py:196
+msgid "Office/home raided"
+msgstr ""
+
+#: survey/models.py:197
+msgid "Property stolen/confiscated/destroyed"
+msgstr ""
+
+#: survey/models.py:198
+msgid "Defamation campaign"
+msgstr ""
+
+#: survey/models.py:199
+msgid "Disciplinary proceedings"
+msgstr ""
+
+#: survey/models.py:200
+msgid "Travel restrictions"
+msgstr ""
+
+#: survey/models.py:201
+msgid "Access denied"
+msgstr ""
+
+#: survey/models.py:202
+msgid "Expulsion/Visa denied"
+msgstr ""
+
+#: survey/models.py:203
+msgid "Administrative harassment"
+msgstr ""
+
+#: survey/models.py:204
+msgid "Failure to intervene/protect"
+msgstr ""
+
+#: survey/models.py:209
+msgid "Police/security forces"
+msgstr ""
+
+#: survey/models.py:210
+msgid "Public official/administration/judiciary"
+msgstr ""
+
+#: survey/models.py:211
+msgid "Army"
+msgstr ""
+
+#: survey/models.py:212
+msgid "Armed opposition"
+msgstr ""
+
+#: survey/models.py:213
+msgid "Business/landholder"
+msgstr ""
+
+#: survey/models.py:214
+msgid "Mob"
+msgstr ""
+
+#: survey/models.py:215
+msgid "Paramilitary group"
+msgstr ""
+
+#: survey/models.py:216
+msgid "Private person"
+msgstr ""
+
+#: survey/models.py:217
+msgid "Religious authority"
+msgstr ""
+
+#: survey/models.py:222
+msgid "UA"
+msgstr ""
+
+#: survey/models.py:223
+msgid "JUA"
+msgstr ""
+
+#: survey/models.py:224
+msgid "AL"
+msgstr ""
+
+#: survey/models.py:225
+msgid "JAL"
+msgstr ""
+
+#: survey/models.py:226
+msgid "PR"
+msgstr ""
+
+#: survey/models.py:230
+msgid "FrASSEM"
+msgstr ""
+
+#: survey/models.py:231
+msgid "FrEXPRESS"
+msgstr ""
+
+#: survey/models.py:232
+msgid "TORTURE"
+msgstr ""
+
+#: survey/models.py:233
+msgid "WGAD"
+msgstr ""
+
+#: survey/models.py:234
+msgid "WGED"
+msgstr ""
+
+#: survey/models.py:235
+msgid "SumEXECU"
+msgstr ""
+
+#: survey/models.py:236
+msgid "WOMEN"
+msgstr ""
+
+#: survey/models.py:237
+msgid "FrRELIGION"
+msgstr ""
+
+#: survey/models.py:238
+msgid "JUDGES"
+msgstr ""
+
+#: survey/models.py:239
+msgid "INDIGENOUS"
+msgstr ""
+
+#: survey/models.py:240
+msgid "TERRORISM"
+msgstr ""
+
+#: survey/models.py:241
+msgid "BUSINESS"
+msgstr ""
+
+#: survey/models.py:242
+msgid "HEALTH"
+msgstr ""
+
+#: survey/models.py:243
+msgid "ENVIR"
+msgstr ""
+
+#: survey/models.py:244
+msgid "FOOD"
+msgstr ""
+
+#: survey/models.py:245
+msgid "CHILD"
+msgstr ""
+
+#: survey/models.py:246
+msgid "RACISM"
+msgstr ""
+
+#: survey/models.py:247
+msgid "HOUSING"
+msgstr ""
+
+#: survey/models.py:248
+msgid "MINORITY"
+msgstr ""
+
+#: survey/models.py:249
+msgid "EDUCATION"
+msgstr ""
+
+#: survey/models.py:250
+msgid "MIGRANTS"
+msgstr ""
+
+#: survey/models.py:251
+msgid "WASTE"
+msgstr ""
+
+#: survey/models.py:252
+msgid "IDPs"
+msgstr ""
+
+#: survey/models.py:253
+msgid "WG_WOMEN"
+msgstr ""
+
+#: survey/models.py:254
+msgid "MERCENARIES"
+msgstr ""
+
+#: survey/models.py:255
+msgid "TRUTH"
+msgstr ""
+
+#: survey/models.py:256
+msgid "POVERTY"
+msgstr ""
+
+#: survey/models.py:257
+msgid "CULTURE"
+msgstr ""
+
+#: survey/models.py:258
+msgid "ELDERLY"
+msgstr ""
+
+#: survey/models.py:259
+msgid "SLAVERY"
+msgstr ""
+
+#: survey/models.py:260
+msgid "WATER"
+msgstr ""
+
+#: survey/models.py:261
+msgid "AFRICAN"
+msgstr ""
+
+#: survey/models.py:262
+msgid "DISCAPA"
+msgstr ""
+
+#: survey/models.py:263
+msgid "SOLIDAR"
+msgstr ""
+
+#: survey/models.py:264
+msgid "INT'ORDER"
+msgstr ""
+
+#: survey/models.py:265
+msgid "TRAFFIC"
+msgstr ""
+
+#: survey/models.py:266
+#, fuzzy
+#| msgid "Country"
+msgid "Country-specific"
+msgstr "Pays"
+
+#: survey/models.py:270
+msgid "Concern over violation"
+msgstr ""
+
+#: survey/models.py:271
+msgid "Concern: Pattern of violation"
+msgstr ""
+
+#: survey/models.py:272
+msgid "Demand: Protection measures"
+msgstr ""
+
+#: survey/models.py:273
+msgid "Demand: Independent investigation"
+msgstr ""
+
+#: survey/models.py:274
+msgid "Demand: Provide information"
+msgstr ""
+
+#: survey/models.py:275
+msgid "Demand: Release detainee"
+msgstr ""
+
+#: survey/models.py:279
+msgid "Violation rejected"
+msgstr ""
+
+#: survey/models.py:280
+msgid "Reponsive but incomplete"
+msgstr ""
+
+#: survey/models.py:281
+msgid "Immaterial response"
+msgstr ""
+
+#: survey/models.py:282
+msgid "Steps taken to address"
+msgstr ""
+
+#: survey/models.py:283
+msgid "In translation"
+msgstr ""
+
+#: survey/models.py:284
+msgid "File not available"
+msgstr ""
+
+#: survey/models.py:288
+msgid "Protection measures granted"
+msgstr ""
+
+#: survey/models.py:289
+msgid "Individual released early"
+msgstr ""
+
+#: survey/models.py:290
+msgid "Individual released without trial"
+msgstr ""
+
+#: survey/models.py:291
+msgid "Improved prison conditions"
+msgstr ""
+
+#: survey/models.py:292
+msgid "Investigation opened"
+msgstr ""
+
+#: survey/models.py:293
+msgid "Perpetrator suspended/prosecuted"
+msgstr ""
+
+#: survey/models.py:294
+msgid "Travel documents issued"
+msgstr ""
+
+#: survey/models.py:295
+msgid "Other"
+msgstr ""
+
+#: survey/models.py:299
+msgid "INGO"
+msgstr ""
+
+#: survey/models.py:300
+msgid "RNGO"
+msgstr ""
+
+#: survey/models.py:301
+msgid "LNGO"
+msgstr ""
+
+#: survey/models.py:302
+msgid "GOV"
+msgstr ""
+
+#: survey/models.py:303
+msgid "IO"
+msgstr ""
+
+#: survey/models.py:304
+msgid "Indiv."
+msgstr ""
+
+#: survey/models.py:311 survey/models.py:785
+msgid "Person ID"
+msgstr ""
+
+#: survey/models.py:314
+msgid ""
+"Form YYYY-CCCC-PPP, where YYYY is the year of publication, CCCC is the "
+"paragraph number given in the report, and PPP the person number within the "
+"communication"
+msgstr ""
+
+#: survey/models.py:319 survey/models.py:687
+msgid "OHCHR case no."
+msgstr ""
+
+#: survey/models.py:322 survey/models.py:690
+msgid "(select country)"
+msgstr ""
+
+#: survey/models.py:323 survey/models.py:691
+#: templates/questionnaire/followup_form.html:35
+msgid "Country"
+msgstr "Pays"
+
+#: survey/models.py:326 survey/models.py:694
+msgid "Date of the intervention"
+msgstr "Date de l'intervention"
+
+#: survey/models.py:334 survey/models.py:700
+#, fuzzy
+#| msgid "Date of the intervention"
+msgid "Type of intervention"
+msgstr "Date de l'intervention"
+
+#: survey/models.py:340 survey/models.py:706
+msgid "Joint with"
+msgstr ""
+
+#: survey/models.py:341 survey/models.py:425 survey/models.py:432
+#: survey/models.py:438 survey/models.py:445 survey/models.py:452
+#: survey/models.py:459 survey/models.py:572 survey/models.py:707
+#: survey/models.py:809
+msgid "Select multiple items with <i>Ctrl+Click</i>"
+msgstr ""
+
+#: survey/models.py:345 survey/models.py:814
+msgid "Name of HRD"
+msgstr ""
+
+#: survey/models.py:349
+msgid "Gender"
+msgstr ""
+
+#: survey/models.py:353 survey/models.py:720
+#, fuzzy
+#| msgid "Follow-Up Questionnaire"
+msgid "Follow-up on UN case"
+msgstr "Questionnaire complémentaire"
+
+#: survey/models.py:358
+msgid "Date(s) of earlier coms"
+msgstr ""
+
+#: survey/models.py:362 survey/models.py:724
+msgid "Regional mechanism case"
+msgstr ""
+
+#: survey/models.py:369
+msgid "Issue area"
+msgstr ""
+
+#: survey/models.py:370 survey/models.py:378
+msgid "Select maximum 3 items with <i>Ctrl+Click</i>"
+msgstr ""
+
+#: survey/models.py:377
+msgid "Relevant activities"
+msgstr ""
+
+#: survey/models.py:383 templates/questionnaire/followup_form.html.py:43
+msgid "Affiliation"
+msgstr ""
+
+#: survey/models.py:387
+#, fuzzy
+#| msgid "Further comments"
+msgid "Further information"
+msgstr "Remarque complémentaire"
+
+#: survey/models.py:388
+msgid "Name of NGO or party, title of conference, object of investigation etc."
+msgstr ""
+
+#: survey/models.py:392
+msgid "Foreign national"
+msgstr ""
+
+#: survey/models.py:397
+#, fuzzy
+#| msgid "Further comments"
+msgid "International cooperation"
+msgstr "Remarque complémentaire"
+
+#: survey/models.py:403
+msgid "Location"
+msgstr ""
+
+#: survey/models.py:408
+msgid "Name of City / Area"
+msgstr ""
+
+#: survey/models.py:413
+msgid "Violation against HRD or family member?"
+msgstr ""
+
+#: survey/models.py:418
+msgid "Concerned family member"
+msgstr ""
+
+#: survey/models.py:424
+msgid "Violation(s)"
+msgstr ""
+
+#: survey/models.py:431
+msgid "Alleged perpetrator"
+msgstr ""
+
+#: survey/models.py:437
+msgid "Violation(s) #2"
+msgstr ""
+
+#: survey/models.py:444
+msgid "Alleged perpetrator #2"
+msgstr ""
+
+#: survey/models.py:451
+msgid "Violation(s) #3"
+msgstr ""
+
+#: survey/models.py:458
+msgid "Alleged perpetrator #3"
+msgstr ""
+
+#: survey/models.py:465
+#, fuzzy
+#| msgid "Date of the intervention"
+msgid "Date of the latest incident"
+msgstr "Date de l'intervention"
+
+#: survey/models.py:471
+msgid "If unspecific"
+msgstr ""
+
+#: survey/models.py:476
+msgid "Concern/demand expressed in intervention"
+msgstr ""
+
+#: survey/models.py:481
+msgid "If arrested: released?"
+msgstr ""
+
+#: survey/models.py:489
+#, fuzzy
+#| msgid "Date of the intervention"
+msgid "Date of government reply"
+msgstr "Date de l'intervention"
+
+#: survey/models.py:490
+msgid "Format YYYY-MM-DD, leave empty for \"No response\""
+msgstr ""
+
+#: survey/models.py:495
+#, fuzzy
+#| msgid "Date of the intervention"
+msgid "Date(s) of further replies"
+msgstr "Date de l'intervention"
+
+#: survey/models.py:500
+msgid "Content of government reply"
+msgstr ""
+
+#: survey/models.py:501
+msgid "According to rating criteria by Piccone (2012)"
+msgstr ""
+
+#: survey/models.py:507
+msgid "Date of action according to reply"
+msgstr ""
+
+#: survey/models.py:513
+msgid "Action taken according to reply"
+msgstr ""
+
+#: survey/models.py:522 survey/models.py:732 survey/models.py:901
 msgid "Observations that might be relevant but don't fit elsewhere"
 msgstr ""
 "Observations qui pourraient être pertinentes mais ne correspondent pas "
 "ailleurs"
 
-#: questionnaire/models.py:60
-msgid "Follow-up form answered"
+#: survey/models.py:527
+msgid "Feedback"
 msgstr ""
 
-#: templates/admin/draw.html:12
-msgid "Home"
+#: survey/models.py:528
+msgid "Direct feedback on the coding of this particular case"
 msgstr ""
 
-#: templates/admin/draw.html:19
-msgid "You don't have permission to edit anything."
+#: survey/models.py:535 survey/models.py:739
+msgid "Uploads"
 msgstr ""
 
-#: templates/questionnaire/followup_form.html:19
-#, fuzzy
-#| msgid "HRD Case Follow-Up"
-msgid "HRD Case Follow-Up Questionnaire"
-msgstr "DRH"
+#: survey/models.py:542 survey/models.py:746 survey/models.py:908
+msgid "Analyst"
+msgstr ""
 
-#: templates/questionnaire/followup_form.html:22
+#: survey/models.py:543 survey/models.py:747 survey/models.py:909
+msgid "User responsible for this record"
+msgstr ""
+
+#: survey/models.py:548 survey/models.py:914
+msgid "Final"
+msgstr ""
+
+#: survey/models.py:553 survey/models.py:752
+msgid "Business-related case"
+msgstr ""
+
+#: survey/models.py:559 survey/models.py:758
+msgid "Name of company"
+msgstr ""
+
+#: survey/models.py:565
+msgid "Number of sources"
+msgstr ""
+
+#: survey/models.py:571
+msgid "Type of sources"
+msgstr ""
+
+#: survey/models.py:579
+msgid "Complaint sent on"
+msgstr ""
+
+#: survey/models.py:586
+msgid "Complaint received on"
+msgstr ""
+
+#: survey/models.py:594
+msgid "Coordinates"
+msgstr ""
+
+#: survey/models.py:652
+msgid "NGO/Trade union/..."
+msgstr ""
+
+#: survey/models.py:653
+msgid "NHRI"
+msgstr ""
+
+#: survey/models.py:654
+msgid "Statement by official"
+msgstr ""
+
+#: survey/models.py:655
+msgid "Law/bill"
+msgstr ""
+
+#: survey/models.py:656
+msgid "Mass violation/pattern"
+msgstr ""
+
+#: survey/models.py:657
+msgid "Anonymous cases"
+msgstr ""
+
+#: survey/models.py:658
+msgid "PR on individual"
+msgstr ""
+
+#: survey/models.py:659
+msgid "Country visit by SR"
+msgstr ""
+
+#: survey/models.py:663
+msgid "NGO Record"
+msgstr ""
+
+#: survey/models.py:679
+msgid "Case ID"
+msgstr ""
+
+#: survey/models.py:682
+msgid ""
+"Form YYYY-CCCC, where YYYY is the year of publication and CCCC the paragraph "
+"number given in the report"
+msgstr ""
+
+#: survey/models.py:711
+msgid "Subject of communication"
+msgstr ""
+
+#: survey/models.py:715
+msgid "Type of case"
+msgstr ""
+
+#: survey/models.py:767
+msgid "AI Record"
+msgstr ""
+
+#: survey/models.py:789
+msgid ""
+"Form AI-YYYY-RRRR-PPP, where YYYY is the year of publication, RRRR is the "
+"reference, and PPP the person number within the communication"
+msgstr ""
+
+#: survey/models.py:793
+msgid "AI Internal Reference"
+msgstr ""
+
+#: survey/models.py:798
+msgid "Public ID"
+msgstr ""
+
+#: survey/models.py:802
+msgid "Date of the submission"
+msgstr ""
+
+#: survey/models.py:810
+msgid "Additional mandates"
+msgstr ""
+
+#: survey/models.py:818 templates/questionnaire/followup_form.html.py:31
 msgid "Case Summary"
+msgstr "Résumé du cas"
+
+#: survey/models.py:824
+msgid "FA Title"
+msgstr ""
+
+#: survey/models.py:829
+msgid "Date of FA"
+msgstr ""
+
+#: survey/models.py:837
+msgid "Summary of FA"
+msgstr ""
+
+#: survey/models.py:843
+msgid "FA Title (2)"
+msgstr ""
+
+#: survey/models.py:848
+msgid "Date of FA (2)"
+msgstr ""
+
+#: survey/models.py:856
+msgid "Summary of FA (2)"
+msgstr ""
+
+#: survey/models.py:862
+msgid "FA Title (3)"
+msgstr ""
+
+#: survey/models.py:867
+msgid "Date of FA (3)"
+msgstr ""
+
+#: survey/models.py:875
+msgid "Summary of FA (3)"
+msgstr ""
+
+#: survey/models.py:881
+msgid "FA Title (4)"
+msgstr ""
+
+#: survey/models.py:886
+msgid "Date of FA (4)"
+msgstr ""
+
+#: survey/models.py:894
+msgid "Summary of FA (4)"
 msgstr ""
 
 #: templates/questionnaire/followup_form.html:25
-msgid "Country"
-msgstr ""
-
-#: templates/questionnaire/followup_form.html:27
-msgid "Date of the intervention"
-msgstr "Date de l'intervention"
-
-#: templates/questionnaire/followup_form.html:32
-msgid "Follow-Up Questionnaire"
-msgstr "Questionnaire complémentaire"
-
-#: templates/questionnaire/followup_form.html:37
-msgid "Warning!"
-msgstr "Attention!"
-
-#: templates/questionnaire/followup_form.html:37
-msgid ""
-"You can only submit this form once. After submission, the link is "
-"deactivated."
+msgid "HRD Case Follow-Up Questionnaire"
 msgstr ""
 
 #: templates/questionnaire/followup_form.html:39
-msgid "Submit"
-msgstr "Envoyer"
+msgid "Defender's Name"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:47
+msgid "Incidents reported to UN"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:55
+msgid "Victim(s)"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:58
+msgid "Defender him/herself"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:60
+msgid "Relatives of the defender"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:62
+msgid "Defender and his/her relatives"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:67
+msgid "Date of last reported incident"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:77
+msgid "Date of UN action"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:87
+msgid "Follow-Up Questionnaire"
+msgstr ""

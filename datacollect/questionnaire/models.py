@@ -59,9 +59,15 @@ class FollowUp(models.Model):
         Record,
         on_delete=models.CASCADE,
         primary_key=True,
-        related_name="followup"
+        related_name="followup",
+        verbose_name = _('Case')
     )
-    unique_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    unique_id = models.UUIDField(
+        default=uuid.uuid4,
+        editable=False,
+        unique=True,
+        verbose_name = _('Unique ID')
+    )
     timestamp = models.DateTimeField(
         null=True,
         blank=True,
@@ -70,23 +76,26 @@ class FollowUp(models.Model):
     language = models.CharField(
         default = "en",
         max_length=7,
-        choices=settings.LANGUAGES
+        choices=settings.LANGUAGES,
+        verbose_name = _('Language')
     )
     familiarity = models.IntegerField(
         choices=FAMILIARITY_CHOICES,
         default=4,
         null=True,
+        verbose_name = _('Level of familiarity')
     )
     rating = models.IntegerField(
         choices=RATING_CHOICES,
         default=6,
         null=True,
+        verbose_name = _('Rating')
     )
     incident_date_1 = models.DateField(
         null=True,
         blank=True,
         verbose_name=_("Date of the incident"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
     incident_text_1 = models.TextField(
         blank=True,
@@ -97,7 +106,7 @@ class FollowUp(models.Model):
         null=True,
         blank=True,
         verbose_name=_("Date of the incident"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
     incident_text_2 = models.TextField(
         blank=True,
@@ -108,7 +117,7 @@ class FollowUp(models.Model):
         null=True,
         blank=True,
         verbose_name=_("Date of the incident"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
     incident_text_3 = models.TextField(
         blank=True,
@@ -119,7 +128,7 @@ class FollowUp(models.Model):
         null=True,
         blank=True,
         verbose_name=_("Date of the incident"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
     incident_text_4 = models.TextField(
         blank=True,
@@ -129,7 +138,7 @@ class FollowUp(models.Model):
         null=True,
         blank=True,
         verbose_name=_("Date of the incident"),
-        help_text=_("Format YYY-MM-DD")
+        help_text=_("Format YYYY-MM-DD")
     )
     incident_text_5 = models.TextField(
         blank=True,
@@ -139,6 +148,7 @@ class FollowUp(models.Model):
         choices=ATTENTION_CHOICES,
         default=6,
         null=True,
+        verbose_name = _('Attention impact')
     )
     impact = models.TextField(
         blank=True,
