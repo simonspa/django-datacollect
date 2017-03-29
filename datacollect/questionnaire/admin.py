@@ -31,6 +31,7 @@ class FollowUpAdmin(VersionAdmin):
         }),
         (None, {
             'fields': ("attention",
+                       "intervention",
                        "impact",
                        "further_comments",)
         }),

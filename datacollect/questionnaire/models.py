@@ -150,6 +150,12 @@ class FollowUp(models.Model):
         null=True,
         verbose_name = _('Attention impact')
     )
+    intervention = models.IntegerField(
+        choices=ATTENTION_CHOICES,
+        default=6,
+        null=True,
+        verbose_name = _('Impact of intervention')
+    )
     impact = models.TextField(
         blank=True,
         verbose_name=_("Details about impact"),

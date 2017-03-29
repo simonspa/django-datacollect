@@ -21,6 +21,7 @@ class FollowUpForm(forms.ModelForm):
                   'incident_date_4','incident_text_4',
                   'incident_date_5','incident_text_5',
                   'attention',
+                  'intervention',
                   'impact',
                   'further_comments',
                   'want_informed',
@@ -31,6 +32,7 @@ class FollowUpForm(forms.ModelForm):
             'rating': forms.RadioSelect(),
             'familiarity': forms.RadioSelect(),
             'attention': forms.RadioSelect(),
+            'intervention': forms.RadioSelect(),
             'impact': forms.Textarea(attrs={'rows': 3,
                                             'cols': 40,
                                             'style': 'height: 8em;'}),
@@ -110,7 +112,13 @@ class FollowUpForm(forms.ModelForm):
                 'attention',
             ),
             Fieldset(
-                _('5. Impact of the attention'),
+                _('5. Special Rapporteur\'s Intervention'),
+                HTML(_("<p>Amidst the broader international attention, do you believe that the Special Rapporteur's intervention had a distinguishable impact?</p>")),
+                'intervention',
+            ),
+
+            Fieldset(
+                _('6. Impact of the attention'),
                 HTML(_('<p>Please provide as much detail as possible on what makes you come to this conclusion, as well as on what kind of impact the attention had (if any):</p>')),
                 'impact',
             ),
