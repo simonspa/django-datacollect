@@ -4,7 +4,7 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from .models import FollowUp
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Button
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Button, Div
 from crispy_forms.bootstrap import TabHolder, Tab, InlineRadios, FormActions, Alert
 from django.utils.translation import ugettext_lazy as _
 
@@ -60,86 +60,137 @@ class FollowUpForm(forms.ModelForm):
         super(FollowUpForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.helper.form_class = 'form-horizontal'
-        self.helper.label_class = 'col-lg-4'
-        self.helper.field_class = 'col-lg-8'
+        self.helper.label_class = 'col-sm-3 col-md-3 col-lg-3'
+        self.helper.field_class = 'col-sm-9 col-md-9 col-lg-9'
         self.helper.layout = Layout(
-            Fieldset(
-                _('1. Familiarity'),
-                HTML(_("<p>How familiar are you with {{ form.instance.case.name }}'s case in the period from {{ form.instance.case.date_intervention }} until one year later?</p>")),
-                'familiarity',
-            ),
-            Fieldset(
-                _('2. Development of the situation'),
-                HTML(_("<p>In light of the attacks (see above) that occurred before the Special Rapporteur's action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation/case <strong>within one year</strong> after this date?</p>")),
-                'rating',
-                HTML(_("<p>To ensure consistency in responses by different respondents, we recommend that you look at <a data-toggle='modal' data-target='#myModal'>this table</a> that lists various examples and explains how to rate developments of a case depending on the initial situation.</p>")),
-            ),
-            Fieldset(
-                _('3. Significant incidents'),
-                HTML(_("<p>Please indicate all significant incidents that happened within one year after the Special Rapporteur's intervention that you are aware of (if there were more than 5, concentrate on the most important ones):</p>")),
-                TabHolder(
-                    Tab(
-                        _('Incident #1'),
-                        'incident_date_1',
-                        'incident_text_1'
-                    ),
-                    Tab(
-                        _('Incident #2'),
-                        'incident_date_2',
-                        'incident_text_2',
-                    ),
-                    Tab(
-                        _('Incident #3'),
-                        'incident_date_3',
-                        'incident_text_3',
-                    ),
-                    Tab(
-                        _('Incident #4'),
-                        'incident_date_4',
-                        'incident_text_4',
-                    ),
-                    Tab(
-                        _('Incident #5'),
-                        'incident_date_5',
-                        'incident_text_5',
-                    ),
-
-          ),
-            ),
-            Fieldset(
-                _('4. International attention'),
-                HTML(_("<p>Do you believe that the international attention to {{ form.instance.case.name }}\'s case did have an impact on the development of his/her situation during this period?</p>")),
-                'attention',
-            ),
-            Fieldset(
-                _('5. Special Rapporteur\'s Intervention'),
-                HTML(_("<p>Amidst the broader international attention, do you believe that the Special Rapporteur's intervention had a distinguishable impact?</p>")),
-                'intervention',
-            ),
-
-            Fieldset(
-                _('6. Impact of the attention'),
-                HTML(_('<p>Please provide as much detail as possible on what makes you come to your conclusion on question (4) and (5), as well as on what kind of impact the attention had (if any):</p>')),
-                'impact',
-            ),
-            Fieldset(
-                _('7. Further comments/feedback:'),
-                'further_comments',
-            ),
-            Fieldset(
-                _('8. Voluntary contact information:'),
-                'want_informed',
-                'contact_again',
-                'email_address',
-                HTML(_("(Please note that by submitting your email address, your contact can be connected to this case by the independent researcher carrying out the analysis. If you do not indicate your contact details, your submission will remain anonymous. If you wish to receive further information but do not want to be connected to this case, you can write to <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>.)")),
-            ),
-            Fieldset(
-                _('Submission'),
-                Alert(content=_('<strong>Warning!</strong> You can only submit this form once. After submission, the link is deactivated.')),
-                HTML(_("<p>Thank you for your contribution!</p>")),
-                FormActions(
-                    Submit('save', _('Submit')),
+            Div(
+                Div(
+                    HTML(_('1. Familiarity')),
+                    css_class = 'panel-heading'
                 ),
+                Div(
+                    HTML(_("<p>How familiar are you with {{ form.instance.case.name }}'s case in the period from {{ form.instance.case.date_intervention }} until one year later?</p>")),
+                    'familiarity',
+                    css_class = 'panel-body'
+                ),
+                css_class = 'panel panel-default'
+            ),
+            Div(
+                Div(
+                    HTML(_('2. Development of the situation')),
+                    css_class = 'panel-heading'
+                ),
+                Div(
+                    HTML(_("<p>In light of the attacks (see above) that occurred before the Special Rapporteur's action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation/case <strong>within one year</strong> after this date?</p>")),
+                'rating',
+                    HTML(_("<p>To ensure consistency in responses by different respondents, we recommend that you look at <a data-toggle='modal' data-target='#myModal'>this table</a> that lists various examples and explains how to rate developments of a case depending on the initial situation.</p>")),
+                    css_class = 'panel-body'
+                ),
+                css_class = 'panel panel-default'
+            ),
+            Div(
+                Div(
+                    HTML(_('3. Significant incidents')),
+                    css_class = 'panel-heading'
+                ),
+                Div(
+                    HTML(_("<p>Please indicate all significant incidents that happened within one year after the Special Rapporteur's intervention that you are aware of (if there were more than 5, concentrate on the most important ones):</p>")),
+                    TabHolder(
+                        Tab(
+                            _('Incident #1'),
+                            'incident_date_1',
+                            'incident_text_1'
+                        ),
+                        Tab(
+                            _('Incident #2'),
+                            'incident_date_2',
+                            'incident_text_2',
+                        ),
+                        Tab(
+                            _('Incident #3'),
+                            'incident_date_3',
+                            'incident_text_3',
+                        ),
+                        Tab(
+                            _('Incident #4'),
+                            'incident_date_4',
+                            'incident_text_4',
+                        ),
+                        Tab(
+                            _('Incident #5'),
+                            'incident_date_5',
+                            'incident_text_5',
+                        ),
+                    ),
+                    css_class = 'panel-body'
+                ),
+                css_class = 'panel panel-default'
+            ),
+            Div(
+                Div(
+                    HTML(_('4. International attention')),
+                    css_class = 'panel-heading'
+                ),
+                Div(
+                    HTML(_("<p>Do you believe that the international attention to {{ form.instance.case.name }}\'s case did have an impact on the development of his/her situation during this period?</p>")),
+                    'attention',
+                    css_class = 'panel-body'
+                ),
+                css_class = 'panel panel-default'
+            ),
+            Div(
+                Div(
+                    HTML(_('5. Special Rapporteur\'s Intervention')),
+                    css_class = 'panel-heading'
+                ),
+                Div(
+                    HTML(_("<p>Amidst the broader international attention, do you believe that the Special Rapporteur's intervention had a distinguishable impact?</p>")),
+                    'intervention',
+                    css_class = 'panel-body'
+                ),
+                css_class = 'panel panel-default'
+            ),
+            Div(
+                Div(
+                    HTML(_('6. Impact of the attention')),
+                    css_class = 'panel-heading'
+                ),
+                Div(
+                    HTML(_('<p>Please provide as much detail as possible on what makes you come to your conclusion on question (4) and (5), as well as on what kind of impact the attention had (if any):</p>')),
+                    'impact',
+                    css_class = 'panel-body'
+                ),
+                css_class = 'panel panel-default'
+            ),
+            Div(
+                Div(
+                    HTML(_('7. Further comments/feedback:')),
+                    css_class = 'panel-heading'
+                ),
+                Div(
+                    'further_comments',
+                    css_class = 'panel-body'
+                ),
+                css_class = 'panel panel-default'
+            ),
+            Div(
+                Div(
+                    HTML(_('8. Voluntary contact information:')),
+                    css_class = 'panel-heading'
+                ),
+                Div(
+                    'want_informed',
+                    'contact_again',
+                    'email_address',
+                    HTML(_("(Please note that by submitting your email address, your contact can be connected to this case by the independent researcher carrying out the analysis. If you do not indicate your contact details, your submission will remain anonymous. If you wish to receive further information but do not want to be connected to this case, you can write to <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>.)")),
+                    css_class = 'panel-body'
+                ),
+                css_class = 'panel panel-default'
+            ),
+            Alert(content=_('<strong>Warning!</strong> You can only submit this form once. After submission, the link is deactivated.'), css_class="alert-warning"),
+            HTML(_("<p>Thank you for your contribution!</p>")),
+            FormActions(
+                Submit('save', _('Submit')),
             ),
         )
 
