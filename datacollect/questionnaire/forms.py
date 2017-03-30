@@ -72,7 +72,7 @@ class FollowUpForm(forms.ModelForm):
                 _('2. Development of the situation'),
                 HTML(_("<p>In light of the attacks (see above) that occurred before the Special Rapporteur's action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation/case <strong>within one year</strong> after this date?</p>")),
                 'rating',
-                HTML(_("<p>To ensure consistency in responses by different respondents, we recommend that you look at this table that lists various examples and explains how to rate developments of a case depending on the initial situation.</p>")),
+                HTML(_("<p>To ensure consistency in responses by different respondents, we recommend that you look at <a data-toggle='modal' data-target='#myModal'>this table</a> that lists various examples and explains how to rate developments of a case depending on the initial situation.</p>")),
             ),
             Fieldset(
                 _('3. Significant incidents'),
