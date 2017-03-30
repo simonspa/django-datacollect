@@ -3,20 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 18:03+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-03-27 23:27+0200\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.12\n"
 
 #: datacollect/settings.py:130 datacollect/settings_production.py:149
 msgid "English"
@@ -32,7 +32,7 @@ msgstr "Français"
 
 #: questionnaire/forms.py:65
 msgid "1. Familiarity"
-msgstr "1. Connaissance"
+msgstr "1. Connaissance du cas"
 
 #: questionnaire/forms.py:66
 msgid ""
@@ -40,10 +40,13 @@ msgid ""
 "period from {{ form.instance.case.date_intervention }} until one year later?"
 "</p>"
 msgstr ""
+"<p>Dans quelle mesure êtes-vous familier avec le cas de {{ form.instance."
+"case.name }} dans la période à partir du {{ form.instance.case."
+"date_intervention }} jusqu'à une année après?</p>"
 
 #: questionnaire/forms.py:70
 msgid "2. Development of the situation"
-msgstr "2. Developpement de la situation"
+msgstr "2. Développement de la situation"
 
 #: questionnaire/forms.py:71
 msgid ""
@@ -52,16 +55,25 @@ msgid ""
 "you describe the development of {{ form.instance.case.name }}'s situation/"
 "case <strong>within one year</strong> after this date?</p>"
 msgstr ""
+"<p>Au vue des attaques (voir ci-dessus) qui se sont produites avant "
+"l'intervention du Rapporteur Special au {{ form.instance.case."
+"date_intervention }}, comment décririez-vous le développement de la "
+"situation de {{ form.instance.case.name }} <strong>en l'espace d'une année</"
+"strong> après cette date?</p>"
 
 #: questionnaire/forms.py:73
 msgid ""
 "<p>If you are not sure how to assess the case, here is a table with various "
 "examples.</p>"
 msgstr ""
+"<p>Afin d'assurer la cohérence entre les réponses des différents répondants, "
+"nous vous recommandons d'examiner ce tableau qui donne plusieurs exemples et "
+"explique comment évaluer le développement d'un cas en fonction de la "
+"situation de départ.</p>"
 
 #: questionnaire/forms.py:76
 msgid "3. Significant incidents"
-msgstr ""
+msgstr "3. Événements signifiants"
 
 #: questionnaire/forms.py:77
 msgid ""
@@ -69,32 +81,34 @@ msgid ""
 "aware of (if there were more than 5, concentrate on the most important ones):"
 "</p>"
 msgstr ""
+"<p>Veuillez indiquer ici tout événement signifiant qui s'est produit au "
+"cours d'une année suite à l'intervention du Rapporteur Special dont vous "
+"avez connaissance (s'il y avait plus de 5, concentrez-vous sur les plus "
+"importants):</p>"
 
 #: questionnaire/forms.py:80
 msgid "Incident #1"
-msgstr ""
+msgstr "Événement #1"
 
 #: questionnaire/forms.py:85
 msgid "Incident #2"
-msgstr ""
+msgstr "Événement #2"
 
 #: questionnaire/forms.py:90
 msgid "Incident #3"
-msgstr ""
+msgstr "Événement #3"
 
 #: questionnaire/forms.py:95
 msgid "Incident #4"
-msgstr ""
+msgstr "Événement #4"
 
 #: questionnaire/forms.py:100
 msgid "Incident #5"
-msgstr ""
+msgstr "Événement #5"
 
 #: questionnaire/forms.py:108
-#, fuzzy
-#| msgid "Further comments"
 msgid "4. International attention"
-msgstr "Remarque complémentaire"
+msgstr "4. Attention internationale"
 
 #: questionnaire/forms.py:109
 msgid ""
@@ -102,28 +116,30 @@ msgid ""
 "name }}'s case, including from the UN, did have an impact on the development "
 "of his/her situation during this period?</p>"
 msgstr ""
+"<p>Croyez-vous que l'attention internationale sur le cas de {{ form.instance."
+"case.name }} a eu un impact sur le développement de sa situation pendant "
+"cette période?</p>"
 
 #: questionnaire/forms.py:113
-#, fuzzy
-#| msgid "Date of the intervention"
 msgid "5. Impact of the attention"
-msgstr "Date de l'intervention"
+msgstr "5. Impact de l'attention"
 
 #: questionnaire/forms.py:114
 msgid ""
 "<p>Please provide as much detail as possible on what makes you come to this "
 "conclusion, as well as on what kind of impact the attention had (if any):</p>"
 msgstr ""
+"<p>Veuillez fournir autant de détails que possible sur ce qui vous amène à "
+"vos conclusions sur les questions (4) et (5), ainsi que sur le type d'impact "
+"que l'attention a eu (le cas échéant):</p>"
 
 #: questionnaire/forms.py:118
-#, fuzzy
-#| msgid "Further comments"
 msgid "6. Further comments/feedback:"
-msgstr "Remarque complémentaire"
+msgstr "6. Remarques/commentaires complémentaires"
 
 #: questionnaire/forms.py:122
 msgid "7. Voluntary contact information:"
-msgstr ""
+msgstr "7. Coordonnées (volontaire)"
 
 #: questionnaire/forms.py:126
 msgid ""
@@ -134,16 +150,24 @@ msgid ""
 "to be connected to this case, you can write to <a href=\"mailto:"
 "info@defendersdatabase.org\">info@defendersdatabase.org</a>.)"
 msgstr ""
+"(Veuillez noter qu'en envoyant votre adresse e-mail, votre contact peut être "
+"connecté à ce cas par la chercheuse indépendante effectuant l'analyse. Si "
+"vous n'indiquez pas vos coordonnées, votre soumission demeurera anonyme. Si "
+"vous souhaitez recevoir des informations supplémentaires, mais ne souhaitez "
+"pas être connecté(e) à ce cas, vous pouvez vous adresser à <a href=\"mailto:"
+"info@defendersdatabase.org\">info@defendersdatabase.org</a>.)"
 
 #: questionnaire/forms.py:129
 msgid "Submission"
-msgstr ""
+msgstr "Soumission"
 
 #: questionnaire/forms.py:130
 msgid ""
 "<strong>Warning!</strong> You can only submit this form once. After "
 "submission, the link is deactivated."
 msgstr ""
+"<strong>Attention!</strong> Vous pouvez soumettre ce formulaire une seule "
+"fois. Après l'envoi, le lien sera désactivé."
 
 #: questionnaire/forms.py:131
 msgid "<p>Thank you for your contribution!</p>"
@@ -157,98 +181,98 @@ msgstr "Envoyer"
 msgid ""
 "Please fill the e-mail address field if you wish to receive information."
 msgstr ""
+"Veuillez indiquer une addresse e-mail si vous souhaitez recevoir de "
+"l'information."
 
 #: questionnaire/models.py:22
 msgid "HRD Case Follow-Up"
-msgstr ""
+msgstr "Suivi de cas de défenseurs"
 
 #: questionnaire/models.py:36
 msgid "I am very familiar with the case."
-msgstr ""
+msgstr "Je connais ce cas très bien."
 
 #: questionnaire/models.py:37
 msgid "I have information but it might be incomplete."
-msgstr ""
+msgstr "J'ai des informations, mais elles pourraient être incomplètes."
 
 #: questionnaire/models.py:38
 msgid "I only have little information."
-msgstr ""
+msgstr "Je n'ai que peu d'informations."
 
 #: questionnaire/models.py:39
 msgid "I don't have any information."
-msgstr ""
+msgstr "Je n'ai pas d'informations sur ce cas."
 
 #: questionnaire/models.py:42
 msgid "Much better"
-msgstr ""
+msgstr "Beaucoup meilleure"
 
 #: questionnaire/models.py:43
 msgid "Somewhat better"
-msgstr ""
+msgstr "Plutôt meilleure"
 
 #: questionnaire/models.py:44
 msgid "Situation stayed the same overall"
-msgstr ""
+msgstr "Situation est restée la même dans l'ensemble"
 
 #: questionnaire/models.py:45
 msgid "Somewhat worse"
-msgstr ""
+msgstr "Plutôt pire"
 
 #: questionnaire/models.py:46
 msgid "Much worse"
-msgstr ""
+msgstr "Beaucoup pire"
 
 #: questionnaire/models.py:47 questionnaire/models.py:54
 msgid "I don't know"
-msgstr ""
+msgstr "Je ne sais pas"
 
 #: questionnaire/models.py:50
 msgid "For sure"
-msgstr ""
+msgstr "Certainement oui"
 
 #: questionnaire/models.py:51
 msgid "Probably"
-msgstr ""
+msgstr "Probablement oui"
 
 #: questionnaire/models.py:52
 msgid "Rather not"
-msgstr ""
+msgstr "Plutôt non"
 
 #: questionnaire/models.py:53
 msgid "Definitely not"
-msgstr ""
+msgstr "Certainement non"
 
 #: questionnaire/models.py:63
 msgid "Case"
-msgstr ""
+msgstr "Cas"
 
 #: questionnaire/models.py:69
 msgid "Unique ID"
-msgstr ""
+msgstr "ID unique"
 
 #: questionnaire/models.py:74
 msgid "Timestamp"
-msgstr ""
+msgstr "Horodatage"
 
 #: questionnaire/models.py:80
 msgid "Language"
-msgstr ""
+msgstr "Langue"
 
 #: questionnaire/models.py:86
 msgid "Level of familiarity"
-msgstr "Niveau de connaissance"
+msgstr "Niveau de connaissance du cas"
 
 #: questionnaire/models.py:92
 msgid "Rating"
-msgstr ""
+msgstr "Évaluation"
 
 #: questionnaire/models.py:97 questionnaire/models.py:108
 #: questionnaire/models.py:119 questionnaire/models.py:130
 #: questionnaire/models.py:140
-#, fuzzy
-#| msgid "Date of the intervention"
 msgid "Date of the incident"
-msgstr "Date de l'intervention"
+msgstr "Date de l'événement"
 
 #: questionnaire/models.py:98 questionnaire/models.py:109
 #: questionnaire/models.py:120 questionnaire/models.py:131
@@ -257,38 +281,41 @@ msgstr "Date de l'intervention"
 #: survey/models.py:695 survey/models.py:803 survey/models.py:830
 #: survey/models.py:849 survey/models.py:868 survey/models.py:887
 msgid "Format YYYY-MM-DD"
-msgstr ""
+msgstr "Format AAAA-MM-JJ"
 
 #: questionnaire/models.py:102 questionnaire/models.py:113
 #: questionnaire/models.py:124 questionnaire/models.py:135
 #: questionnaire/models.py:145
 msgid "Brief description of the incident"
-msgstr ""
+msgstr "Brève déscription de l'événement"
 
 #: questionnaire/models.py:151
 msgid "Attention impact"
-msgstr ""
+msgstr "Impact de l'attention"
 
 #: questionnaire/models.py:155
 msgid "Details about impact"
-msgstr ""
+msgstr "Détails sur l'impact"
 
 #: questionnaire/models.py:159 survey/models.py:521 survey/models.py:731
 #: survey/models.py:900
 msgid "Further comments"
-msgstr "Remarque complémentaire"
+msgstr "Remarques complémentaires"
 
 #: questionnaire/models.py:164
 msgid "I want to be informed about the outcome of this study"
 msgstr ""
+"Je voudrais recevoir des informations sur les résultats de cette étude."
 
 #: questionnaire/models.py:169
 msgid "You can contact me again if you have further questions about this case"
 msgstr ""
+"Vous pouvez me récontacter si vous avez des questions supplémentaires sur ce "
+"cas."
 
 #: questionnaire/models.py:175
 msgid "Email address"
-msgstr ""
+msgstr "Adresse e-mail"
 
 #: questionnaire/models.py:179
 msgid "Follow-up form answered"
@@ -573,95 +600,95 @@ msgstr ""
 
 #: survey/models.py:181
 msgid "Arrest/Detention"
-msgstr ""
+msgstr "Détention"
 
 #: survey/models.py:182
 msgid "Incommunicado"
-msgstr ""
+msgstr "Détention au secret"
 
 #: survey/models.py:183
 msgid "Held in poor conditions"
-msgstr ""
+msgstr "Détention dans des mauvaises conditions"
 
 #: survey/models.py:184
 msgid "Risk of torture"
-msgstr ""
+msgstr "Risque de torture"
 
 #: survey/models.py:185
 msgid "Torture/Ill-treatment"
-msgstr ""
+msgstr "Torture/mauvais traitement"
 
 #: survey/models.py:187
 msgid "Physical attack"
-msgstr ""
+msgstr "Attaque physique"
 
 #: survey/models.py:188
 msgid "Killing attempt"
-msgstr ""
+msgstr "Tentative de mise à mort"
 
 #: survey/models.py:189
 msgid "Killing"
-msgstr ""
+msgstr "Homicide"
 
 #: survey/models.py:190
 msgid "Kidnapping"
-msgstr ""
+msgstr "Kidnapping"
 
 #: survey/models.py:191
 msgid "Trial"
-msgstr ""
+msgstr "Procès"
 
 #: survey/models.py:192
 msgid "Unfair trial"
-msgstr ""
+msgstr "Procès inéquitable"
 
 #: survey/models.py:193
 msgid "Conviction"
-msgstr ""
+msgstr "Conviction"
 
 #: survey/models.py:194
 msgid "Threats"
-msgstr ""
+msgstr "Menaces"
 
 #: survey/models.py:195
 msgid "Surveillance"
-msgstr ""
+msgstr "Surveillance"
 
 #: survey/models.py:196
 msgid "Office/home raided"
-msgstr ""
+msgstr "Bureau/maison attaqué(e)"
 
 #: survey/models.py:197
 msgid "Property stolen/confiscated/destroyed"
-msgstr ""
+msgstr "Propriété volée/confisquée/détruite"
 
 #: survey/models.py:198
 msgid "Defamation campaign"
-msgstr ""
+msgstr "Campagne de diffamation"
 
 #: survey/models.py:199
 msgid "Disciplinary proceedings"
-msgstr ""
+msgstr "Procédure disciplinaire"
 
 #: survey/models.py:200
 msgid "Travel restrictions"
-msgstr ""
+msgstr "Restrictions de voyage"
 
 #: survey/models.py:201
 msgid "Access denied"
-msgstr ""
+msgstr "Accès refusé"
 
 #: survey/models.py:202
 msgid "Expulsion/Visa denied"
-msgstr ""
+msgstr "Expulsion/Visa refusé"
 
 #: survey/models.py:203
 msgid "Administrative harassment"
-msgstr ""
+msgstr "Harcèlement administratif"
 
 #: survey/models.py:204
 msgid "Failure to intervene/protect"
-msgstr ""
+msgstr "Défaut d'intervention/de protection"
 
 #: survey/models.py:209
 msgid "Police/security forces"
@@ -864,10 +891,8 @@ msgid "TRAFFIC"
 msgstr ""
 
 #: survey/models.py:266
-#, fuzzy
-#| msgid "Country"
 msgid "Country-specific"
-msgstr "Pays"
+msgstr ""
 
 #: survey/models.py:270
 msgid "Concern over violation"
@@ -1002,10 +1027,8 @@ msgid "Date of the intervention"
 msgstr "Date de l'intervention"
 
 #: survey/models.py:334 survey/models.py:700
-#, fuzzy
-#| msgid "Date of the intervention"
 msgid "Type of intervention"
-msgstr "Date de l'intervention"
+msgstr "Type d'intervention"
 
 #: survey/models.py:340 survey/models.py:706
 msgid "Joint with"
@@ -1020,17 +1043,15 @@ msgstr ""
 
 #: survey/models.py:345 survey/models.py:814
 msgid "Name of HRD"
-msgstr ""
+msgstr "Nom du défenseur"
 
 #: survey/models.py:349
 msgid "Gender"
 msgstr ""
 
 #: survey/models.py:353 survey/models.py:720
-#, fuzzy
-#| msgid "Follow-Up Questionnaire"
 msgid "Follow-up on UN case"
-msgstr "Questionnaire complémentaire"
+msgstr ""
 
 #: survey/models.py:358
 msgid "Date(s) of earlier coms"
@@ -1117,10 +1138,8 @@ msgid "Alleged perpetrator #3"
 msgstr ""
 
 #: survey/models.py:465
-#, fuzzy
-#| msgid "Date of the intervention"
 msgid "Date of the latest incident"
-msgstr "Date de l'intervention"
+msgstr "Date du dernier événement"
 
 #: survey/models.py:471
 msgid "If unspecific"
@@ -1358,40 +1377,40 @@ msgstr ""
 
 #: templates/questionnaire/followup_form.html:25
 msgid "HRD Case Follow-Up Questionnaire"
-msgstr ""
+msgstr "Défenseurs de droits de l'homme: Questionnaire de suivi"
 
 #: templates/questionnaire/followup_form.html:39
 msgid "Defender's Name"
-msgstr ""
+msgstr "Nom du défenseur"
 
 #: templates/questionnaire/followup_form.html:47
 msgid "Incidents reported to UN"
-msgstr ""
+msgstr "Violations reportées à l'ONU"
 
 #: templates/questionnaire/followup_form.html:55
 msgid "Victim(s)"
-msgstr ""
+msgstr "Victime(s)"
 
 #: templates/questionnaire/followup_form.html:58
 msgid "Defender him/herself"
-msgstr ""
+msgstr "Défenseur lui/elle-même"
 
 #: templates/questionnaire/followup_form.html:60
 msgid "Relatives of the defender"
-msgstr ""
+msgstr "Proches du défenseur"
 
 #: templates/questionnaire/followup_form.html:62
 msgid "Defender and his/her relatives"
-msgstr ""
+msgstr "Défenseur et ses proches"
 
 #: templates/questionnaire/followup_form.html:67
 msgid "Date of last reported incident"
-msgstr ""
+msgstr "Date du dernier événement reporté"
 
 #: templates/questionnaire/followup_form.html:77
 msgid "Date of UN action"
-msgstr ""
+msgstr "Date de l'intervention du Rapporteur Spécial"
 
 #: templates/questionnaire/followup_form.html:87
 msgid "Follow-Up Questionnaire"
-msgstr ""
+msgstr "Questionnaire de suivi"
