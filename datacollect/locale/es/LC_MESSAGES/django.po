@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 23:25+0200\n"
+"POT-Creation-Date: 2017-03-31 00:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,8 +56,9 @@ msgstr ""
 #: questionnaire/forms.py:75
 msgid ""
 "<p>To ensure consistency in responses by different respondents, we recommend "
-"that you look at this table that lists various examples and explains how to "
-"rate developments of a case depending on the initial situation.</p>"
+"that you look at <a data-toggle='modal' data-target='#myModal'>this table</"
+"a> that lists various examples and explains how to rate developments of a "
+"case depending on the initial situation.</p>"
 msgstr ""
 
 #: questionnaire/forms.py:78
@@ -643,7 +644,7 @@ msgstr ""
 msgid "Property stolen/confiscated/destroyed"
 msgstr ""
 
-#: survey/models.py:198
+#: survey/models.py:198 templates/questionnaire/followup_form.html.py:104
 msgid "Defamation campaign"
 msgstr ""
 
@@ -663,7 +664,7 @@ msgstr ""
 msgid "Expulsion/Visa denied"
 msgstr ""
 
-#: survey/models.py:203
+#: survey/models.py:203 templates/questionnaire/followup_form.html.py:96
 msgid "Administrative harassment"
 msgstr ""
 
@@ -999,7 +1000,7 @@ msgid "(select country)"
 msgstr ""
 
 #: survey/models.py:323 survey/models.py:691
-#: templates/questionnaire/followup_form.html:35
+#: templates/questionnaire/followup_form.html:128
 msgid "Country"
 msgstr ""
 
@@ -1054,7 +1055,7 @@ msgstr ""
 msgid "Relevant activities"
 msgstr ""
 
-#: survey/models.py:383 templates/questionnaire/followup_form.html.py:43
+#: survey/models.py:383 templates/questionnaire/followup_form.html.py:136
 msgid "Affiliation"
 msgstr ""
 
@@ -1294,7 +1295,7 @@ msgstr ""
 msgid "Additional mandates"
 msgstr ""
 
-#: survey/models.py:818 templates/questionnaire/followup_form.html.py:31
+#: survey/models.py:818 templates/questionnaire/followup_form.html.py:124
 msgid "Case Summary"
 msgstr ""
 
@@ -1346,42 +1347,259 @@ msgstr ""
 msgid "Summary of FA (4)"
 msgstr ""
 
-#: templates/questionnaire/followup_form.html:25
+#: templates/questionnaire/followup_form.html:26
 msgid "HRD Case Follow-Up Questionnaire"
 msgstr ""
 
-#: templates/questionnaire/followup_form.html:39
-msgid "Defender's Name"
+#: templates/questionnaire/followup_form.html:38
+msgid "Examples for assessing the development of a case"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:41
+msgid ""
+"This matrix is providing examples on how to assess the development of a case "
+"for different types of initial violations denounced in the Special "
+"Rapporteur's communication (see the case description above). If other or "
+"several violations apply, new violations occurred within one year or "
+"different outcomes than the ones described were observed, please use your "
+"best judgment to assess the overall outcome applying a similar logic."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:46
+msgid "Example of initial violation"
 msgstr ""
 
 #: templates/questionnaire/followup_form.html:47
-msgid "Incidents reported to UN"
+msgid "Much better within one year"
 msgstr ""
 
-#: templates/questionnaire/followup_form.html:55
-msgid "Victim(s)"
+#: templates/questionnaire/followup_form.html:48
+msgid "Somewhat better within one year"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:49
+msgid "Situation stayed the same overall within one year"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:50
+msgid "Somewhat worse within one year"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:51
+msgid "Much worse within one year"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:56
+msgid "Detention"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:57
+msgid "Release without conditions."
 msgstr ""
 
 #: templates/questionnaire/followup_form.html:58
-msgid "Defender him/herself"
+msgid ""
+"Release with conditions (e.g. on bail), OR: Detention continued but "
+"conditions were improved."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:59
+msgid "Detention continued."
 msgstr ""
 
 #: templates/questionnaire/followup_form.html:60
-msgid "Relatives of the defender"
+msgid "Detention continued, charges or threats added."
 msgstr ""
 
-#: templates/questionnaire/followup_form.html:62
-msgid "Defender and his/her relatives"
+#: templates/questionnaire/followup_form.html:61
+msgid ""
+"Detention continued, and X was tortured, disappeared or died in detention."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:64
+msgid "Torture in Detention"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:65
+msgid ""
+"Release and/or torture claims were credibly investigated and reparation "
+"provided."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:66
+msgid ""
+"Detention continued, but torture stopped and the claims were investigated."
 msgstr ""
 
 #: templates/questionnaire/followup_form.html:67
-msgid "Date of last reported incident"
+msgid "Detention continued and torture claims were not investigated."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:68
+msgid "Detention and torture continued."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:69
+msgid "X was disappeared or died in detention."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:72
+msgid "Put on trial"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:73
+msgid "Charges were dismissed and trial was discontinued."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:74
+msgid "Trial continued, but X was acquitted eventually."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:75
+msgid "Trial went on for that period."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:76
+msgid "Trial went on, X was sentenced."
 msgstr ""
 
 #: templates/questionnaire/followup_form.html:77
+msgid "Trial went on, X received a relatively heavy sentence."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:80
+msgid "Death threats / Physical attack"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:81
+msgid ""
+"Protection provided, threats were credibly investigated, perpetrator(s) "
+"prosecuted."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:82
+msgid ""
+"Protection provided, threats were credibly investigated, no conclusive "
+"outcome."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:83
+msgid ""
+"Threats/attack against X were not credibly investigated, but discontinued."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:84
+msgid "Threats/attack against X were not credibly investigated and continued."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:85
+msgid ""
+"Threats/attacks against X were not credibly investigated and X was injured/"
+"killed."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:88
+msgid "Enforced Disappearance / Killing"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:89
+msgid ""
+"Credible investigations were made (and X was found); perpetrator(s) were "
+"prosecuted."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:90
+msgid "Credible investigations were initiated."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:91
+msgid "No investigations were made into the disappearance / killing of X."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:92
+msgid "(X remained disappeared), fake investigations were made as a cover-up."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:93
+msgid ""
+"(X remained disappeared), the wrong people were prosecuted in fake "
+"investigations; and/or other defenders were disppeared/killed."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:97
+msgid "Harassment was discontinued, compensation provided."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:98
+msgid "Harassment was discontinued, relevant documents issued etc."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:99
+msgid "Harassment continued on the same level."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:100
+msgid "Harassment became worse."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:101
+#: templates/questionnaire/followup_form.html:109
+msgid "[If additional violations occurred]"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:105
+msgid ""
+"Defamatory statements were officially condemned and/or credibly investigated."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:106
+msgid "Defamatory statements were discontinued."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:107
+msgid ""
+"Defamatory statements continued and were not officially condemned or "
+"investigated."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:108
+msgid ""
+"Defamatory statements continued to be made and were endorsed by (more) "
+"officials."
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:132
+msgid "Defender's Name"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:140
+msgid "Incidents reported to UN"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:148
+msgid "Victim(s)"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:151
+msgid "Defender him/herself"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:153
+msgid "Relatives of the defender"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:155
+msgid "Defender and his/her relatives"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:160
+msgid "Date of last reported incident"
+msgstr ""
+
+#: templates/questionnaire/followup_form.html:170
 msgid "Date of UN action"
 msgstr ""
 
-#: templates/questionnaire/followup_form.html:87
+#: templates/questionnaire/followup_form.html:180
 msgid "Follow-Up Questionnaire"
 msgstr ""
