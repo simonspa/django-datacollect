@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-31 21:36+0200\n"
+"POT-Creation-Date: 2017-04-01 00:08+0200\n"
 "PO-Revision-Date: 2017-03-31 22:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -126,9 +126,14 @@ msgid "5. Special Rapporteur's intervention"
 msgstr "5. Intervención del Relator Especial"
 
 #: questionnaire/forms.py:147
+#, fuzzy
+#| msgid ""
+#| "<p>Do you believe that the intervention of the Special Rapporteur had a "
+#| "distinguishable impact (amidst broader international attention)?</p>"
 msgid ""
 "<p>Do you believe that the intervention of the Special Rapporteur had a "
-"distinguishable impact (amidst broader international attention)?</p>"
+"distinguishable impact on this case (amidst broader international attention)?"
+"</p>"
 msgstr ""
 "<p>¿Cree usted que la intervención del Relator Especial tuvo un impacto "
 "distinguible en este caso (en medio de una atención internacional más "
@@ -254,7 +259,9 @@ msgid "Definitely yes"
 msgstr "Definitivamente sí"
 
 #: questionnaire/models.py:52
-msgid "Probably"
+#, fuzzy
+#| msgid "Probably"
+msgid "Probably yes"
 msgstr "Probablemente sí"
 
 #: questionnaire/models.py:53
