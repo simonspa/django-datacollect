@@ -73,7 +73,7 @@ class FollowUpForm(forms.ModelForm):
                     'familiarity',
                     css_class = 'panel-body'
                 ),
-                css_class = 'panel panel-default'
+                css_class = 'panel panel-info'
             ),
             Div(
                 Div(
@@ -86,7 +86,7 @@ class FollowUpForm(forms.ModelForm):
                     'rating',
                     css_class = 'panel-body'
                 ),
-                css_class = 'panel panel-default'
+                css_class = 'panel panel-info'
             ),
             Div(
                 Div(
@@ -124,7 +124,7 @@ class FollowUpForm(forms.ModelForm):
                     ),
                     css_class = 'panel-body'
                 ),
-                css_class = 'panel panel-default'
+                css_class = 'panel panel-info'
             ),
             Div(
                 Div(
@@ -136,7 +136,7 @@ class FollowUpForm(forms.ModelForm):
                     'attention',
                     css_class = 'panel-body'
                 ),
-                css_class = 'panel panel-default'
+                css_class = 'panel panel-info'
             ),
             Div(
                 Div(
@@ -148,7 +148,7 @@ class FollowUpForm(forms.ModelForm):
                     'intervention',
                     css_class = 'panel-body'
                 ),
-                css_class = 'panel panel-default'
+                css_class = 'panel panel-info'
             ),
             Div(
                 Div(
@@ -160,7 +160,7 @@ class FollowUpForm(forms.ModelForm):
                     'impact',
                     css_class = 'panel-body'
                 ),
-                css_class = 'panel panel-default'
+                css_class = 'panel panel-info'
             ),
             Div(
                 Div(
@@ -171,7 +171,7 @@ class FollowUpForm(forms.ModelForm):
                     'further_comments',
                     css_class = 'panel-body'
                 ),
-                css_class = 'panel panel-default'
+                css_class = 'panel panel-info'
             ),
             Div(
                 Div(
@@ -185,12 +185,22 @@ class FollowUpForm(forms.ModelForm):
                     HTML(_("Please note that by submitting your email address, your contact details can be connected to this case by the independent researcher carrying out the analysis. If you do not indicate your contact details, your submission will remain anonymous. If you wish to receive further information on the analysis but do not want to be connected to this case, you can write to <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>.")),
                     css_class = 'panel-body'
                 ),
-                css_class = 'panel panel-default'
+                css_class = 'panel panel-info'
             ),
-            Alert(content=_('<strong>Warning!</strong> You can only submit this form once. After your submission the link will be deactivated.'), css_class="alert-danger"),
-            HTML(_("<p>Thank you for your contribution!</p>")),
-            FormActions(
-                Submit('save', _('Submit')),
+            Div(
+                Div(
+                    HTML(_('Submission')),
+                    css_class = 'panel-heading'
+                ),
+                Div(
+                    Alert(content=_('<strong>Warning!</strong> You can only submit this form once. After your submission the link will be deactivated.'), css_class="alert-danger"),
+                    HTML(_("<p>Thank you for your contribution!</p>")),
+                    FormActions(
+                        Submit('save', _('Submit')),
+                    ),
+                    css_class = 'panel-body'
+                ),
+                css_class = 'panel panel-primary'
             ),
         )
 
