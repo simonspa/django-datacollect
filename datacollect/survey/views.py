@@ -49,7 +49,8 @@ class RecordAnalysis(LoginRequiredMixin,TemplateView):
         reportlist = [1,4198,1]
         reportsum = sum(reportlist)
         progress = 100.*total_comm/reportsum
-        
+        progressint = int(progress)
+
         # Count issues in categories (multiple choices possible)
         issues = {x[0]: 0 for x in Record.ISSUE_CHOICES}
         issues_titles = dict(Record.ISSUE_CHOICES)
