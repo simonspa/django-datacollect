@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-31 17:21+0200\n"
+"POT-Creation-Date: 2017-03-31 21:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,21 +142,25 @@ msgid ""
 "\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>."
 msgstr ""
 
-#: questionnaire/forms.py:190
+#: questionnaire/forms.py:192
+msgid "Submission"
+msgstr ""
+
+#: questionnaire/forms.py:196
 msgid ""
 "<strong>Warning!</strong> You can only submit this form once. After your "
 "submission the link will be deactivated."
 msgstr ""
 
-#: questionnaire/forms.py:191
+#: questionnaire/forms.py:197
 msgid "<p>Thank you for your contribution!</p>"
 msgstr ""
 
-#: questionnaire/forms.py:193
+#: questionnaire/forms.py:199
 msgid "Submit"
 msgstr ""
 
-#: questionnaire/forms.py:203
+#: questionnaire/forms.py:213
 msgid ""
 "Please fill the e-mail address field if you wish to receive information."
 msgstr ""

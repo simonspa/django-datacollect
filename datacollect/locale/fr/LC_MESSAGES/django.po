@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-31 17:21+0200\n"
+"POT-Creation-Date: 2017-03-31 21:20+0200\n"
 "PO-Revision-Date: 2017-03-31 18:31+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -172,7 +172,11 @@ msgstr ""
 "souhaitez pas être connecté(e) à ce cas, vous pouvez vous adresser à <a href="
 "\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>."
 
-#: questionnaire/forms.py:190
+#: questionnaire/forms.py:192
+msgid "Submission"
+msgstr "Soumission"
+
+#: questionnaire/forms.py:196
 msgid ""
 "<strong>Warning!</strong> You can only submit this form once. After your "
 "submission the link will be deactivated."
@@ -180,15 +184,15 @@ msgstr ""
 "<strong>Attention!</strong> Vous pouvez soumettre ce formulaire une seule "
 "fois. Après l'envoi, le lien sera désactivé."
 
-#: questionnaire/forms.py:191
+#: questionnaire/forms.py:197
 msgid "<p>Thank you for your contribution!</p>"
 msgstr "<p>Merci beaucoup pour votre contribution !</p>"
 
-#: questionnaire/forms.py:193
+#: questionnaire/forms.py:199
 msgid "Submit"
 msgstr "Envoyer"
 
-#: questionnaire/forms.py:203
+#: questionnaire/forms.py:213
 msgid ""
 "Please fill the e-mail address field if you wish to receive information."
 msgstr ""
@@ -1717,9 +1721,6 @@ msgstr "Questionnaire de suivi"
 
 #~ msgid "Attention impact"
 #~ msgstr "Impact de l'attention"
-
-#~ msgid "Submission"
-#~ msgstr "Soumission"
 
 #~ msgid "Defender's Name"
 #~ msgstr "Nom du défenseur"
