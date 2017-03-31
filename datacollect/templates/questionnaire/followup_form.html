@@ -6,7 +6,15 @@
 {% trans alert %}
 {% load crispy_forms_tags %}
 
-{% block title %}<h1>{% trans "HRD Case Follow-Up Questionnaire" %}</h1>{% endblock %}
+{% block extra_head %}
+<style type="text/css">
+  .asteriskField {
+  display: none;
+  }
+</style>
+{% endblock %}
+
+{% block title %}<h1>{% trans "Human Rights Defender Case Follow-up Questionnaire" %}</h1>{% endblock %}
 
 {% block content %}
 
@@ -121,7 +129,7 @@
           <th>{% trans "Incidents reported to UN" %}</th>
           <td class="data">
 	    {% for i in form.instance.case.violations %}
-	    {{ i|display_violation }}</br>
+	    {{ i|display_violation }},
 	    {% endfor %}
 	  </td>
 	</tr>

@@ -69,7 +69,7 @@ class FollowUpForm(forms.ModelForm):
                     css_class = 'panel-heading'
                 ),
                 Div(
-                    HTML(_("<p>How familiar are you with {{ form.instance.case.name }}'s case in the period from {{ form.instance.case.date_intervention }} until one year later?</p>")),
+                    HTML(_("<p>How familiar are you with the case of {{ form.instance.case.name }} in the one year period after {{ form.instance.case.date_intervention }}?</p>")),
                     'familiarity',
                     css_class = 'panel-body'
                 ),
@@ -81,9 +81,9 @@ class FollowUpForm(forms.ModelForm):
                     css_class = 'panel-heading'
                 ),
                 Div(
-                    HTML(_("<p>In light of the attacks (see above) that occurred before the Special Rapporteur's action on {{ form.instance.case.date_intervention }}, how would you describe the development of {{ form.instance.case.name }}\'s situation/case <strong>within one year</strong> after this date?</p>")),
-                'rating',
-                    HTML(_("<p>To ensure consistency in responses by different respondents, we recommend that you look at <a data-toggle='modal' data-target='#myModal'>this table</a> that lists various examples and explains how to rate developments of a case depending on the initial situation.</p>")),
+                    HTML(_("<p>How would you describe the development of the case of {{ form.instance.case.name }} in the one year period after {{ form.instance.case.date_intervention }}, in light of the incidents listed above that occurred before the action of the Special Rapporteur?</p>")),
+                    HTML(_("<p>We recommend you look at <a data-toggle='modal' data-target='#myModal'>this table</a> to ensure consistency in responses. The table lists various examples and explains how to rate developments of a case depending on the initial situation.</p>")),
+                    'rating',
                     css_class = 'panel-body'
                 ),
                 css_class = 'panel panel-default'
@@ -94,7 +94,7 @@ class FollowUpForm(forms.ModelForm):
                     css_class = 'panel-heading'
                 ),
                 Div(
-                    HTML(_("<p>Please indicate all significant incidents that happened within one year after the Special Rapporteur's intervention that you are aware of (if there were more than 5, concentrate on the most important ones):</p>")),
+                    HTML(_("<p>Please list all known significant incidents that occurred in the one year period after {{ form.instance.case.date_intervention }}. If there were more than 5, please concentrate on the most important ones:</p>")),
                     TabHolder(
                         Tab(
                             _('Incident #1'),
@@ -132,7 +132,7 @@ class FollowUpForm(forms.ModelForm):
                     css_class = 'panel-heading'
                 ),
                 Div(
-                    HTML(_("<p>Do you believe that the international attention to {{ form.instance.case.name }}\'s case did have an impact on the development of his/her situation during this period?</p>")),
+                    HTML(_("<p>Do you believe that the international attention given to the case of {{ form.instance.case.name }} had an impact on the development of his/her situation in the one year period after {{ form.instance.case.date_intervention }}?</p>")),
                     'attention',
                     css_class = 'panel-body'
                 ),
@@ -140,11 +140,11 @@ class FollowUpForm(forms.ModelForm):
             ),
             Div(
                 Div(
-                    HTML(_('5. Special Rapporteur\'s Intervention')),
+                    HTML(_('5. Special Rapporteur\'s intervention')),
                     css_class = 'panel-heading'
                 ),
                 Div(
-                    HTML(_("<p>Amidst the broader international attention, do you believe that the Special Rapporteur's intervention had a distinguishable impact?</p>")),
+                    HTML(_("<p>Do you believe that the intervention of the Special Rapporteur had a distinguishable impact (amidst broader international attention)?</p>")),
                     'intervention',
                     css_class = 'panel-body'
                 ),
@@ -164,7 +164,7 @@ class FollowUpForm(forms.ModelForm):
             ),
             Div(
                 Div(
-                    HTML(_('7. Further comments/feedback:')),
+                    HTML(_('7. Further comments/feedback')),
                     css_class = 'panel-heading'
                 ),
                 Div(
@@ -175,19 +175,19 @@ class FollowUpForm(forms.ModelForm):
             ),
             Div(
                 Div(
-                    HTML(_('8. Voluntary contact information:')),
+                    HTML(_('8. Voluntary contact information')),
                     css_class = 'panel-heading'
                 ),
                 Div(
                     'want_informed',
                     'contact_again',
                     'email_address',
-                    HTML(_("(Please note that by submitting your email address, your contact can be connected to this case by the independent researcher carrying out the analysis. If you do not indicate your contact details, your submission will remain anonymous. If you wish to receive further information but do not want to be connected to this case, you can write to <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>.)")),
+                    HTML(_("Please note that by submitting your email address, your contact details can be connected to this case by the independent researcher carrying out the analysis. If you do not indicate your contact details, your submission will remain anonymous. If you wish to receive further information on the analysis but do not want to be connected to this case, you can write to <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>.")),
                     css_class = 'panel-body'
                 ),
                 css_class = 'panel panel-default'
             ),
-            Alert(content=_('<strong>Warning!</strong> You can only submit this form once. After submission, the link is deactivated.'), css_class="alert-warning"),
+            Alert(content=_('<strong>Warning!</strong> You can only submit this form once. After your submission the link will be deactivated.'), css_class="alert-danger"),
             HTML(_("<p>Thank you for your contribution!</p>")),
             FormActions(
                 Submit('save', _('Submit')),

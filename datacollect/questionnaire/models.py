@@ -36,7 +36,7 @@ class FollowUp(models.Model):
         (1, _("I am very familiar with the case.")),
         (2, _("I have information but it might be incomplete.")),
         (3, _("I only have little information.")),
-        (4, _("I don't have any information.")),
+        (4, _("I do not have any information.")),
     )
     RATING_CHOICES = (
         (1, _("Much better")),
@@ -44,14 +44,15 @@ class FollowUp(models.Model):
         (3, _("Situation stayed the same overall")),
         (4, _("Somewhat worse")),
         (5, _("Much worse")),
-        (6, _("I don't know"))
+        (7, _("There were equally important positive and negative developments")),
+        (6, _("I do not know"))
     )
     ATTENTION_CHOICES = (
-        (1, _("For sure")),
+        (1, _("Definitely yes")),
         (2, _("Probably")),
-        (3, _("Rather not")),
+        (3, _("Probably not")),
         (4, _("Definitely not")),
-        (6, _("I don't know"))
+        (6, _("I do not know"))
     )
 
     # Data model implementation
@@ -148,7 +149,7 @@ class FollowUp(models.Model):
         choices=ATTENTION_CHOICES,
         default=6,
         null=True,
-        verbose_name = _('Attention impact')
+        verbose_name = _('Impact of international attention')
     )
     intervention = models.IntegerField(
         choices=ATTENTION_CHOICES,
@@ -162,7 +163,7 @@ class FollowUp(models.Model):
     )
     further_comments = models.TextField(
         blank=True,
-        verbose_name=_("Further comments"),
+        verbose_name=_("Any additional comments/feedback"),
     )
     want_informed = models.BooleanField(
         default = False,
