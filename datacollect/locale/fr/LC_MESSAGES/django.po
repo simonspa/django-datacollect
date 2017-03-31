@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-31 17:21+0200\n"
-"PO-Revision-Date: 2017-03-31 15:51+0200\n"
+"PO-Revision-Date: 2017-03-31 17:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -35,11 +35,6 @@ msgid "1. Familiarity"
 msgstr "1. Connaissance du cas"
 
 #: questionnaire/forms.py:72
-#, fuzzy
-#| msgid ""
-#| "<p>How familiar are you with {{ form.instance.case.name }}'s case in the "
-#| "period from {{ form.instance.case.date_intervention }} until one year "
-#| "later?</p>"
 msgid ""
 "<p>How familiar are you with the case of {{ form.instance.case.name }} in "
 "the one year period after {{ form.instance.case.date_intervention }}?</p>"
@@ -53,59 +48,44 @@ msgid "2. Development of the situation"
 msgstr "2. Développement de la situation"
 
 #: questionnaire/forms.py:84
-#, fuzzy
-#| msgid ""
-#| "<p>How familiar are you with {{ form.instance.case.name }}'s case in the "
-#| "period from {{ form.instance.case.date_intervention }} until one year "
-#| "later?</p>"
 msgid ""
 "<p>How would you describe the development of the case of {{ form.instance."
 "case.name }} in the one year period after {{ form.instance.case."
 "date_intervention }}, in light of the incidents listed above that occurred "
 "before the action of the Special Rapporteur?</p>"
 msgstr ""
-"<p>Dans quelle mesure êtes-vous familier avec le cas de {{ form.instance."
-"case.name }} dans la période à partir du {{ form.instance.case."
-"date_intervention }} jusqu'à une année après?</p>"
+"<p>Comment décririez-vous le développement du cas de {{ form.instance.case."
+"name }} au cours d'une année après le {{ form.instance.case."
+"date_intervention }}, au vu des violations décrites ci-dessus qui se sont "
+"produites avant l'intervention du Rapporteur Spécial?</p>"
 
 #: questionnaire/forms.py:85
-#, fuzzy
-#| msgid ""
-#| "<p>To ensure consistency in responses by different respondents, we "
-#| "recommend that you look at <a data-toggle='modal' data-"
-#| "target='#myModal'>this table</a> that lists various examples and explains "
-#| "how to rate developments of a case depending on the initial situation.</p>"
 msgid ""
 "<p>We recommend you look at <a data-toggle='modal' data-"
 "target='#myModal'>this table</a> to ensure consistency in responses. The "
 "table lists various examples and explains how to rate developments of a case "
 "depending on the initial situation.</p>"
 msgstr ""
-" <p>Afin d'assurer la cohérence entre les réponses des différents "
-"répondants, nous vous recommandons d'examiner <a data-toggle='modal' data-"
-"target='#myModal'>ce tableau</a> qui donne plusieurs exemples et explique "
-"comment évaluer le développement d'un cas en fonction de la situation de "
-"départ.</p>"
+" <p>Nous vous recommandons d'examiner <a data-toggle='modal' data-"
+"target='#myModal'>ce tableau</a> afin d'assurer la cohérence entre les "
+"réponses des différents répondants. Le tableau donne plusieurs exemples et "
+"explique comment évaluer le développement d'un cas en fonction de la "
+"situation de départ.</p>"
 
 #: questionnaire/forms.py:93
 msgid "3. Significant incidents"
 msgstr "3. Événements signifiants"
 
 #: questionnaire/forms.py:97
-#, fuzzy
-#| msgid ""
-#| "<p>Please indicate all significant incidents that happened within one "
-#| "year after the Special Rapporteur's intervention that you are aware of "
-#| "(if there were more than 5, concentrate on the most important ones):</p>"
 msgid ""
 "<p>Please list all known significant incidents that occurred in the one year "
 "period after {{ form.instance.case.date_intervention }}. If there were more "
 "than 5, please concentrate on the most important ones:</p>"
 msgstr ""
 "<p>Veuillez indiquer ici tout événement signifiant qui s'est produit au "
-"cours d'une année suite à l'intervention du Rapporteur Spécial dont vous "
-"avez connaissance (s'il y avait plus de 5, concentrez-vous sur les plus "
-"importants):</p>"
+"cours d'une année après le {{ form.instance.case.date_intervention }} dont "
+"vous avez connaissance. S'il y avait plus de 5, concentrez-vous sur les plus "
+"importants s'il vous plaît:</p>"
 
 #: questionnaire/forms.py:100
 msgid "Incident #1"
@@ -132,11 +112,6 @@ msgid "4. International attention"
 msgstr "4. Attention internationale"
 
 #: questionnaire/forms.py:135
-#, fuzzy
-#| msgid ""
-#| "<p>Do you believe that the international attention to {{ form.instance."
-#| "case.name }}'s case did have an impact on the development of his/her "
-#| "situation during this period?</p>"
 msgid ""
 "<p>Do you believe that the international attention given to the case of "
 "{{ form.instance.case.name }} had an impact on the development of his/her "
@@ -144,12 +119,10 @@ msgid ""
 "date_intervention }}?</p>"
 msgstr ""
 "<p>Croyez-vous que l'attention internationale sur le cas de {{ form.instance."
-"case.name }} a eu un impact sur le développement de sa situation pendant "
-"cette période?</p>"
+"case.name }} a eu un impact sur le développement de sa situation dans la "
+"période d'une année après le {{ form.instance.case.date_intervention }}?</p>"
 
 #: questionnaire/forms.py:143
-#, fuzzy
-#| msgid "5. Special Rapporteur's Intervention"
 msgid "5. Special Rapporteur's intervention"
 msgstr "5. Intervention du Rapporteur Spécial"
 
@@ -158,6 +131,8 @@ msgid ""
 "<p>Do you believe that the intervention of the Special Rapporteur had a "
 "distinguishable impact (amidst broader international attention)?</p>"
 msgstr ""
+"<p>Croyez-vous que l'intervention du Rapporteur Spécial a eu un effet "
+"discernable (parmi cette attention internationale)?</p>"
 
 #: questionnaire/forms.py:155
 msgid "6. Impact of the attention"
@@ -174,26 +149,14 @@ msgstr ""
 "que l'attention a eu (le cas échéant):</p>"
 
 #: questionnaire/forms.py:167
-#, fuzzy
-#| msgid "7. Further comments/feedback:"
 msgid "7. Further comments/feedback"
 msgstr "7. Remarques/commentaires complémentaires"
 
 #: questionnaire/forms.py:178
-#, fuzzy
-#| msgid "8. Voluntary contact information:"
 msgid "8. Voluntary contact information"
 msgstr "8. Coordonnées (volontaire)"
 
 #: questionnaire/forms.py:185
-#, fuzzy
-#| msgid ""
-#| "(Please note that by submitting your email address, your contact can be "
-#| "connected to this case by the independent researcher carrying out the "
-#| "analysis. If you do not indicate your contact details, your submission "
-#| "will remain anonymous. If you wish to receive further information but do "
-#| "not want to be connected to this case, you can write to <a href=\"mailto:"
-#| "info@defendersdatabase.org\">info@defendersdatabase.org</a>.)"
 msgid ""
 "Please note that by submitting your email address, your contact details can "
 "be connected to this case by the independent researcher carrying out the "
@@ -202,18 +165,14 @@ msgid ""
 "but do not want to be connected to this case, you can write to <a href="
 "\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>."
 msgstr ""
-"(Veuillez noter qu'en envoyant votre adresse e-mail, votre contact peut être "
+"Veuillez noter qu'en envoyant votre adresse e-mail, votre contact peut être "
 "connecté à ce cas par la chercheuse indépendante effectuant l'analyse. Si "
 "vous n'indiquez pas vos coordonnées, votre soumission demeurera anonyme. Si "
-"vous souhaitez recevoir des informations supplémentaires, mais ne souhaitez "
-"pas être connecté(e) à ce cas, vous pouvez vous adresser à <a href=\"mailto:"
-"info@defendersdatabase.org\">info@defendersdatabase.org</a>.)"
+"vous souhaitez recevoir des informations sur le résultat de l'étude, mais ne "
+"souhaitez pas être connecté(e) à ce cas, vous pouvez vous adresser à <a href="
+"\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>."
 
 #: questionnaire/forms.py:190
-#, fuzzy
-#| msgid ""
-#| "<strong>Warning!</strong> You can only submit this form once. After "
-#| "submission, the link is deactivated."
 msgid ""
 "<strong>Warning!</strong> You can only submit this form once. After your "
 "submission the link will be deactivated."
@@ -253,8 +212,6 @@ msgid "I only have little information."
 msgstr "Je n'ai que peu d'informations."
 
 #: questionnaire/models.py:39
-#, fuzzy
-#| msgid "I don't have any information."
 msgid "I do not have any information."
 msgstr "Je n'ai pas d'informations sur ce cas."
 
@@ -281,28 +238,23 @@ msgstr "Beaucoup pire"
 #: questionnaire/models.py:47
 msgid "There were equally important positive and negative developments"
 msgstr ""
+"Il y avait des développements positifs et négatifs d'une importance similare"
 
 #: questionnaire/models.py:48 questionnaire/models.py:55
-#, fuzzy
-#| msgid "I don't know"
 msgid "I do not know"
 msgstr "Je ne sais pas"
 
 #: questionnaire/models.py:51
-#, fuzzy
-#| msgid "Definitely not"
 msgid "Definitely yes"
-msgstr "Certainement non"
+msgstr "Certainement oui"
 
 #: questionnaire/models.py:52
 msgid "Probably"
 msgstr "Probablement oui"
 
 #: questionnaire/models.py:53
-#, fuzzy
-#| msgid "Probably"
 msgid "Probably not"
-msgstr "Probablement oui"
+msgstr "Probablement non"
 
 #: questionnaire/models.py:54
 msgid "Definitely not"
@@ -354,10 +306,8 @@ msgid "Brief description of the incident"
 msgstr "Brève déscription de l'événement"
 
 #: questionnaire/models.py:152
-#, fuzzy
-#| msgid "4. International attention"
 msgid "Impact of international attention"
-msgstr "4. Attention internationale"
+msgstr "Impact de l'attention internationale"
 
 #: questionnaire/models.py:158
 msgid "Impact of intervention"
@@ -368,10 +318,8 @@ msgid "Details about impact"
 msgstr "Détails sur l'impact"
 
 #: questionnaire/models.py:166
-#, fuzzy
-#| msgid "7. Further comments/feedback:"
 msgid "Any additional comments/feedback"
-msgstr "7. Remarques/commentaires complémentaires"
+msgstr "Toute remarque/commentaire complémentaire"
 
 #: questionnaire/models.py:171
 msgid "I want to be informed about the outcome of this study"
@@ -1443,8 +1391,6 @@ msgid "Summary of FA (4)"
 msgstr ""
 
 #: templates/questionnaire/followup_form.html:17
-#, fuzzy
-#| msgid "HRD Case Follow-Up Questionnaire"
 msgid "Human Rights Defender Case Follow-up Questionnaire"
 msgstr "Défenseurs de droits de l'homme: Questionnaire de suivi"
 
@@ -1453,14 +1399,6 @@ msgid "Examples for assessing the development of a case"
 msgstr "Exemples pour l'évaluation du développement d'un cas"
 
 #: templates/questionnaire/followup_form.html:32
-#, fuzzy
-#| msgid ""
-#| "This matrix provides examples on how to assess the development of a case. "
-#| "It is divided into different types of violations denounced in the United "
-#| "Nation’s communication (see the case description above). If more than one "
-#| "violation applies, new violations occurred within one year, or different "
-#| "outcomes other than the described were observed, please use your best "
-#| "judgment to assess the overall outcome applying a similar logic."
 msgid ""
 "This matrix provides examples on how to assess the development of a case. It "
 "is divided into different types of violations denounced in the Special "
@@ -1487,7 +1425,7 @@ msgstr ""
 
 #: templates/questionnaire/followup_form.html:37
 msgid "Example of initial violation"
-msgstr "Exemple de violation initiale"
+msgstr "Exemple de la violation initiale"
 
 #: templates/questionnaire/followup_form.html:38
 msgid "Much better within one year"
