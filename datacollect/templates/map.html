@@ -1,5 +1,6 @@
 {% extends 'jsp/base.html' %}
 {% load leaflet_tags %}
+{% load l10n %}
 {% load staticfiles %}
 
 {% block extra_head %}
@@ -31,6 +32,7 @@
 {% endblock %}
 
 {% block container %}
+{% localize off %}
 <script type="text/template" id="tooltip-template">
   <h4>Intervention</h4>
     <p><div class="swatch-holder"><div class="swatch round type-<%= style %>"></div><b><%= type %></b></div>
@@ -150,5 +152,5 @@ function map_init_basic (map, options) {
   <div class="swatch-holder"><div class="swatch round type-2"></div>AL / JAL</div>
   <div class="swatch-holder"><div class="swatch round type-3"></div>N/A / Others</div>    
 </div>
-
+{% endlocalize %}
 {% endblock %}
