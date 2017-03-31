@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-31 17:21+0200\n"
+"POT-Creation-Date: 2017-03-31 21:36+0200\n"
 "PO-Revision-Date: 2017-03-31 21:33+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.12\n"
 
 #: datacollect/settings.py:130 datacollect/settings_production.py:149
@@ -172,7 +172,13 @@ msgstr ""
 "a <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</"
 "a>."
 
-#: questionnaire/forms.py:190
+#: questionnaire/forms.py:192
+#, fuzzy
+#| msgid "Submit"
+msgid "Submission"
+msgstr "Enviar"
+
+#: questionnaire/forms.py:196
 msgid ""
 "<strong>Warning!</strong> You can only submit this form once. After your "
 "submission the link will be deactivated."
@@ -181,15 +187,15 @@ msgstr ""
 "Después del\n"
 " envío, el enlace se desactivará."
 
-#: questionnaire/forms.py:191
+#: questionnaire/forms.py:197
 msgid "<p>Thank you for your contribution!</p>"
 msgstr "<p>Gracias por su contribución!</p>"
 
-#: questionnaire/forms.py:193
+#: questionnaire/forms.py:199
 msgid "Submit"
 msgstr "Enviar"
 
-#: questionnaire/forms.py:203
+#: questionnaire/forms.py:213
 msgid ""
 "Please fill the e-mail address field if you wish to receive information."
 msgstr ""
@@ -1386,6 +1392,7 @@ msgid "Summary of FA (4)"
 msgstr ""
 
 #: templates/questionnaire/followup_form.html:17
+#: templates/questionnaire/success.html:9
 msgid "Human Rights Defender Case Follow-up Questionnaire"
 msgstr "Defensores de los derechos humanos: Cuestionario de seguimiento"
 
@@ -1654,3 +1661,15 @@ msgstr "Fecha de la acción de la ONU"
 #: templates/questionnaire/followup_form.html:167
 msgid "Follow-Up Questionnaire"
 msgstr "Cuestionario de seguimiento"
+
+#: templates/questionnaire/success.html:15
+msgid "Success"
+msgstr ""
+
+#: templates/questionnaire/success.html:18
+msgid "Your information has been received correctly."
+msgstr ""
+
+#: templates/questionnaire/success.html:19
+msgid "Thank you for providing follow-up information on this case."
+msgstr ""

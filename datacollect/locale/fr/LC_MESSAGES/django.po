@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-31 21:20+0200\n"
+"POT-Creation-Date: 2017-03-31 21:36+0200\n"
 "PO-Revision-Date: 2017-03-31 18:31+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1395,6 +1395,7 @@ msgid "Summary of FA (4)"
 msgstr ""
 
 #: templates/questionnaire/followup_form.html:17
+#: templates/questionnaire/success.html:9
 msgid "Human Rights Defender Case Follow-up Questionnaire"
 msgstr "Défenseurs de droits de l'homme: Questionnaire de suivi"
 
@@ -1693,6 +1694,18 @@ msgstr "Date de l'intervention du Rapporteur Spécial"
 #: templates/questionnaire/followup_form.html:167
 msgid "Follow-Up Questionnaire"
 msgstr "Questionnaire de suivi"
+
+#: templates/questionnaire/success.html:15
+msgid "Success"
+msgstr ""
+
+#: templates/questionnaire/success.html:18
+msgid "Your information has been received correctly."
+msgstr ""
+
+#: templates/questionnaire/success.html:19
+msgid "Thank you for providing follow-up information on this case."
+msgstr ""
 
 #~ msgid ""
 #~ "<p>In light of the attacks (see above) that occurred before the Special "
