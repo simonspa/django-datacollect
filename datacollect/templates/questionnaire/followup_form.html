@@ -129,7 +129,7 @@
           <th>{% trans "Incidents reported to UN" %}</th>
           <td class="data">
 	    {% for i in form.instance.case.violations %}
-	    {{ i|display_violation }},
+	    {{ i|display_violation }}<br>
 	    {% endfor %}
 	  </td>
 	</tr>
