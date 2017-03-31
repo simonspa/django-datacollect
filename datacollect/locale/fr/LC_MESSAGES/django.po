@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-31 21:36+0200\n"
-"PO-Revision-Date: 2017-03-31 18:31+0200\n"
+"PO-Revision-Date: 2017-03-31 22:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -132,7 +132,7 @@ msgid ""
 "distinguishable impact (amidst broader international attention)?</p>"
 msgstr ""
 "<p>Croyez-vous que l'intervention du Rapporteur Spécial a eu un effet "
-"discernable (parmi cette attention internationale)?</p>"
+"discernable sur ce cas (parmi une attention internationale plus large)?</p>"
 
 #: questionnaire/forms.py:155
 msgid "6. Impact of the attention"
@@ -1697,15 +1697,15 @@ msgstr "Questionnaire de suivi"
 
 #: templates/questionnaire/success.html:15
 msgid "Success"
-msgstr ""
+msgstr "Succès"
 
 #: templates/questionnaire/success.html:18
 msgid "Your information has been received correctly."
-msgstr ""
+msgstr "Vos informations ont été reçues correctement."
 
 #: templates/questionnaire/success.html:19
 msgid "Thank you for providing follow-up information on this case."
-msgstr ""
+msgstr "Merci d'avoir fourni des informations de suivi sur ce cas."
 
 #~ msgid ""
 #~ "<p>In light of the attacks (see above) that occurred before the Special "
