@@ -37,7 +37,7 @@ legend {
         <h4 class="modal-title">{% trans "Examples for assessing the development of a case" %}</h4>
       </div>
       <div class="modal-body">
-	<p>{% blocktrans %}This matrix is providing examples on how to assess the development of a case for different types of initial violations denounced in the Special Rapporteur's communication (see the case description above). If other or several violations apply, new violations occurred within one year or different outcomes than the ones described were observed, please use your best judgment to assess the overall outcome applying a similar logic.{% endblocktrans %}</p>
+	<p>{% blocktrans %}This matrix provides examples on how to assess the development of a case. It is divided into different types of violations denounced in the United Nation’s communication (see the case description above). If more than one violation applies, new violations occurred within one year, or different outcomes other than the described were observed, please use your best judgment to assess the overall outcome applying a similar logic.</p>
 
 	<table class="table table-striped table-bordered table-condensed">
           <thead>
@@ -56,13 +56,13 @@ legend {
 	      <td>{% trans "Release without conditions." %}</td>
 	      <td>{% trans "Release with conditions (e.g. on bail), OR: Detention continued but conditions were improved." %}</td>
 	      <td>{% trans "Detention continued." %}</td>
-	      <td>{% trans "Detention continued, charges or threats added." %}</td>
-	      <td>{% trans "Detention continued, and X was tortured, disappeared or died in detention." %}</td>
+	      <td>{% trans "Detention continued, charges or threats were added." %}</td>
+	      <td>{% trans "Detention continued, X was tortured, disappeared or died in detention." %}</td>
 	    </tr>
 	    <tr>
 	      <th>{% trans "Torture in Detention" %}</th>
-	      <td>{% trans "Release and/or torture claims were credibly investigated and reparation provided." %}</td>
-	      <td>{% trans "Detention continued, but torture stopped and the claims were investigated." %}</td>
+	      <td>{% trans "Release and torture claims were credibly investigated and reparation provided." %}</td>
+	      <td>{% trans "Detention continued, but torture stopped and claims were investigated." %}</td>
 	      <td>{% trans "Detention continued and torture claims were not investigated." %}</td>
 	      <td>{% trans "Detention and torture continued." %}</td>
 	      <td>{% trans "X was disappeared or died in detention." %}</td>
@@ -72,15 +72,15 @@ legend {
 	      <td>{% trans "Charges were dismissed and trial was discontinued." %}</td>
 	      <td>{% trans "Trial continued, but X was acquitted eventually." %}</td>
 	      <td>{% trans "Trial went on for that period." %}</td>
-	      <td>{% trans "Trial went on, X was sentenced." %}</td>
-	      <td>{% trans "Trial went on, X received a relatively heavy sentence." %}</td>
+	      <td>{% trans "Trial continued, X was sentenced." %}</td>
+	      <td>{% trans "Trial continued, X received a relatively heavy sentence." %}</td>
 	    </tr>
 	    <tr>
 	      <th>{% trans "Death threats / Physical attack" %}</th>
-	      <td>{% trans "Protection provided, threats were credibly investigated, perpetrator(s) prosecuted." %}</td>
+	      <td>{% trans "Protection provided, threats were credibly investigated, perpetrator(s) were prosecuted." %}</td>
 	      <td>{% trans "Protection provided, threats were credibly investigated, no conclusive outcome." %}</td>
-	      <td>{% trans "Threats/attack against X were not credibly investigated, but discontinued." %}</td>
-	      <td>{% trans "Threats/attack against X were not credibly investigated and continued." %}</td>
+	      <td>{% trans "Threats/attacks against X were not credibly investigated, but discontinued." %}</td>
+	      <td>{% trans "Threats/attacks against X were not credibly investigated and continued." %}</td>
 	      <td>{% trans "Threats/attacks against X were not credibly investigated and X was injured/killed." %}</td>
 	    </tr>
 	    <tr>
@@ -89,7 +89,7 @@ legend {
 	      <td>{% trans "Credible investigations were initiated." %}</td>
 	      <td>{% trans "No investigations were made into the disappearance / killing of X." %}</td>
 	      <td>{% trans "(X remained disappeared), fake investigations were made as a cover-up." %}</td>
-	      <td>{% trans "(X remained disappeared), the wrong people were prosecuted in fake investigations; and/or other defenders were disppeared/killed." %}</td>
+	      <td>{% trans "(X remained disappeared), the wrong people were prosecuted in fake investigations and/or other defenders were disappeared/killed." %}</td>
 	    </tr>
 	    <tr>
 	      <th>{% trans "Administrative harassment" %}</th>
@@ -124,12 +124,12 @@ legend {
     <table class="table table-striped table-bordered table-condensed">
       <tbody>
         <tr>
-          <th>{% trans "Country" %}</th>
-          <td class="data">{{ form.instance.case.country.name }}</td>
+			<th>{% trans "Name of Defender" %}</th>
+          <td class="data">{{ form.instance.case.name }}</td>
 	</tr>
 	<tr>
-	  <th>{% trans "Defender's Name" %}</th>
-          <td class="data">{{ form.instance.case.name }}</td>
+          <th>{% trans "Country" %}</th>
+          <td class="data">{{ form.instance.case.country.name }}</td>
 	</tr>
 	<tr>
           <th>{% trans "Affiliation" %}</th>
