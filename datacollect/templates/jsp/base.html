@@ -1,4 +1,4 @@
-{% extends 'demo/bootstrap.html' %}
+{% extends 'jsp/bootstrap.html' %}
 
 {% load bootstrap3 %}
 
@@ -33,7 +33,6 @@
   #footer-container a{color:white}
   #footer-container #footer{width:100%;margin:0 auto;height:50px;position:relative;font-family:Arial,sans-serif;font-size:11px;}
   #tophat-footer{display:block;float:left;margin:0 10px 0 20px;padding:0 0 0 0;font-family:Georgia,serif;font-size:15px;color:white;text-decoration:none;display:block;line-height:50px}
-
 </style>
 {% block extra_head %}{% endblock %}
 {% endblock %}
@@ -44,7 +43,7 @@
 <!-- NAV -->
 {% block nav %}
 <nav title="Navigation">
-  {% include "jsp/nav/default.html" %}
+  {% include "jsp/nav/menu.html" %}
 </nav>
 {% endblock %}
 
