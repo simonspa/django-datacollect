@@ -83,6 +83,16 @@
       {{ progress|floatformat:2 }}% complete
     </div>
   </div>
+
+  <h2>Response Status</h2>
+  received {{ followup_filled|intcomma }} response from {{ followup|intcomma }} follow-up questionnaires in total
+  <div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+	 aria-valuenow="{{ followup_filled_int }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ followup_filled_int }}%">
+      {{ followup_filled_perc|floatformat:2 }}% answers
+    </div>
+  </div>
+
   
   <h2>HRD Records Statistics</h2>
   <table class="table table-striped table-bordered table-condensed">

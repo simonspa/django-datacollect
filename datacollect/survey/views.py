@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import FormView
 from django.views.generic import TemplateView
 from survey.models import Record, OtherRecord
+from questionnaire.models import FollowUp
 import json
 from django.http import HttpResponse
 from collections import OrderedDict
@@ -23,6 +24,12 @@ class RecordAnalysis(LoginRequiredMixin,TemplateView):
 
     login_url = '/login/'
     def get_context_data(self, **kwargs):
+        # Check questionnaires
+        followup = FollowUp.objects.all().count()
+        followup_filled = FollowUp.objects.filter(is_answered=True).count()
+        followup_filled_perc = 100.*followup_filled/followup
+        followup_filled_int = int(followup_filled_perc)
+        
         # Quick notation to access all records
         records = Record.objects.all()
         ngorecords = OtherRecord.objects.all()

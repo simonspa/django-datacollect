@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from .models import FollowUp
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Button, Div
-from crispy_forms.bootstrap import TabHolder, Tab, InlineRadios, FormActions, Alert, FieldWithButtons, StrictButton
+from crispy_forms.bootstrap import TabHolder, Tab, Alert, FieldWithButtons, StrictButton
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
