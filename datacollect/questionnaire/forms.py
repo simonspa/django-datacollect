@@ -214,9 +214,7 @@ class FollowUpForm(forms.ModelForm):
                 Div(
                     Alert(content=_('<strong>Warning!</strong> You can only submit this form once. After your submission the link will be deactivated.'), css_class="alert-danger"),
                     HTML(_("<p>Thank you for your contribution!</p>")),
-                    FormActions(
-                        Submit('save', _('Submit')),
-                    ),
+                    StrictButton(_('Submit <span class="glyphicon glyphicon-envelope"></span>'), type='submit', name='save', css_class="btn-primary"),
                     css_class = 'panel-body'
                 ),
                 css_class = 'panel panel-primary'

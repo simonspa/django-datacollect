@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 20:17+0200\n"
+"POT-Creation-Date: 2017-04-02 20:25+0200\n"
 "PO-Revision-Date: 2017-04-02 19:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -181,11 +181,11 @@ msgstr ""
 msgid "<p>Thank you for your contribution!</p>"
 msgstr "<p>Merci beaucoup pour votre contribution !</p>"
 
-#: questionnaire/forms.py:218
-msgid "Submit"
-msgstr "Envoyer"
+#: questionnaire/forms.py:217
+msgid "Submit <span class=\"glyphicon glyphicon-envelope\"></span>"
+msgstr ""
 
-#: questionnaire/forms.py:232
+#: questionnaire/forms.py:230
 msgid ""
 "Please fill the e-mail address field if you wish to receive information."
 msgstr ""
@@ -1707,6 +1707,9 @@ msgstr "Vos informations ont été reçues correctement."
 #: templates/questionnaire/success.html:19
 msgid "Thank you for providing follow-up information on this case."
 msgstr "Merci d'avoir fourni des informations de suivi sur ce cas."
+
+#~ msgid "Submit"
+#~ msgstr "Envoyer"
 
 #~ msgid "English"
 #~ msgstr "English"
