@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-31 21:36+0200\n"
-"PO-Revision-Date: 2017-03-31 22:27+0200\n"
+"PO-Revision-Date: 2017-04-02 12:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -39,9 +39,8 @@ msgid ""
 "<p>How familiar are you with the case of {{ form.instance.case.name }} in "
 "the one year period after {{ form.instance.case.date_intervention }}?</p>"
 msgstr ""
-"<p>Dans quelle mesure êtes-vous familier avec le cas de {{ form.instance."
-"case.name }} dans la période à partir du {{ form.instance.case."
-"date_intervention }} jusqu'à une année après?</p>"
+"<p>Connaissez-vous bien l'évolution du cas de {{ form.instance.case.name }} "
+"dans l'année suivant le {{ form.instance.case.date_intervention }}?</p>"
 
 #: questionnaire/forms.py:80
 msgid "2. Development of the situation"
@@ -54,9 +53,9 @@ msgid ""
 "date_intervention }}, in light of the incidents listed above that occurred "
 "before the action of the Special Rapporteur?</p>"
 msgstr ""
-"<p>Comment décririez-vous le développement du cas de {{ form.instance.case."
-"name }} au cours d'une année après le {{ form.instance.case."
-"date_intervention }}, au vu des violations décrites ci-dessus qui se sont "
+"<p>Comment décririez-vous l'évolution du cas de {{ form.instance.case."
+"name }} dans l'une année qui a suivi le {{ form.instance.case."
+"date_intervention }} au vu des violations décrites ci-dessus qui se sont "
 "produites avant l'intervention du Rapporteur Spécial?</p>"
 
 #: questionnaire/forms.py:85
@@ -66,15 +65,15 @@ msgid ""
 "table lists various examples and explains how to rate developments of a case "
 "depending on the initial situation.</p>"
 msgstr ""
-" <p>Nous vous recommandons d'examiner <a data-toggle='modal' data-"
+" <p>Nous vous recommandons de consulter <a data-toggle='modal' data-"
 "target='#myModal'>ce tableau</a> afin d'assurer la cohérence entre les "
 "réponses des différents répondants. Le tableau donne plusieurs exemples et "
-"explique comment évaluer le développement d'un cas en fonction de la "
-"situation de départ.</p>"
+"explique comment évaluer l'évolution d'un cas en fonction de la situation de "
+"départ.</p>"
 
 #: questionnaire/forms.py:93
 msgid "3. Significant incidents"
-msgstr "3. Événements signifiants"
+msgstr "3. Événements significatifs"
 
 #: questionnaire/forms.py:97
 msgid ""
@@ -82,10 +81,10 @@ msgid ""
 "period after {{ form.instance.case.date_intervention }}. If there were more "
 "than 5, please concentrate on the most important ones:</p>"
 msgstr ""
-"<p>Veuillez indiquer ici tout événement signifiant qui s'est produit au "
-"cours d'une année après le {{ form.instance.case.date_intervention }} dont "
-"vous avez connaissance. S'il y avait plus de 5, concentrez-vous sur les plus "
-"importants s'il vous plaît:</p>"
+"<p>Veuillez indiquer ici tout événement significatif dont vous avez "
+"connaissance qui s'est produit au cours de l'année suivant le {{ form."
+"instance.case.date_intervention }}. S'il y en a plus de 5, concentrez-vous "
+"s'il vous plaît sur les plus importants:</p>"
 
 #: questionnaire/forms.py:100
 msgid "Incident #1"
@@ -119,8 +118,8 @@ msgid ""
 "date_intervention }}?</p>"
 msgstr ""
 "<p>Croyez-vous que l'attention internationale sur le cas de {{ form.instance."
-"case.name }} a eu un impact sur le développement de sa situation dans la "
-"période d'une année après le {{ form.instance.case.date_intervention }}?</p>"
+"case.name }} a eu un impact sur l'évolution de sa situation dans l'une année "
+"qui a suivi le {{ form.instance.case.date_intervention }}?</p>"
 
 #: questionnaire/forms.py:143
 msgid "5. Special Rapporteur's intervention"
@@ -205,7 +204,7 @@ msgstr "Suivi de cas de défenseurs"
 
 #: questionnaire/models.py:36
 msgid "I am very familiar with the case."
-msgstr "Je connais ce cas très bien."
+msgstr "Je connais très bien ce cas."
 
 #: questionnaire/models.py:37
 msgid "I have information but it might be incomplete."
@@ -221,7 +220,7 @@ msgstr "Je n'ai pas d'informations sur ce cas."
 
 #: questionnaire/models.py:42
 msgid "Much better"
-msgstr "Beaucoup meilleure"
+msgstr "Bien meilleure"
 
 #: questionnaire/models.py:43
 msgid "Somewhat better"
@@ -229,7 +228,7 @@ msgstr "Plutôt meilleure"
 
 #: questionnaire/models.py:44
 msgid "Situation stayed the same overall"
-msgstr "Situation est restée la même dans l'ensemble"
+msgstr "La situation est restée la même dans l'ensemble"
 
 #: questionnaire/models.py:45
 msgid "Somewhat worse"
@@ -237,12 +236,11 @@ msgstr "Plutôt pire"
 
 #: questionnaire/models.py:46
 msgid "Much worse"
-msgstr "Beaucoup pire"
+msgstr "Bien pire"
 
 #: questionnaire/models.py:47
 msgid "There were equally important positive and negative developments"
-msgstr ""
-"Il y avait des développements positifs et négatifs d'une importance similare"
+msgstr "Il y a eu des évolutions positives et négatives équivalentes"
 
 #: questionnaire/models.py:48 questionnaire/models.py:55
 msgid "I do not know"
@@ -1421,12 +1419,12 @@ msgstr ""
 "communications du Rapporteur Spécial (voir le résumé du cas ci-dessus). Si "
 "dans le cas présent il y avait des développements contradictoires au cours "
 "d'une année (p.ex. le défenseur a été libéré sans condition mais arrêté de "
-"nouveau quelques mois plus tard), alors sélectionnez \"Il y avait des "
-"développements positifs et négatifs d'une importance similare\". Si dans le "
-"cas présent il s'agit de plusieurs violations initiales, si de nouvelles "
-"violations se sont produites au cours d'une année, ou si d'autres "
-"développements que ceux décrits sont observées, veuillez répondre selon "
-"votre meilleur jugement en applicant une logique similaire."
+"nouveau quelques mois plus tard), alors sélectionnez \"Il y a eu des "
+"évolutions positives et négatives équivalentes\". Si dans le cas présent il "
+"s'agit de plusieurs violations initiales, si de nouvelles violations se sont "
+"produites au cours d'une année, ou si d'autres développements que ceux "
+"décrits sont observées, veuillez répondre selon votre meilleur jugement en "
+"applicant une logique similaire."
 
 #: templates/questionnaire/followup_form.html:37
 msgid "Example of initial violation"
@@ -1434,7 +1432,7 @@ msgstr "Exemple de la violation initiale"
 
 #: templates/questionnaire/followup_form.html:38
 msgid "Much better within one year"
-msgstr "Beaucoup meilleure au cours d'une année"
+msgstr "Bien meilleure au cours d'une année"
 
 #: templates/questionnaire/followup_form.html:39
 msgid "Somewhat better within one year"
@@ -1450,7 +1448,7 @@ msgstr "Plutôt pire au cours d'une année"
 
 #: templates/questionnaire/followup_form.html:42
 msgid "Much worse within one year"
-msgstr "Beaucoup pire au cours d'une année"
+msgstr "Bien pire au cours d'une année"
 
 #: templates/questionnaire/followup_form.html:47
 msgid "Detention"
@@ -1665,7 +1663,7 @@ msgstr "Nom du défenseur"
 
 #: templates/questionnaire/followup_form.html:129
 msgid "Incidents reported to UN"
-msgstr "Violations reportées à l'ONU"
+msgstr "Violations dénoncées à l'ONU"
 
 #: templates/questionnaire/followup_form.html:137
 msgid "Victim(s)"
@@ -1685,7 +1683,7 @@ msgstr "Défenseur et ses proches"
 
 #: templates/questionnaire/followup_form.html:149
 msgid "Date of last reported incident"
-msgstr "Date du dernier événement reporté"
+msgstr "Date du dernier événement rapporté"
 
 #: templates/questionnaire/followup_form.html:159
 msgid "Date of UN action"
