@@ -92,9 +92,10 @@ class FollowUp(models.Model):
         null=True,
         verbose_name = _('Rating')
     )
-    incident_date_1 = models.DateField(
+    incident_date_1 = models.CharField(
         null=True,
         blank=True,
+        max_length=100,
         verbose_name=_("Date of the incident"),
         help_text=_("Format YYYY-MM-DD")
     )
@@ -103,9 +104,10 @@ class FollowUp(models.Model):
         verbose_name=_("Brief description of the incident"),
     )
 
-    incident_date_2 = models.DateField(
+    incident_date_2 = models.CharField(
         null=True,
         blank=True,
+        max_length=100,
         verbose_name=_("Date of the incident"),
         help_text=_("Format YYYY-MM-DD")
     )
@@ -114,9 +116,10 @@ class FollowUp(models.Model):
         verbose_name=_("Brief description of the incident"),
     )
 
-    incident_date_3 = models.DateField(
+    incident_date_3 = models.CharField(
         null=True,
         blank=True,
+        max_length=100,
         verbose_name=_("Date of the incident"),
         help_text=_("Format YYYY-MM-DD")
     )
@@ -125,9 +128,10 @@ class FollowUp(models.Model):
         verbose_name=_("Brief description of the incident"),
     )
 
-    incident_date_4 = models.DateField(
+    incident_date_4 = models.CharField(
         null=True,
         blank=True,
+        max_length=100,
         verbose_name=_("Date of the incident"),
         help_text=_("Format YYYY-MM-DD")
     )
@@ -135,9 +139,10 @@ class FollowUp(models.Model):
         blank=True,
         verbose_name=_("Brief description of the incident"),
     )
-    incident_date_5 = models.DateField(
+    incident_date_5 = models.CharField(
         null=True,
         blank=True,
+        max_length=100,
         verbose_name=_("Date of the incident"),
         help_text=_("Format YYYY-MM-DD")
     )
