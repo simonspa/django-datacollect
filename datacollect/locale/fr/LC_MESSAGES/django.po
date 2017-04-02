@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:11+0200\n"
-"PO-Revision-Date: 2017-04-02 15:02+0200\n"
+"PO-Revision-Date: 2017-04-02 18:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: datacollect/settings.py:130 datacollect/settings_production.py:149
 msgid "English"
-msgstr "Anglais"
+msgstr "English"
 
 #: datacollect/settings.py:131 datacollect/settings_production.py:150
 msgid "Spanish"
-msgstr "Espagnol"
+msgstr "Español"
 
 #: datacollect/settings.py:132 datacollect/settings_production.py:151
 msgid "French"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: questionnaire/forms.py:80
 msgid "2. Development of the situation"
-msgstr "2. Développement de la situation"
+msgstr "2. Évolution de la situation"
 
 #: questionnaire/forms.py:84
 msgid ""
