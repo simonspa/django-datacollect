@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 18:26+0200\n"
-"PO-Revision-Date: 2017-04-02 18:07+0200\n"
+"PO-Revision-Date: 2017-04-02 19:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -1426,17 +1426,17 @@ msgid ""
 "the ones described were observed, please use your best judgment to assess "
 "the overall outcome applying a similar logic."
 msgstr ""
-"Cette matrice fournit des exemples sur comment évaluer le développement d'un "
-"cas. Elle est divisée en plusieurs types de violations dénoncées par les "
-"communications du Rapporteur Spécial (voir le résumé du cas ci-dessus). Si "
-"dans le cas présent il y avait des développements contradictoires au cours "
-"d'une année (p.ex. le défenseur a été libéré sans condition mais arrêté de "
-"nouveau quelques mois plus tard), alors sélectionnez \"Il y a eu des "
-"évolutions positives et négatives équivalentes\". Si dans le cas présent il "
-"s'agit de plusieurs violations initiales, si de nouvelles violations se sont "
-"produites au cours d'une année, ou si d'autres développements que ceux "
-"décrits sont observées, veuillez répondre selon votre meilleur jugement en "
-"applicant une logique similaire."
+"Cette matrice fournit des exemples sur comment évaluer l'évolution d'un cas. "
+"Elle est divisée en plusieurs types de violations dénoncées par les "
+"communications du Rapporteur Spécial (voir le résumé du cas au-dessus du "
+"questionnaire). Si dans le cas présent il y avait des évolutions "
+"contradictoires au cours d'une année (p.ex. le défenseur a été libéré sans "
+"condition mais arrêté de nouveau quelques mois plus tard), alors "
+"sélectionnez \"Il y a eu des évolutions positives et négatives équivalentes"
+"\". Si le cas présent concerne plusieurs violations initiales, si de "
+"nouvelles violations se sont produites au cours de l'année ou si d'autres "
+"évolutions que celles décrites sont observées, veuillez répondre selon votre "
+"meilleur jugement en appliquant une logique similaire."
 
 #: templates/questionnaire/followup_form.html:37
 msgid "Example of initial violation"
@@ -1444,23 +1444,23 @@ msgstr "Exemple de la violation initiale"
 
 #: templates/questionnaire/followup_form.html:38
 msgid "Much better within one year"
-msgstr "Bien meilleure au cours d'une année"
+msgstr "Bien meilleure au cours de l'année"
 
 #: templates/questionnaire/followup_form.html:39
 msgid "Somewhat better within one year"
-msgstr "Plutôt meilleure au cours d'une année"
+msgstr "Plutôt meilleure au cours de l'année"
 
 #: templates/questionnaire/followup_form.html:40
 msgid "Situation stayed the same overall within one year"
-msgstr "Situation est restée la même dans l'ensemble au cours d'une année"
+msgstr "Situation est restée la même dans l'ensemble au cours de l'année"
 
 #: templates/questionnaire/followup_form.html:41
 msgid "Somewhat worse within one year"
-msgstr "Plutôt pire au cours d'une année"
+msgstr "Plutôt pire au cours de l'année"
 
 #: templates/questionnaire/followup_form.html:42
 msgid "Much worse within one year"
-msgstr "Bien pire au cours d'une année"
+msgstr "Bien pire au cours de l'année"
 
 #: templates/questionnaire/followup_form.html:47
 msgid "Detention"
@@ -1475,21 +1475,21 @@ msgid ""
 "Release with conditions (e.g. on bail), OR: Detention continued but "
 "conditions were improved."
 msgstr ""
-"Libération sous conditions (p.ex. sous caution), OU: Détention a continué "
+"Libération sous conditions (p.ex. sous caution), OU: Maintien de détention "
 "mais les conditions ont été améliorées."
 
 #: templates/questionnaire/followup_form.html:50
 msgid "Detention continued."
-msgstr "Détention a continué."
+msgstr "Maintien de détention."
 
 #: templates/questionnaire/followup_form.html:51
 msgid "Detention continued, charges or threats were added."
-msgstr "Détention a continué, mise en accusation ou menaces ajoutées."
+msgstr "Maintien de détention, mise en accusation ou menaces ajoutées."
 
 #: templates/questionnaire/followup_form.html:52
 msgid "Detention continued, X was tortured, disappeared or died in detention."
 msgstr ""
-"Détention a continué, X a été torturé, disparu ou est mort en détention."
+"Maintien de détention, X a été torturé, a disparu ou est mort en détention."
 
 #: templates/questionnaire/followup_form.html:55
 msgid "Torture in Detention"
@@ -1500,26 +1500,25 @@ msgid ""
 "Release and torture claims were credibly investigated and reparation "
 "provided."
 msgstr ""
-"Libération; allégations ont été investiguées de manière crédible et "
-"réparations ont été offertes."
+"Libération; les plaintes contre torture ont été examinées de manière "
+"crédible et des réparations ont été offertes."
 
 #: templates/questionnaire/followup_form.html:57
 msgid "Detention continued, but torture stopped and claims were investigated."
 msgstr ""
-"Détention a continué mais non pas la torture, allégations ont été "
-"investiguées."
+"Maintien en détention mais arrêt de la torture, plaintes ont été examinées."
 
 #: templates/questionnaire/followup_form.html:58
 msgid "Detention continued and torture claims were not investigated."
-msgstr "Détention a continué, allégations n'ont pas été investiguées."
+msgstr "Maintien en détention, les plaintes n'ont pas été examinées."
 
 #: templates/questionnaire/followup_form.html:59
 msgid "Detention and torture continued."
-msgstr "Détention et torture ont continué."
+msgstr "Maintien de détention et récurrence de torture."
 
 #: templates/questionnaire/followup_form.html:60
 msgid "X was disappeared or died in detention."
-msgstr "X a été disparu ou est mort en détention."
+msgstr "X a disparu ou est mort en détention."
 
 #: templates/questionnaire/followup_form.html:63
 msgid "Put on trial"
@@ -1543,7 +1542,7 @@ msgstr "Procès a continué, X a été condamné."
 
 #: templates/questionnaire/followup_form.html:68
 msgid "Trial continued, X received a relatively heavy sentence."
-msgstr "Procès a continué, X a réçu une peine relativement lourde."
+msgstr "Procès a continué, X a reçu une peine relativement lourde."
 
 #: templates/questionnaire/followup_form.html:71
 msgid "Death threats / Physical attack"
@@ -1554,7 +1553,7 @@ msgid ""
 "Protection provided, threats were credibly investigated, perpetrator(s) were "
 "prosecuted."
 msgstr ""
-"Protection a été offerte, menaces ont été investiguées de manière crédible, "
+"Protection a été offerte, menaces ont été examinées de manière crédible, "
 "auteurs ont été poursuivis."
 
 #: templates/questionnaire/followup_form.html:73
@@ -1562,29 +1561,29 @@ msgid ""
 "Protection provided, threats were credibly investigated, no conclusive "
 "outcome."
 msgstr ""
-"Protection a été offerte, menaces ont été investiguées de manière crédible, "
+"Protection a été offerte, menaces ont été examinées de manière crédible, "
 "sans résultat."
 
 #: templates/questionnaire/followup_form.html:74
 msgid ""
 "Threats/attacks against X were not credibly investigated, but discontinued."
 msgstr ""
-"Menaces/attaques contre X n'ont pas été investiguées de manière crédible, "
-"mais n'ont pas continué."
+"Menaces/attaques contre X n'ont pas été examinées de manière crédible, mais "
+"n'ont pas continué."
 
 #: templates/questionnaire/followup_form.html:75
 msgid "Threats/attacks against X were not credibly investigated and continued."
 msgstr ""
-"Menaces/attaques contre X n'ont pas été investiguées de manière crédible et "
-"ont continué."
+"Menaces/attaques contre X n'ont pas été examinées de manière crédible et ont "
+"continué."
 
 #: templates/questionnaire/followup_form.html:76
 msgid ""
 "Threats/attacks against X were not credibly investigated and X was injured/"
 "killed."
 msgstr ""
-"Menaces/attaques contre X n'ont pas été investiguées de manière crédible et "
-"X a été blessé/tué."
+"Menaces/attaques contre X n'ont pas été examinées de manière crédible et X a "
+"été blessé/tué."
 
 #: templates/questionnaire/followup_form.html:79
 msgid "Enforced Disappearance / Killing"
@@ -1604,25 +1603,25 @@ msgstr "Enquêtes crédibles ont été menées."
 
 #: templates/questionnaire/followup_form.html:82
 msgid "No investigations were made into the disappearance / killing of X."
-msgstr "Aucune enquête a été menée sur la disparition/mort de X."
+msgstr "Aucune enquête n'a été menée sur la disparition/mort de X."
 
 #: templates/questionnaire/followup_form.html:83
 msgid "(X remained disappeared), fake investigations were made as a cover-up."
 msgstr ""
-"(X demeurait disparu), de fausses enquêtes ont été menées pour dissimuler "
-"les faits."
+"(X demeure disparu), de fausses enquêtes ont été menées pour dissimuler les "
+"faits."
 
 #: templates/questionnaire/followup_form.html:84
 msgid ""
 "(X remained disappeared), the wrong people were prosecuted in fake "
 "investigations and/or other defenders were disappeared/killed."
 msgstr ""
-"(X demeurait disparu), des personnes innocents ont été poursuivis dans de "
-"fausses enquêtes et/ou d'autres défenseurs ont été disparus/tués."
+"(X demeure disparu), des personnes innocents ont été poursuivies dans de "
+"fausses enquêtes et/ou d'autres défenseurs ont disparus/été tués."
 
 #: templates/questionnaire/followup_form.html:88
 msgid "Harassment was discontinued, compensation provided."
-msgstr "Harcèlement n'a pas continué, compensation a été offerte."
+msgstr "Harcèlement n'a pas continué, une compensation a été offerte."
 
 #: templates/questionnaire/followup_form.html:89
 msgid "Harassment was discontinued, relevant documents issued etc."
@@ -1647,7 +1646,7 @@ msgid ""
 "Defamatory statements were officially condemned and/or credibly investigated."
 msgstr ""
 "Déclarations diffamatoires ont été condamnées de manière officielle et/ou "
-"investiguées de manière crédible."
+"examinées de manière crédible."
 
 #: templates/questionnaire/followup_form.html:97
 msgid "Defamatory statements were discontinued."
@@ -1658,15 +1657,15 @@ msgid ""
 "Defamatory statements continued and were not officially condemned or "
 "investigated."
 msgstr ""
-"Déclarations diffamatoires se sont reproduites et n'ont pas été condamné/"
-"investiguées de manière officielle."
+"Déclarations diffamatoires se sont reproduites et n'ont pas été condamnées/"
+"examinées de manière officielle."
 
 #: templates/questionnaire/followup_form.html:99
 msgid ""
 "Defamatory statements continued to be made and were endorsed by (more) "
 "officials."
 msgstr ""
-"Déclarations diffamatoires se sont reproduites et ont été approuvée par des "
+"Déclarations diffamatoires se sont reproduites et ont été approuvées par des "
 "(davantage de) fonctionnaires."
 
 #: templates/questionnaire/followup_form.html:124
