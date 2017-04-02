@@ -5,8 +5,33 @@ from django.core.exceptions import ValidationError
 from .models import FollowUp
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Button, Div
-from crispy_forms.bootstrap import TabHolder, Tab, InlineRadios, FormActions, Alert
+from crispy_forms.bootstrap import TabHolder, Tab, InlineRadios, FormActions, Alert, FieldWithButtons, StrictButton
 from django.utils.translation import ugettext_lazy as _
+from django.conf import settings
+
+class LanguageForm(forms.Form):
+    language = forms.ChoiceField(choices = settings.LANGUAGES, required=True, label=_('Choose preferred language'))
+
+    def __init__(self, *args, **kwargs):
+        super(LanguageForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.form_class = 'form-horizontal'
+        self.helper.label_class = 'col-sm-3 col-md-3 col-lg-3'
+        self.helper.field_class = 'col-sm-4 col-md-4 col-lg-4'
+        self.helper.layout = Layout(
+            Div(
+                Div(
+                    HTML(_("<p>The <strong>language of this questionnaire</strong> has been chosen according to the the defender's country of origin. However, feel free to change the language prior to filling the questionnaire. Changing the language will reset the content of the questionnaire.</p>")),
+                    FieldWithButtons(
+                        'language',
+                        StrictButton('Change language <span class="glyphicon glyphicon-refresh"></span>', type='submit', name='change_language', css_class="btn-success"),
+                    ),
+                    css_class = 'panel-body'
+                ),
+                css_class = 'panel panel-primary'
+            ),
+        )
+
 
 class FollowUpForm(forms.ModelForm):
 
