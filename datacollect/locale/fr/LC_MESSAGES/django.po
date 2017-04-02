@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:11+0200\n"
+"POT-Creation-Date: 2017-04-02 18:26+0200\n"
 "PO-Revision-Date: 2017-04-02 18:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,23 +18,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.8.12\n"
 
-#: datacollect/settings.py:130 datacollect/settings_production.py:149
-msgid "English"
-msgstr "English"
+#: questionnaire/forms.py:13
+msgid "Choose preferred language"
+msgstr ""
 
-#: datacollect/settings.py:131 datacollect/settings_production.py:150
-msgid "Spanish"
-msgstr "Español"
+#: questionnaire/forms.py:24
+msgid ""
+"<p>The <strong>language of this questionnaire</strong> has been chosen "
+"according to the the defender's country of origin. However, feel free to "
+"change the language prior to filling the questionnaire. Changing the "
+"language will reset the content of the questionnaire.</p>"
+msgstr ""
 
-#: datacollect/settings.py:132 datacollect/settings_production.py:151
-msgid "French"
-msgstr "Français"
-
-#: questionnaire/forms.py:68
+#: questionnaire/forms.py:93
 msgid "1. Familiarity"
 msgstr "1. Connaissance du cas"
 
-#: questionnaire/forms.py:72
+#: questionnaire/forms.py:97
 msgid ""
 "<p>How familiar are you with the case of {{ form.instance.case.name }} in "
 "the one year period after {{ form.instance.case.date_intervention }}?</p>"
@@ -42,11 +42,11 @@ msgstr ""
 "<p>Connaissez-vous bien l'évolution du cas de {{ form.instance.case.name }} "
 "dans l'année suivant le {{ form.instance.case.date_intervention }}?</p>"
 
-#: questionnaire/forms.py:80
+#: questionnaire/forms.py:105
 msgid "2. Development of the situation"
 msgstr "2. Évolution de la situation"
 
-#: questionnaire/forms.py:84
+#: questionnaire/forms.py:109
 msgid ""
 "<p>How would you describe the development of the case of {{ form.instance."
 "case.name }} in the one year period after {{ form.instance.case."
@@ -58,7 +58,7 @@ msgstr ""
 "date_intervention }} au vu des violations décrites ci-dessus qui se sont "
 "produites avant l'intervention du Rapporteur Spécial?</p>"
 
-#: questionnaire/forms.py:85
+#: questionnaire/forms.py:110
 msgid ""
 "<p>We recommend you look at <a data-toggle='modal' data-"
 "target='#myModal'>this table</a> to ensure consistency in responses. The "
@@ -71,11 +71,11 @@ msgstr ""
 "explique comment évaluer l'évolution d'un cas en fonction de la situation de "
 "départ.</p>"
 
-#: questionnaire/forms.py:93
+#: questionnaire/forms.py:118
 msgid "3. Significant incidents"
 msgstr "3. Événements significatifs"
 
-#: questionnaire/forms.py:97
+#: questionnaire/forms.py:122
 msgid ""
 "<p>Please list all known significant incidents that occurred in the one year "
 "period after {{ form.instance.case.date_intervention }}. If there were more "
@@ -86,31 +86,31 @@ msgstr ""
 "instance.case.date_intervention }}. S'il y en a plus de 5, concentrez-vous "
 "s'il vous plaît sur les plus importants:</p>"
 
-#: questionnaire/forms.py:100
+#: questionnaire/forms.py:125
 msgid "Incident #1"
 msgstr "Événement #1"
 
-#: questionnaire/forms.py:105
+#: questionnaire/forms.py:130
 msgid "Incident #2"
 msgstr "Événement #2"
 
-#: questionnaire/forms.py:110
+#: questionnaire/forms.py:135
 msgid "Incident #3"
 msgstr "Événement #3"
 
-#: questionnaire/forms.py:115
+#: questionnaire/forms.py:140
 msgid "Incident #4"
 msgstr "Événement #4"
 
-#: questionnaire/forms.py:120
+#: questionnaire/forms.py:145
 msgid "Incident #5"
 msgstr "Événement #5"
 
-#: questionnaire/forms.py:131
+#: questionnaire/forms.py:156
 msgid "4. International attention"
 msgstr "4. Attention internationale"
 
-#: questionnaire/forms.py:135
+#: questionnaire/forms.py:160
 msgid ""
 "<p>Do you believe that the international attention given to the case of "
 "{{ form.instance.case.name }} had an impact on the development of his/her "
@@ -121,11 +121,11 @@ msgstr ""
 "case.name }} a eu un impact sur l'évolution de sa situation dans l'une année "
 "qui a suivi le {{ form.instance.case.date_intervention }}?</p>"
 
-#: questionnaire/forms.py:143
+#: questionnaire/forms.py:168
 msgid "5. Special Rapporteur's intervention"
 msgstr "5. Intervention du Rapporteur Spécial"
 
-#: questionnaire/forms.py:147
+#: questionnaire/forms.py:172
 msgid ""
 "<p>Do you believe that the intervention of the Special Rapporteur had a "
 "distinguishable impact on this case (amidst broader international attention)?"
@@ -135,11 +135,11 @@ msgstr ""
 "discernable sur le cas (parmi les autres effets de l'attention "
 "internationale)? "
 
-#: questionnaire/forms.py:155
+#: questionnaire/forms.py:180
 msgid "6. Impact of the attention"
 msgstr "6. Impact de l'attention"
 
-#: questionnaire/forms.py:159
+#: questionnaire/forms.py:184
 msgid ""
 "<p>Please provide as much detail as possible on what makes you come to your "
 "conclusion on question (4) and (5), as well as on what kind of impact the "
@@ -149,15 +149,15 @@ msgstr ""
 "vos conclusions sur les questions (4) et (5), ainsi que sur le type d'impact "
 "que l'attention a eu (le cas échéant):</p>"
 
-#: questionnaire/forms.py:167
+#: questionnaire/forms.py:192
 msgid "7. Further comments/feedback"
 msgstr "7. Remarques/commentaires supplémentaires"
 
-#: questionnaire/forms.py:178
+#: questionnaire/forms.py:203
 msgid "8. Voluntary contact information"
 msgstr "8. Coordonnées (volontaire)"
 
-#: questionnaire/forms.py:185
+#: questionnaire/forms.py:210
 msgid ""
 "Please note that by submitting your email address, your contact details can "
 "be connected to this case by the independent researcher carrying out the "
@@ -173,11 +173,11 @@ msgstr ""
 "souhaitez pas être connecté(e) à ce cas, vous pouvez vous adresser à <a href="
 "\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>."
 
-#: questionnaire/forms.py:192
+#: questionnaire/forms.py:217
 msgid "Submission"
 msgstr "Soumission"
 
-#: questionnaire/forms.py:196
+#: questionnaire/forms.py:221
 msgid ""
 "<strong>Warning!</strong> You can only submit this form once. After your "
 "submission the link will be deactivated."
@@ -185,15 +185,15 @@ msgstr ""
 "<strong>Attention!</strong> Vous pouvez soumettre ce formulaire une seule "
 "fois. Après l'envoi, le lien sera désactivé."
 
-#: questionnaire/forms.py:197
+#: questionnaire/forms.py:222
 msgid "<p>Thank you for your contribution!</p>"
 msgstr "<p>Merci beaucoup pour votre contribution !</p>"
 
-#: questionnaire/forms.py:199
+#: questionnaire/forms.py:224
 msgid "Submit"
 msgstr "Envoyer"
 
-#: questionnaire/forms.py:213
+#: questionnaire/forms.py:238
 msgid ""
 "Please fill the e-mail address field if you wish to receive information."
 msgstr ""
@@ -1041,7 +1041,7 @@ msgid "(select country)"
 msgstr ""
 
 #: survey/models.py:323 survey/models.py:691
-#: templates/questionnaire/followup_form.html:121
+#: templates/questionnaire/followup_form.html:128
 msgid "Country"
 msgstr "Pays"
 
@@ -1096,7 +1096,7 @@ msgstr ""
 msgid "Relevant activities"
 msgstr ""
 
-#: survey/models.py:383 templates/questionnaire/followup_form.html.py:125
+#: survey/models.py:383 templates/questionnaire/followup_form.html.py:132
 msgid "Affiliation"
 msgstr ""
 
@@ -1342,7 +1342,7 @@ msgstr ""
 msgid "Additional mandates"
 msgstr ""
 
-#: survey/models.py:818 templates/questionnaire/followup_form.html.py:113
+#: survey/models.py:818 templates/questionnaire/followup_form.html.py:120
 msgid "Case Summary"
 msgstr "Résumé du cas"
 
@@ -1669,39 +1669,39 @@ msgstr ""
 "Déclarations diffamatoires se sont reproduites et ont été approuvée par des "
 "(davantage de) fonctionnaires."
 
-#: templates/questionnaire/followup_form.html:117
+#: templates/questionnaire/followup_form.html:124
 msgid "Name of Defender"
 msgstr "Nom du défenseur"
 
-#: templates/questionnaire/followup_form.html:129
+#: templates/questionnaire/followup_form.html:136
 msgid "Incidents reported to UN"
 msgstr "Violations dénoncées à l'ONU"
 
-#: templates/questionnaire/followup_form.html:137
+#: templates/questionnaire/followup_form.html:144
 msgid "Victim(s)"
 msgstr "Victime(s)"
 
-#: templates/questionnaire/followup_form.html:140
+#: templates/questionnaire/followup_form.html:147
 msgid "Defender him/herself"
 msgstr "Défenseur lui/elle-même"
 
-#: templates/questionnaire/followup_form.html:142
+#: templates/questionnaire/followup_form.html:149
 msgid "Relatives of the defender"
 msgstr "Proches du défenseur"
 
-#: templates/questionnaire/followup_form.html:144
+#: templates/questionnaire/followup_form.html:151
 msgid "Defender and his/her relatives"
 msgstr "Défenseur et ses proches"
 
-#: templates/questionnaire/followup_form.html:149
+#: templates/questionnaire/followup_form.html:156
 msgid "Date of last reported incident"
 msgstr "Date du dernier événement rapporté"
 
-#: templates/questionnaire/followup_form.html:159
+#: templates/questionnaire/followup_form.html:166
 msgid "Date of UN action"
 msgstr "Date de l'intervention du Rapporteur Spécial"
 
-#: templates/questionnaire/followup_form.html:167
+#: templates/questionnaire/followup_form.html:174
 msgid "Follow-Up Questionnaire"
 msgstr "Questionnaire de suivi"
 
@@ -1716,6 +1716,15 @@ msgstr "Vos informations ont été reçues correctement."
 #: templates/questionnaire/success.html:19
 msgid "Thank you for providing follow-up information on this case."
 msgstr "Merci d'avoir fourni des informations de suivi sur ce cas."
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgid "Spanish"
+#~ msgstr "Español"
+
+#~ msgid "French"
+#~ msgstr "Français"
 
 #~ msgid ""
 #~ "<p>In light of the attacks (see above) that occurred before the Special "
