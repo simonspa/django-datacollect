@@ -13,6 +13,7 @@ class FollowUpAdmin(VersionAdmin):
     readonly_fields = ['case']
     list_per_page = 500
     list_display = ("person_id","name","affiliation","ohchr_case","country","date_intervention","unique_id","language","timestamp","is_answered","is_processed")
+    list_editable = ("language",)
     fieldsets = (
         ('Case information', {
             'fields': ('case',)
