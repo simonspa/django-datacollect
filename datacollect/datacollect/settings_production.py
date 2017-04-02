@@ -1,3 +1,4 @@
+# coding=utf8
 """
 Django settings for datacollect project.
 
@@ -146,9 +147,9 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 LANGUAGES = [
-    ('en', _('English')),
-    ('es', _('Spanish')),
-    ('fr', _('French')),
+    ('en', 'English'),
+    ('es', 'Español'),
+    ('fr', 'Français'),
 ]
 
 LOCALE_PATHS = (
