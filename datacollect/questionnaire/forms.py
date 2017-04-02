@@ -144,7 +144,7 @@ class FollowUpForm(forms.ModelForm):
                     css_class = 'panel-heading'
                 ),
                 Div(
-                    HTML(_("<p>Do you believe that the intervention of the Special Rapporteur had a distinguishable impact (amidst broader international attention)?</p>")),
+                    HTML(_("<p>Do you believe that the intervention of the Special Rapporteur had a distinguishable impact on this case (amidst broader international attention)?</p>")),
                     'intervention',
                     css_class = 'panel-body'
                 ),

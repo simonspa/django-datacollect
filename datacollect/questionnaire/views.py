@@ -26,7 +26,7 @@ class FollowUpUpdate(UpdateView):
             return obj
 
     def get_success_url(self):
-        return reverse('submit-success', kwargs={'person_id': self.object.case.person_id})
+        return reverse('submit-success')
 
 
 class FormSuccessView(TemplateView):

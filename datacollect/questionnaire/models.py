@@ -49,7 +49,7 @@ class FollowUp(models.Model):
     )
     ATTENTION_CHOICES = (
         (1, _("Definitely yes")),
-        (2, _("Probably")),
+        (2, _("Probably yes")),
         (3, _("Probably not")),
         (4, _("Definitely not")),
         (6, _("I do not know"))
