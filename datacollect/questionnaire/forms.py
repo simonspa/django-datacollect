@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
 class LanguageForm(forms.Form):
-    language = forms.ChoiceField(choices = settings.LANGUAGES, required=True, label=_('Change language / Cambiar el idioma / Changer la langue'))
+    language = forms.ChoiceField(choices = settings.LANGUAGES, required=True, label='Change language / Cambiar el idioma / Changer la langue')
 
     def __init__(self, *args, **kwargs):
         super(LanguageForm, self).__init__(*args, **kwargs)
