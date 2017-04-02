@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 20:37+0200\n"
-"PO-Revision-Date: 2017-04-02 20:30+0200\n"
+"PO-Revision-Date: 2017-04-02 20:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -1453,7 +1453,7 @@ msgstr "Dentención"
 
 #: templates/questionnaire/followup_form.html:83
 msgid "Release without conditions."
-msgstr "Liberación sin conditiones."
+msgstr "Liberación sin condiciones."
 
 #: templates/questionnaire/followup_form.html:84
 msgid ""
@@ -1486,8 +1486,7 @@ msgid ""
 "provided."
 msgstr ""
 "Libéracion; las denuncias de tortura fueron investigadas de manera creíble y "
-"se proporcionó reparación.Las denuncias de tortura fueron investigadas de "
-"manera creíble y se proporcionó reparación."
+"se proporcionó reparación."
 
 #: templates/questionnaire/followup_form.html:92
 msgid "Detention continued, but torture stopped and claims were investigated."
