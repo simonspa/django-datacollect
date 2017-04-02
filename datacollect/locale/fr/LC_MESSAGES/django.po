@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-31 21:36+0200\n"
-"PO-Revision-Date: 2017-04-02 12:21+0200\n"
+"PO-Revision-Date: 2017-04-02 12:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -151,7 +151,7 @@ msgstr ""
 
 #: questionnaire/forms.py:167
 msgid "7. Further comments/feedback"
-msgstr "7. Remarques/commentaires complémentaires"
+msgstr "7. Remarques/commentaires supplémentaires"
 
 #: questionnaire/forms.py:178
 msgid "8. Voluntary contact information"
@@ -168,7 +168,7 @@ msgid ""
 msgstr ""
 "Veuillez noter qu'en envoyant votre adresse e-mail, votre contact peut être "
 "connecté à ce cas par la chercheuse indépendante effectuant l'analyse. Si "
-"vous n'indiquez pas vos coordonnées, votre soumission demeurera anonyme. Si "
+"vous n'indiquez pas vos coordonnées, vos réponses resteront anonymes. Si "
 "vous souhaitez recevoir des informations sur le résultat de l'étude, mais ne "
 "souhaitez pas être connecté(e) à ce cas, vous pouvez vous adresser à <a href="
 "\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>."
@@ -323,18 +323,18 @@ msgstr "Détails sur l'impact"
 
 #: questionnaire/models.py:166
 msgid "Any additional comments/feedback"
-msgstr "Toute remarque/commentaire complémentaire"
+msgstr "Toute remarque/commentaire supplémentaire"
 
 #: questionnaire/models.py:171
 msgid "I want to be informed about the outcome of this study"
 msgstr ""
-"Je voudrais recevoir des informations sur les résultats de cette étude."
+"Je souhaite recevoir des informations sur les résultats de cette étude."
 
 #: questionnaire/models.py:176
 msgid "You can contact me again if you have further questions about this case"
 msgstr ""
-"Vous pouvez me récontacter si vous avez des questions supplémentaires sur ce "
-"cas."
+"Vous pouvez me contacter à nouveau si vous avez des questions "
+"supplémentaires sur ce cas."
 
 #: questionnaire/models.py:182
 msgid "Email address"
