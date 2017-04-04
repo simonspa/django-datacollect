@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 20:37+0200\n"
-"PO-Revision-Date: 2017-04-02 20:42+0200\n"
+"PO-Revision-Date: 2017-04-04 18:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -28,7 +28,7 @@ msgid ""
 "the one year period after {{ form.instance.case.date_intervention }}?</p>"
 msgstr ""
 "<p>¿Qué tan familiarizado está usted con el caso de {{ form.instance.case."
-"name }} en el período de un año después del {{ form.instance.case."
+"name }} en el período de un año contado a partir del {{ form.instance.case."
 "date_intervention }}?</p>"
 
 #: questionnaire/forms.py:99
@@ -43,9 +43,9 @@ msgid ""
 "before the action of the Special Rapporteur?</p>"
 msgstr ""
 "<p>¿Cómo describiría el desarrollo del caso de {{ form.instance.case.name }} "
-"en el período de un año después del {{ form.instance.case."
-"date_intervention }}, en vista de los incidentes mencionados arriba que "
-"ocurrieron antes de la acción del Relator Especial?</p>"
+"en el período de un año contado a partir del {{ form.instance.case."
+"date_intervention }}, teniendo en cuenta los incidentes mencionados arriba, "
+"ocurridos antes de la acción del Relator Especial?</p>"
 
 #: questionnaire/forms.py:104
 msgid ""
@@ -56,8 +56,8 @@ msgid ""
 msgstr ""
 "<p>Le recomendamos que examine <a data-toggle='modal' data-"
 "target='#myModal'>esta tabla</a> para asegurar la coherencia en las "
-"respuestas. La tabla muestra varios ejemplos y explica cómo evaluar la "
-"evolución de un caso en función de la situación inicial.</p>"
+"respuestas de varios encuestados. La tabla muestra varios ejemplos y explica "
+"cómo evaluar la evolución de un caso en función de la situación inicial.</p>"
 
 #: questionnaire/forms.py:112
 msgid "3. Significant incidents"
@@ -69,8 +69,8 @@ msgid ""
 "period after {{ form.instance.case.date_intervention }}. If there were more "
 "than 5, please concentrate on the most important ones:</p>"
 msgstr ""
-"<p>Sírvase enumerar todos los incidentes significativos conocidos que "
-"ocurrieron en el período de un año posterior al {{ form.instance.case."
+"<p>Sírvase enumerar todos los incidentes relevantes conocidos que ocurrieron "
+"en el período de un año posterior al {{ form.instance.case."
 "date_intervention }}. Si hubiera más de 5, por favor, concéntrese en los más "
 "importantes:</p>"
 
@@ -107,7 +107,8 @@ msgid ""
 msgstr ""
 "<p>¿Cree usted que la atención internacional dada al caso de {{ form."
 "instance.case.name }} tuvo un impacto en el desarrollo de su situación en el "
-"período de un año después del {{ form.instance.case.date_intervention }}?</p>"
+"período de un año posterior al {{ form.instance.case.date_intervention }}?</"
+"p>"
 
 #: questionnaire/forms.py:162
 msgid "5. Special Rapporteur's intervention"
@@ -120,8 +121,8 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>¿Cree usted que la intervención del Relator Especial tuvo un impacto "
-"distinguible en este caso (en medio de una atención internacional más "
-"amplia)?</p>"
+"específico en este caso (en medio de una atención internacional más amplia)?"
+"</p>"
 
 #: questionnaire/forms.py:174
 msgid "6. Impact of the attention"
@@ -133,17 +134,17 @@ msgid ""
 "conclusion on question (4) and (5), as well as on what kind of impact the "
 "attention had (if any):</p>"
 msgstr ""
-"<p>Por favor, proporcione tantos detalles como sea posible acerca de lo que "
-"lleva a sus conclusiones sobre las preguntas (4) y (5), y del tipo de "
-"impacto que tenía la atención (en caso afirmativo):</p>"
+"<p>Por favor, proporcione tantos detalles como sea posible acerca de las "
+"razones que lo llevan a sus conclusiones en las preguntas (4) y (5), así "
+"como sobre el tipo de impacto que tenía la atención (en caso afirmativo):</p>"
 
 #: questionnaire/forms.py:186
 msgid "7. Further comments/feedback"
-msgstr "7. Otros comentarios/reacciónes"
+msgstr "7. Otros comentarios/reacciones"
 
 #: questionnaire/forms.py:197
 msgid "8. Voluntary contact information"
-msgstr "8. Contacto (facultativo)"
+msgstr "8. Contacto (opcional)"
 
 #: questionnaire/forms.py:204
 msgid ""
@@ -155,12 +156,12 @@ msgid ""
 "\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>."
 msgstr ""
 "Tenga en cuenta que al enviar su dirección de correo electrónico, sus datos "
-"de contacto pueden estar conectados a este caso por la investigadora "
+"de contacto pueden ser vinculados a este caso por la investigadora "
 "independiente que lleva a cabo el análisis. Si no indica sus datos de "
 "contacto, su envío permanecerá anónimo. Si desea recibir más información "
-"sobre el análisis pero no desea estar conectado a este caso, puede escribir "
-"a <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</"
-"a>."
+"sobre el análisis, pero no desea que sus datos se encuentren vinculados a "
+"este caso, puede escribir a <a href=\"mailto:info@defendersdatabase.org"
+"\">info@defendersdatabase.org</a>."
 
 #: questionnaire/forms.py:211
 msgid "Submission"
@@ -177,7 +178,7 @@ msgstr ""
 
 #: questionnaire/forms.py:216
 msgid "<p>Thank you for your contribution!</p>"
-msgstr "<p>Gracias por su contribución!</p>"
+msgstr "<p>¡Gracias por su contribución!</p>"
 
 #: questionnaire/forms.py:217
 msgid "Submit <span class=\"glyphicon glyphicon-envelope\"></span>"
@@ -200,7 +201,7 @@ msgstr "Estoy muy familiarizado con el caso."
 
 #: questionnaire/models.py:37
 msgid "I have information but it might be incomplete."
-msgstr "Tengo información pero puede ser incompleta."
+msgstr "Tengo información pero puede estar incompleta."
 
 #: questionnaire/models.py:38
 msgid "I only have little information."
@@ -317,7 +318,7 @@ msgstr "Cualquier comentario adicional"
 
 #: questionnaire/models.py:176
 msgid "I want to be informed about the outcome of this study"
-msgstr "Quiero estar informado sobre el resultado de este estudio"
+msgstr "Deseo estar informado sobre el resultado de este estudio"
 
 #: questionnaire/models.py:181
 msgid "You can contact me again if you have further questions about this case"
@@ -1415,13 +1416,13 @@ msgstr ""
 "Se divide en diferentes tipos de violaciones denunciadas en las "
 "comunicaciones del Relator Especial (véase la descripción del caso "
 "anterior). Si en el presente caso hubo desarrollos contradictorios en el "
-"plazo de un año (por ejemplo, el defensor fue liberado incondicionalmente "
-"pero fue detenido de nuevo unos meses más tarde), seleccione \"Hubo "
-"desarrollos positivos y negativos igualmente importantes\". Si en el "
-"presente caso se aplica más de una violación inicial, si se produjeron "
-"nuevas violaciónes dentro de un año, o si se observaron resultados "
-"diferentes a los descritos, utilice su mejor juicio para evaluar el "
-"resultado general aplicando una lógica similar."
+"plazo de un año (por ejemplo, si el defensor fue liberado incondicionalmente "
+"pero posteriormente fue detenido de nuevo), seleccione \"Hubo desarrollos "
+"positivos y negativos igualmente importantes\". Si en el presente caso "
+"aplica más de una violación inicial, si se produjeron nuevas violaciones "
+"dentro de un año, o si se observaron resultados diferentes a los descritos, "
+"utilice su mejor juicio para evaluar el resultado general aplicando una "
+"lógica similar."
 
 #: templates/questionnaire/followup_form.html:72
 msgid "Example of initial violation"
@@ -1437,7 +1438,7 @@ msgstr "Mejor dentro de un año"
 
 #: templates/questionnaire/followup_form.html:75
 msgid "Situation stayed the same overall within one year"
-msgstr "Situación se mantuvo igual dentro de en un año"
+msgstr "La situación se mantuvo igual dentro de en un año"
 
 #: templates/questionnaire/followup_form.html:76
 msgid "Somewhat worse within one year"
@@ -1449,7 +1450,7 @@ msgstr "Mucho peor dentro de un año"
 
 #: templates/questionnaire/followup_form.html:82
 msgid "Detention"
-msgstr "Dentención"
+msgstr "Detención"
 
 #: templates/questionnaire/followup_form.html:83
 msgid "Release without conditions."
@@ -1460,8 +1461,8 @@ msgid ""
 "Release with conditions (e.g. on bail), OR: Detention continued but "
 "conditions were improved."
 msgstr ""
-"Liberación con condiciones (p.ej. bajo fianza), O: Dentención continuó pero "
-"las condiciones se mejoraron."
+"Liberación con condiciones (p.ej. bajo fianza), o: Dentención continuó pero "
+"las condiciones mejoraron."
 
 #: templates/questionnaire/followup_form.html:85
 msgid "Detention continued."
@@ -1485,12 +1486,14 @@ msgid ""
 "Release and torture claims were credibly investigated and reparation "
 "provided."
 msgstr ""
-"Libéracion; las denuncias de tortura fueron investigadas de manera creíble y "
-"se proporcionó reparación."
+"Liberación; las denuncias de tortura fueron investigadas de manera creíble y "
+"se proporcionaron medidas de reparación."
 
 #: templates/questionnaire/followup_form.html:92
 msgid "Detention continued, but torture stopped and claims were investigated."
-msgstr "Detención continuó, pero tortura cesó y denuncias fueron investigadas."
+msgstr ""
+"Detención continuó, pero actos de tortura cesaron y denuncias fueron "
+"investigadas."
 
 #: templates/questionnaire/followup_form.html:93
 msgid "Detention continued and torture claims were not investigated."
@@ -1498,7 +1501,7 @@ msgstr "Detención continuó y denuncias de tortura no fueron investigadas."
 
 #: templates/questionnaire/followup_form.html:94
 msgid "Detention and torture continued."
-msgstr "Detención y tortura continuaron."
+msgstr "Detención y actos de tortura continuaron."
 
 #: templates/questionnaire/followup_form.html:95
 msgid "X was disappeared or died in detention."
@@ -1537,16 +1540,16 @@ msgid ""
 "Protection provided, threats were credibly investigated, perpetrator(s) were "
 "prosecuted."
 msgstr ""
-"Protección fue proporcionada, amenazas fueron investigadas de manera "
-"creíble, los autores fueron procesados."
+"Se proporcionaron medidas de protección, amenazas fueron investigadas de "
+"manera creíble, los autores fueron procesados."
 
 #: templates/questionnaire/followup_form.html:108
 msgid ""
 "Protection provided, threats were credibly investigated, no conclusive "
 "outcome."
 msgstr ""
-"Protección fue proporcionada, amenazas fueron investigadas de manera "
-"creíble, sin resultados."
+"Se proporcionaron medidas de protección, amenazas fueron investigadas de "
+"manera creíble, sin resultados."
 
 #: templates/questionnaire/followup_form.html:109
 msgid ""
@@ -1571,7 +1574,7 @@ msgstr ""
 
 #: templates/questionnaire/followup_form.html:114
 msgid "Enforced Disappearance / Killing"
-msgstr "Desaparición forzada / Homocidio"
+msgstr "Desaparición forzada / Homicidio"
 
 #: templates/questionnaire/followup_form.html:115
 msgid ""
@@ -1622,7 +1625,7 @@ msgstr "Hostigamiento empeoró."
 #: templates/questionnaire/followup_form.html:127
 #: templates/questionnaire/followup_form.html:135
 msgid "[If additional violations occurred]"
-msgstr "[Si se produjeron violaciones adicionales]"
+msgstr "[Se produjeron violaciones adicionales]"
 
 #: templates/questionnaire/followup_form.html:131
 msgid ""
@@ -1648,7 +1651,7 @@ msgid ""
 "Defamatory statements continued to be made and were endorsed by (more) "
 "officials."
 msgstr ""
-"Declaraciones difamatorias continuaron y fueron afirmadas por (más) "
+"Declaraciones difamatorias continuaron y fueron reafirmadas por (más) "
 "funcionarios."
 
 #: templates/questionnaire/followup_form.html:166
