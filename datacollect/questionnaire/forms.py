@@ -90,6 +90,7 @@ class FollowUpForm(forms.ModelForm):
                 Div(
                     HTML(_("<p>How familiar are you with the case of {{ form.instance.case.name }} in the one year period after {{ form.instance.case.date_intervention }}?</p>")),
                     'familiarity',
+                    HTML(_("<p>Note: Even if you only have little or incomplete information, please try to answer all questions based on the knowledge you have.</p>")),
                     css_class = 'panel-body'
                 ),
                 css_class = 'panel panel-info'

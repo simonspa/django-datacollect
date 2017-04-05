@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-05 15:58+0200\n"
-"PO-Revision-Date: 2017-04-05 15:58+0200\n"
+"POT-Creation-Date: 2017-04-05 22:16+0200\n"
+"PO-Revision-Date: 2017-04-05 22:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -30,11 +30,20 @@ msgstr ""
 "<p>Connaissez-vous bien l'évolution du cas de {{ form.instance.case.name }} "
 "dans l'année suivant le {{ form.instance.case.date_intervention }}?</p>"
 
-#: questionnaire/forms.py:99
+#: questionnaire/forms.py:93
+msgid ""
+"<p>Note: Even if you only have little or incomplete information, please try "
+"to answer all questions based on the knowledge you have.</p>"
+msgstr ""
+"<p>Remarque: Même si vous n'avez que peu d'informations ou si elles sont "
+"incomplètes, essayez de répondre à toutes les questions en fonction des "
+"connaissances que vous possédez s'il vous plaît.</p>"
+
+#: questionnaire/forms.py:100
 msgid "2. Development of the situation"
 msgstr "2. Évolution de la situation"
 
-#: questionnaire/forms.py:103
+#: questionnaire/forms.py:104
 msgid ""
 "<p>How would you describe the development of the case of {{ form.instance."
 "case.name }} in the one year period after {{ form.instance.case."
@@ -46,7 +55,7 @@ msgstr ""
 "date_intervention }} au vu des violations décrites ci-dessus qui se sont "
 "produites avant l'intervention du Rapporteur Spécial?</p>"
 
-#: questionnaire/forms.py:104
+#: questionnaire/forms.py:105
 msgid ""
 "<p>We recommend you look at <a data-toggle='modal' data-"
 "target='#myModal'>this table</a> to ensure consistency in responses. The "
@@ -59,11 +68,11 @@ msgstr ""
 "explique comment évaluer l'évolution d'un cas en fonction de la situation de "
 "départ.</p>"
 
-#: questionnaire/forms.py:112
+#: questionnaire/forms.py:113
 msgid "3. Significant incidents"
 msgstr "3. Événements significatifs"
 
-#: questionnaire/forms.py:116
+#: questionnaire/forms.py:117
 msgid ""
 "<p>Please list all known significant incidents that occurred in the one year "
 "period after {{ form.instance.case.date_intervention }}. If there were more "
@@ -74,31 +83,31 @@ msgstr ""
 "instance.case.date_intervention }}. S'il y en a plus de 5, concentrez-vous "
 "s'il vous plaît sur les plus importants:</p>"
 
-#: questionnaire/forms.py:119
+#: questionnaire/forms.py:120
 msgid "Incident #1"
 msgstr "Événement #1"
 
-#: questionnaire/forms.py:124
+#: questionnaire/forms.py:125
 msgid "Incident #2"
 msgstr "Événement #2"
 
-#: questionnaire/forms.py:129
+#: questionnaire/forms.py:130
 msgid "Incident #3"
 msgstr "Événement #3"
 
-#: questionnaire/forms.py:134
+#: questionnaire/forms.py:135
 msgid "Incident #4"
 msgstr "Événement #4"
 
-#: questionnaire/forms.py:139
+#: questionnaire/forms.py:140
 msgid "Incident #5"
 msgstr "Événement #5"
 
-#: questionnaire/forms.py:150
+#: questionnaire/forms.py:151
 msgid "4. International attention"
 msgstr "4. Attention internationale"
 
-#: questionnaire/forms.py:154
+#: questionnaire/forms.py:155
 msgid ""
 "<p>Do you believe that the international attention given to the case of "
 "{{ form.instance.case.name }} had an impact on the development of his/her "
@@ -109,11 +118,11 @@ msgstr ""
 "case.name }} a eu un impact sur l'évolution de sa situation dans l'une année "
 "qui a suivi le {{ form.instance.case.date_intervention }}?</p>"
 
-#: questionnaire/forms.py:162
+#: questionnaire/forms.py:163
 msgid "5. Special Rapporteur's intervention"
 msgstr "5. Intervention du Rapporteur Spécial"
 
-#: questionnaire/forms.py:166
+#: questionnaire/forms.py:167
 msgid ""
 "<p>Do you believe that the intervention of the Special Rapporteur had a "
 "distinguishable impact on this case (amidst broader international attention)?"
@@ -123,11 +132,11 @@ msgstr ""
 "discernable sur le cas (parmi les autres effets de l'attention "
 "internationale)? "
 
-#: questionnaire/forms.py:174
+#: questionnaire/forms.py:175
 msgid "6. Impact of the attention"
 msgstr "6. Impact de l'attention"
 
-#: questionnaire/forms.py:178
+#: questionnaire/forms.py:179
 msgid ""
 "<p>Please provide as much detail as possible on what makes you come to your "
 "conclusion on question (4) and (5), as well as on what kind of impact the "
@@ -137,19 +146,19 @@ msgstr ""
 "vos conclusions sur les questions (4) et (5), ainsi que sur le type d'impact "
 "que l'attention a eu (le cas échéant):</p>"
 
-#: questionnaire/forms.py:186
+#: questionnaire/forms.py:187
 msgid "7. Further comments/feedback"
 msgstr "7. Remarques/commentaires supplémentaires"
 
-#: questionnaire/forms.py:197
+#: questionnaire/forms.py:198
 msgid "8. Voluntary contact information"
 msgstr "8. Coordonnées (volontaire)"
 
-#: questionnaire/forms.py:210
+#: questionnaire/forms.py:211
 msgid "Submission"
 msgstr "Envoi"
 
-#: questionnaire/forms.py:214
+#: questionnaire/forms.py:215
 msgid ""
 "<strong>Warning!</strong> You can only submit this form once. After your "
 "submission the link will be deactivated."
@@ -157,15 +166,15 @@ msgstr ""
 "<strong>Attention!</strong> Vous pouvez soumettre ce formulaire une seule "
 "fois. Après l'envoi, le lien sera désactivé."
 
-#: questionnaire/forms.py:215
+#: questionnaire/forms.py:216
 msgid "<p>Thank you for your contribution!</p>"
 msgstr "<p>Merci beaucoup pour votre contribution !</p>"
 
-#: questionnaire/forms.py:216
+#: questionnaire/forms.py:217
 msgid "Submit <span class=\"glyphicon glyphicon-envelope\"></span>"
 msgstr "Envoyer <span class=\"glyphicon glyphicon-envelope\"></span>"
 
-#: questionnaire/forms.py:229
+#: questionnaire/forms.py:230
 msgid ""
 "Please fill the e-mail address field if you wish to receive information."
 msgstr ""
