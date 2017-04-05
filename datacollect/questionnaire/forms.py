@@ -201,7 +201,6 @@ class FollowUpForm(forms.ModelForm):
                     'want_informed',
                     'contact_again',
                     'email_address',
-                    HTML(_("Please note that by submitting your email address, your contact details can be connected to this case by the independent researcher carrying out the analysis. If you do not indicate your contact details, your submission will remain anonymous. If you wish to receive further information on the analysis but do not want to be connected to this case, you can write to <a href=\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>.")),
                     css_class = 'panel-body'
                 ),
                 css_class = 'panel panel-info'

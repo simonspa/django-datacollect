@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 20:37+0200\n"
-"PO-Revision-Date: 2017-04-02 20:33+0200\n"
+"POT-Creation-Date: 2017-04-05 15:58+0200\n"
+"PO-Revision-Date: 2017-04-05 15:58+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 1.8.9\n"
 
 #: questionnaire/forms.py:87
 msgid "1. Familiarity"
@@ -145,27 +145,11 @@ msgstr "7. Remarques/commentaires supplémentaires"
 msgid "8. Voluntary contact information"
 msgstr "8. Coordonnées (volontaire)"
 
-#: questionnaire/forms.py:204
-msgid ""
-"Please note that by submitting your email address, your contact details can "
-"be connected to this case by the independent researcher carrying out the "
-"analysis. If you do not indicate your contact details, your submission will "
-"remain anonymous. If you wish to receive further information on the analysis "
-"but do not want to be connected to this case, you can write to <a href="
-"\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>."
-msgstr ""
-"Veuillez noter qu'en envoyant votre adresse e-mail, votre contact peut être "
-"connecté à ce cas par la chercheuse indépendante effectuant l'analyse. Si "
-"vous n'indiquez pas vos coordonnées, vos réponses resteront anonymes. Si "
-"vous souhaitez recevoir des informations sur le résultat de l'étude, mais ne "
-"souhaitez pas être connecté(e) à ce cas, vous pouvez vous adresser à <a href="
-"\"mailto:info@defendersdatabase.org\">info@defendersdatabase.org</a>."
-
-#: questionnaire/forms.py:211
+#: questionnaire/forms.py:210
 msgid "Submission"
 msgstr "Envoi"
 
-#: questionnaire/forms.py:215
+#: questionnaire/forms.py:214
 msgid ""
 "<strong>Warning!</strong> You can only submit this form once. After your "
 "submission the link will be deactivated."
@@ -173,15 +157,15 @@ msgstr ""
 "<strong>Attention!</strong> Vous pouvez soumettre ce formulaire une seule "
 "fois. Après l'envoi, le lien sera désactivé."
 
-#: questionnaire/forms.py:216
+#: questionnaire/forms.py:215
 msgid "<p>Thank you for your contribution!</p>"
 msgstr "<p>Merci beaucoup pour votre contribution !</p>"
 
-#: questionnaire/forms.py:217
+#: questionnaire/forms.py:216
 msgid "Submit <span class=\"glyphicon glyphicon-envelope\"></span>"
 msgstr "Envoyer <span class=\"glyphicon glyphicon-envelope\"></span>"
 
-#: questionnaire/forms.py:230
+#: questionnaire/forms.py:229
 msgid ""
 "Please fill the e-mail address field if you wish to receive information."
 msgstr ""
@@ -1384,13 +1368,11 @@ msgstr ""
 
 #: templates/jsp/footer.html:8
 msgid ""
-"Survey performed by <strong>Janika Spannagel</strong>, Global Public Policy "
-"Institute, <a href='mailto:info@defendersdatabase."
-"org'>info@defendersdatabase.org</a>"
+"Survey performed by <strong>Janika Spannagel</strong>, <a href='mailto:"
+"defenderssurvey@ohchr.org'>defenderssurvey@ohchr.org</a>"
 msgstr ""
-"Sondage effectué par <strong>Janika Spannagel</strong>, Global Public Policy "
-"Institute, <a href='mailto:info@defendersdatabase."
-"org'>info@defendersdatabase.org</a>"
+"Sondage effectué par <strong>Janika Spannagel</strong>, <a href='mailto:"
+"defenderssurvey@ohchr.org'>defenderssurvey@ohchr.org</a>"
 
 #: templates/questionnaire/followup_form.html:52
 #: templates/questionnaire/success.html:9
@@ -1703,6 +1685,23 @@ msgstr "Vos informations ont été reçues correctement."
 #: templates/questionnaire/success.html:19
 msgid "Thank you for providing follow-up information on this case."
 msgstr "Merci d'avoir fourni des informations de suivi sur ce cas."
+
+#~ msgid ""
+#~ "Please note that by submitting your email address, your contact details "
+#~ "can be connected to this case by the independent researcher carrying out "
+#~ "the analysis. If you do not indicate your contact details, your "
+#~ "submission will remain anonymous. If you wish to receive further "
+#~ "information on the analysis but do not want to be connected to this case, "
+#~ "you can write to <a href=\"mailto:info@defendersdatabase.org"
+#~ "\">info@defendersdatabase.org</a>."
+#~ msgstr ""
+#~ "Veuillez noter qu'en envoyant votre adresse e-mail, votre contact peut "
+#~ "être connecté à ce cas par la chercheuse indépendante effectuant "
+#~ "l'analyse. Si vous n'indiquez pas vos coordonnées, vos réponses resteront "
+#~ "anonymes. Si vous souhaitez recevoir des informations sur le résultat de "
+#~ "l'étude, mais ne souhaitez pas être connecté(e) à ce cas, vous pouvez "
+#~ "vous adresser à <a href=\"mailto:info@defendersdatabase.org"
+#~ "\">info@defendersdatabase.org</a>."
 
 #~ msgid "Submit"
 #~ msgstr "Envoyer"
