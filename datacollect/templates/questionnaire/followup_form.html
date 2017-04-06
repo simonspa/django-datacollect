@@ -180,6 +180,12 @@
 	    {% for i in form.instance.case.violations %}
 	    {{ i|display_violation }}<br>
 	    {% endfor %}
+	    {% for i in form.instance.case.violations2 %}
+	    {{ i|display_violation }}<br>
+	    {% endfor %}
+	    {% for i in form.instance.case.violations3 %}
+	    {{ i|display_violation }}<br>
+	    {% endfor %}
 	  </td>
 	</tr>
 	<tr>
