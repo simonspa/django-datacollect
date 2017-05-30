@@ -198,3 +198,11 @@ class FollowUp(models.Model):
         blank=True,
         verbose_name=_("Internal comments"),
     )
+    internal_submit = models.BooleanField(
+        default = False,
+        verbose_name=_("Internally submitted")
+    )
+    internal_edit = models.BooleanField(
+        default = False,
+        verbose_name=_("Internally edited")
+    )
