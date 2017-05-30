@@ -114,7 +114,7 @@ class RecordAdmin(VersionAdmin):
         }),
         ('Further violations', {
             #'classes': ('collapse',),
-            'fields': (('violations2','perpetrator2'), ('violations3','perpetrator3')),
+            'fields': (('violations2','perpetrator2'), ('violations3','perpetrator3'), ('violations4','perpetrator4')),
         }),
         (None, {
             'fields': (('date_incident','date_incident_unspecific'),'is_released'),

@@ -79,6 +79,16 @@ class Record(models.Model):
             if any(True for x in self.violations3 if x in ["UT","C"]):
                 self.violations3.append("P")
 
+        if not "AD" in self.violations4:
+            if any(True for x in self.violations4 if x in ["IC","PC","RT"]):
+                self.violations4.append("AD")
+        if not "KA" in self.violations4:
+            if any(True for x in self.violations4 if x in ["KK","K"]):
+                self.violations4.append("KA")
+        if not "P" in self.violations4:
+            if any(True for x in self.violations4 if x in ["UT","C"]):
+                self.violations4.append("P")
+
         # Fill geolocation:
         self.get_coordinates()
         
@@ -456,6 +466,20 @@ class Record(models.Model):
         max_length=10,
         choices=PERPETRATOR_CHOICES,
         verbose_name=_("Alleged perpetrator #3"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>"),
+        blank=True
+    )
+    violations4 = SelectMultipleField(
+        max_length=50,
+        choices=VIOLATIONS_CHOICES,
+        verbose_name=_("Violation(s) #4"),
+        help_text=_("Select multiple items with <i>Ctrl+Click</i>"),
+        blank=True
+    )
+    perpetrator4 = SelectMultipleField(
+        max_length=10,
+        choices=PERPETRATOR_CHOICES,
+        verbose_name=_("Alleged perpetrator #4"),
         help_text=_("Select multiple items with <i>Ctrl+Click</i>"),
         blank=True
     )
