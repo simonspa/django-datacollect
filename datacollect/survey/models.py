@@ -108,7 +108,7 @@ class Record(models.Model):
     )
 
     ISSUE_CHOICES = (
-        ("X",_("N/A")),
+        ("?",_("N/A")),
         ("WR",_("Women's rights")),
         ("CRS",_("Children's rights")),
         ("IPR",_("Indigenous peoples' rights")),
@@ -143,7 +143,7 @@ class Record(models.Model):
     )
     
     ACTIVITIES_CHOICES = (
-        ("X",_("N/A")),
+        ("?",_("N/A")),
         ("CSA",_("Civil society activist")),
         ("TUA",_("Trade union activist")),
         ("RA",_("Religious association")),
@@ -177,7 +177,7 @@ class Record(models.Model):
         ("T",_("City/Town")),
         ("R",_("Rural area")),
         ("A",_("Abroad")),
-        ("X",_("Unknown"))
+        ("?",_("Unknown"))
     )
 
     VIOLATION_FAMILY_CHOICES = (
@@ -187,7 +187,7 @@ class Record(models.Model):
     )
 
     VIOLATIONS_CHOICES = (
-        ("X",_("N/A")),
+        ("?",_("N/A")),
         ("AD",_("Arrest/Detention")),
         ("IC",_("Incommunicado")),
         ("PC",_("Held in poor conditions")),
@@ -228,7 +228,7 @@ class Record(models.Model):
     )
 
     INTERVENTION_CHOICES = (
-        ("X",_("N/A")),
+        ("?",_("N/A")),
         ("UA",_("UA")),
         ("JUA",_("JUA")),
         ("AL",_("AL")),
@@ -375,7 +375,7 @@ class Record(models.Model):
         max_length=20,
         choices=ISSUE_CHOICES,
         max_choices=3,
-        default="X",
+        default="?",
         verbose_name=_("Issue area"),
         help_text=_("Select maximum 3 items with <i>Ctrl+Click</i>")
     )
@@ -383,7 +383,7 @@ class Record(models.Model):
         max_length=15,
         choices=ACTIVITIES_CHOICES,
         max_choices=3,
-        default="X",
+        default="?",
         verbose_name=_("Relevant activities"),
         help_text=_("Select maximum 3 items with <i>Ctrl+Click</i>")
     )
@@ -409,7 +409,7 @@ class Record(models.Model):
     location = models.CharField(
         max_length=1,
         choices=LOCATION_CHOICES,
-        default = "X",
+        default = "?",
         verbose_name=_("Location")
     )
     name_area = models.CharField(
@@ -430,7 +430,7 @@ class Record(models.Model):
     violations = SelectMultipleField(
         max_length=50,
         choices=VIOLATIONS_CHOICES,
-        default="X",
+        default="?",
         verbose_name=_("Violation(s)"),
         help_text=_("Select multiple items with <i>Ctrl+Click</i>")
     )
