@@ -212,6 +212,7 @@ class Record(models.Model):
         ("VD",_("Expulsion/Visa denied")),
         ("AH",_("Administrative harassment")),
         ("FI",_("Failure to intervene/protect")),
+        ("CR",_("Citizenship revoked")),
     )
 
     PERPETRATOR_CHOICES = (
@@ -273,6 +274,8 @@ class Record(models.Model):
         ("SOLIDAR",_("SOLIDAR")),
         ("INTORDER",_("INT'ORDER")),
         ("TRAFFIC",_("TRAFFIC")),
+        ("PRIVACY",_("PRIVACY")),
+        ("DEBT",_("DEBT")),
         ("specific",_("Country-specific")),
     )
 
