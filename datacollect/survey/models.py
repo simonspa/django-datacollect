@@ -42,7 +42,7 @@ class Record(models.Model):
         # Communication dates: check for sensible time order
         if self.date_govreply and self.date_intervention and self.date_govreply < self.date_intervention:
             raise ValidationError('Date of government reply has to be past the date of intervention.')
-        if self.date_intervention and self.date_incident and self.date_intervention <= self.date_incident:
+        if self.date_intervention and self.date_incident and self.date_intervention < self.date_incident:
             raise ValidationError('Date of intervention has to be past the date of the incident.')
         if self.date_govreply and self.date_incident and self.date_govreply < self.date_incident:
             raise ValidationError('Date of government reply has to be past the date of the incident.')
