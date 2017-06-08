@@ -276,6 +276,7 @@ class Record(models.Model):
         ("TRAFFIC",_("TRAFFIC")),
         ("PRIVACY",_("PRIVACY")),
         ("DEBT",_("DEBT")),
+        ("SOGI",_("SOGI")),
         ("specific",_("Country-specific")),
     )
 
@@ -683,7 +684,8 @@ class OtherRecord(models.Model):
         (4, _("Mass violation/pattern")),
         (5, _("Anonymous cases")),
         (6, _("PR on individual")),
-        (7, _("Country visit by SR"))
+        (7, _("Country visit by SR")),
+        (8, _("Event/Commemoration"))
     )
 
     class Meta: 
