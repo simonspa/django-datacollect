@@ -6,18 +6,19 @@ class Command(BaseCommand):
     help = 'Finds fuzzy name matches and allows to alter their relation'
 
     def add_arguments(self, parser):
-        parser.add_argument('start', nargs='+', type=int, default=0)
+        parser.add_argument('start', nargs='?', type=int, default=0)
 
     def handle(self, *args, **options):
         rx = Record.objects.all()
         all = rx.count()
         cnt = 0
-        print "Iterating over " + str(all) + " database ercrods, starting at " + str(options['start'])
+        print "Iterating over " + str(all) + " database records, starting at " + str(options['start'])
         for i,r1 in enumerate(rx):
             # Obey start position argument
             if i < options['start']: continue
             for j,r2 in enumerate(rx):
                 if j <= i: continue
+
                 ratio = fuzz.ratio(r1.name,r2.name)
                 if ratio < 75:
                     continue
