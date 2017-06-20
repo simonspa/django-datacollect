@@ -9,6 +9,24 @@ from django.utils.encoding import force_bytes
 from reversion.admin import VersionAdmin
 from django.db import transaction
 
+def export_csv(modeladmin, request, queryset):
+    import csv
+    from django.utils.encoding import smart_str
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=questionnaire.csv'
+    writer = csv.writer(response, csv.excel)
+    response.write(u'\ufeff'.encode('utf8'))
+
+    # Write out the column names, read from first item
+    writer.writerow([smart_str(field.name) for field in queryset[0]._meta.fields])
+
+    # Loop over requested records and write out data
+    for obj in queryset:
+        writer.writerow(["\"" + force_bytes(getattr(obj,field.name)) + "\"" for field in obj._meta.fields])
+        
+    return response
+export_csv.short_description = u"Export CSV"
+
 class FollowUpAdmin(VersionAdmin):
     readonly_fields = ['case']
     list_per_page = 500
@@ -47,7 +65,7 @@ class FollowUpAdmin(VersionAdmin):
         })
     )
     list_filter = ("is_processed","is_answered","language")
-    actions = ['mark_as_answered', 'mark_as_processed', 'mark_as_unprocessed', 'export_urls']
+    actions = [export_csv,'mark_as_answered', 'mark_as_processed', 'mark_as_unprocessed', 'export_urls']
     
     def person_id(self, x):
         return x.case.person_id
