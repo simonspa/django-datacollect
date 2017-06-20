@@ -98,12 +98,13 @@ class RecordAdmin(VersionAdmin):
     list_filter = ("is_final","gender","violation_family","business_case","type_intervention","analyst","country")
     search_fields = ("name","person_id")
     actions = [export_csv,duplicate_event,set_final,'generate_followups'] #, export_xls, export_xlsx]
+    filter_horizontal = ('follow_ups',)
     fieldsets = (
         (None, {
             'fields': (('person_id', 'ohchr_case'),)
         }),
         ('Case information', {
-            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', ('follow_up_case','regional_case'), 'earlier_coms')
+            'fields': ('country', 'date_intervention', 'type_intervention', 'joint_with', 'name', ('follow_up_case','regional_case'), 'follow_ups', 'earlier_coms')
         }),
         ('HRD identity', {
             #'description': 'ex',
