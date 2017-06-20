@@ -31,6 +31,7 @@ class Command(BaseCommand):
                 # Print leftovers:
                 print ""
                 print u"Score: {0:3d}         {1:30}{2}".format(ratio,r1.name,r2.name)
+                print u"Person-ID:         {1:30}{2}".format(ratio,r1.person_id,r2.person_id)
                 print u"Follow-up:         {0!r:<30}{1}".format(r1.follow_up_case,r2.follow_up_case)
                 print u"Date intervention: {0:30}{1}".format(str(r1.date_intervention),str(r2.date_intervention))
                 print u"Issue area:        {0:30}{1}".format(r1.issue_area,r2.issue_area)
