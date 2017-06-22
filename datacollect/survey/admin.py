@@ -29,8 +29,7 @@ def export_csv(modeladmin, request, queryset):
 
             try:
                 if isinstance(field, models.ManyToManyField):
-                    z = getattr(obj,field.name)
-                    thisrow.append("\"" + force_bytes(z.all()) + "\"")
+                    thisrow.append("\"" + force_bytes([p.person_id for p in getattr(obj,field.name).all()]) + "\"")
                 else:
                     thisrow.append("\"" + force_bytes(getattr(obj,field.name)) + "\"")
             except:
