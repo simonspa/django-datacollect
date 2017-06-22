@@ -20,12 +20,22 @@ def export_csv(modeladmin, request, queryset):
     response.write(u'\ufeff'.encode('utf8'))
 
     # Write out the column names, read from first item
-    writer.writerow([smart_str(field.name) for field in queryset[0]._meta.fields])
+    writer.writerow([smart_str(field.name) for field in queryset[0]._meta.get_fields()])
 
     # Loop over requested records and write out data
     for obj in queryset:
-        writer.writerow(["\"" + force_bytes(getattr(obj,field.name)) + "\"" for field in obj._meta.fields])
-        
+        thisrow = list()
+        for field in obj._meta.get_fields():
+
+            try:
+                if isinstance(field, models.ManyToManyField):
+                    z = getattr(obj,field.name)
+                    thisrow.append("\"" + force_bytes(z.all()) + "\"")
+                else:
+                    thisrow.append("\"" + force_bytes(getattr(obj,field.name)) + "\"")
+            except:
+                thisrow.append("\"\"")
+        writer.writerow(thisrow)    
     return response
 export_csv.short_description = u"Export CSV"
 
