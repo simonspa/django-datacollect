@@ -8,6 +8,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import int_list_validator, MinLengthValidator
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import force_bytes
 
 import json
 from geopy.exc import GeocoderServiceError
@@ -658,7 +659,20 @@ class Record(models.Model):
         except GeocoderServiceError:
             #print "Geocoder service error on record %s (%s)" % (self.person_id, unicode(self.name))
             pass
-        
+
+    # Produce list with field items:
+    def get_field_list(self):
+        thisrow = list()
+        for field in self._meta.get_fields():
+            try:
+                if isinstance(field, models.ManyToManyField):
+                    thisrow.append("\"" + force_bytes([p.person_id for p in getattr(self,field.name).all()]) + "\"")
+                else:
+                    thisrow.append("\"" + force_bytes(getattr(self,field.name)) + "\"")
+            except:
+                thisrow.append("\"\"")
+        return thisrow
+
     def as_geojson_dict(self):
         """
         Method to return each feature in the DB as a geojson object.

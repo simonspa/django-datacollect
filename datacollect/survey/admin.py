@@ -24,17 +24,7 @@ def export_csv(modeladmin, request, queryset):
 
     # Loop over requested records and write out data
     for obj in queryset:
-        thisrow = list()
-        for field in obj._meta.get_fields():
-
-            try:
-                if isinstance(field, models.ManyToManyField):
-                    thisrow.append("\"" + force_bytes([p.person_id for p in getattr(obj,field.name).all()]) + "\"")
-                else:
-                    thisrow.append("\"" + force_bytes(getattr(obj,field.name)) + "\"")
-            except:
-                thisrow.append("\"\"")
-        writer.writerow(thisrow)    
+        writer.writerow(obj.get_field_list())
     return response
 export_csv.short_description = u"Export CSV"
 
