@@ -667,6 +667,8 @@ class Record(models.Model):
             try:
                 if isinstance(field, models.ManyToManyField):
                     thisrow.append("\"" + force_bytes([p.person_id for p in getattr(self,field.name).all()]) + "\"")
+                elif isinstance(field, CountryField):
+                    thisrow.append("\"" + force_bytes(getattr(self,field.name).alpha3) + "\"")
                 else:
                     thisrow.append("\"" + force_bytes(getattr(self,field.name)) + "\"")
             except:
