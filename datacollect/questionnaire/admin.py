@@ -68,7 +68,7 @@ class FollowUpAdmin(VersionAdmin):
             'fields': ("language","timestamp","is_answered","is_processed","internal_comments", ("internal_submit", "internal_edit"))
         })
     )
-    list_filter = ("is_processed","is_answered","language")
+    list_filter = ("is_processed","is_answered", "internal_submit", "language")
     actions = [export_csv,'mark_as_answered', 'mark_as_processed', 'mark_as_unprocessed', 'export_urls']
     
     def person_id(self, x):
