@@ -34,7 +34,7 @@ export_csv.short_description = u"Export CSV"
 class FollowUpAdmin(VersionAdmin):
     readonly_fields = ['case']
     list_per_page = 500
-    list_display = ("person_id","name","affiliation","ohchr_case","country","date_intervention","unique_id","language","timestamp","is_answered","is_processed")
+    list_display = ("person_id","name","affiliation","ohchr_case","country","date_intervention","language","timestamp","is_answered","internal_submit","is_processed")
     list_editable = ("language",)
     fieldsets = (
         ('Case information', {
@@ -69,7 +69,7 @@ class FollowUpAdmin(VersionAdmin):
         })
     )
     list_filter = ("is_processed","is_answered", "internal_submit", "language")
-    actions = [export_csv,'mark_as_answered', 'mark_as_processed', 'mark_as_unprocessed', 'export_urls']
+    actions = [export_csv,'mark_as_answered', 'mark_as_processed', 'mark_as_unprocessed', 'mark_as_internal', 'export_urls']
     
     def person_id(self, x):
         return x.case.person_id
@@ -98,6 +98,10 @@ class FollowUpAdmin(VersionAdmin):
     def mark_as_answered(self, request, queryset):
         queryset.update(is_answered=True)
     mark_as_answered.short_description = u"Mark selected follow-up forms as answered"
+
+    def mark_as_internal(self, request, queryset):
+        queryset.update(internal_submit=True)
+    mark_as_internal.short_description = u"Mark selected follow-up forms as internally submitted"
 
     def mark_as_processed(self, request, queryset):
         queryset.update(is_processed=True)
