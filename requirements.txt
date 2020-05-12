@@ -7,7 +7,7 @@ django-geojson==2.9.0
 django-jsonfield==1.0.0
 django-leaflet
 django-mathfilters
-django-reversion=2.0.0
+django-reversion==2.0.0
 django-select-multiple-field
 mysql-python
 geopy==1.22
