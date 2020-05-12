@@ -1,0 +1,14 @@
+django==1.9.13
+django-bootstrap3==7.0.1
+django-countries==3.4.1
+django-crispy-forms==1.6.1
+django-flat-theme==1.1.4
+django-geojson==2.9.0
+django-jsonfield==1.0.0
+django-leaflet
+django-mathfilters
+django-reversion=2.0.0
+django-select-multiple-field
+mysql-python
+geopy==1.22
+
