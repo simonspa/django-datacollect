@@ -32,6 +32,17 @@ sudo apt-get install libmysqlclient-dev python-mysqldb
 ```
 
 
+Deployment
+==
+
+Run
+
+```
+python manage.py migrate  --settings=datacollect.settings_production
+python manage.py collectstatic --settings=datacollect.settings_production
+```
+
+
 Development server
 ==
 
