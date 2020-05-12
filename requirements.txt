@@ -1,4 +1,4 @@
-django==1.9.13
+django==1.11.28
 django-bootstrap3==7.0.1
 django-countries==3.4.1
 django-crispy-forms==1.6.1
